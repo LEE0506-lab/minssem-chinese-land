@@ -345,7 +345,125 @@ h1 {
   font-weight: 700;
 }
 
-/* Random Speed Quiz */
+/* Quiz Mode Selection */
+
+.mode-selection {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.mode-selection h2 {
+  margin: 0 0 8px;
+  font-size: 23px;
+}
+
+.mode-description {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.mode-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.mode-card {
+  border: 2px solid var(--line);
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: border-color .2s, background .2s;
+}
+
+.mode-card:hover {
+  border-color: var(--teal);
+  background: #f0faf5;
+}
+
+.mode-icon { font-size: 35px; }
+
+.mode-title {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.mode-time {
+  color: var(--teal);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.mode-detail {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Timer */
+
+.timer-area {
+  margin-bottom: 23px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 20px;
+}
+
+.timer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.timer-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.timer-value {
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--teal);
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-value.warning {
+  color: #e05b54;
+}
+
+.timer-track {
+  width: 100%;
+  height: 9px;
+  border-radius: 99px;
+  background: #e3ebe6;
+  overflow: hidden;
+}
+
+.timer-fill {
+  height: 100%;
+  width: 100%;
+  border-radius: 99px;
+  background: var(--teal);
+  transition: width .1s linear, background .2s;
+}
+
+.timer-fill.warning {
+  background: #e05b54;
+}
+
+/* Quiz */
 
 .quiz-question {
   padding: 32px 26px;
@@ -494,6 +612,12 @@ h1 {
   .quiz-option-hanzi { font-size: 29px; }
 }
 
+@media (max-width: 440px) {
+  .mode-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -517,7 +641,7 @@ h1 {
 
 <main class="container">
 
-  <!-- 1. Vocabulary -->
+  <!-- STEP 1: Vocabulary -->
 
   <section id="vocabSection">
     <p class="eyebrow">HSK 1급 · 제1과</p>
@@ -565,13 +689,8 @@ h1 {
 
       <div class="card-divider"></div>
 
-      <div class="meaning-en" id="meaningEn">
-        Hello
-      </div>
-
-      <div class="meaning-ko" id="meaningKo">
-        안녕하세요
-      </div>
+      <div class="meaning-en" id="meaningEn">Hello</div>
+      <div class="meaning-ko" id="meaningKo">안녕하세요</div>
     </div>
 
     <div class="navigation">
@@ -599,7 +718,7 @@ h1 {
     </p>
   </section>
 
-  <!-- 2. Flashcards -->
+  <!-- STEP 2: Flashcards -->
 
   <section id="flashSection" hidden>
     <p class="eyebrow">HSK 1급 · 제1과</p>
@@ -682,7 +801,7 @@ h1 {
     </div>
   </section>
 
-  <!-- 3. Random Speed Quiz -->
+  <!-- STEP 3: Speed Quiz -->
 
   <section id="quizSection" hidden>
     <p class="eyebrow">HSK 1급 · 제1과</p>
@@ -692,14 +811,62 @@ h1 {
       한자와 영어·한국어 뜻을 연결해 보세요.
     </p>
 
-    <div id="quizPlay">
+    <!-- Mode Selection -->
+
+    <div class="mode-selection" id="modeSelection">
+      <h2>퀴즈 모드를 선택하세요!</h2>
+      <p class="mode-description">
+        자신의 학습 속도에 맞게 도전해 보세요.
+      </p>
+
+      <div class="mode-cards">
+        <button class="mode-card" id="practiceModeBtn">
+          <span class="mode-icon">📖</span>
+          <span class="mode-title">연습 모드</span>
+          <span class="mode-time">시간 무제한</span>
+          <span class="mode-detail">
+            시간에 쫓기지 않고<br>
+            차근차근 복습하기
+          </span>
+        </button>
+
+        <button class="mode-card" id="challengeModeBtn">
+          <span class="mode-icon">⚡</span>
+          <span class="mode-title">도전 모드</span>
+          <span class="mode-time">문제당 15초</span>
+          <span class="mode-detail">
+            제한 시간 안에<br>
+            빠르게 정답 찾기
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quiz Play -->
+
+    <div id="quizPlay" hidden>
       <div class="progress-top">
-        <span>퀴즈 진행률</span>
+        <span id="quizModeLabel">퀴즈 진행률</span>
         <span id="quizCounter">1 / 11</span>
       </div>
 
       <div class="progress-track">
         <div class="progress-fill" id="quizProgress"></div>
+      </div>
+
+      <!-- Timer: challenge mode only -->
+
+      <div class="timer-area" id="timerArea" hidden>
+        <div class="timer-top">
+          <span class="timer-label">⏱ 남은 시간</span>
+          <span class="timer-value" id="timerValue">
+            00:15
+          </span>
+        </div>
+
+        <div class="timer-track">
+          <div class="timer-fill" id="timerFill"></div>
+        </div>
       </div>
 
       <div class="quiz-question">
@@ -733,9 +900,12 @@ h1 {
       </button>
     </div>
 
+    <!-- Quiz Result -->
+
     <div class="finish-panel" id="quizResult" hidden>
       <strong>🎉 스피드 퀴즈 완료!</strong>
 
+      <p id="resultMode"></p>
       <div class="quiz-score" id="quizScore">0점</div>
       <p id="quizResultText"></p>
 
@@ -743,6 +913,12 @@ h1 {
         class="nav-btn next full-button"
         id="quizRestartBtn">
         다시 도전하기 ↻
+      </button>
+
+      <button
+        class="nav-btn prev full-button"
+        id="changeModeBtn">
+        다른 모드 선택하기
       </button>
 
       <p>
@@ -760,7 +936,7 @@ h1 {
 <script>
 "use strict";
 
-/* Vocabulary */
+/* Vocabulary Data */
 
 const words = [
   {hanzi:"你好",pinyin:"nǐ hǎo",en:"Hello",ko:"안녕하세요"},
@@ -800,7 +976,7 @@ function showStage(stage) {
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
-/* Chinese speech */
+/* Chinese Speech */
 
 function stopSpeech() {
   if ("speechSynthesis" in window) {
@@ -862,7 +1038,7 @@ function speakChinese(text, note) {
   window.speechSynthesis.speak(utterance);
 }
 
-/* Step 1: Vocabulary */
+/* STEP 1: Vocabulary */
 
 let vocabIndex = 0;
 let vocabCompleted = false;
@@ -917,15 +1093,12 @@ el("nextBtn").addEventListener("click", () => {
 });
 
 el("soundBtn").addEventListener("click", () => {
-  speakChinese(
-    words[vocabIndex].hanzi,
-    el("soundNote")
-  );
+  speakChinese(words[vocabIndex].hanzi, el("soundNote"));
 });
 
 el("startFlashBtn").addEventListener("click", startFlash);
 
-/* Step 2: Flashcards */
+/* STEP 2: Flashcards */
 
 let flashIndex = 0;
 let flashFlipped = false;
@@ -1020,32 +1193,96 @@ el("flashSoundBtn").addEventListener("click", () => {
 });
 
 el("restartFlashBtn").addEventListener("click", startFlash);
-el("startQuizBtn").addEventListener("click", startQuiz);
+el("startQuizBtn").addEventListener("click", showModeSelection);
 
-/* Step 3: Random Mixed Speed Quiz */
+/* STEP 3: Random Quiz with Timer */
 
+const QUESTION_TIME = 15;
+
+let quizMode = "practice";
 let quizQuestions = [];
 let quizIndex = 0;
 let quizCorrect = 0;
 let quizAnswered = false;
 
-/*
-  type "hanziToMeaning":
-    Chinese -> English + Korean
+// Timer state
+let timerInterval = null;
+let timerDeadline = 0;
+let remainingSeconds = QUESTION_TIME;
 
-  type "meaningToHanzi":
-    English + Korean -> Chinese
-*/
+function stopTimer() {
+  if (timerInterval !== null) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+}
+
+function updateTimerDisplay() {
+  const seconds = Math.max(0, remainingSeconds);
+  const warning = seconds <= 5;
+
+  el("timerValue").textContent =
+    `00:${String(seconds).padStart(2,"0")}`;
+
+  el("timerValue").classList.toggle("warning", warning);
+  el("timerFill").classList.toggle("warning", warning);
+
+  el("timerFill").style.width =
+    `${seconds / QUESTION_TIME * 100}%`;
+}
+
+function startTimer() {
+  stopTimer();
+
+  if (quizMode !== "challenge") return;
+
+  remainingSeconds = QUESTION_TIME;
+  timerDeadline = Date.now() + QUESTION_TIME * 1000;
+
+  updateTimerDisplay();
+
+  timerInterval = setInterval(() => {
+    if (quizAnswered) {
+      stopTimer();
+      return;
+    }
+
+    const millisecondsLeft = timerDeadline - Date.now();
+
+    remainingSeconds = Math.max(
+      0,
+      Math.ceil(millisecondsLeft / 1000)
+    );
+
+    updateTimerDisplay();
+
+    if (millisecondsLeft <= 0) {
+      stopTimer();
+      handleTimeout();
+    }
+  }, 100);
+}
+
+function showModeSelection() {
+  stopSpeech();
+  stopTimer();
+
+  el("modeSelection").hidden = false;
+  el("quizPlay").hidden = true;
+  el("quizResult").hidden = true;
+
+  showStage("quizSection");
+}
 
 function makeQuizQuestions() {
   const shuffledWords = shuffle(words);
 
-  // Ensure both types appear at least once.
+  // Both question types are guaranteed to appear.
   const types = shuffle([
     "hanziToMeaning",
     "meaningToHanzi",
     ...Array.from(
-      {length: words.length - 2},
+      {length: Math.max(0, words.length - 2)},
       () => Math.random() < 0.5
         ? "hanziToMeaning"
         : "meaningToHanzi"
@@ -1058,22 +1295,35 @@ function makeQuizQuestions() {
   }));
 }
 
-function startQuiz() {
+function startQuiz(mode) {
+  stopTimer();
   stopSpeech();
 
+  quizMode = mode;
   quizQuestions = makeQuizQuestions();
   quizIndex = 0;
   quizCorrect = 0;
   quizAnswered = false;
 
-  el("quizPlay").hidden = false;
+  el("modeSelection").hidden = true;
   el("quizResult").hidden = true;
+  el("quizPlay").hidden = false;
+
+  el("timerArea").hidden = quizMode !== "challenge";
+
+  el("quizModeLabel").textContent =
+    quizMode === "challenge"
+      ? "⚡ 도전 모드"
+      : "📖 연습 모드";
 
   renderQuiz();
-  showStage("quizSection");
+
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function renderQuiz() {
+  stopTimer();
+
   const question = quizQuestions[quizIndex];
   const word = question.word;
 
@@ -1122,6 +1372,7 @@ function renderQuiz() {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "quiz-option";
+    button.dataset.hanzi = choice.hanzi;
 
     if (isHanziToMeaning) {
       const english = document.createElement("span");
@@ -1144,50 +1395,92 @@ function renderQuiz() {
     button.addEventListener("click", () => {
       if (quizAnswered) return;
 
-      quizAnswered = true;
+      // Check the real deadline, even if the timer
+      // callback has not run yet.
+      if (
+        quizMode === "challenge" &&
+        Date.now() >= timerDeadline
+      ) {
+        handleTimeout();
+        return;
+      }
 
       const correct = choice.hanzi === word.hanzi;
 
-      if (correct) {
-        quizCorrect++;
-
-        el("quizFeedback").textContent =
-          "✓ 정답이에요!";
-
-        el("quizFeedback").style.color = "#176c54";
-      } else {
-        el("quizFeedback").textContent =
-          isHanziToMeaning
-            ? `✗ 정답: ${word.en} · ${word.ko}`
-            : `✗ 정답: ${word.hanzi}`;
-
-        el("quizFeedback").style.color = "#b34838";
-      }
-
-      optionsContainer
-        .querySelectorAll("button")
-        .forEach(optionButton => {
-          optionButton.disabled = true;
-
-          if (optionButton.dataset.hanzi === word.hanzi) {
-            optionButton.classList.add("correct");
-          } else if (optionButton === button) {
-            optionButton.classList.add("wrong");
-          }
-        });
-
-      el("quizNextBtn").textContent =
-        quizIndex === quizQuestions.length - 1
-          ? "결과 확인하기 →"
-          : "다음 문제 →";
-
-      el("quizNextBtn").hidden = false;
+      finishQuestion(
+        correct,
+        button,
+        false
+      );
     });
 
-    button.dataset.hanzi = choice.hanzi;
     optionsContainer.appendChild(button);
   });
+
+  startTimer();
 }
+
+function finishQuestion(correct, selectedButton, timedOut) {
+  if (quizAnswered) return;
+
+  quizAnswered = true;
+  stopTimer();
+
+  const question = quizQuestions[quizIndex];
+  const word = question.word;
+
+  if (correct) {
+    quizCorrect++;
+    el("quizFeedback").textContent = "✓ 정답이에요!";
+    el("quizFeedback").style.color = "#176c54";
+  } else if (timedOut) {
+    el("quizFeedback").textContent =
+      `⏰ 시간 초과! 정답: ${word.hanzi} · ${word.en} · ${word.ko}`;
+
+    el("quizFeedback").style.color = "#b34838";
+  } else {
+    el("quizFeedback").textContent =
+      `✗ 정답: ${word.hanzi} · ${word.en} · ${word.ko}`;
+
+    el("quizFeedback").style.color = "#b34838";
+  }
+
+  el("quizOptions")
+    .querySelectorAll("button")
+    .forEach(button => {
+      button.disabled = true;
+
+      if (button.dataset.hanzi === word.hanzi) {
+        button.classList.add("correct");
+      } else if (button === selectedButton) {
+        button.classList.add("wrong");
+      }
+    });
+
+  el("quizNextBtn").textContent =
+    quizIndex === quizQuestions.length - 1
+      ? "결과 확인하기 →"
+      : "다음 문제 →";
+
+  el("quizNextBtn").hidden = false;
+}
+
+function handleTimeout() {
+  if (quizAnswered) return;
+
+  remainingSeconds = 0;
+  updateTimerDisplay();
+
+  finishQuestion(false, null, true);
+}
+
+el("practiceModeBtn").addEventListener("click", () => {
+  startQuiz("practice");
+});
+
+el("challengeModeBtn").addEventListener("click", () => {
+  startQuiz("challenge");
+});
 
 el("quizNextBtn").addEventListener("click", () => {
   if (!quizAnswered) return;
@@ -1201,12 +1494,19 @@ el("quizNextBtn").addEventListener("click", () => {
 });
 
 function finishQuiz() {
+  stopTimer();
+
   const percent = Math.round(
     quizCorrect / quizQuestions.length * 100
   );
 
   el("quizPlay").hidden = true;
   el("quizResult").hidden = false;
+
+  el("resultMode").textContent =
+    quizMode === "challenge"
+      ? "⚡ 도전 모드 결과"
+      : "📖 연습 모드 결과";
 
   el("quizScore").textContent = `${percent}점`;
 
@@ -1216,9 +1516,36 @@ function finishQuiz() {
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
-el("quizRestartBtn").addEventListener("click", startQuiz);
+el("quizRestartBtn").addEventListener("click", () => {
+  startQuiz(quizMode);
+});
 
-/* Initial setup */
+el("changeModeBtn").addEventListener("click", () => {
+  showModeSelection();
+});
+
+/* Cleanup */
+
+document.addEventListener("visibilitychange", () => {
+  // The deadline is based on real elapsed time,
+  // so background tabs cannot extend the limit.
+  if (
+    document.visibilityState === "visible" &&
+    timerInterval !== null &&
+    !quizAnswered &&
+    quizMode === "challenge" &&
+    Date.now() >= timerDeadline
+  ) {
+    handleTimeout();
+  }
+});
+
+window.addEventListener("pagehide", () => {
+  stopTimer();
+  stopSpeech();
+});
+
+/* Initial Setup */
 
 if (!("speechSynthesis" in window)) {
   el("soundBtn").disabled = true;
