@@ -835,6 +835,7 @@ h1 {
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after { transition:none!important; }
 }
+.meaning-ko,.flash-ko,.quiz-korean,.quiz-option-ko,.review-ko {display:none!important;}
 </style>
 </head>
 
@@ -1328,6 +1329,11 @@ h1 {
 
 <script>
 "use strict";
+
+function currentMeaning(word) {
+  return localStorage.getItem("minssem-language") === "en" ? word.en : word.ko;
+}
+
 
 /* ======================================
    HSK 1 LESSON DATA
@@ -3597,8 +3603,8 @@ function renderWord() {
 
   el("hanzi").textContent = word.hanzi;
   el("pinyin").textContent = word.pinyin;
-  el("meaningEn").textContent = word.en;
-  el("meaningKo").textContent = word.ko;
+  el("meaningEn").textContent = currentMeaning(word);
+  el("meaningKo").textContent = "";
 
   el("counter").textContent =
     `${currentWordIndex + 1} / ${words.length}`;
@@ -3708,8 +3714,8 @@ function renderFlash() {
 
   el("flashHanzi").textContent = word.hanzi;
   el("flashPinyin").textContent = word.pinyin;
-  el("flashEn").textContent = word.en;
-  el("flashKo").textContent = word.ko;
+  el("flashEn").textContent = currentMeaning(word);
+  el("flashKo").textContent = "";
 
   el("flashPinyin").hidden = true;
   el("flashEn").hidden = true;
@@ -3997,11 +4003,11 @@ function renderQuizQuestion() {
 
     const english = document.createElement("div");
     english.className = "quiz-english";
-    english.textContent = word.en;
+    english.textContent = currentMeaning(word);
 
     const korean = document.createElement("div");
     korean.className = "quiz-korean";
-    korean.textContent = word.ko;
+    korean.textContent = "";
 
     prompt.appendChild(english);
     prompt.appendChild(korean);
@@ -4019,11 +4025,11 @@ function renderQuizQuestion() {
     if (question.type === "hanziToMeaning") {
       const english = document.createElement("span");
       english.className = "quiz-option-en";
-      english.textContent = choice.en;
+      english.textContent = currentMeaning(choice);
 
       const korean = document.createElement("span");
       korean.className = "quiz-option-ko";
-      korean.textContent = choice.ko;
+      korean.textContent = "";
 
       button.appendChild(english);
       button.appendChild(korean);
@@ -4428,11 +4434,11 @@ function renderWrongAnswerReview() {
 
     const english = document.createElement("div");
     english.className = "review-en";
-    english.textContent = word.en;
+    english.textContent = currentMeaning(word);
 
     const korean = document.createElement("div");
     korean.className = "review-ko";
-    korean.textContent = word.ko;
+    korean.textContent = "";
 
     meaning.appendChild(english);
     meaning.appendChild(korean);
@@ -4587,5 +4593,6 @@ window.addEventListener("pagehide", () => {
 initializeLesson();
 
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>
