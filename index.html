@@ -30,6 +30,31 @@
       font-weight: 800;
       color: var(--primary);
       font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      min-width: 0;
+    }
+
+    .language-select {
+      border: 1px solid #DCE8E2;
+      background: white;
+      color: var(--text);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .language-select:focus-visible {
+      outline: 3px solid #8BCDBD;
+      outline-offset: 2px;
     }
 
     main {
@@ -116,6 +141,16 @@
     }
 
     @media (max-width: 700px) {
+      header {
+        padding: 16px 20px;
+        font-size: 15px;
+      }
+
+      .language-select {
+        font-size: 12px;
+        padding: 9px;
+      }
+
       main { padding: 45px 20px; }
       .courses { grid-template-columns: 1fr; }
     }
@@ -123,47 +158,167 @@
 </head>
 <body>
 
-<header>✦ 민쌤중국어 어휘랜드</header>
+<header>
+  <div class="brand" id="brand">
+    ✦ 민쌤중국어 어휘랜드
+  </div>
+
+  <select
+    id="minssemLanguage"
+    class="language-select"
+    aria-label="Language / 언어"
+  >
+    <option value="ko">한국어</option>
+    <option value="en">English</option>
+  </select>
+</header>
 
 <main>
   <section>
-    <div class="eyebrow">MINSSem CHINESE VOCABULARY LAND</div>
-    <h1>중국어 단어 공부,<br>이제 모험처럼 즐겁게!</h1>
-    <p class="intro">
+    <div class="eyebrow">
+      MINSSEM CHINESE VOCABULARY LAND
+    </div>
+
+    <h1 id="heroTitle">
+      중국어 단어 공부,<br>
+      이제 모험처럼 즐겁게!
+    </h1>
+
+    <p class="intro" id="heroIntro">
       단어를 배우고, 게임에 도전하고,<br>
       별을 모아 새로운 스테이지를 열어보세요.
     </p>
   </section>
 
   <section id="courses">
-    <h2 class="section-title">학습 코스 선택</h2>
+    <h2 class="section-title" id="courseTitle">
+      학습 코스 선택
+    </h2>
 
     <div class="courses">
       <div class="course">
         <div class="course-icon">📗</div>
         <h3>HSK 3.0</h3>
-        <p>급수별·과별 단어 학습과 게임형 테스트</p>
-        <a href="hsk.html">학습 시작하기 →</a>
+        <p id="hskDescription">
+          급수별·과별 단어 학습과 게임형 테스트
+        </p>
+        <a href="hsk.html" id="startLink">
+          학습 시작하기 →
+        </a>
       </div>
 
       <div class="course disabled">
         <div class="course-icon">🎓</div>
         <h3>IB Chinese</h3>
-        <p>IB Chinese B 어휘 학습 코스</p>
-        <p>추후 오픈</p>
+        <p id="ibDescription">
+          IB Chinese B 어휘 학습 코스
+        </p>
+        <p class="comingSoon">추후 오픈</p>
       </div>
 
       <div class="course disabled">
         <div class="course-icon">🌏</div>
         <h3>AP Chinese</h3>
-        <p>AP Chinese 어휘 학습 코스</p>
-        <p>추후 오픈</p>
+        <p id="apDescription">
+          AP Chinese 어휘 학습 코스
+        </p>
+        <p class="comingSoon">추후 오픈</p>
       </div>
     </div>
   </section>
 </main>
 
-<footer>© 2026 민쌤중국어 어휘랜드</footer>
+<footer id="footer">
+  © 2026 민쌤중국어 어휘랜드
+</footer>
+
+<script>
+  "use strict";
+
+  const LANGUAGE_KEY = "minssem-language";
+
+  const translations = {
+    ko: {
+      brand: "✦ 민쌤중국어 어휘랜드",
+      heroTitle: "중국어 단어 공부,<br>이제 모험처럼 즐겁게!",
+      heroIntro: "단어를 배우고, 게임에 도전하고,<br>별을 모아 새로운 스테이지를 열어보세요.",
+      courseTitle: "학습 코스 선택",
+      hskDescription: "급수별·과별 단어 학습과 게임형 테스트",
+      startLink: "학습 시작하기 →",
+      ibDescription: "IB Chinese B 어휘 학습 코스",
+      apDescription: "AP Chinese 어휘 학습 코스",
+      comingSoon: "추후 오픈",
+      footer: "© 2026 민쌤중국어 어휘랜드"
+    },
+
+    en: {
+      brand: "✦ Min's Chinese Vocabulary Land",
+      heroTitle: "Learning Chinese Vocabulary,<br>Now an Exciting Adventure!",
+      heroIntro: "Learn new words, take on challenges,<br>collect stars, and unlock new stages.",
+      courseTitle: "Choose Your Learning Course",
+      hskDescription: "Vocabulary lessons and game-based quizzes by HSK level and lesson",
+      startLink: "Start Learning →",
+      ibDescription: "Vocabulary learning course for IB Chinese B",
+      apDescription: "Vocabulary learning course for AP Chinese",
+      comingSoon: "Coming Soon",
+      footer: "© 2026 Min's Chinese Vocabulary Land"
+    }
+  };
+
+  function getSavedLanguage() {
+    try {
+      return localStorage.getItem(LANGUAGE_KEY) === "en"
+        ? "en"
+        : "ko";
+    } catch (error) {
+      return "ko";
+    }
+  }
+
+  function setLanguage(language) {
+    const selected = language === "en" ? "en" : "ko";
+    const t = translations[selected];
+
+    document.documentElement.lang = selected;
+    document.getElementById("minssemLanguage").value = selected;
+
+    [
+      "brand",
+      "heroTitle",
+      "heroIntro",
+      "courseTitle",
+      "hskDescription",
+      "startLink",
+      "ibDescription",
+      "apDescription",
+      "footer"
+    ].forEach(id => {
+      const element = document.getElementById(id);
+      if (id === "heroTitle" || id === "heroIntro") {
+        element.innerHTML = t[id];
+      } else {
+        element.textContent = t[id];
+      }
+    });
+
+    document.querySelectorAll(".comingSoon").forEach(element => {
+      element.textContent = t.comingSoon;
+    });
+
+    try {
+      localStorage.setItem(LANGUAGE_KEY, selected);
+    } catch (error) {
+      // Continue using the selected language for this page.
+    }
+  }
+
+  document.getElementById("minssemLanguage")
+    .addEventListener("change", function () {
+      setLanguage(this.value);
+    });
+
+  setLanguage(getSavedLanguage());
+</script>
 
 </body>
 </html>
