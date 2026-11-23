@@ -1242,6 +1242,7 @@ function startQuiz(mode, sourceWords = words, review = false) {
   el("modeSelection").hidden = true;
   el("quizResult").hidden = true;
   el("quizPlay").hidden = false;
+  showStage("quizSection");
   el("timerArea").hidden = quizMode !== "challenge";
   const modeName = quizMode === "challenge"
     ? "⚡ 도전 모드" : "📖 연습 모드";
