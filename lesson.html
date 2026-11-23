@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>제1과 단어 학습 | 민쌤중국어 어휘랜드</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+:root {
+  --teal: #0f766e;
+  --dark: #263b36;
+  --muted: #778981;
+  --line: #e5ece8;
+  --bg: #f8faf9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--dark);
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.topbar {
+  height: 68px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(22px, calc((100vw - 1050px) / 2));
+}
+
+.brand {
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.exit {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 44px 20px 70px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+h1 {
+  font-size: clamp(24px, 5vw, 32px);
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 8px 0 30px;
+}
+
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.progress-top span:last-child {
+  color: var(--teal);
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background: #e3ebe6;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.progress-fill {
+  width: 9.09%;
+  height: 100%;
+  background: var(--teal);
+  border-radius: 99px;
+  transition: width .25s ease;
+}
+
+.word-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(34, 67, 55, .04);
+  min-height: 430px;
+  padding: 30px 32px 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-label {
+  font-size: 11px;
+  color: #91a099;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+}
+
+.hanzi {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi",
+               "Noto Sans SC", serif;
+  font-size: clamp(64px, 13vw, 92px);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 27px;
+  color: #253b36;
+}
+
+.pinyin {
+  font-size: 21px;
+  color: var(--teal);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.sound {
+  width: 56px;
+  height: 56px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 50%;
+  background: #e5f5ee;
+  color: var(--teal);
+  display: grid;
+  place-items: center;
+  transition: background .2s, transform .2s;
+}
+
+.sound:hover {
+  background: #d2ede1;
+  transform: scale(1.06);
+}
+
+.sound svg {
+  width: 25px;
+  height: 25px;
+}
+
+.sound:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.sound-note {
+  color: #9aa8a1;
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+.card-divider {
+  width: 100%;
+  height: 1px;
+  background: #eef2ef;
+  margin: 28px 0 25px;
+}
+
+.meaning-en {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.meaning-ko {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.navigation {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  border-radius: 13px;
+  padding: 17px 20px;
+  border: 1px solid var(--line);
+  font-weight: 700;
+  font-size: 15px;
+  transition: background .2s;
+}
+
+.prev {
+  flex: 1;
+  background: white;
+  color: var(--dark);
+}
+
+.prev:disabled {
+  color: #b5c0ba;
+  background: #f1f4f2;
+  cursor: not-allowed;
+}
+
+.next {
+  flex: 2;
+  background: var(--teal);
+  border-color: var(--teal);
+  color: white;
+}
+
+.next:hover {
+  background: #0b615a;
+}
+
+.message {
+  display: none;
+  margin-top: 20px;
+  background: #e8f6ef;
+  border: 1px solid #cce8da;
+  color: #176c54;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.message strong {
+  display: block;
+  font-size: 18px;
+}
+
+.message a {
+  color: #0f766e;
+  font-weight: 700;
+}
+
+.footnote {
+  color: #98a69e;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 22px;
+}
+
+@media (max-width: 600px) {
+  .topbar { height: 60px; padding: 0 17px; }
+  .brand { font-size: 13px; }
+  .container { padding: 28px 15px 50px; }
+  .word-card { padding: 25px 20px 30px; min-height: 405px; }
+  .hanzi { margin-top: 23px; }
+  .navigation { gap: 9px; }
+  .nav-btn { padding: 16px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">🌿 민쌤중국어 어휘랜드</a>
+  <a class="exit" href="hsk1.html">✕ 나가기</a>
+</header>
+
+<main class="container">
+  <p class="eyebrow">HSK 1급 · 제1과</p>
+  <h1>AI小语，你好！</h1>
+  <p class="subtitle">단어 학습 · Vocabulary Learning</p>
+
+  <div class="progress-top">
+    <span>학습 진행률</span>
+    <span id="counter">1 / 11</span>
+  </div>
+
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <section class="word-card" aria-live="polite">
+    <div class="card-label" id="cardLabel">VOCABULARY 01</div>
+
+    <div class="hanzi" id="hanzi">你好</div>
+    <div class="pinyin" id="pinyin">nǐ hǎo</div>
+
+    <button class="sound" id="soundBtn"
+            type="button" aria-label="중국어 발음 듣기">
+      <svg viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.8"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 5 6 9H3v6h3l5 4V5Z"/>
+        <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
+        <path d="M19 5a10 10 0 0 1 0 14"/>
+      </svg>
+    </button>
+
+    <div class="sound-note" id="soundNote">발음 듣기</div>
+
+    <div class="card-divider"></div>
+
+    <div class="meaning-en" id="meaningEn">Hello</div>
+    <div class="meaning-ko" id="meaningKo">안녕하세요</div>
+  </section>
+
+  <div class="navigation">
+    <button class="nav-btn prev" id="prevBtn" type="button">
+      ← 이전
+    </button>
+    <button class="nav-btn next" id="nextBtn" type="button">
+      다음 단어 →
+    </button>
+  </div>
+
+  <div class="message" id="completeMessage" role="status">
+    <strong>🎉 단어 학습 완료!</strong>
+    제1과의 단어 11개를 모두 살펴봤어요.
+    <div>
+      <a href="hsk1.html">새싹 마을로 돌아가기 →</a>
+    </div>
+  </div>
+
+  <p class="footnote">
+    한자를 보고, 병음을 읽고, 발음을 따라 해 보세요.
+  </p>
+</main>
+
+<script>
+const words = [
+  {
+    hanzi: "你好",
+    pinyin: "nǐ hǎo",
+    en: "Hello",
+    ko: "안녕하세요"
+  },
+  {
+    hanzi: "大家",
+    pinyin: "dàjiā",
+    en: "Everybody; everyone",
+    ko: "여러분, 모두"
+  },
+  {
+    hanzi: "好",
+    pinyin: "hǎo",
+    en: "Good; fine",
+    ko: "좋다"
+  },
+  {
+    hanzi: "学生",
+    pinyin: "xuésheng",
+    en: "Student",
+    ko: "학생"
+  },
+  {
+    hanzi: "老师",
+    pinyin: "lǎoshī",
+    en: "Teacher",
+    ko: "선생님"
+  },
+  {
+    hanzi: "你",
+    pinyin: "nǐ",
+    en: "You",
+    ko: "너, 당신"
+  },
+  {
+    hanzi: "你们",
+    pinyin: "nǐmen",
+    en: "You (plural)",
+    ko: "너희들, 여러분"
+  },
+  {
+    hanzi: "谢谢",
+    pinyin: "xièxie",
+    en: "Thank you",
+    ko: "감사합니다"
+  },
+  {
+    hanzi: "不客气",
+    pinyin: "bú kèqi",
+    en: "You're welcome",
+    ko: "천만에요"
+  },
+  {
+    hanzi: "同学",
+    pinyin: "tóngxué",
+    en: "Classmate",
+    ko: "학우, 같은 반 친구"
+  },
+  {
+    hanzi: "再见",
+    pinyin: "zàijiàn",
+    en: "Goodbye",
+    ko: "안녕히 가세요, 또 만나요"
+  }
+];
+
+let current = 0;
+let completed = false;
+
+const hanziEl = document.getElementById("hanzi");
+const pinyinEl = document.getElementById("pinyin");
+const enEl = document.getElementById("meaningEn");
+const koEl = document.getElementById("meaningKo");
+const counterEl = document.getElementById("counter");
+const fillEl = document.getElementById("progressFill");
+const labelEl = document.getElementById("cardLabel");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const soundBtn = document.getElementById("soundBtn");
+const soundNote = document.getElementById("soundNote");
+const completeMessage = document.getElementById("completeMessage");
+
+function render() {
+  const word = words[current];
+
+  hanziEl.textContent = word.hanzi;
+  pinyinEl.textContent = word.pinyin;
+  enEl.textContent = word.en;
+  koEl.textContent = word.ko;
+
+  counterEl.textContent = `${current + 1} / ${words.length}`;
+  labelEl.textContent =
+    `VOCABULARY ${String(current + 1).padStart(2, "0")}`;
+
+  fillEl.style.width =
+    `${((current + 1) / words.length) * 100}%`;
+
+  prevBtn.disabled = current === 0;
+  nextBtn.textContent =
+    current === words.length - 1
+      ? "학습 마치기 ✓"
+      : "다음 단어 →";
+
+  completeMessage.style.display =
+    completed ? "block" : "none";
+}
+
+prevBtn.addEventListener("click", () => {
+  if (current > 0) {
+    current--;
+    completed = false;
+    render();
+  }
+});
+
+nextBtn.addEventListener("click", () => {
+  if (current < words.length - 1) {
+    current++;
+    completed = false;
+    render();
+  } else {
+    completed = true;
+    render();
+    completeMessage.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+  }
+});
+
+function getChineseVoice() {
+  const voices = speechSynthesis.getVoices();
+  return (
+    voices.find(v =>
+      v.lang.toLowerCase() === "zh-cn" &&
+      /google/i.test(v.name)
+    ) ||
+    voices.find(v =>
+      v.lang.toLowerCase() === "zh-cn"
+    ) ||
+    voices.find(v =>
+      v.lang.toLowerCase().startsWith("zh")
+    ) ||
+    null
+  );
+}
+
+function speakChinese() {
+  if (!("speechSynthesis" in window)) {
+    soundNote.textContent = "이 브라우저는 음성을 지원하지 않아요.";
+    return;
+  }
+
+  speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(
+    words[current].hanzi
+  );
+
+  utterance.lang = "zh-CN";
+  utterance.rate = 0.82;
+  utterance.pitch = 1;
+
+  const voice = getChineseVoice();
+  if (voice) utterance.voice = voice;
+
+  utterance.onerror = () => {
+    soundNote.textContent = "발음을 재생할 수 없어요.";
+  };
+
+  utterance.onstart = () => {
+    soundNote.textContent = "발음 재생 중...";
+  };
+
+  utterance.onend = () => {
+    soundNote.textContent = "발음 듣기";
+  };
+
+  speechSynthesis.speak(utterance);
+}
+
+soundBtn.addEventListener("click", speakChinese);
+
+if (!("speechSynthesis" in window)) {
+  soundBtn.disabled = true;
+  soundNote.textContent = "음성 지원 안 됨";
+}
+
+render();
+</script>
+
+</body>
+</html>
