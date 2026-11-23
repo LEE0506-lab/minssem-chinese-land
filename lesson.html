@@ -5,7 +5,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>제1과 단어 학습 | 민쌤중국어 어휘랜드</title>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
 
@@ -17,27 +16,18 @@
   --bg: #f8faf9;
   --green-light: #e8f6ef;
 }
-
 * { box-sizing: border-box; }
-
 body {
   margin: 0;
   background: var(--bg);
   color: var(--dark);
   font-family: "Noto Sans KR", sans-serif;
 }
-
-button {
-  font: inherit;
-  cursor: pointer;
-}
-
-button:focus-visible,
-a:focus-visible {
+button { font: inherit; cursor: pointer; }
+button:focus-visible, a:focus-visible {
   outline: 3px solid #50b5a2;
   outline-offset: 3px;
 }
-
 [hidden] { display: none !important; }
 
 .topbar {
@@ -49,47 +39,40 @@ a:focus-visible {
   justify-content: space-between;
   padding: 0 max(22px, calc((100vw - 1050px) / 2));
 }
-
 .brand {
   color: var(--teal);
   font-size: 15px;
   font-weight: 800;
   text-decoration: none;
 }
-
 .exit {
   color: var(--muted);
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
 }
-
 .container {
   max-width: 660px;
   margin: 0 auto;
   padding: 44px 20px 70px;
 }
-
 .eyebrow {
   color: var(--muted);
   font-size: 13px;
   font-weight: 600;
   margin: 0 0 8px;
 }
-
 h1 {
   font-size: clamp(24px, 5vw, 32px);
   line-height: 1.4;
   margin: 0;
   font-weight: 800;
 }
-
 .subtitle {
   color: var(--muted);
   font-size: 14px;
   margin: 8px 0 30px;
 }
-
 .progress-top {
   display: flex;
   justify-content: space-between;
@@ -98,9 +81,7 @@ h1 {
   font-size: 13px;
   font-weight: 700;
 }
-
 .progress-top span:last-child { color: var(--teal); }
-
 .progress-track {
   width: 100%;
   height: 8px;
@@ -109,7 +90,6 @@ h1 {
   overflow: hidden;
   margin-bottom: 24px;
 }
-
 .progress-fill {
   width: 0;
   height: 100%;
@@ -117,9 +97,7 @@ h1 {
   border-radius: 99px;
   transition: width .25s ease;
 }
-
-.word-card,
-.quiz-question {
+.word-card, .quiz-question {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 24px;
@@ -127,50 +105,36 @@ h1 {
   padding: 30px 32px 36px;
   text-align: center;
 }
-
 .word-card {
   min-height: 430px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .card-label {
   font-size: 11px;
   color: #91a099;
   letter-spacing: 1.5px;
   font-weight: 800;
 }
-
-.hanzi,
-.flash-hanzi,
-.quiz-hanzi,
-.quiz-option-hanzi {
-  font-family:
-    "Kaiti SC", "STKaiti", "KaiTi",
+.hanzi, .flash-hanzi, .quiz-hanzi,
+.quiz-option-hanzi, .review-hanzi {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi",
     "Noto Sans SC", serif;
   font-weight: 500;
   color: #253b36;
 }
-
 .hanzi {
   font-size: clamp(64px, 13vw, 92px);
   line-height: 1.4;
   margin-top: 27px;
 }
-
-.pinyin,
-.flash-pinyin {
+.pinyin, .flash-pinyin, .review-pinyin {
   font-family: Arial, sans-serif;
   color: var(--teal);
   font-weight: 500;
 }
-
-.pinyin {
-  font-size: 22px;
-  margin-top: 4px;
-}
-
+.pinyin { font-size: 22px; margin-top: 4px; }
 .sound {
   width: 56px;
   height: 56px;
@@ -182,51 +146,35 @@ h1 {
   display: grid;
   place-items: center;
 }
-
 .sound:hover { background: #d2ede1; }
-
-.sound svg {
-  width: 25px;
-  height: 25px;
-}
-
-.sound:disabled {
-  opacity: .5;
-  cursor: not-allowed;
-}
-
+.sound svg { width: 25px; height: 25px; }
+.sound:disabled { opacity: .5; cursor: not-allowed; }
 .sound-note {
   color: #9aa8a1;
   font-size: 11px;
   margin-top: 8px;
 }
-
 .card-divider {
   width: 100%;
   height: 1px;
   background: #eef2ef;
   margin: 28px 0 25px;
 }
-
 .meaning-en {
   font-size: 23px;
   font-weight: 700;
   line-height: 1.4;
 }
-
 .meaning-ko {
   margin-top: 9px;
   color: var(--muted);
   font-size: 15px;
 }
-
-.navigation,
-.flash-actions {
+.navigation, .flash-actions {
   display: flex;
   gap: 12px;
   margin-top: 20px;
 }
-
 .nav-btn {
   border-radius: 13px;
   padding: 17px 20px;
@@ -234,34 +182,28 @@ h1 {
   font-weight: 700;
   font-size: 15px;
 }
-
 .prev {
   flex: 1;
   background: white;
   color: var(--dark);
 }
-
 .prev:disabled {
   color: #b5c0ba;
   background: #f1f4f2;
   cursor: not-allowed;
 }
-
 .next {
   flex: 2;
   background: var(--teal);
   border-color: var(--teal);
   color: white;
 }
-
 .next:hover { background: #0b615a; }
-
 .full-button {
   display: block;
   width: 100%;
   margin-top: 14px;
 }
-
 .finish-panel {
   margin-top: 20px;
   background: var(--green-light);
@@ -272,26 +214,26 @@ h1 {
   text-align: center;
   line-height: 1.8;
 }
-
 .finish-panel strong {
   display: block;
   font-size: 19px;
 }
-
 .finish-panel a {
   color: var(--teal);
   font-weight: 700;
 }
-
 .footnote {
   color: #98a69e;
   text-align: center;
   font-size: 12px;
   margin-top: 22px;
 }
+.footnote a {
+  color: var(--teal);
+  font-weight: 700;
+}
 
 /* Flashcards */
-
 .flash-card {
   width: 100%;
   min-height: 350px;
@@ -307,35 +249,16 @@ h1 {
   text-align: center;
   transition: transform .2s, border-color .2s;
 }
-
 .flash-card:hover {
   border-color: #9ed9c7;
   transform: translateY(-2px);
 }
-
-.flash-hanzi {
-  font-size: clamp(58px, 12vw, 86px);
-}
-
+.flash-hanzi { font-size: clamp(58px, 12vw, 86px); }
 .flash-pinyin { font-size: 23px; }
-
-.flash-en {
-  font-size: 25px;
-  font-weight: 700;
-}
-
-.flash-ko {
-  font-size: 16px;
-  color: var(--muted);
-}
-
-.flash-hint {
-  font-size: 12px;
-  color: var(--muted);
-}
-
+.flash-en { font-size: 25px; font-weight: 700; }
+.flash-ko { font-size: 16px; color: var(--muted); }
+.flash-hint { font-size: 12px; color: var(--muted); }
 .flash-actions .nav-btn { flex: 1; }
-
 .flash-sound {
   border: 1px solid #cce8da;
   background: #e5f5ee;
@@ -345,8 +268,7 @@ h1 {
   font-weight: 700;
 }
 
-/* Quiz Mode Selection */
-
+/* Mode Selection */
 .mode-selection {
   background: #fff;
   border: 1px solid var(--line);
@@ -354,24 +276,17 @@ h1 {
   padding: 30px 24px;
   text-align: center;
 }
-
-.mode-selection h2 {
-  margin: 0 0 8px;
-  font-size: 23px;
-}
-
+.mode-selection h2 { margin: 0 0 8px; font-size: 23px; }
 .mode-description {
   color: var(--muted);
   font-size: 14px;
   margin-bottom: 25px;
 }
-
 .mode-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
-
 .mode-card {
   border: 2px solid var(--line);
   background: #fff;
@@ -384,25 +299,17 @@ h1 {
   gap: 10px;
   transition: border-color .2s, background .2s;
 }
-
 .mode-card:hover {
   border-color: var(--teal);
   background: #f0faf5;
 }
-
 .mode-icon { font-size: 35px; }
-
-.mode-title {
-  font-size: 19px;
-  font-weight: 800;
-}
-
+.mode-title { font-size: 19px; font-weight: 800; }
 .mode-time {
   color: var(--teal);
   font-weight: 800;
   font-size: 15px;
 }
-
 .mode-detail {
   color: var(--muted);
   font-size: 12px;
@@ -410,39 +317,31 @@ h1 {
 }
 
 /* Timer */
-
 .timer-area {
-  margin-bottom: 23px;
+  margin-bottom: 16px; /* 23px -> 16px */
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 16px 20px;
 }
-
 .timer-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
 }
-
 .timer-label {
   font-size: 13px;
   font-weight: 700;
   color: var(--muted);
 }
-
 .timer-value {
   font-size: 23px;
   font-weight: 800;
   color: var(--teal);
   font-variant-numeric: tabular-nums;
 }
-
-.timer-value.warning {
-  color: #e05b54;
-}
-
+.timer-value.warning { color: #e05b54; }
 .timer-track {
   width: 100%;
   height: 9px;
@@ -450,7 +349,6 @@ h1 {
   background: #e3ebe6;
   overflow: hidden;
 }
-
 .timer-fill {
   height: 100%;
   width: 100%;
@@ -458,17 +356,15 @@ h1 {
   background: var(--teal);
   transition: width .1s linear, background .2s;
 }
+.timer-fill.warning { background: #e05b54; }
 
-.timer-fill.warning {
-  background: #e05b54;
+/* Quiz - spacing optimized */
+#quizPlay > .progress-track {
+  margin-bottom: 18px; /* 24px -> 18px */
 }
-
-/* Quiz */
-
 .quiz-question {
-  padding: 32px 26px;
+  padding: 26px; /* 32px -> 26px vertical */
 }
-
 .quiz-type {
   display: inline-block;
   background: #e5f5ee;
@@ -477,50 +373,43 @@ h1 {
   padding: 7px 13px;
   font-size: 12px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
-
 .quiz-prompt {
-  min-height: 125px;
+  min-height: 112px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
 .quiz-hanzi {
   font-size: clamp(60px, 12vw, 86px);
 }
-
 .quiz-english {
   font-size: clamp(25px, 5vw, 34px);
   font-weight: 800;
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
-
 .quiz-korean {
   color: var(--muted);
   font-size: 17px;
   margin-top: 10px;
 }
-
 .quiz-instruction {
   font-size: 13px;
   color: var(--muted);
-  margin-top: 18px;
+  margin-top: 14px;
 }
-
 .quiz-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 10px; /* 12px -> 10px */
+  margin-top: 18px; /* 24px -> 18px */
 }
-
 .quiz-option {
-  min-height: 90px;
-  padding: 14px 10px;
+  min-height: 84px;
+  padding: 12px 10px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: #fff;
@@ -532,49 +421,38 @@ h1 {
   gap: 5px;
   transition: background .2s, border-color .2s;
 }
-
 .quiz-option:hover:not(:disabled) {
   border-color: var(--teal);
   background: #f0faf5;
 }
-
 .quiz-option-en {
   font-size: 15px;
   font-weight: 700;
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
-
 .quiz-option-ko {
   font-size: 12px;
   color: var(--muted);
   line-height: 1.4;
 }
-
-.quiz-option-hanzi {
-  font-size: 33px;
-}
-
+.quiz-option-hanzi { font-size: 33px; }
 .quiz-option.correct {
   background: #dff5e9;
   border-color: #32a67c;
 }
-
 .quiz-option.wrong {
   background: #fff0ed;
   border-color: #e38b7b;
 }
-
 .quiz-option:disabled { cursor: default; }
-
 .quiz-feedback {
   min-height: 28px;
-  margin-top: 18px;
+  margin-top: 14px; /* 18px -> 14px */
   text-align: center;
   font-weight: 700;
   line-height: 1.6;
 }
-
 .quiz-score {
   font-size: 48px;
   font-weight: 800;
@@ -582,361 +460,359 @@ h1 {
   margin: 10px 0;
 }
 
+/* Wrong Answer Review */
+.review-section {
+  margin-top: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+}
+.review-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.review-heading h2 { font-size: 19px; margin: 0; }
+.review-count {
+  background: #fff0ed;
+  color: #b34838;
+  border-radius: 99px;
+  padding: 6px 11px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.review-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: 16px;
+}
+.review-word { flex: 1; min-width: 0; }
+.review-hanzi { font-size: 29px; line-height: 1.3; }
+.review-pinyin { font-size: 13px; margin-top: 3px; }
+.review-meaning {
+  flex: 1.4;
+  min-width: 0;
+  line-height: 1.5;
+}
+.review-en { font-size: 14px; font-weight: 700; }
+.review-ko {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+.review-sound {
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border: none;
+  border-radius: 50%;
+  background: #e5f5ee;
+  color: var(--teal);
+  font-size: 19px;
+}
+.review-sound:hover { background: #d2ede1; }
+.review-sound:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.review-note {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  margin: 13px 0 0;
+}
+.review-complete {
+  background: #e8f6ef;
+  border: 1px solid #cce8da;
+  border-radius: 16px;
+  padding: 23px 18px;
+  text-align: center;
+  color: #176c54;
+}
+.review-complete strong {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.review-complete p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 @media (max-width: 600px) {
-  .topbar {
-    height: 60px;
-    padding: 0 17px;
-  }
-
+  .topbar { height: 60px; padding: 0 17px; }
   .brand { font-size: 13px; }
-
   .container { padding: 28px 15px 50px; }
-
   .word-card {
     padding: 25px 20px 30px;
     min-height: 405px;
   }
-
   .nav-btn { padding: 16px 12px; }
-
-  .quiz-question { padding: 25px 16px; }
-
-  .quiz-options { gap: 9px; }
-
+  .quiz-question { padding: 22px 16px; }
+  .quiz-options { gap: 10px; }
   .quiz-option { padding: 12px 8px; }
-
   .quiz-option-en { font-size: 13px; }
-
   .quiz-option-ko { font-size: 11px; }
-
   .quiz-option-hanzi { font-size: 29px; }
+  .review-section { padding: 17px; }
+  .review-item { gap: 10px; padding: 12px; }
+  .review-hanzi { font-size: 25px; }
+  .review-en { font-size: 12px; }
+  .review-ko { font-size: 11px; }
 }
-
 @media (max-width: 440px) {
-  .mode-cards {
-    grid-template-columns: 1fr;
-  }
+  .mode-cards { grid-template-columns: 1fr; }
 }
-
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
+  *, *::before, *::after { transition: none !important; }
 }
 </style>
 </head>
-
 <body>
 
 <header class="topbar">
   <a class="brand" href="index.html">
     🌿 민쌤중국어 어휘랜드
   </a>
-  <a class="exit" href="hsk1.html">
-    ✕ 나가기
-  </a>
+  <a class="exit" href="hsk1.html">✕ 나가기</a>
 </header>
 
 <main class="container">
 
-  <!-- STEP 1: Vocabulary -->
+<!-- STEP 1: Vocabulary -->
+<section id="vocabSection">
+  <p class="eyebrow">HSK 1급 · 제1과</p>
+  <h1>AI小语，你好！</h1>
+  <p class="subtitle">단어 학습 · Vocabulary Learning</p>
 
-  <section id="vocabSection">
-    <p class="eyebrow">HSK 1급 · 제1과</p>
-    <h1>AI小语，你好！</h1>
-    <p class="subtitle">단어 학습 · Vocabulary Learning</p>
+  <div class="progress-top">
+    <span>학습 진행률</span>
+    <span id="counter">1 / 11</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
 
+  <div class="word-card">
+    <div class="card-label" id="cardLabel">VOCABULARY 01</div>
+    <div class="hanzi" id="hanzi">你好</div>
+    <div class="pinyin" id="pinyin">nǐ hǎo</div>
+
+    <button class="sound" id="soundBtn" type="button"
+      aria-label="중국어 발음 듣기">
+      <svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 5 6 9H3v6h3l5 4V5Z"/>
+        <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
+        <path d="M19 5a10 10 0 0 1 0 14"/>
+      </svg>
+    </button>
+    <div class="sound-note" id="soundNote">발음 듣기</div>
+
+    <div class="card-divider"></div>
+    <div class="meaning-en" id="meaningEn">Hello</div>
+    <div class="meaning-ko" id="meaningKo">안녕하세요</div>
+  </div>
+
+  <div class="navigation">
+    <button class="nav-btn prev" id="prevBtn">← 이전</button>
+    <button class="nav-btn next" id="nextBtn">다음 단어 →</button>
+  </div>
+
+  <div class="finish-panel" id="completeMessage" hidden>
+    <strong>🎉 단어 학습 완료!</strong>
+    <p>제1과 단어 11개를 모두 살펴봤어요.</p>
+    <button class="nav-btn next full-button" id="startFlashBtn">
+      플래시카드 시작하기 →
+    </button>
+  </div>
+  <p class="footnote">
+    한자를 보고, 병음을 읽고, 발음을 따라 해 보세요.
+  </p>
+</section>
+
+<!-- STEP 2: Flashcards -->
+<section id="flashSection" hidden>
+  <p class="eyebrow">HSK 1급 · 제1과</p>
+  <h1>플래시카드</h1>
+  <p class="subtitle">카드를 눌러 뜻과 병음을 확인하세요.</p>
+
+  <div id="flashPlay">
     <div class="progress-top">
-      <span>학습 진행률</span>
-      <span id="counter">1 / 11</span>
+      <span>플래시카드 진행률</span>
+      <span id="flashCounter">1 / 11</span>
     </div>
-
     <div class="progress-track">
-      <div class="progress-fill" id="progressFill"></div>
+      <div class="progress-fill" id="flashProgress"></div>
     </div>
 
-    <div class="word-card">
-      <div class="card-label" id="cardLabel">
-        VOCABULARY 01
-      </div>
+    <button id="flashCard" class="flash-card" type="button"
+      aria-pressed="false">
+      <span class="card-label" id="flashLabel">FLASHCARD 01</span>
+      <span class="flash-hanzi" id="flashHanzi"></span>
+      <span class="flash-pinyin" id="flashPinyin" hidden></span>
+      <span class="flash-en" id="flashEn" hidden></span>
+      <span class="flash-ko" id="flashKo" hidden></span>
+      <span class="flash-hint" id="flashHint">
+        카드를 눌러 정답 확인하기 ↻
+      </span>
+    </button>
 
-      <div class="hanzi" id="hanzi">你好</div>
-      <div class="pinyin" id="pinyin">nǐ hǎo</div>
-
-      <button
-        class="sound"
-        id="soundBtn"
-        type="button"
-        aria-label="중국어 발음 듣기">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round">
-          <path d="M11 5 6 9H3v6h3l5 4V5Z"/>
-          <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
-          <path d="M19 5a10 10 0 0 1 0 14"/>
-        </svg>
+    <div style="text-align:center;margin-top:16px;">
+      <button class="flash-sound" id="flashSoundBtn">
+        🔊 발음 듣기
       </button>
-
-      <div class="sound-note" id="soundNote">
-        발음 듣기
-      </div>
-
-      <div class="card-divider"></div>
-
-      <div class="meaning-en" id="meaningEn">Hello</div>
-      <div class="meaning-ko" id="meaningKo">안녕하세요</div>
+      <div class="sound-note" id="flashSoundNote"
+        aria-live="polite">발음 듣기</div>
     </div>
 
-    <div class="navigation">
-      <button class="nav-btn prev" id="prevBtn">
-        ← 이전
-      </button>
-      <button class="nav-btn next" id="nextBtn">
-        다음 단어 →
-      </button>
+    <div class="flash-actions">
+      <button class="nav-btn prev" id="flashPrevBtn">← 이전</button>
+      <button class="nav-btn next" id="flashNextBtn">다음 카드 →</button>
     </div>
+  </div>
 
-    <div class="finish-panel" id="completeMessage" hidden>
-      <strong>🎉 단어 학습 완료!</strong>
-      <p>제1과 단어 11개를 모두 살펴봤어요.</p>
+  <div class="finish-panel" id="flashFinish" hidden>
+    <strong>🎉 플래시카드 학습 완료!</strong>
+    <p>제1과 단어 11개를 모두 복습했어요.</p>
+    <button class="nav-btn next full-button" id="startQuizBtn">
+      ⚡ 스피드 퀴즈 시작하기 →
+    </button>
+    <button class="nav-btn prev full-button" id="restartFlashBtn">
+      플래시카드 다시 복습하기 ↻
+    </button>
+    <p><a href="hsk1.html">새싹 마을로 돌아가기 →</a></p>
+  </div>
+</section>
 
-      <button
-        class="nav-btn next full-button"
-        id="startFlashBtn">
-        플래시카드 시작하기 →
-      </button>
-    </div>
+<!-- STEP 3: Speed Quiz -->
+<section id="quizSection" hidden>
+  <p class="eyebrow">HSK 1급 · 제1과</p>
+  <h1>⚡ 스피드 퀴즈</h1>
+  <p class="subtitle">한자와 영어·한국어 뜻을 연결해 보세요.</p>
 
-    <p class="footnote">
-      한자를 보고, 병음을 읽고, 발음을 따라 해 보세요.
+  <div class="mode-selection" id="modeSelection">
+    <h2>퀴즈 모드를 선택하세요!</h2>
+    <p class="mode-description">
+      자신의 학습 속도에 맞게 도전해 보세요.
     </p>
-  </section>
-
-  <!-- STEP 2: Flashcards -->
-
-  <section id="flashSection" hidden>
-    <p class="eyebrow">HSK 1급 · 제1과</p>
-    <h1>플래시카드</h1>
-    <p class="subtitle">
-      카드를 눌러 뜻과 병음을 확인하세요.
-    </p>
-
-    <div id="flashPlay">
-      <div class="progress-top">
-        <span>플래시카드 진행률</span>
-        <span id="flashCounter">1 / 11</span>
-      </div>
-
-      <div class="progress-track">
-        <div class="progress-fill" id="flashProgress"></div>
-      </div>
-
-      <button
-        id="flashCard"
-        class="flash-card"
-        type="button"
-        aria-pressed="false">
-
-        <span class="card-label" id="flashLabel">
-          FLASHCARD 01
-        </span>
-
-        <span class="flash-hanzi" id="flashHanzi"></span>
-        <span class="flash-pinyin" id="flashPinyin" hidden></span>
-        <span class="flash-en" id="flashEn" hidden></span>
-        <span class="flash-ko" id="flashKo" hidden></span>
-
-        <span class="flash-hint" id="flashHint">
-          카드를 눌러 정답 확인하기 ↻
+    <div class="mode-cards">
+      <button class="mode-card" id="practiceModeBtn">
+        <span class="mode-icon">📖</span>
+        <span class="mode-title">연습 모드</span>
+        <span class="mode-time">시간 무제한</span>
+        <span class="mode-detail">
+          시간에 쫓기지 않고<br>차근차근 복습하기
         </span>
       </button>
-
-      <div style="text-align:center;margin-top:16px;">
-        <button class="flash-sound" id="flashSoundBtn">
-          🔊 발음 듣기
-        </button>
-        <div
-          class="sound-note"
-          id="flashSoundNote"
-          aria-live="polite">
-          발음 듣기
-        </div>
-      </div>
-
-      <div class="flash-actions">
-        <button class="nav-btn prev" id="flashPrevBtn">
-          ← 이전
-        </button>
-        <button class="nav-btn next" id="flashNextBtn">
-          다음 카드 →
-        </button>
-      </div>
-    </div>
-
-    <div class="finish-panel" id="flashFinish" hidden>
-      <strong>🎉 플래시카드 학습 완료!</strong>
-      <p>제1과 단어 11개를 모두 복습했어요.</p>
-
-      <button
-        class="nav-btn next full-button"
-        id="startQuizBtn">
-        ⚡ 스피드 퀴즈 시작하기 →
-      </button>
-
-      <button
-        class="nav-btn prev full-button"
-        id="restartFlashBtn">
-        플래시카드 다시 복습하기 ↻
-      </button>
-
-      <p>
-        <a href="hsk1.html">새싹 마을로 돌아가기 →</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- STEP 3: Speed Quiz -->
-
-  <section id="quizSection" hidden>
-    <p class="eyebrow">HSK 1급 · 제1과</p>
-    <h1>⚡ 스피드 퀴즈</h1>
-
-    <p class="subtitle">
-      한자와 영어·한국어 뜻을 연결해 보세요.
-    </p>
-
-    <!-- Mode Selection -->
-
-    <div class="mode-selection" id="modeSelection">
-      <h2>퀴즈 모드를 선택하세요!</h2>
-      <p class="mode-description">
-        자신의 학습 속도에 맞게 도전해 보세요.
-      </p>
-
-      <div class="mode-cards">
-        <button class="mode-card" id="practiceModeBtn">
-          <span class="mode-icon">📖</span>
-          <span class="mode-title">연습 모드</span>
-          <span class="mode-time">시간 무제한</span>
-          <span class="mode-detail">
-            시간에 쫓기지 않고<br>
-            차근차근 복습하기
-          </span>
-        </button>
-
-        <button class="mode-card" id="challengeModeBtn">
-          <span class="mode-icon">⚡</span>
-          <span class="mode-title">도전 모드</span>
-          <span class="mode-time">문제당 15초</span>
-          <span class="mode-detail">
-            제한 시간 안에<br>
-            빠르게 정답 찾기
-          </span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Quiz Play -->
-
-    <div id="quizPlay" hidden>
-      <div class="progress-top">
-        <span id="quizModeLabel">퀴즈 진행률</span>
-        <span id="quizCounter">1 / 11</span>
-      </div>
-
-      <div class="progress-track">
-        <div class="progress-fill" id="quizProgress"></div>
-      </div>
-
-      <!-- Timer: challenge mode only -->
-
-      <div class="timer-area" id="timerArea" hidden>
-        <div class="timer-top">
-          <span class="timer-label">⏱ 남은 시간</span>
-          <span class="timer-value" id="timerValue">
-            00:15
-          </span>
-        </div>
-
-        <div class="timer-track">
-          <div class="timer-fill" id="timerFill"></div>
-        </div>
-      </div>
-
-      <div class="quiz-question">
-        <div class="quiz-type" id="quizType"></div>
-
-        <div class="quiz-prompt">
-          <div class="quiz-hanzi" id="quizHanzi"></div>
-          <div class="quiz-english" id="quizEnglish"></div>
-          <div class="quiz-korean" id="quizKorean"></div>
-        </div>
-
-        <div class="quiz-instruction" id="quizInstruction">
-        </div>
-
-        <div class="quiz-options" id="quizOptions">
-        </div>
-      </div>
-
-      <div
-        class="quiz-feedback"
-        id="quizFeedback"
-        role="status"
-        aria-live="polite">
-      </div>
-
-      <button
-        class="nav-btn next full-button"
-        id="quizNextBtn"
-        hidden>
-        다음 문제 →
+      <button class="mode-card" id="challengeModeBtn">
+        <span class="mode-icon">⚡</span>
+        <span class="mode-title">도전 모드</span>
+        <span class="mode-time">문제당 15초</span>
+        <span class="mode-detail">
+          제한 시간 안에<br>빠르게 정답 찾기
+        </span>
       </button>
     </div>
+  </div>
 
-    <!-- Quiz Result -->
+  <div id="quizPlay" hidden>
+    <div class="progress-top">
+      <span id="quizModeLabel">퀴즈 진행률</span>
+      <span id="quizCounter">1 / 11</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="quizProgress"></div>
+    </div>
 
-    <div class="finish-panel" id="quizResult" hidden>
+    <div class="timer-area" id="timerArea" hidden>
+      <div class="timer-top">
+        <span class="timer-label">⏱ 남은 시간</span>
+        <span class="timer-value" id="timerValue">00:15</span>
+      </div>
+      <div class="timer-track">
+        <div class="timer-fill" id="timerFill"></div>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <div class="quiz-type" id="quizType"></div>
+      <div class="quiz-prompt">
+        <div class="quiz-hanzi" id="quizHanzi"></div>
+        <div class="quiz-english" id="quizEnglish"></div>
+        <div class="quiz-korean" id="quizKorean"></div>
+      </div>
+      <div class="quiz-instruction" id="quizInstruction"></div>
+      <div class="quiz-options" id="quizOptions"></div>
+    </div>
+
+    <div class="quiz-feedback" id="quizFeedback"
+      role="status" aria-live="polite"></div>
+    <button class="nav-btn next full-button"
+      id="quizNextBtn" hidden>다음 문제 →</button>
+  </div>
+
+  <div id="quizResult" hidden>
+    <div class="finish-panel">
       <strong>🎉 스피드 퀴즈 완료!</strong>
-
       <p id="resultMode"></p>
       <div class="quiz-score" id="quizScore">0점</div>
       <p id="quizResultText"></p>
-
-      <button
-        class="nav-btn next full-button"
-        id="quizRestartBtn">
-        다시 도전하기 ↻
-      </button>
-
-      <button
-        class="nav-btn prev full-button"
-        id="changeModeBtn">
-        다른 모드 선택하기
-      </button>
-
-      <p>
-        <a href="hsk1.html">새싹 마을로 돌아가기 →</a>
-      </p>
     </div>
 
-    <p class="footnote">
-      다시 도전하면 문제 순서와 유형이 새롭게 섞여요.
-    </p>
-  </section>
+    <div class="review-section">
+      <div id="reviewWrongArea">
+        <div class="review-heading">
+          <h2>📚 틀린 단어 복습</h2>
+          <span class="review-count" id="reviewCount">0개</span>
+        </div>
+        <div class="review-list" id="reviewList"></div>
+        <p class="review-note" id="reviewSoundNote">
+          🔊 버튼을 눌러 중국어 발음을 들어 보세요.
+        </p>
+        <button class="nav-btn next full-button" id="retryWrongBtn">
+          틀린 단어만 다시 풀기 ↻
+        </button>
+      </div>
+      <div class="review-complete" id="reviewComplete" hidden>
+        <strong>🌟 완벽해요!</strong>
+        <p>모든 단어를 맞혔어요!<br>
+        이번 복습에서 더 이상 틀린 단어가 없어요.</p>
+      </div>
+    </div>
 
+    <button class="nav-btn next full-button" id="quizRestartBtn">
+      전체 11문제 다시 도전하기 ↻
+    </button>
+    <button class="nav-btn prev full-button" id="changeModeBtn">
+      다른 모드 선택하기
+    </button>
+    <p class="footnote">
+      <a href="hsk1.html">새싹 마을로 돌아가기 →</a>
+    </p>
+  </div>
+
+  <p class="footnote">
+    다시 도전하면 문제 순서와 유형이 새롭게 섞여요.
+  </p>
+</section>
 </main>
 
 <script>
 "use strict";
-
-/* Vocabulary Data */
 
 const words = [
   {hanzi:"你好",pinyin:"nǐ hǎo",en:"Hello",ko:"안녕하세요"},
@@ -958,26 +834,20 @@ function el(id) {
 
 function shuffle(items) {
   const result = [...items];
-
   for (let i = result.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [result[i], result[j]] = [result[j], result[i]];
   }
-
   return result;
 }
 
 function showStage(stage) {
   ["vocabSection", "flashSection", "quizSection"]
-    .forEach(id => {
-      el(id).hidden = id !== stage;
-    });
-
+    .forEach(id => { el(id).hidden = id !== stage; });
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
 /* Chinese Speech */
-
 function stopSpeech() {
   if ("speechSynthesis" in window) {
     window.speechSynthesis.cancel();
@@ -986,20 +856,14 @@ function stopSpeech() {
 
 function getChineseVoice() {
   if (!("speechSynthesis" in window)) return null;
-
   const voices = window.speechSynthesis.getVoices();
-
   return (
     voices.find(v =>
       v.lang.toLowerCase() === "zh-cn" &&
       /google/i.test(v.name)
     ) ||
-    voices.find(v =>
-      v.lang.toLowerCase() === "zh-cn"
-    ) ||
-    voices.find(v =>
-      v.lang.toLowerCase().startsWith("zh")
-    ) ||
+    voices.find(v => v.lang.toLowerCase() === "zh-cn") ||
+    voices.find(v => v.lang.toLowerCase().startsWith("zh")) ||
     null
   );
 }
@@ -1009,70 +873,52 @@ function speakChinese(text, note) {
     note.textContent = "음성을 지원하지 않는 브라우저예요.";
     return;
   }
-
   stopSpeech();
-
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "zh-CN";
   utterance.rate = 0.82;
   utterance.pitch = 1;
-
   const voice = getChineseVoice();
   if (voice) utterance.voice = voice;
-
   utterance.onstart = () => {
     note.textContent = "발음 재생 중...";
   };
-
   utterance.onend = () => {
     note.textContent = "발음 듣기";
   };
-
   utterance.onerror = event => {
     if (event.error === "canceled" ||
         event.error === "interrupted") return;
-
     note.textContent = "발음을 재생할 수 없어요.";
   };
-
   window.speechSynthesis.speak(utterance);
 }
 
-/* STEP 1: Vocabulary */
-
+/* Vocabulary */
 let vocabIndex = 0;
 let vocabCompleted = false;
 
 function renderVocab() {
   const word = words[vocabIndex];
-
   el("hanzi").textContent = word.hanzi;
   el("pinyin").textContent = word.pinyin;
   el("meaningEn").textContent = word.en;
   el("meaningKo").textContent = word.ko;
-
   el("counter").textContent =
     `${vocabIndex + 1} / ${words.length}`;
-
   el("cardLabel").textContent =
     `VOCABULARY ${String(vocabIndex + 1).padStart(2,"0")}`;
-
   el("progressFill").style.width =
     `${(vocabIndex + 1) / words.length * 100}%`;
-
   el("prevBtn").disabled = vocabIndex === 0;
-
   el("nextBtn").textContent =
     vocabIndex === words.length - 1
-      ? "학습 마치기 ✓"
-      : "다음 단어 →";
-
+      ? "학습 마치기 ✓" : "다음 단어 →";
   el("completeMessage").hidden = !vocabCompleted;
 }
 
 el("prevBtn").addEventListener("click", () => {
   if (vocabIndex === 0) return;
-
   stopSpeech();
   vocabIndex--;
   vocabCompleted = false;
@@ -1081,79 +927,60 @@ el("prevBtn").addEventListener("click", () => {
 
 el("nextBtn").addEventListener("click", () => {
   stopSpeech();
-
   if (vocabIndex < words.length - 1) {
     vocabIndex++;
     vocabCompleted = false;
   } else {
     vocabCompleted = true;
   }
-
   renderVocab();
 });
 
 el("soundBtn").addEventListener("click", () => {
   speakChinese(words[vocabIndex].hanzi, el("soundNote"));
 });
-
 el("startFlashBtn").addEventListener("click", startFlash);
 
-/* STEP 2: Flashcards */
-
+/* Flashcards */
 let flashIndex = 0;
 let flashFlipped = false;
 let flashCompleted = false;
 
 function startFlash() {
   stopSpeech();
-
   flashIndex = 0;
   flashFlipped = false;
   flashCompleted = false;
-
   renderFlash();
   showStage("flashSection");
 }
 
 function renderFlash() {
   const word = words[flashIndex];
-
   el("flashCounter").textContent =
     `${flashIndex + 1} / ${words.length}`;
-
   el("flashProgress").style.width =
     `${(flashIndex + 1) / words.length * 100}%`;
-
   el("flashLabel").textContent =
     `FLASHCARD ${String(flashIndex + 1).padStart(2,"0")}`;
-
   el("flashHanzi").textContent = word.hanzi;
   el("flashPinyin").textContent = word.pinyin;
   el("flashEn").textContent = word.en;
   el("flashKo").textContent = word.ko;
-
   el("flashHanzi").hidden = flashFlipped;
   el("flashPinyin").hidden = !flashFlipped;
   el("flashEn").hidden = !flashFlipped;
   el("flashKo").hidden = !flashFlipped;
-
-  el("flashHint").textContent =
-    flashFlipped
-      ? "카드를 눌러 한자 다시 보기 ↻"
-      : "카드를 눌러 정답 확인하기 ↻";
-
+  el("flashHint").textContent = flashFlipped
+    ? "카드를 눌러 한자 다시 보기 ↻"
+    : "카드를 눌러 정답 확인하기 ↻";
   el("flashCard").setAttribute(
-    "aria-pressed",
-    String(flashFlipped)
+    "aria-pressed", String(flashFlipped)
   );
-
   el("flashPrevBtn").disabled = flashIndex === 0;
-
   el("flashNextBtn").textContent =
     flashIndex === words.length - 1
-      ? "복습 마치기 ✓"
-      : "다음 카드 →";
-
+      ? "복습 마치기 ✓" : "다음 카드 →";
   el("flashPlay").hidden = flashCompleted;
   el("flashFinish").hidden = !flashCompleted;
 }
@@ -1165,7 +992,6 @@ el("flashCard").addEventListener("click", () => {
 
 el("flashPrevBtn").addEventListener("click", () => {
   if (flashIndex === 0) return;
-
   stopSpeech();
   flashIndex--;
   flashFlipped = false;
@@ -1174,38 +1000,30 @@ el("flashPrevBtn").addEventListener("click", () => {
 
 el("flashNextBtn").addEventListener("click", () => {
   stopSpeech();
-
   if (flashIndex < words.length - 1) {
     flashIndex++;
     flashFlipped = false;
   } else {
     flashCompleted = true;
   }
-
   renderFlash();
 });
 
 el("flashSoundBtn").addEventListener("click", () => {
-  speakChinese(
-    words[flashIndex].hanzi,
-    el("flashSoundNote")
-  );
+  speakChinese(words[flashIndex].hanzi, el("flashSoundNote"));
 });
-
 el("restartFlashBtn").addEventListener("click", startFlash);
 el("startQuizBtn").addEventListener("click", showModeSelection);
 
-/* STEP 3: Random Quiz with Timer */
-
+/* Quiz + Review */
 const QUESTION_TIME = 15;
-
 let quizMode = "practice";
 let quizQuestions = [];
 let quizIndex = 0;
 let quizCorrect = 0;
 let quizAnswered = false;
-
-// Timer state
+let wrongWords = [];
+let isReviewRound = false;
 let timerInterval = null;
 let timerDeadline = 0;
 let remainingSeconds = QUESTION_TIME;
@@ -1220,42 +1038,30 @@ function stopTimer() {
 function updateTimerDisplay() {
   const seconds = Math.max(0, remainingSeconds);
   const warning = seconds <= 5;
-
   el("timerValue").textContent =
     `00:${String(seconds).padStart(2,"0")}`;
-
   el("timerValue").classList.toggle("warning", warning);
   el("timerFill").classList.toggle("warning", warning);
-
   el("timerFill").style.width =
     `${seconds / QUESTION_TIME * 100}%`;
 }
 
 function startTimer() {
   stopTimer();
-
   if (quizMode !== "challenge") return;
-
   remainingSeconds = QUESTION_TIME;
   timerDeadline = Date.now() + QUESTION_TIME * 1000;
-
   updateTimerDisplay();
-
   timerInterval = setInterval(() => {
     if (quizAnswered) {
       stopTimer();
       return;
     }
-
     const millisecondsLeft = timerDeadline - Date.now();
-
     remainingSeconds = Math.max(
-      0,
-      Math.ceil(millisecondsLeft / 1000)
+      0, Math.ceil(millisecondsLeft / 1000)
     );
-
     updateTimerDisplay();
-
     if (millisecondsLeft <= 0) {
       stopTimer();
       handleTimeout();
@@ -1266,106 +1072,90 @@ function startTimer() {
 function showModeSelection() {
   stopSpeech();
   stopTimer();
-
   el("modeSelection").hidden = false;
   el("quizPlay").hidden = true;
   el("quizResult").hidden = true;
-
   showStage("quizSection");
 }
 
-function makeQuizQuestions() {
-  const shuffledWords = shuffle(words);
-
-  // Both question types are guaranteed to appear.
-  const types = shuffle([
-    "hanziToMeaning",
-    "meaningToHanzi",
-    ...Array.from(
-      {length: Math.max(0, words.length - 2)},
-      () => Math.random() < 0.5
-        ? "hanziToMeaning"
-        : "meaningToHanzi"
-    )
-  ]);
-
+function makeQuizQuestions(sourceWords) {
+  const shuffledWords = shuffle(sourceWords);
+  let types;
+  if (shuffledWords.length === 1) {
+    types = [
+      Math.random() < 0.5
+        ? "hanziToMeaning" : "meaningToHanzi"
+    ];
+  } else {
+    types = shuffle([
+      "hanziToMeaning",
+      "meaningToHanzi",
+      ...Array.from(
+        {length: shuffledWords.length - 2},
+        () => Math.random() < 0.5
+          ? "hanziToMeaning" : "meaningToHanzi"
+      )
+    ]);
+  }
   return shuffledWords.map((word, index) => ({
-    word,
-    type: types[index]
+    word, type: types[index]
   }));
 }
 
-function startQuiz(mode) {
+function startQuiz(mode, sourceWords = words, review = false) {
   stopTimer();
   stopSpeech();
-
   quizMode = mode;
-  quizQuestions = makeQuizQuestions();
+  quizQuestions = makeQuizQuestions(sourceWords);
   quizIndex = 0;
   quizCorrect = 0;
   quizAnswered = false;
-
+  wrongWords = [];
+  isReviewRound = review;
   el("modeSelection").hidden = true;
   el("quizResult").hidden = true;
   el("quizPlay").hidden = false;
-
   el("timerArea").hidden = quizMode !== "challenge";
-
-  el("quizModeLabel").textContent =
-    quizMode === "challenge"
-      ? "⚡ 도전 모드"
-      : "📖 연습 모드";
-
+  const modeName = quizMode === "challenge"
+    ? "⚡ 도전 모드" : "📖 연습 모드";
+  el("quizModeLabel").textContent = isReviewRound
+    ? `${modeName} · 오답 재도전` : modeName;
   renderQuiz();
-
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function renderQuiz() {
   stopTimer();
-
   const question = quizQuestions[quizIndex];
   const word = question.word;
-
   quizAnswered = false;
-
   el("quizCounter").textContent =
     `${quizIndex + 1} / ${quizQuestions.length}`;
-
   el("quizProgress").style.width =
     `${(quizIndex + 1) / quizQuestions.length * 100}%`;
-
   el("quizFeedback").textContent = "";
   el("quizNextBtn").hidden = true;
 
   const isHanziToMeaning =
     question.type === "hanziToMeaning";
-
-  el("quizType").textContent =
-    isHanziToMeaning
-      ? "유형 1 · 한자 → 뜻"
-      : "유형 2 · 뜻 → 한자";
-
+  el("quizType").textContent = isHanziToMeaning
+    ? "유형 1 · 한자 → 뜻"
+    : "유형 2 · 뜻 → 한자";
   el("quizHanzi").hidden = !isHanziToMeaning;
   el("quizEnglish").hidden = isHanziToMeaning;
   el("quizKorean").hidden = isHanziToMeaning;
-
   el("quizHanzi").textContent = word.hanzi;
   el("quizEnglish").textContent = word.en;
   el("quizKorean").textContent = word.ko;
-
-  el("quizInstruction").textContent =
-    isHanziToMeaning
-      ? "알맞은 영어·한국어 뜻을 선택하세요."
-      : "알맞은 중국어 단어를 선택하세요.";
+  el("quizInstruction").textContent = isHanziToMeaning
+    ? "알맞은 영어·한국어 뜻을 선택하세요."
+    : "알맞은 중국어 단어를 선택하세요.";
 
   const distractors = shuffle(
     words.filter(item => item.hanzi !== word.hanzi)
   ).slice(0, 3);
-
   const choices = shuffle([word, ...distractors]);
   const optionsContainer = el("quizOptions");
-
   optionsContainer.replaceChildren();
 
   choices.forEach(choice => {
@@ -1378,25 +1168,19 @@ function renderQuiz() {
       const english = document.createElement("span");
       english.className = "quiz-option-en";
       english.textContent = choice.en;
-
       const korean = document.createElement("span");
       korean.className = "quiz-option-ko";
       korean.textContent = choice.ko;
-
       button.append(english, korean);
     } else {
       const hanzi = document.createElement("span");
       hanzi.className = "quiz-option-hanzi";
       hanzi.textContent = choice.hanzi;
-
       button.appendChild(hanzi);
     }
 
     button.addEventListener("click", () => {
       if (quizAnswered) return;
-
-      // Check the real deadline, even if the timer
-      // callback has not run yet.
       if (
         quizMode === "challenge" &&
         Date.now() >= timerDeadline
@@ -1404,52 +1188,37 @@ function renderQuiz() {
         handleTimeout();
         return;
       }
-
       const correct = choice.hanzi === word.hanzi;
-
-      finishQuestion(
-        correct,
-        button,
-        false
-      );
+      finishQuestion(correct, button, false);
     });
-
     optionsContainer.appendChild(button);
   });
-
   startTimer();
 }
 
 function finishQuestion(correct, selectedButton, timedOut) {
   if (quizAnswered) return;
-
   quizAnswered = true;
   stopTimer();
-
-  const question = quizQuestions[quizIndex];
-  const word = question.word;
+  const word = quizQuestions[quizIndex].word;
 
   if (correct) {
     quizCorrect++;
     el("quizFeedback").textContent = "✓ 정답이에요!";
     el("quizFeedback").style.color = "#176c54";
-  } else if (timedOut) {
-    el("quizFeedback").textContent =
-      `⏰ 시간 초과! 정답: ${word.hanzi} · ${word.en} · ${word.ko}`;
-
-    el("quizFeedback").style.color = "#b34838";
   } else {
-    el("quizFeedback").textContent =
-      `✗ 정답: ${word.hanzi} · ${word.en} · ${word.ko}`;
-
+    if (!wrongWords.some(item => item.hanzi === word.hanzi)) {
+      wrongWords.push(word);
+    }
+    el("quizFeedback").textContent = timedOut
+      ? `⏰ 시간 초과! 정답: ${word.hanzi} · ${word.en} · ${word.ko}`
+      : `✗ 정답: ${word.hanzi} · ${word.en} · ${word.ko}`;
     el("quizFeedback").style.color = "#b34838";
   }
 
-  el("quizOptions")
-    .querySelectorAll("button")
+  el("quizOptions").querySelectorAll("button")
     .forEach(button => {
       button.disabled = true;
-
       if (button.dataset.hanzi === word.hanzi) {
         button.classList.add("correct");
       } else if (button === selectedButton) {
@@ -1459,32 +1228,107 @@ function finishQuestion(correct, selectedButton, timedOut) {
 
   el("quizNextBtn").textContent =
     quizIndex === quizQuestions.length - 1
-      ? "결과 확인하기 →"
-      : "다음 문제 →";
-
+      ? "결과 확인하기 →" : "다음 문제 →";
   el("quizNextBtn").hidden = false;
 }
 
 function handleTimeout() {
   if (quizAnswered) return;
-
   remainingSeconds = 0;
   updateTimerDisplay();
-
   finishQuestion(false, null, true);
+}
+
+function renderWrongAnswers() {
+  const wrongArea = el("reviewWrongArea");
+  const completeArea = el("reviewComplete");
+
+  if (wrongWords.length === 0) {
+    wrongArea.hidden = true;
+    completeArea.hidden = false;
+    return;
+  }
+  wrongArea.hidden = false;
+  completeArea.hidden = true;
+  el("reviewCount").textContent = `${wrongWords.length}개`;
+
+  const reviewList = el("reviewList");
+  reviewList.replaceChildren();
+
+  wrongWords.forEach(word => {
+    const item = document.createElement("div");
+    item.className = "review-item";
+
+    const wordBox = document.createElement("div");
+    wordBox.className = "review-word";
+    const hanzi = document.createElement("div");
+    hanzi.className = "review-hanzi";
+    hanzi.textContent = word.hanzi;
+    const pinyin = document.createElement("div");
+    pinyin.className = "review-pinyin";
+    pinyin.textContent = word.pinyin;
+    wordBox.append(hanzi, pinyin);
+
+    const meaningBox = document.createElement("div");
+    meaningBox.className = "review-meaning";
+    const english = document.createElement("div");
+    english.className = "review-en";
+    english.textContent = word.en;
+    const korean = document.createElement("div");
+    korean.className = "review-ko";
+    korean.textContent = word.ko;
+    meaningBox.append(english, korean);
+
+    const soundButton = document.createElement("button");
+    soundButton.type = "button";
+    soundButton.className = "review-sound";
+    soundButton.textContent = "🔊";
+    soundButton.setAttribute(
+      "aria-label", `${word.hanzi} 발음 듣기`
+    );
+    soundButton.disabled =
+      !("speechSynthesis" in window);
+    soundButton.addEventListener("click", () => {
+      speakChinese(word.hanzi, el("reviewSoundNote"));
+    });
+
+    item.append(wordBox, meaningBox, soundButton);
+    reviewList.appendChild(item);
+  });
+
+  el("reviewSoundNote").textContent =
+    "🔊 버튼을 눌러 중국어 발음을 들어 보세요.";
+}
+
+function finishQuiz() {
+  stopTimer();
+  const percent = Math.round(
+    quizCorrect / quizQuestions.length * 100
+  );
+  el("quizPlay").hidden = true;
+  el("quizResult").hidden = false;
+
+  const modeName = quizMode === "challenge"
+    ? "⚡ 도전 모드" : "📖 연습 모드";
+  el("resultMode").textContent = isReviewRound
+    ? `${modeName} · 오답 복습 결과`
+    : `${modeName} 결과`;
+  el("quizScore").textContent = `${percent}점`;
+  el("quizResultText").textContent =
+    `총 ${quizQuestions.length}문제 중 ${quizCorrect}문제를 맞혔어요!`;
+
+  renderWrongAnswers();
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 el("practiceModeBtn").addEventListener("click", () => {
   startQuiz("practice");
 });
-
 el("challengeModeBtn").addEventListener("click", () => {
   startQuiz("challenge");
 });
-
 el("quizNextBtn").addEventListener("click", () => {
   if (!quizAnswered) return;
-
   if (quizIndex < quizQuestions.length - 1) {
     quizIndex++;
     renderQuiz();
@@ -1492,43 +1336,17 @@ el("quizNextBtn").addEventListener("click", () => {
     finishQuiz();
   }
 });
-
-function finishQuiz() {
-  stopTimer();
-
-  const percent = Math.round(
-    quizCorrect / quizQuestions.length * 100
-  );
-
-  el("quizPlay").hidden = true;
-  el("quizResult").hidden = false;
-
-  el("resultMode").textContent =
-    quizMode === "challenge"
-      ? "⚡ 도전 모드 결과"
-      : "📖 연습 모드 결과";
-
-  el("quizScore").textContent = `${percent}점`;
-
-  el("quizResultText").textContent =
-    `총 ${quizQuestions.length}문제 중 ${quizCorrect}문제를 맞혔어요!`;
-
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
+el("retryWrongBtn").addEventListener("click", () => {
+  if (wrongWords.length === 0) return;
+  const retryWords = [...wrongWords];
+  startQuiz(quizMode, retryWords, true);
+});
 el("quizRestartBtn").addEventListener("click", () => {
-  startQuiz(quizMode);
+  startQuiz(quizMode, words, false);
 });
-
-el("changeModeBtn").addEventListener("click", () => {
-  showModeSelection();
-});
-
-/* Cleanup */
+el("changeModeBtn").addEventListener("click", showModeSelection);
 
 document.addEventListener("visibilitychange", () => {
-  // The deadline is based on real elapsed time,
-  // so background tabs cannot extend the limit.
   if (
     document.visibilityState === "visible" &&
     timerInterval !== null &&
@@ -1545,18 +1363,14 @@ window.addEventListener("pagehide", () => {
   stopSpeech();
 });
 
-/* Initial Setup */
-
 if (!("speechSynthesis" in window)) {
   el("soundBtn").disabled = true;
   el("flashSoundBtn").disabled = true;
-
   el("soundNote").textContent = "음성 지원 안 됨";
   el("flashSoundNote").textContent = "음성 지원 안 됨";
 }
 
 renderVocab();
 </script>
-
 </body>
 </html>
