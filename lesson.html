@@ -454,6 +454,39 @@ h1 {
   margin: 10px 0;
 }
 
+/* Star Reward */
+
+.star-reward {
+  margin: 18px auto;
+  text-align: center;
+}
+
+.star-reward-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #778981;
+  margin-bottom: 10px;
+}
+
+.star-reward-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+}
+
+.star-reward-icons svg {
+  width: 38px;
+  height: 38px;
+}
+
+.star-reward-message {
+  margin-top: 11px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #438d6b;
+}
+
 /* Wrong Answer Review */
 .review-section {
   margin-top: 24px;
@@ -770,8 +803,17 @@ h1 {
     <div class="finish-panel">
       <strong>🎉 스피드 퀴즈 완료!</strong>
       <p id="resultMode"></p>
-      <div class="quiz-score" id="quizScore">0점</div>
-      <p id="quizResultText"></p>
+      
+<div class="quiz-score" id="quizScore">0점</div>
+
+<div id="starReward" class="star-reward" hidden>
+  <div class="star-reward-label">획득한 별</div>
+  <div class="star-reward-icons" id="starRewardIcons"></div>
+  <div class="star-reward-message" id="starRewardMessage"></div>
+</div>
+
+<p id="quizResultText"></p>
+
     </div>
 
     <div class="review-section">
@@ -831,6 +873,75 @@ const words = [
 
 function el(id) {
   return document.getElementById(id);
+}
+
+  
+/* HSK 1 Progress & Stars */
+
+const HSK1_STORAGE_KEY = "minssem-hsk1-progress";
+const CURRENT_LESSON = 1;
+
+function calculateStars(correct, total) {
+  if (total <= 0) return 0;
+
+  const percent = correct / total * 100;
+
+  if (percent >= 90) return 3;
+  if (percent >= 60) return 2;
+  return 1;
+}
+
+function saveLessonStars(newStars) {
+  try {
+    let progress = {};
+
+    const saved = localStorage.getItem(HSK1_STORAGE_KEY);
+
+    if (saved) {
+      const parsed = JSON.parse(saved);
+
+      if (parsed && typeof parsed === "object" &&
+          !Array.isArray(parsed)) {
+        progress = parsed;
+      }
+    }
+
+    if (!Array.isArray(progress.stars)) {
+      progress.stars = [];
+    }
+
+    const stars = Array.from({length: 15}, (_, index) => {
+      const value = Number(progress.stars[index]) || 0;
+      return Math.max(0, Math.min(3, Math.floor(value)));
+    });
+
+    const index = CURRENT_LESSON - 1;
+    const previousStars = stars[index];
+
+    stars[index] = Math.max(previousStars, newStars);
+
+    progress.stars = stars;
+
+    localStorage.setItem(
+      HSK1_STORAGE_KEY,
+      JSON.stringify(progress)
+    );
+
+    return {
+      saved: true,
+      previousStars,
+      bestStars: stars[index]
+    };
+
+  } catch (error) {
+    console.error("별 저장 실패:", error);
+
+    return {
+      saved: false,
+      previousStars: 0,
+      bestStars: newStars
+    };
+  }
 }
 
 function shuffle(items) {
@@ -1318,25 +1429,99 @@ function renderWrongAnswers() {
     "발음 버튼을 눌러 중국어 발음을 들어 보세요.";
 }
 
+
 function finishQuiz() {
   stopTimer();
+
   const percent = Math.round(
     quizCorrect / quizQuestions.length * 100
   );
+
   el("quizPlay").hidden = true;
   el("quizResult").hidden = false;
 
   const modeName = quizMode === "challenge"
-    ? "⚡ 도전 모드" : "📖 연습 모드";
+    ? "⚡ 도전 모드"
+    : "📖 연습 모드";
+
   el("resultMode").textContent = isReviewRound
     ? `${modeName} · 오답 복습 결과`
     : `${modeName} 결과`;
+
   el("quizScore").textContent = `${percent}점`;
+
   el("quizResultText").textContent =
     `총 ${quizQuestions.length}문제 중 ${quizCorrect}문제를 맞혔어요!`;
 
+  const starReward = el("starReward");
+  const starIcons = el("starRewardIcons");
+  const starMessage = el("starRewardMessage");
+
+  starReward.hidden = false;
+
+  if (isReviewRound) {
+    starIcons.replaceChildren();
+
+    starMessage.textContent =
+      "오답 복습 완료! 별은 전체 퀴즈 결과로 결정돼요.";
+
+    starReward.querySelector(
+      ".star-reward-label"
+    ).textContent = "복습 결과";
+
+  } else {
+    const earnedStars = calculateStars(
+      quizCorrect,
+      quizQuestions.length
+    );
+
+    const result = saveLessonStars(earnedStars);
+
+    starReward.querySelector(
+      ".star-reward-label"
+    ).textContent = "획득한 별";
+
+    starIcons.innerHTML = Array.from(
+      {length: 3},
+      (_, index) => {
+        const filled = index < result.bestStars;
+
+        return `
+          <svg viewBox="0 0 24 24"
+            fill="${filled ? "#D4A044" : "none"}"
+            stroke="${filled ? "#D4A044" : "#8E9E95"}"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="m12 2 3.1 6.3 7 1-5.1 5
+              .9 7-5.9-3.3-5.9 3.3.9-7-5.1-5
+              7-1Z"/>
+          </svg>
+        `;
+      }
+    ).join("");
+
+    if (!result.saved) {
+      starMessage.textContent =
+        "별을 저장하지 못했어요. 브라우저 저장 설정을 확인해 주세요.";
+    } else if (result.bestStars === 3) {
+      starMessage.textContent =
+        "PERFECT! ⭐⭐⭐ 완벽 마스터!";
+    } else if (result.bestStars > result.previousStars) {
+      starMessage.textContent =
+        `축하해요! 최고 기록이 별 ${result.bestStars}개로 갱신됐어요!`;
+    } else {
+      starMessage.textContent =
+        `현재 최고 기록: 별 ${result.bestStars}개`;
+    }
+  }
+
   renderWrongAnswers();
-  window.scrollTo({top:0,behavior:"smooth"});
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 el("practiceModeBtn").addEventListener("click", () => {
