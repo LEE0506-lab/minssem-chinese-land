@@ -218,301 +218,353 @@ h1 {
   color: var(--area-color);
   font-size: 12px;
   font-weight: 800;
+  letter-spacing: .5px;
 }
 
-.area-title {
-  font-size: 21px;
+.area-name {
+  font-size: 23px;
   font-weight: 800;
-  margin: 6px 0 7px;
+  margin: 7px 0;
 }
 
 .area-description {
+  color: var(--muted);
   font-size: 13px;
   line-height: 1.7;
-  color: var(--muted);
   margin: 0;
 }
 
-.area-status {
+.area-icon {
+  width: 53px;
+  height: 53px;
+  border-radius: 15px;
+  background: var(--area-light);
+  color: var(--area-color);
+  display: grid;
+  place-items: center;
   flex-shrink: 0;
-  font-size: 12px;
-  font-weight: 800;
-  border-radius: 99px;
-  padding: 7px 11px;
-  background: #e8f6ef;
-  color: var(--teal);
 }
 
-.area-status.locked {
-  background: #eef1ef;
-  color: #98a69e;
+.area-icon svg {
+  width: 25px;
+  height: 25px;
 }
 
-/* Area Progress */
-.area-progress {
-  margin-top: 20px;
-}
-
-.area-progress-top {
+.area-meta {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
   font-size: 12px;
-  font-weight: 700;
   color: var(--muted);
 }
 
-.area-progress-track {
+.area-meta strong {
+  color: var(--dark);
+}
+
+.area-progress {
   height: 7px;
-  background: #e7eee9;
   border-radius: 99px;
+  background: #e9efeb;
   overflow: hidden;
-  margin-top: 9px;
+  margin: 10px 0 0;
 }
 
 .area-progress-fill {
-  height: 100%;
   width: 0;
+  height: 100%;
   background: var(--area-color);
   border-radius: 99px;
-  transition: width .3s ease;
 }
 
-/* Lesson List */
-.lesson-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 22px;
+.area-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: 0;
+  border-radius: 13px;
+  background: var(--area-color);
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
 }
 
-.lesson-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-height: 83px;
-  border: 1px solid var(--line);
-  border-radius: 15px;
-  padding: 14px 16px;
-  background: #fff;
-  text-decoration: none;
-  color: var(--dark);
-  transition: border-color .2s, background .2s;
+.area-button:hover:not(:disabled) {
+  filter: brightness(.94);
 }
 
-.lesson-item.available:hover {
-  border-color: var(--teal);
-  background: #f4fbf7;
-}
-
-.lesson-item.locked {
-  background: #f8faf9;
-  color: #a4b0a9;
+.area-button:disabled {
+  background: #edf1ef;
+  color: #9ca9a2;
   cursor: not-allowed;
 }
 
-.lesson-number {
-  width: 43px;
-  height: 43px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  border-radius: 13px;
-  background: #e8f6ef;
-  color: var(--teal);
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.lesson-item.locked .lesson-number {
-  background: #edf1ee;
-  color: #a4b0a9;
-}
-
-.lesson-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.lesson-title {
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.5;
-}
-
-.lesson-subtitle {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 4px;
-}
-
-.lesson-item.locked .lesson-subtitle {
-  color: #a4b0a9;
-}
-
-/* Lesson Stars */
-.lesson-stars {
+.unlock-note {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 17px;
+  line-height: 1.7;
+}
+
+.unlock-note svg {
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
 }
 
-.lesson-stars svg {
-  width: 17px;
-  height: 17px;
+/* Area Map */
+.map-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 24px;
 }
 
-.lesson-stars .filled {
-  fill: var(--gold);
-  stroke: var(--gold);
+.back-button {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--dark);
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
 }
 
-.lesson-stars .empty {
-  fill: #e3e9e5;
-  stroke: #e3e9e5;
+.back-button svg {
+  width: 20px;
+  height: 20px;
 }
 
-/* Lesson Status */
-.lesson-status {
-  font-size: 12px;
+.map-title {
+  font-size: 27px;
+  font-weight: 800;
+  margin: 3px 0 4px;
+}
+
+.map-subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.map-progress-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  padding: 18px 21px;
+  margin-bottom: 22px;
+}
+
+.map-progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
   font-weight: 700;
-  color: var(--teal);
+}
+
+.map-progress-top span:last-child {
+  color: var(--area-color);
+}
+
+/* Curved Learning Path */
+.map-board {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 24px 8px 32px;
+}
+
+.map-board-heading {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.path-container {
+  position: relative;
+  max-width: 440px;
+  height: 680px;
+  margin: 0 auto;
+}
+
+.path-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.lesson-node {
+  position: absolute;
+  width: 116px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  z-index: 2;
+}
+
+.node-circle {
+  width: 67px;
+  height: 67px;
+  border-radius: 50%;
+  border: 3px solid #dce5df;
+  background: white;
+  color: #a5b3aa;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(30,60,40,.04);
+  padding: 0;
+}
+
+.node-circle.current {
+  background: var(--area-color);
+  border-color: var(--area-color);
+  color: white;
+  box-shadow: 0 0 0 7px var(--area-light);
+}
+
+.node-circle.completed {
+  background: var(--area-light);
+  border-color: var(--area-color);
+  color: var(--area-color);
+}
+
+.node-circle.locked,
+.node-circle.coming-soon {
+  cursor: not-allowed;
+}
+
+.node-circle svg {
+  width: 23px;
+  height: 23px;
+}
+
+.node-number {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--dark);
+  background: #ffffff;
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin-top: 3px;
+}
+
+.node-stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+.node-stars svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.node-status {
+  font-size: 11px;
+  color: var(--muted);
+  background: #ffffff;
+  padding: 2px 6px;
+  border-radius: 5px;
   white-space: nowrap;
 }
 
-.lesson-item.locked .lesson-status {
-  color: #a4b0a9;
-}
-
-.lesson-arrow {
-  font-size: 22px;
-  color: #9aa9a1;
-  flex-shrink: 0;
-}
-
-.lesson-item.available:hover .lesson-arrow {
-  color: var(--teal);
-}
-
-/* Locked Area Message */
-.locked-message {
+/* Footer */
+.area-finish {
   margin-top: 20px;
-  background: #f5f7f5;
-  border: 1px dashed #dce5de;
-  border-radius: 14px;
-  padding: 17px;
+  background: var(--area-light);
+  border: 1px solid var(--area-border);
+  border-radius: 17px;
+  padding: 22px;
   text-align: center;
-  font-size: 12px;
-  color: #91a099;
+}
+
+.area-finish strong {
+  display: block;
+  color: var(--area-color);
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.area-finish p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
   line-height: 1.8;
 }
 
-.locked-message strong {
-  display: block;
-  color: #7d8c83;
-  font-size: 13px;
-  margin-bottom: 4px;
-}
-
-/* Bottom Navigation */
-.bottom-navigation {
-  margin-top: 28px;
-  text-align: center;
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--teal);
-  text-decoration: none;
-  font-size: 13px;
+.area-finish button {
+  margin-top: 15px;
+  border: 0;
+  background: var(--area-color);
+  color: white;
+  border-radius: 12px;
+  padding: 13px 20px;
   font-weight: 700;
 }
 
-.back-link:hover {
-  text-decoration: underline;
+.footnote {
+  text-align: center;
+  color: #98a69e;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 27px;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .topbar {
     height: 60px;
     padding: 0 17px;
   }
 
-  .brand {
-    font-size: 13px;
-  }
+  .brand { font-size: 13px; }
 
   .container {
     padding: 28px 15px 55px;
   }
 
-  .page-header {
-    align-items: flex-start;
+  .area-card { padding: 21px; }
+
+  .area-name { font-size: 21px; }
+
+  .path-container { height: 650px; }
+
+  .node-circle {
+    width: 61px;
+    height: 61px;
   }
 
-  .header-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 15px;
-  }
+  .lesson-node { width: 105px; }
 
-  .header-icon svg {
-    width: 27px;
-    height: 27px;
-  }
-
-  .overall-card,
-  .area-card {
-    padding: 19px;
-  }
-
-  .lesson-item {
-    gap: 10px;
-    padding: 12px;
-  }
-
-  .lesson-number {
-    width: 37px;
-    height: 37px;
-    border-radius: 11px;
-  }
-
-  .lesson-title {
-    font-size: 13px;
-  }
-
-  .lesson-subtitle {
-    font-size: 11px;
-  }
-
-  .lesson-stars svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .lesson-status {
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 400px) {
-  .lesson-status {
-    display: none;
-  }
-
-  .lesson-item {
-    gap: 8px;
-  }
+  .map-board { padding-left: 3px; padding-right: 3px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    transition: none !important;
-  }
+  * { transition: none !important; }
 }
 </style>
 </head>
@@ -523,660 +575,577 @@ h1 {
   <a class="brand" href="index.html">
     🌿 민쌤중국어 어휘랜드
   </a>
-
-  <a class="top-link" href="index.html">
-    ← 메인으로
-  </a>
+  <a class="top-link" href="hsk.html">HSK 급수 선택</a>
 </header>
 
 <main class="container">
 
-  <!-- PAGE HEADER -->
-
+<!-- AREA SELECTION -->
+<section id="areaSelection">
   <div class="page-header">
-
     <div>
-      <p class="eyebrow">
-        HSK LEVEL 1
-      </p>
-
-      <h1>🌱 새싹 마을</h1>
-
+      <p class="eyebrow">HSK 1 · LEARNING JOURNEY</p>
+      <h1>새싹 마을</h1>
       <p class="subtitle">
-        중국어 학습의 첫걸음!<br>
-        15개의 레슨을 완료하고
-        별 45개를 모아 보세요.
+        하나씩 레슨을 완료하고 새로운 구역을 열어보세요.
       </p>
     </div>
 
-    <div class="header-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.7"
-        stroke-linecap="round"
-        stroke-linejoin="round">
-        <path d="M12 22v-9"/>
-        <path d="M12 13C6 13 3 9 3 3c6 0 9 4 9 10Z"/>
-        <path d="M12 16c0-7 3-11 9-11 0 7-3 11-9 11Z"/>
+    <div class="header-icon">
+      <svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22V12"/>
+        <path d="M12 13C5 13 3 9 3 4c6 0 9 3 9 9Z"/>
+        <path d="M12 16c0-7 3-10 9-10 0 6-3 10-9 10Z"/>
       </svg>
     </div>
-
   </div>
 
-  <!-- OVERALL PROGRESS -->
-
-  <section class="overall-card"
-    aria-label="전체 학습 진행률">
-
+  <div class="overall-card">
     <div class="overall-top">
-
       <div>
-        <div class="overall-label">
-          전체 학습 진행률
-        </div>
-
-        <div class="overall-number"
-          id="overallProgressText">
-          0 / 15 레슨 완료
+        <div class="overall-label">전체 학습 진행률</div>
+        <div class="overall-number" id="totalProgress">
+          0 / 15 레슨
         </div>
       </div>
-
-      <div class="star-total">
-        <svg viewBox="0 0 24 24"
-          fill="currentColor"
-          stroke="currentColor"
-          aria-hidden="true">
-          <path d="M12 2.5 15 8.7l6.8 1-4.9 4.8
-            1.2 6.8L12 18.1l-6.1 3.2
-            1.2-6.8-4.9-4.8 6.8-1L12 2.5Z"/>
-        </svg>
-
-        <span id="overallStars">
-          0 / 45
-        </span>
+      <div>
+        <div class="overall-label">획득한 별</div>
+        <div class="star-total">
+          <svg viewBox="0 0 24 24"
+            fill="currentColor" stroke="currentColor">
+            <path d="m12 2 3.1 6.3 7 1-5.1 5 .9 7-5.9-3.3-5.9 3.3.9-7-5.1-5 7-1Z"/>
+          </svg>
+          <span id="totalStars">0 / 45</span>
+        </div>
       </div>
-
     </div>
 
     <div class="progress-track">
-      <div class="progress-fill"
-        id="overallProgressFill"></div>
+      <div class="progress-fill" id="totalProgressFill"></div>
     </div>
-
-    <div class="progress-caption"
-      id="overallProgressCaption">
-      첫 번째 레슨부터 시작해 보세요!
+    <div class="progress-caption">
+      레슨마다 최대 3개의 별을 획득할 수 있어요.
     </div>
-
-  </section>
-
-  <!-- AREA LIST -->
-
-  <h2 class="section-title">
-    🗺️ 학습 지도
-  </h2>
-
-  <div class="area-list" id="areaList">
-
-    <!--
-      JavaScript에서 3개 구역을 자동 생성합니다.
-
-      AREA 1: 제1과 ~ 제5과
-      AREA 2: 제6과 ~ 제10과
-      AREA 3: 제11과 ~ 제15과
-
-      각 레슨의 별, 잠금 상태, 이동 링크도
-      저장된 학습 기록을 기준으로 생성됩니다.
-    -->
-
   </div>
 
-  <!-- BOTTOM NAVIGATION -->
+  <h2 class="section-title">학습 구역</h2>
+  <div class="area-list" id="areaList"></div>
 
-  <nav class="bottom-navigation">
-    <a class="back-link" href="index.html">
-      ← 어휘랜드 메인으로 돌아가기
-    </a>
-  </nav>
+  <p class="footnote">
+    각 구역의 레슨 5개를 완료하면 다음 구역이 열립니다.<br>
+    학습 기록은 현재 브라우저에 저장됩니다.
+  </p>
+</section>
+
+<!-- AREA MAP -->
+<section id="areaMap" hidden>
+  <div class="map-header">
+    <button class="back-button" id="backButton"
+      aria-label="구역 선택으로 돌아가기">
+      <svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+    </button>
+    <div>
+      <p class="eyebrow" id="mapEyebrow">AREA 01</p>
+      <h1 class="map-title" id="mapTitle">새싹의 시작</h1>
+      <div class="map-subtitle" id="mapSubtitle"></div>
+    </div>
+  </div>
+
+  <div class="map-progress-card" id="mapProgressCard">
+    <div class="map-progress-top">
+      <span>구역 학습 진행률</span>
+      <span id="mapProgressText">0 / 5</span>
+    </div>
+    <div class="progress-track" style="margin-top:12px;">
+      <div class="progress-fill" id="mapProgressFill"></div>
+    </div>
+  </div>
+
+  <div class="map-board" id="mapBoard">
+    <div class="map-board-heading">
+      START ↓
+    </div>
+    <div class="path-container" id="pathContainer"></div>
+  </div>
+
+  <div class="area-finish" id="areaFinish"></div>
+
+  <p class="footnote">
+    별 1개 이상을 획득하면 해당 레슨이 완료됩니다.
+  </p>
+</section>
 
 </main>
 
 <script>
 "use strict";
 
-/* ======================================
-   HSK 1 MAP CONFIGURATION
-====================================== */
-
 const STORAGE_KEY = "minssem-hsk1-progress";
 const TOTAL_LESSONS = 15;
 const MAX_STARS = 3;
-const TOTAL_STARS = TOTAL_LESSONS * MAX_STARS;
 
 const areas = [
   {
-    number: 1,
-    title: "첫걸음 숲",
-    description: "중국어의 기본 표현을 익혀요.",
+    id: 1,
+    name: "새싹의 시작",
+    description: "중국어 학습의 첫걸음을 시작해 보세요.",
     start: 1,
     end: 5,
-    color: "#0f766e"
+    color: "#438d6b",
+    light: "#e3f4e9",
+    border: "#c7e6d2",
+    icon: "sprout"
   },
   {
-    number: 2,
-    title: "성장 언덕",
-    description: "더 다양한 단어를 배워요.",
+    id: 2,
+    name: "성장의 여정",
+    description: "새로운 표현을 익히며 실력을 키워보세요.",
     start: 6,
     end: 10,
-    color: "#438d6b"
+    color: "#5c85b6",
+    light: "#e8f0fc",
+    border: "#d2e0f2",
+    icon: "waves"
   },
   {
-    number: 3,
-    title: "도전 정원",
-    description: "배운 표현을 활용해 보세요.",
+    id: 3,
+    name: "첫 번째 목표",
+    description: "마지막 구역에 도전해 보세요.",
     start: 11,
     end: 15,
-    color: "#7d9a55"
+    color: "#9876b6",
+    light: "#f1eafb",
+    border: "#e4d7f0",
+    icon: "flag"
   }
 ];
 
-/* ======================================
-   LESSON INFORMATION
-====================================== */
-
-const lessonTitles = [
-  "AI小语，你好！",
-  "제2과",
-  "제3과",
-  "제4과",
-  "제5과",
-  "제6과",
-  "제7과",
-  "제8과",
-  "제9과",
-  "제10과",
-  "제11과",
-  "제12과",
-  "제13과",
-  "제14과",
-  "제15과"
-];
-
-// 현재 실제 단어 자료가 등록된 레슨
-const availableLessons = new Set([1]);
+// Activate a lesson only after its vocabulary is added to LESSON_DATA
+// in lesson.html. Keep this list in sync with the lesson data.
+const availableLessons = new Set([1, 2]);
 
 function el(id) {
   return document.getElementById(id);
 }
 
-/* ======================================
-   LEARNING PROGRESS
-====================================== */
-
 function readProgress() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-
-    if (!raw) {
-      return Array(TOTAL_LESSONS).fill(0);
-    }
+    if (!raw) return Array(TOTAL_LESSONS).fill(0);
 
     const parsed = JSON.parse(raw);
-
     if (!parsed || !Array.isArray(parsed.stars)) {
       return Array(TOTAL_LESSONS).fill(0);
     }
 
-    return Array.from(
-      { length: TOTAL_LESSONS },
-      (_, index) => {
-        const value = Number(parsed.stars[index]) || 0;
-
-        return Math.max(
-          0,
-          Math.min(MAX_STARS, Math.floor(value))
-        );
-      }
-    );
-
+    return Array.from({length: TOTAL_LESSONS}, (_, i) => {
+      const value = Number(parsed.stars[i]) || 0;
+      return Math.max(0, Math.min(3, Math.floor(value)));
+    });
   } catch (error) {
-    console.warn(
-      "학습 기록을 불러올 수 없습니다.",
-      error
-    );
-
     return Array(TOTAL_LESSONS).fill(0);
   }
 }
 
-/* ======================================
-   LESSON STATUS
-====================================== */
+let stars = readProgress();
+let currentArea = null;
 
-function getLessonStars(lessonNumber, stars) {
-  return stars[lessonNumber - 1] || 0;
+function countCompleted(start, end) {
+  let count = 0;
+  for (let n = start; n <= end; n++) {
+    if (stars[n - 1] >= 1) count++;
+  }
+  return count;
 }
 
-function isLessonUnlocked(lessonNumber, stars) {
-  // 첫 번째 레슨은 항상 열려 있어요.
-  if (lessonNumber === 1) {
-    return true;
+function countStars(start, end) {
+  let total = 0;
+  for (let n = start; n <= end; n++) {
+    total += stars[n - 1];
   }
-
-  // 이전 레슨에서 별 1개 이상 획득해야 해요.
-  return getLessonStars(
-    lessonNumber - 1,
-    stars
-  ) >= 1;
+  return total;
 }
 
-function isLessonAvailable(lessonNumber) {
-  return availableLessons.has(lessonNumber);
+function isAreaUnlocked(areaId) {
+  if (areaId === 1) return true;
+  const previous = areas[areaId - 2];
+  return countCompleted(previous.start, previous.end) === 5;
 }
 
-function getLessonStatus(lessonNumber, stars) {
-  const earnedStars = getLessonStars(
-    lessonNumber,
-    stars
+function isLessonUnlocked(lesson) {
+  if (lesson === 1) return true;
+
+  const area = areas.find(a =>
+    lesson >= a.start && lesson <= a.end
   );
 
-  const unlocked = isLessonUnlocked(
-    lessonNumber,
-    stars
-  );
+  if (!area || !isAreaUnlocked(area.id)) return false;
 
-  const available = isLessonAvailable(
-    lessonNumber
-  );
-
-  if (!unlocked) {
-    return {
-      type: "locked",
-      label: "잠김",
-      canEnter: false
-    };
-  }
-
-  if (!available) {
-    return {
-      type: "comingSoon",
-      label: "준비 중",
-      canEnter: false
-    };
-  }
-
-  if (earnedStars >= 1) {
-    return {
-      type: "completed",
-      label: "복습하기",
-      canEnter: true
-    };
-  }
-
-  return {
-    type: "available",
-    label: "학습하기",
-    canEnter: true
-  };
+  return stars[lesson - 2] >= 1;
 }
 
-/* ======================================
-   OVERALL PROGRESS
-====================================== */
+function iconSvg(name) {
+  const common = `fill="none" stroke="currentColor"
+    stroke-width="1.8" stroke-linecap="round"
+    stroke-linejoin="round"`;
 
-function updateOverallProgress(stars) {
-  const completedLessons = stars.filter(
-    value => value >= 1
-  ).length;
-
-  const earnedStars = stars.reduce(
-    (total, value) => total + value,
-    0
-  );
-
-  const progressPercentage =
-    completedLessons / TOTAL_LESSONS * 100;
-
-  el("overallProgressText").textContent =
-    `${completedLessons} / ${TOTAL_LESSONS} 레슨 완료`;
-
-  el("overallStars").textContent =
-    `${earnedStars} / ${TOTAL_STARS}`;
-
-  el("overallProgressFill").style.width =
-    `${progressPercentage}%`;
-
-  if (completedLessons === TOTAL_LESSONS) {
-    el("overallProgressCaption").textContent =
-      "🎉 모든 레슨을 완료했어요! 축하합니다!";
-
-  } else if (completedLessons > 0) {
-    el("overallProgressCaption").textContent =
-      `${completedLessons}개의 레슨을 완료했어요. 계속 도전해 보세요!`;
-
-  } else {
-    el("overallProgressCaption").textContent =
-      "첫 번째 레슨부터 시작해 보세요!";
-  }
-}
-
-/* ======================================
-   AREA PROGRESS
-====================================== */
-
-function getAreaProgress(area, stars) {
-  const areaStars = stars.slice(
-    area.start - 1,
-    area.end
-  );
-
-  const completed = areaStars.filter(
-    value => value >= 1
-  ).length;
-
-  const earnedStars = areaStars.reduce(
-    (total, value) => total + value,
-    0
-  );
-
-  const totalLessons =
-    area.end - area.start + 1;
-
-  return {
-    completed,
-    totalLessons,
-    earnedStars,
-    maxStars: totalLessons * MAX_STARS,
-    percentage: completed / totalLessons * 100
-  };
-}
-
-function isAreaUnlocked(area, stars) {
-  if (area.number === 1) {
-    return true;
+  if (name === "sprout") {
+    return `<svg viewBox="0 0 24 24" ${common}>
+      <path d="M12 22V12"/>
+      <path d="M12 13C5 13 3 9 3 4c6 0 9 3 9 9Z"/>
+      <path d="M12 16c0-7 3-10 9-10 0 6-3 10-9 10Z"/>
+    </svg>`;
   }
 
-  return isLessonUnlocked(
-    area.start,
-    stars
-  );
-}
-
-/* ======================================
-   STAR ICON
-====================================== */
-
-function createStarIcon(filled) {
-  const className = filled ? "filled" : "empty";
-
-  return `
-    <svg class="${className}"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      aria-hidden="true">
-      <path d="M12 2.5 15 8.7l6.8 1-4.9 4.8
-        1.2 6.8L12 18.1l-6.1 3.2
-        1.2-6.8-4.9-4.8 6.8-1L12 2.5Z"/>
-    </svg>
-  `;
-}
-
-function createLessonStars(earnedStars) {
-  let html = "";
-
-  for (let i = 0; i < MAX_STARS; i++) {
-    html += createStarIcon(i < earnedStars);
+  if (name === "waves") {
+    return `<svg viewBox="0 0 24 24" ${common}>
+      <path d="M2 8c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2"/>
+      <path d="M2 15c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2"/>
+    </svg>`;
   }
 
-  return html;
+  if (name === "flag") {
+    return `<svg viewBox="0 0 24 24" ${common}>
+      <path d="M4 22V4"/>
+      <path d="M4 5c6-4 10 4 16 0v11c-6 4-10-4-16 0"/>
+    </svg>`;
+  }
+
+  if (name === "lock") {
+    return `<svg viewBox="0 0 24 24" ${common}>
+      <rect x="4" y="10" width="16" height="11" rx="2"/>
+      <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+    </svg>`;
+  }
+
+  if (name === "check") {
+    return `<svg viewBox="0 0 24 24" ${common}>
+      <path d="m5 12 4 4L19 6"/>
+    </svg>`;
+  }
+
+  return "";
 }
 
-/* ======================================
-   LESSON ITEM
-====================================== */
-
-function createLessonItem(lessonNumber, stars) {
-  const status = getLessonStatus(
-    lessonNumber,
-    stars
-  );
-
-  const earnedStars = getLessonStars(
-    lessonNumber,
-    stars
-  );
-
-  const title =
-    lessonTitles[lessonNumber - 1] ||
-    `제${lessonNumber}과`;
-
-  const isAvailable = status.canEnter;
-
-  const item = document.createElement(
-    isAvailable ? "a" : "div"
-  );
-
-  item.className =
-    `lesson-item ${isAvailable ? "available" : "locked"}`;
-
-  if (isAvailable) {
-    item.href = `lesson.html?lesson=${lessonNumber}`;
-  }
-
-  const number = document.createElement("div");
-  number.className = "lesson-number";
-  number.textContent = String(
-    lessonNumber
-  ).padStart(2, "0");
-
-  const info = document.createElement("div");
-  info.className = "lesson-info";
-
-  const titleElement = document.createElement("div");
-  titleElement.className = "lesson-title";
-  titleElement.textContent = title;
-
-  const subtitle = document.createElement("div");
-  subtitle.className = "lesson-subtitle";
-
-  if (status.type === "locked") {
-    subtitle.textContent =
-      "이전 레슨을 완료하면 열려요.";
-
-  } else if (status.type === "comingSoon") {
-    subtitle.textContent =
-      "학습 자료를 준비하고 있어요.";
-
-  } else if (status.type === "completed") {
-    subtitle.textContent =
-      "언제든지 다시 복습할 수 있어요.";
-
-  } else {
-    subtitle.textContent =
-      "새로운 중국어 단어를 배워 보세요.";
-  }
-
-  info.appendChild(titleElement);
-  info.appendChild(subtitle);
-
-  const starsElement = document.createElement("div");
-  starsElement.className = "lesson-stars";
-  starsElement.setAttribute(
-    "aria-label",
-    `별 ${earnedStars}개 획득`
-  );
-  starsElement.innerHTML =
-    createLessonStars(earnedStars);
-
-  const statusElement = document.createElement("div");
-  statusElement.className = "lesson-status";
-  statusElement.textContent = status.label;
-
-  const arrow = document.createElement("div");
-  arrow.className = "lesson-arrow";
-  arrow.textContent = isAvailable ? "›" : "🔒";
-
-  if (status.type === "comingSoon") {
-    arrow.textContent = "⏳";
-  }
-
-  item.appendChild(number);
-  item.appendChild(info);
-  item.appendChild(starsElement);
-  item.appendChild(statusElement);
-  item.appendChild(arrow);
-
-  return item;
+function starSvg(filled) {
+  return `<svg viewBox="0 0 24 24"
+    fill="${filled ? "#D4A044" : "none"}"
+    stroke="${filled ? "#D4A044" : "#8E9E95"}"
+    stroke-width="2"
+    stroke-linejoin="round"
+    aria-hidden="true">
+    <path d="m12 2 3.1 6.3 7 1-5.1 5 .9 7-5.9-3.3-5.9 3.3.9-7-5.1-5 7-1Z"/>
+  </svg>`;
 }
 
-/* ======================================
-   AREA CARD
-====================================== */
+function renderAreaSelection() {
+  stars = readProgress();
 
-function createAreaCard(area, stars) {
-  const unlocked = isAreaUnlocked(area, stars);
-  const progress = getAreaProgress(area, stars);
+  const completed = countCompleted(1, TOTAL_LESSONS);
+  const earned = countStars(1, TOTAL_LESSONS);
 
-  const card = document.createElement("section");
+  el("totalProgress").textContent =
+    `${completed} / ${TOTAL_LESSONS} 레슨`;
+  el("totalStars").textContent =
+    `${earned} / ${TOTAL_LESSONS * MAX_STARS}`;
+  el("totalProgressFill").style.width =
+    `${completed / TOTAL_LESSONS * 100}%`;
 
-  card.className =
-    `area-card ${unlocked ? "unlocked" : "locked"}`;
+  const list = el("areaList");
+  list.replaceChildren();
 
-  card.style.setProperty(
-    "--area-color",
-    area.color
-  );
-
-  const heading = document.createElement("div");
-  heading.className = "area-heading";
-
-  const headingInfo = document.createElement("div");
-
-  const label = document.createElement("div");
-  label.className = "area-label";
-  label.textContent = `AREA ${area.number}`;
-
-  const title = document.createElement("h3");
-  title.className = "area-title";
-  title.textContent = area.title;
-
-  const description = document.createElement("p");
-  description.className = "area-description";
-  description.textContent = area.description;
-
-  headingInfo.appendChild(label);
-  headingInfo.appendChild(title);
-  headingInfo.appendChild(description);
-
-  const status = document.createElement("span");
-  status.className =
-    `area-status ${unlocked ? "" : "locked"}`;
-
-  status.textContent =
-    unlocked ? "탐험 가능" : "🔒 잠김";
-
-  heading.appendChild(headingInfo);
-  heading.appendChild(status);
-
-  card.appendChild(heading);
-
-  // 구역별 진행률
-  const progressArea = document.createElement("div");
-  progressArea.className = "area-progress";
-
-  const progressTop = document.createElement("div");
-  progressTop.className = "area-progress-top";
-
-  const progressLabel = document.createElement("span");
-  progressLabel.textContent =
-    `${progress.completed} / ${progress.totalLessons} 레슨 완료`;
-
-  const progressStars = document.createElement("span");
-  progressStars.textContent =
-    `⭐ ${progress.earnedStars} / ${progress.maxStars}`;
-
-  progressTop.appendChild(progressLabel);
-  progressTop.appendChild(progressStars);
-
-  const track = document.createElement("div");
-  track.className = "area-progress-track";
-
-  const fill = document.createElement("div");
-  fill.className = "area-progress-fill";
-  fill.style.width = `${progress.percentage}%`;
-
-  track.appendChild(fill);
-
-  progressArea.appendChild(progressTop);
-  progressArea.appendChild(track);
-
-  card.appendChild(progressArea);
-
-  // 레슨 목록
-  const lessonList = document.createElement("div");
-  lessonList.className = "lesson-list";
-
-  for (
-    let lessonNumber = area.start;
-    lessonNumber <= area.end;
-    lessonNumber++
-  ) {
-    lessonList.appendChild(
-      createLessonItem(lessonNumber, stars)
-    );
-  }
-
-  card.appendChild(lessonList);
-
-  return card;
-}
-
-/* ======================================
-   RENDER LEARNING MAP
-====================================== */
-
-function renderLearningMap() {
-  const stars = readProgress();
-
-  // 전체 학습 진행률 업데이트
-  updateOverallProgress(stars);
-
-  // 기존 구역 목록 초기화
-  const areaList = el("areaList");
-  areaList.innerHTML = "";
-
-  // 3개 구역 자동 생성
   areas.forEach(area => {
-    const areaCard = createAreaCard(area, stars);
-    areaList.appendChild(areaCard);
+    const unlocked = isAreaUnlocked(area.id);
+    const done = countCompleted(area.start, area.end);
+    const earnedStars = countStars(area.start, area.end);
+
+    const card = document.createElement("div");
+    card.className = `area-card ${unlocked ? "unlocked" : "locked"}`;
+    card.style.setProperty("--area-color", area.color);
+    card.style.setProperty("--area-light", area.light);
+
+    card.innerHTML = `
+      <div class="area-heading">
+        <div>
+          <div class="area-label">
+            AREA ${String(area.id).padStart(2, "0")}
+            · LESSON ${String(area.start).padStart(2,"0")}–${String(area.end).padStart(2,"0")}
+          </div>
+          <div class="area-name">${area.name}</div>
+          <p class="area-description">${area.description}</p>
+        </div>
+        <div class="area-icon">
+          ${iconSvg(unlocked ? area.icon : "lock")}
+        </div>
+      </div>
+
+      <div class="area-meta">
+        <span>학습 진행률 <strong>${done} / 5</strong></span>
+        <span>★ ${earnedStars} / 15</span>
+      </div>
+
+      <div class="area-progress">
+        <div class="area-progress-fill"
+          style="width:${done / 5 * 100}%"></div>
+      </div>
+
+      ${!unlocked ? `
+        <div class="unlock-note">
+          ${iconSvg("lock")}
+          <span>${area.id - 1}구역의 5개 레슨을 완료하면 열립니다.</span>
+        </div>
+      ` : ""}
+
+      <button class="area-button"
+        ${unlocked ? "" : "disabled"}>
+        ${unlocked
+          ? done === 5
+            ? "구역 다시 둘러보기 →"
+            : `${area.id}구역 입장하기 →`
+          : "잠금 상태"}
+      </button>
+    `;
+
+    const button = card.querySelector(".area-button");
+    if (unlocked) {
+      button.addEventListener("click", () => {
+        openArea(area.id);
+      });
+    }
+
+    list.appendChild(card);
   });
 }
 
-/* ======================================
-   UPDATE PROGRESS ON RETURN
-====================================== */
+function openArea(areaId) {
+  stars = readProgress();
 
-// 다른 페이지에서 돌아왔을 때
-// 저장된 학습 기록을 다시 불러옵니다.
+  if (!isAreaUnlocked(areaId)) return;
+
+  currentArea = areas[areaId - 1];
+
+  el("areaSelection").hidden = true;
+  el("areaMap").hidden = false;
+
+  el("mapEyebrow").textContent =
+    `HSK 1 · AREA ${String(areaId).padStart(2,"0")}`;
+  el("mapTitle").textContent = currentArea.name;
+  el("mapSubtitle").textContent =
+    `LESSON ${currentArea.start}–${currentArea.end} · ${currentArea.description}`;
+
+  ["mapProgressCard", "mapBoard", "areaFinish"].forEach(id => {
+    el(id).style.setProperty("--area-color", currentArea.color);
+    el(id).style.setProperty("--area-light", currentArea.light);
+    el(id).style.setProperty("--area-border", currentArea.border);
+  });
+
+  el("mapEyebrow").style.color = currentArea.color;
+
+  renderAreaMap();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function renderAreaMap() {
+  if (!currentArea) return;
+
+  stars = readProgress();
+
+  const area = currentArea;
+  const completed = countCompleted(area.start, area.end);
+
+  el("mapProgressText").textContent = `${completed} / 5`;
+  el("mapProgressText").style.color = area.color;
+  el("mapProgressFill").style.width = `${completed / 5 * 100}%`;
+  el("mapProgressFill").style.background = area.color;
+
+  const container = el("pathContainer");
+  container.replaceChildren();
+
+  // Path runs from top to bottom, alternating left and right.
+  const path = document.createElementNS(
+    "http://www.w3.org/2000/svg", "svg"
+  );
+  path.setAttribute("class", "path-svg");
+  path.setAttribute("viewBox", "0 0 400 680");
+  path.setAttribute("preserveAspectRatio", "none");
+
+
+path.innerHTML = `
+  <path
+    d="M200 78
+       C200 132 95 120 95 205
+       S305 275 305 335
+       S95 415 95 465
+       S200 550 200 590"
+    fill="none"
+    stroke="#e4ebe6"
+    stroke-width="17"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M200 78
+       C200 132 95 120 95 205
+       S305 275 305 335
+       S95 415 95 465
+       S200 550 200 590"
+    fill="none"
+    stroke="${area.color}"
+    stroke-opacity=".48"
+    stroke-width="3"
+    stroke-dasharray="5 10"
+    stroke-linecap="round"
+  />
+`;
+
+container.appendChild(path);
+
+
+  const positions = [
+    {x:50, y:11.5},
+    {x:23.75, y:30.1},
+    {x:76.25, y:49.3},
+    {x:23.75, y:68.4},
+    {x:50, y:86.8}
+  ];
+
+  positions.forEach((position, index) => {
+    const lesson = area.start + index;
+    const earned = stars[lesson - 1];
+    const unlocked = isLessonUnlocked(lesson);
+    const available = availableLessons.has(lesson);
+
+    let state = "locked";
+    if (earned >= 1) {
+      state = "completed";
+    } else if (unlocked && available) {
+      state = "current";
+    } else if (unlocked) {
+      state = "coming-soon";
+    }
+
+    const node = document.createElement("div");
+    node.className = "lesson-node";
+    node.style.left = `${position.x}%`;
+    node.style.top = `${position.y}%`;
+
+    const circle = document.createElement("button");
+    circle.type = "button";
+    circle.className = `node-circle ${state}`;
+    circle.style.setProperty("--area-color", area.color);
+    circle.style.setProperty("--area-light", area.light);
+
+    if (state === "locked") {
+      circle.innerHTML = iconSvg("lock");
+      circle.disabled = true;
+      circle.setAttribute("aria-label", `제${lesson}과 잠김`);
+    } else if (!available) {
+      circle.textContent = String(lesson);
+      circle.disabled = true;
+      circle.setAttribute("aria-label", `제${lesson}과 준비 중`);
+    } else {
+      circle.textContent = String(lesson);
+      circle.setAttribute(
+        "aria-label", `제${lesson}과 학습 시작`
+      );
+      circle.addEventListener("click", () => {
+        window.location.href =
+          `lesson.html?lesson=${lesson}`;
+      });
+    }
+
+    const number = document.createElement("div");
+    number.className = "node-number";
+    number.textContent =
+      `LESSON ${String(lesson).padStart(2,"0")}`;
+
+    const starRow = document.createElement("div");
+    starRow.className = "node-stars";
+    for (let s = 1; s <= 3; s++) {
+      starRow.innerHTML += starSvg(s <= earned);
+    }
+
+    const status = document.createElement("div");
+    status.className = "node-status";
+
+    if (earned >= 1 && available) {
+      status.textContent = "완료 · 다시 학습 가능";
+    } else if (earned >= 1) {
+      status.textContent = "완료";
+    } else if (!unlocked) {
+      status.textContent = "잠금";
+    } else if (!available) {
+      status.textContent = "준비 중";
+    } else {
+      status.textContent = "학습 시작";
+    }
+
+    node.append(circle, number, starRow, status);
+    container.appendChild(node);
+  });
+
+  const finish = el("areaFinish");
+  finish.replaceChildren();
+
+  const heading = document.createElement("strong");
+  const message = document.createElement("p");
+
+  if (completed === 5) {
+    heading.textContent = "🎉 구역 완료!";
+    message.textContent = area.id === 3
+      ? "HSK 1급의 모든 구역을 완료했어요!"
+      : "축하해요! 다음 구역이 잠금 해제되었어요.";
+
+    if (area.id < 3) {
+      const button = document.createElement("button");
+      button.textContent = "다음 구역으로 이동하기 →";
+      button.addEventListener("click", () => {
+        openArea(area.id + 1);
+      });
+      finish.append(heading, message, button);
+    } else {
+      finish.append(heading, message);
+    }
+  } else {
+    heading.textContent = "다음 구역 잠금 해제";
+    message.textContent =
+      `이 구역에서 ${5 - completed}개 레슨을 더 완료하면 다음 구역으로 나아갈 수 있어요.`;
+    if (area.id === 3) {
+      heading.textContent = "HSK 1급 최종 목표";
+      message.textContent =
+        "5개 레슨을 모두 완료하면 HSK 1급 학습 여정이 완성됩니다.";
+    }
+    finish.append(heading, message);
+  }
+}
+
+function goBack() {
+  currentArea = null;
+  el("areaMap").hidden = true;
+  el("areaSelection").hidden = false;
+  renderAreaSelection();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+el("backButton").addEventListener("click", goBack);
+
+// Refresh progress when returning from a lesson.
 window.addEventListener("pageshow", () => {
-  renderLearningMap();
-});
-
-// 다른 탭에서 학습 기록이 변경된 경우
-// 현재 페이지에도 반영합니다.
-window.addEventListener("storage", event => {
-  if (event.key === STORAGE_KEY) {
-    renderLearningMap();
+  stars = readProgress();
+  if (currentArea) {
+    renderAreaMap();
+  } else {
+    renderAreaSelection();
   }
 });
 
-/* ======================================
-   PAGE INITIALIZATION
-====================================== */
-
-renderLearningMap();
-
+renderAreaSelection();
 </script>
 </body>
 </html>
