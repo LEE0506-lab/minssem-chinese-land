@@ -955,7 +955,21 @@ function shuffle(items) {
 
 function showStage(stage) {
   ["vocabSection", "flashSection", "quizSection"]
-    .forEach(id => { el(id).hidden = id !== stage; });
+    .forEach(id => {
+      el(id).hidden = id !== stage;
+    });
+
+  const stageName = {
+    vocabSection: "vocab",
+    flashSection: "flash",
+    quizSection: "quiz"
+  };
+
+  sessionStorage.setItem(
+    "minssem-lesson-stage",
+    stageName[stage] || "vocab"
+  );
+
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
@@ -1218,6 +1232,7 @@ function startQuiz(mode, sourceWords = words, review = false) {
   stopTimer();
   stopSpeech();
   quizMode = mode;
+  sessionStorage.setItem("minssem-lesson-quiz-mode", mode);
   quizQuestions = makeQuizQuestions(sourceWords);
   quizIndex = 0;
   quizCorrect = 0;
@@ -1574,6 +1589,23 @@ if (!("speechSynthesis" in window)) {
 }
 
 renderVocab();
+
+const savedStage = sessionStorage.getItem("minssem-lesson-stage");
+
+if (savedStage === "quiz") {
+  const savedQuizMode = sessionStorage.getItem(
+    "minssem-lesson-quiz-mode"
+  );
+
+  if (savedQuizMode === "practice" || savedQuizMode === "challenge") {
+    startQuiz(savedQuizMode);
+  } else {
+    showModeSelection();
+  }
+} else if (savedStage === "flash") {
+  startFlash();
+}
+  
 </script>
 </body>
 </html>
