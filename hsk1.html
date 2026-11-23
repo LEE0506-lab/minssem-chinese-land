@@ -973,54 +973,37 @@ function renderAreaMap() {
   path.setAttribute("viewBox", "0 0 400 680");
   path.setAttribute("preserveAspectRatio", "none");
 
+
 path.innerHTML = `
-  <defs>
-    <mask id="road-gap-mask">
-      <rect width="400" height="680" fill="white"/>
+  <path
+    d="M200 78
+       C200 132 95 120 95 205
+       S305 275 305 335
+       S95 415 95 465
+       S200 550 200 590"
+    fill="none"
+    stroke="#e4ebe6"
+    stroke-width="17"
+    stroke-linecap="round"
+  />
 
-      <!-- 각 레슨의 원형 버튼과 하단 정보 영역 가리기 -->
-      <rect x="142" y="28" width="116" height="112"
-        rx="14" fill="black"/>
-      <rect x="37" y="154" width="116" height="112"
-        rx="14" fill="black"/>
-      <rect x="247" y="284" width="116" height="112"
-        rx="14" fill="black"/>
-      <rect x="37" y="414" width="116" height="112"
-        rx="14" fill="black"/>
-      <rect x="142" y="539" width="116" height="112"
-        rx="14" fill="black"/>
-    </mask>
-  </defs>
-
-  <g mask="url(#road-gap-mask)">
-    <path
-      d="M200 78
-         C200 132 95 120 95 205
-         S305 275 305 335
-         S95 415 95 465
-         S200 550 200 590"
-      fill="none"
-      stroke="#e4ebe6"
-      stroke-width="17"
-      stroke-linecap="round"
-    />
-
-    <path
-      d="M200 78
-         C200 132 95 120 95 205
-         S305 275 305 335
-         S95 415 95 465
-         S200 550 200 590"
-      fill="none"
-      stroke="${area.color}"
-      stroke-opacity=".48"
-      stroke-width="3"
-      stroke-dasharray="5 10"
-      stroke-linecap="round"
-    />
-  </g>
+  <path
+    d="M200 78
+       C200 132 95 120 95 205
+       S305 275 305 335
+       S95 415 95 465
+       S200 550 200 590"
+    fill="none"
+    stroke="${area.color}"
+    stroke-opacity=".48"
+    stroke-width="3"
+    stroke-dasharray="5 10"
+    stroke-linecap="round"
+  />
 `;
-  container.appendChild(path);
+
+container.appendChild(path);
+
 
   const positions = [
     {x:50, y:11.5},
