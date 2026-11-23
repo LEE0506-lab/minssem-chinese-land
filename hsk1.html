@@ -42,56 +42,139 @@ h1 { font-size: clamp(23px, 4vw, 34px); margin: 0; }
   overflow: hidden;
   box-shadow: 0 10px 30px #254f3420;
 }
+
+/* 입체적인 학습 별 버튼 */
 .lesson {
   position: absolute;
   transform: translate(-50%, -50%);
   width: 12%;
   aspect-ratio: 1;
   min-width: 42px;
-  border: 0;
   padding: 0;
-  background: none;
+  border: 0;
+  background: transparent;
   cursor: pointer;
-  filter: drop-shadow(0 5px 2px #34234a55);
-  transition: transform .2s;
+  filter: drop-shadow(0 7px 3px rgba(61, 42, 80, .35));
+  transition: transform .22s ease, filter .22s ease;
+  overflow: visible;
 }
-.lesson:not(:disabled):hover { transform: translate(-50%, -55%) scale(1.1); }
-.lesson:disabled { cursor: not-allowed; }
+
+.lesson:not(:disabled):hover {
+  transform: translate(-50%, -57%) scale(1.1);
+  filter: drop-shadow(0 11px 5px rgba(61, 42, 80, .35));
+}
+
+.lesson:not(:disabled):active {
+  transform: translate(-50%, -48%) scale(.96);
+}
+
+.lesson:disabled {
+  cursor: not-allowed;
+}
+
 .star-shape {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  background: #a87be7;
-  clip-path: polygon(50% 2%, 63% 32%, 97% 36%, 72% 58%, 80% 94%, 50% 76%, 20% 94%, 28% 58%, 3% 36%, 37% 32%);
+  background: linear-gradient(
+    145deg,
+    #e6c6ff 0%,
+    #b27aef 42%,
+    #7844b6 100%
+  );
+  clip-path: polygon(
+    50% 2%, 63% 32%, 97% 36%,
+    72% 58%, 80% 94%, 50% 76%,
+    20% 94%, 28% 58%, 3% 36%,
+    37% 32%
+  );
 }
+
 .star-shape::before {
   content: "";
   position: absolute;
-  inset: 8%;
-  background: #d1adff;
+  inset: 9%;
+  background: linear-gradient(
+    160deg,
+    #f4e5ff 0%,
+    #d8afff 35%,
+    #a56de5 78%,
+    #9560d5 100%
+  );
   clip-path: inherit;
 }
-.lesson.locked .star-shape { background: #78847d; }
-.lesson.locked .star-shape::before { background: #adb9b0; }
+
+.star-shape::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 29%;
+  width: 40%;
+  height: 18%;
+  background: rgba(255,255,255,.65);
+  border-radius: 50%;
+  filter: blur(5px);
+  transform: rotate(-15deg);
+}
+
 .number {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   color: white;
   font-weight: 900;
-  font-size: clamp(16px, 3vw, 29px);
-  text-shadow: 0 2px 2px #47305b70;
+  font-size: clamp(18px, 3vw, 30px);
+  text-shadow:
+    0 2px 0 rgba(84,43,130,.7),
+    0 3px 5px rgba(56,26,93,.3);
 }
+
+/* 잠긴 별: 부드러운 회보라색 */
+.lesson.locked .star-shape {
+  background: linear-gradient(
+    145deg, #d6d0df, #9992ac 65%, #777185
+  );
+}
+
+.lesson.locked .star-shape::before {
+  background: linear-gradient(
+    160deg, #e9e5ee, #c6bfd1 50%, #a49bb5
+  );
+}
+
+.lesson.locked .number {
+  font-size: clamp(19px, 3.2vw, 32px);
+  text-shadow: 0 2px 3px rgba(50,40,60,.3);
+}
+
+/* 획득한 별 3개 표시 */
 .rating {
   position: absolute;
-  bottom: -9px;
+  z-index: 3;
+  bottom: -13px;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  font-size: clamp(10px, 1.7vw, 18px);
-  color: #ffcd43;
-  text-shadow: 0 2px 2px #614719;
+  color: #ffce36;
+  font-size: clamp(14px, 2.1vw, 23px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  -webkit-text-stroke: .6px #a97825;
+  text-shadow:
+    0 2px 0 #8c611f,
+    0 3px 4px rgba(66,45,17,.4);
 }
+
+.lesson:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson { transition: none; }
+}
+
 .l1 { left: 23%; top: 35%; }
 .l2 { left: 61%; top: 43%; }
 .l3 { left: 31%; top: 60%; }
