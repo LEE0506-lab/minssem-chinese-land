@@ -315,19 +315,37 @@
 
       const user = data.user;
 
-      const { data: profile, error: profileError } =
-        await client
-          .from("profiles")
-          .select("id, display_name, role")
-          .eq("id", user.id)
-          .single();
+const { data: profile, error: profileError } =
+  await client
+    .from("profiles")
+    .select("id, display_name, role")
+    .eq("id", user.id)
+    .maybeSingle();
 
-      if (profileError || !profile ||
-          !["admin", "student"].includes(profile.role)) {
-        await client.auth.signOut();
-        showMessage(t("notRegistered"));
-        return;
-      }
+if (profileError) {
+  console.error("Profile query error:", profileError);
+  showMessage(
+    language === "ko"
+      ? "프로필 조회 오류: " + profileError.message
+      : "Profile query error: " + profileError.message
+  );
+  return;
+}
+
+if (!profile) {
+  console.warn("No profile for user:", user.id);
+  showMessage(t("notRegistered"));
+  return;
+}
+
+if (!["admin", "student"].includes(profile.role)) {
+  showMessage(
+    language === "ko"
+      ? "계정 권한을 확인할 수 없습니다."
+      : "Your account role is not valid."
+  );
+  return;
+}
 
       showMessage(t("success"), "success");
 
