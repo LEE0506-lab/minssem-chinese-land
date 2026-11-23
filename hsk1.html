@@ -6,149 +6,130 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HSK 1급 모험 지도 | 민쌤중국어</title>
 <style>
-:root {
+:root{
   --green:#0F766E;
   --cream:#FFFCF7;
   --ink:#263B36;
   --muted:#81918A;
 }
-* {box-sizing:border-box}
-body {
+*{box-sizing:border-box}
+body{
   margin:0;
   background:var(--cream);
   color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,
     "Noto Sans KR",sans-serif;
 }
-header {
-  background:white;
+header{
   padding:20px 8%;
+  background:white;
   border-bottom:1px solid #E8EEEA;
 }
-header a {
+header a{
   color:var(--green);
   font-size:20px;
   font-weight:800;
   text-decoration:none;
 }
-main {
+main{
   max-width:820px;
   margin:auto;
-  padding:40px 20px 90px;
+  padding:40px 20px 80px;
 }
-.back {
+.back{
   color:var(--muted);
-  font-size:14px;
   text-decoration:none;
+  font-size:14px;
 }
-.hero {
-  margin-top:35px;
+.hero{
+  margin:35px 0 40px;
+  padding:30px;
   background:#E9F5F1;
   border-radius:25px;
-  padding:30px;
 }
-.eyebrow {
+.eyebrow{
   color:var(--green);
   font-size:12px;
   font-weight:800;
   letter-spacing:2px;
 }
-h1 {
-  font-size:clamp(28px,5vw,39px);
+h1{
   margin:12px 0;
+  font-size:clamp(28px,5vw,39px);
 }
-.hero p {
+.hero p{
   color:#668078;
   line-height:1.7;
 }
-.stats {
+.stats{
   display:flex;
+  flex-wrap:wrap;
   gap:20px;
-  font-weight:800;
   margin-top:22px;
-}
-.map {
-  position:relative;
-  max-width:520px;
-  margin:55px auto 0;
-}
-.lesson {
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin-bottom:35px;
-}
-.lesson:nth-child(even) {
-  transform:translateX(65px);
-}
-.lesson:nth-child(odd) {
-  transform:translateX(-65px);
-}
-.node {
-  display:grid;
-  place-items:center;
-  width:92px;
-  height:92px;
-  border-radius:50%;
-  border:5px solid #DCE7E1;
-  background:#F1F4F1;
-  font-size:34px;
-  color:#9DAAA3;
-}
-.lesson.active .node {
-  background:var(--green);
-  border-color:#B6DED1;
-  color:white;
-  box-shadow:0 7px 0 #095A54;
-}
-.lesson h2 {
-  margin:18px 0 6px;
-  font-size:19px;
-}
-.chinese {
-  font-family:"Kaiti SC","KaiTi","STKaiti",serif;
-  font-size:22px;
-}
-.lesson p {
-  margin:5px 0;
-  font-size:13px;
-  color:var(--muted);
-}
-.stars {
-  color:#D6A32B;
-  font-size:23px;
-  letter-spacing:3px;
-  margin:10px 0;
-}
-.start {
-  display:inline-block;
-  margin-top:10px;
-  background:var(--green);
-  color:white;
-  padding:12px 20px;
-  border-radius:12px;
-  font-size:14px;
   font-weight:800;
-  text-decoration:none;
 }
-.path {
-  width:3px;
-  height:35px;
-  background:#DDE8E1;
-  margin:0 auto 30px;
+.map-wrap{
+  width:100%;
+  max-width:520px;
+  margin:0 auto;
 }
-.note {
+.map-svg{
+  display:block;
+  width:100%;
+  height:auto;
+  overflow:visible;
+}
+.map-svg .route{
+  fill:none;
+  stroke:#DAE7E0;
+  stroke-width:12;
+  stroke-linecap:round;
+}
+.map-svg .route-done{
+  fill:none;
+  stroke:var(--green);
+  stroke-width:12;
+  stroke-linecap:round;
+}
+.map-svg .node-link{
+  cursor:pointer;
+  outline:none;
+}
+.map-svg .node-link:focus-visible .node-ring{
+  stroke:#F3B83E;
+  stroke-width:7;
+}
+.map-svg .node-title{
+  font-size:15px;
+  font-weight:800;
+  text-anchor:middle;
+  fill:var(--ink);
+}
+.map-svg .node-stars{
+  font-size:17px;
+  text-anchor:middle;
+  fill:#D6A32B;
+}
+.map-svg .node-subtitle{
+  font-size:11px;
+  text-anchor:middle;
+  fill:#7B8C84;
+}
+.map-svg .node-hanzi{
+  font-family:"Kaiti SC","KaiTi","STKaiti",serif;
+  font-size:15px;
+  text-anchor:middle;
+  fill:var(--ink);
+}
+.note{
   text-align:center;
   color:var(--muted);
   font-size:13px;
-  line-height:1.7;
+  line-height:1.8;
 }
-@media(max-width:550px) {
-  .lesson:nth-child(even) {transform:translateX(28px)}
-  .lesson:nth-child(odd) {transform:translateX(-28px)}
-  .hero {padding:23px}
-  .node {width:80px;height:80px}
+@media(max-width:550px){
+  main{padding:30px 14px 70px}
+  .hero{padding:22px}
 }
 </style>
 </head>
@@ -169,108 +150,161 @@ h1 {
       별을 획득하면 다음 과가 열립니다!
     </p>
     <div class="stats">
-      <span id="stars">⭐ 0개</span>
-      <span id="completed">📚 완료한 과 0개</span>
+      <span id="stars">⭐ 0 / 45</span>
+      <span id="completed">📚 완료한 과 0 / 15</span>
     </div>
   </section>
 
-  <div class="map" id="lesson-map"></div>
+  <div class="map-wrap">
+    <svg id="map" class="map-svg"
+      viewBox="0 0 520 2350"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="HSK 1급 과별 학습 지도">
+    </svg>
+  </div>
 
   <p class="note">
-    제1과부터 시작해 보세요!<br>
-    이후 과는 이전 과를 완료하면 해금됩니다.
+    원형 스테이지를 눌러 학습을 시작해 보세요.<br>
+    이전 과에서 별을 획득하면 다음 과가 열려요!
   </p>
 </main>
 
 <script>
-const lessons = [
-  {number:1,title:"AI小语，你好！"},
-  {number:2,title:"제2과"},
-  {number:3,title:"제3과"},
-  {number:4,title:"제4과"},
-  {number:5,title:"제5과"},
-  {number:6,title:"제6과"},
-  {number:7,title:"제7과"},
-  {number:8,title:"제8과"},
-  {number:9,title:"제9과"},
-  {number:10,title:"제10과"},
-  {number:11,title:"제11과"},
-  {number:12,title:"제12과"},
-  {number:13,title:"제13과"},
-  {number:14,title:"제14과"},
-  {number:15,title:"제15과"}
-];
-
+const lessonCount=15;
 const key="minssem-hsk1-progress";
 
-let progress;
-try {
-  progress=JSON.parse(localStorage.getItem(key)) || {};
-} catch(e) {
-  progress={};
+let saved={};
+try{
+  saved=JSON.parse(localStorage.getItem(key))||{};
+}catch(error){
+  saved={};
 }
 
-const stars=Array.isArray(progress.stars)
-  ? progress.stars : Array(15).fill(0);
+const stars=Array.from({length:lessonCount},(_,i)=>{
+  const value=Number(saved.stars?.[i]||0);
+  return Number.isFinite(value)
+    ?Math.max(0,Math.min(3,Math.floor(value)))
+    :0;
+});
 
-const total=stars.reduce((sum,n)=>
-  sum+(Number.isFinite(n)?Math.min(3,Math.max(0,n)):0),0
-);
-
+const total=stars.reduce((sum,n)=>sum+n,0);
 const completed=stars.filter(n=>n>=1).length;
 
 document.getElementById("stars").textContent=
-  `⭐ ${total}개`;
+  `⭐ ${total} / 45`;
 
 document.getElementById("completed").textContent=
-  `📚 완료한 과 ${completed}개`;
+  `📚 완료한 과 ${completed} / 15`;
 
-const map=document.getElementById("lesson-map");
+const svg=document.getElementById("map");
+const ns="http://www.w3.org/2000/svg";
+const linkNS="http://www.w3.org/1999/xlink";
 
-lessons.forEach((lesson,index)=>{
-  const unlocked=index===0 || stars[index-1]>=1;
-  const earned=Math.max(0,Math.min(3,stars[index]||0));
+function element(tag,attrs={},content=""){
+  const el=document.createElementNS(ns,tag);
+  Object.entries(attrs).forEach(([name,value])=>{
+    el.setAttribute(name,String(value));
+  });
+  if(content)el.textContent=content;
+  return el;
+}
 
-  const item=document.createElement("div");
-  item.className="lesson"+(unlocked?" active":"");
+// 전체 지도의 중심은 x=260
+// 과별 노드만 중심 기준 좌우로 이동
+const points=Array.from({length:lessonCount},(_,i)=>({
+  x:[260,365,260,155][i%4],
+  y:85+i*155
+}));
 
-  const node=document.createElement("div");
-  node.className="node";
-  node.textContent=unlocked?"📖":"🔒";
+// 노드를 정확히 지나는 부드러운 곡선
+function routeBetween(a,b){
+  const mid=(a.y+b.y)/2;
+  return `M ${a.x} ${a.y}
+          C ${a.x} ${mid},
+            ${b.x} ${mid},
+            ${b.x} ${b.y}`;
+}
 
-  const title=document.createElement("h2");
-  title.textContent=`제${lesson.number}과`;
+for(let i=0;i<points.length-1;i++){
+  const path=element("path",{
+    d:routeBetween(points[i],points[i+1]),
+    class:i<completed?"route-done":"route"
+  });
+  svg.appendChild(path);
+}
 
-  const chinese=document.createElement("div");
-  chinese.className="chinese";
-  chinese.textContent=index===0?lesson.title:"";
+points.forEach((point,i)=>{
+  const unlocked=i===0||stars[i-1]>=1;
+  const earned=stars[i];
 
-  const status=document.createElement("p");
-  status.textContent=unlocked
-    ?"학습할 수 있어요!"
-    :"이전 과를 완료하면 열려요";
+  const group=element("g");
+  const target=unlocked
+    ?element("a",{
+      href:`lesson.html?level=1&lesson=${i+1}`,
+      class:"node-link",
+      tabindex:"0",
+      "aria-label":`제${i+1}과 학습 시작`
+    })
+    :element("g",{
+      "aria-label":`제${i+1}과 잠김`
+    });
 
-  const rating=document.createElement("div");
-  rating.className="stars";
-  rating.textContent="★".repeat(earned)+"☆".repeat(3-earned);
+  // 원형 버튼의 입체 그림자
+  target.appendChild(element("circle",{
+    cx:point.x,
+    cy:point.y+6,
+    r:38,
+    fill:unlocked?"#075C55":"#CAD7D0"
+  }));
 
-  item.append(node,title,chinese,status,rating);
+  // 바깥쪽 테두리
+  target.appendChild(element("circle",{
+    cx:point.x,
+    cy:point.y,
+    r:38,
+    fill:unlocked?"#0F766E":"#EDF2EE",
+    stroke:unlocked?"#A8D7C9":"#D3DFD8",
+    "stroke-width":5,
+    class:"node-ring"
+  }));
 
-  if(unlocked) {
-    const link=document.createElement("a");
-    link.className="start";
-    link.href=`lesson.html?level=1&lesson=${lesson.number}`;
-    link.textContent="학습 시작하기 →";
-    item.append(link);
+  target.appendChild(element("text",{
+    x:point.x,
+    y:point.y+9,
+    "text-anchor":"middle",
+    "font-size":28,
+    fill:unlocked?"white":"#8A9992"
+  },unlocked?"📖":"🔒"));
+
+  group.appendChild(target);
+
+  group.appendChild(element("text",{
+    x:point.x,
+    y:point.y+60,
+    class:"node-title"
+  },`제${i+1}과`));
+
+  if(i===0){
+    group.appendChild(element("text",{
+      x:point.x,
+      y:point.y+82,
+      class:"node-hanzi"
+    },"AI小语，你好！"));
+  }else{
+    group.appendChild(element("text",{
+      x:point.x,
+      y:point.y+80,
+      class:"node-subtitle"
+    },unlocked?"학습 가능":"이전 과 완료 후 해금"));
   }
 
-  map.append(item);
+  group.appendChild(element("text",{
+    x:point.x,
+    y:point.y+105,
+    class:"node-stars"
+  },"★".repeat(earned)+"☆".repeat(3-earned)));
 
-  if(index<lessons.length-1) {
-    const path=document.createElement("div");
-    path.className="path";
-    map.append(path);
-  }
+  svg.appendChild(group);
 });
 </script>
 </body>
