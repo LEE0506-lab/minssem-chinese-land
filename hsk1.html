@@ -413,7 +413,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   text-align: center;
   z-index: 2;
 }
@@ -460,9 +460,10 @@ h1 {
   font-size: 11px;
   font-weight: 800;
   color: var(--dark);
-  background: rgba(255,255,255,.92);
+  background: #ffffff;
   padding: 2px 5px;
   border-radius: 5px;
+  margin-top: 3px;
 }
 
 .node-stars {
@@ -470,21 +471,24 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  padding: 3px 0;
-  background: transparent;
+  padding: 2px 8px;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  z-index: 3;
 }
 
 .node-stars svg {
-  width: 23px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
 }
 
 .node-status {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--muted);
-  background: rgba(255,255,255,.95);
-  padding: 3px 6px;
+  background: #ffffff;
+  padding: 2px 6px;
   border-radius: 5px;
   white-space: nowrap;
 }
@@ -969,7 +973,26 @@ function renderAreaMap() {
   path.setAttribute("viewBox", "0 0 400 680");
   path.setAttribute("preserveAspectRatio", "none");
 
-  path.innerHTML = `
+path.innerHTML = `
+  <defs>
+    <mask id="road-gap-mask">
+      <rect width="400" height="680" fill="white"/>
+
+      <!-- 각 레슨의 원형 버튼과 하단 정보 영역 가리기 -->
+      <rect x="142" y="28" width="116" height="112"
+        rx="14" fill="black"/>
+      <rect x="37" y="154" width="116" height="112"
+        rx="14" fill="black"/>
+      <rect x="247" y="284" width="116" height="112"
+        rx="14" fill="black"/>
+      <rect x="37" y="414" width="116" height="112"
+        rx="14" fill="black"/>
+      <rect x="142" y="539" width="116" height="112"
+        rx="14" fill="black"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#road-gap-mask)">
     <path
       d="M200 78
          C200 132 95 120 95 205
@@ -981,6 +1004,7 @@ function renderAreaMap() {
       stroke-width="17"
       stroke-linecap="round"
     />
+
     <path
       d="M200 78
          C200 132 95 120 95 205
@@ -994,7 +1018,8 @@ function renderAreaMap() {
       stroke-dasharray="5 10"
       stroke-linecap="round"
     />
-  `;
+  </g>
+`;
   container.appendChild(path);
 
   const positions = [
