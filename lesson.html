@@ -318,7 +318,7 @@ h1 {
 
 /* Timer */
 .timer-area {
-  margin-bottom: 16px; /* 23px -> 16px */
+  margin-bottom: 16px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -358,13 +358,9 @@ h1 {
 }
 .timer-fill.warning { background: #e05b54; }
 
-/* Quiz - spacing optimized */
-#quizPlay > .progress-track {
-  margin-bottom: 18px; /* 24px -> 18px */
-}
-.quiz-question {
-  padding: 26px; /* 32px -> 26px vertical */
-}
+/* Quiz - compact spacing */
+#quizPlay > .progress-track { margin-bottom: 18px; }
+.quiz-question { padding: 26px; }
 .quiz-type {
   display: inline-block;
   background: #e5f5ee;
@@ -382,9 +378,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-.quiz-hanzi {
-  font-size: clamp(60px, 12vw, 86px);
-}
+.quiz-hanzi { font-size: clamp(60px, 12vw, 86px); }
 .quiz-english {
   font-size: clamp(25px, 5vw, 34px);
   font-weight: 800;
@@ -404,8 +398,8 @@ h1 {
 .quiz-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px; /* 12px -> 10px */
-  margin-top: 18px; /* 24px -> 18px */
+  gap: 10px;
+  margin-top: 18px;
 }
 .quiz-option {
   min-height: 84px;
@@ -448,7 +442,7 @@ h1 {
 .quiz-option:disabled { cursor: default; }
 .quiz-feedback {
   min-height: 28px;
-  margin-top: 14px; /* 18px -> 14px */
+  margin-top: 14px;
   text-align: center;
   font-weight: 700;
   line-height: 1.6;
@@ -519,7 +513,13 @@ h1 {
   border-radius: 50%;
   background: #e5f5ee;
   color: var(--teal);
-  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.review-sound svg {
+  width: 22px;
+  height: 22px;
 }
 .review-sound:hover { background: #d2ede1; }
 .review-sound:disabled {
@@ -614,7 +614,8 @@ h1 {
       aria-label="중국어 발음 듣기">
       <svg viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="1.8"
-        stroke-linecap="round" stroke-linejoin="round">
+        stroke-linecap="round" stroke-linejoin="round"
+        aria-hidden="true">
         <path d="M11 5 6 9H3v6h3l5 4V5Z"/>
         <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
         <path d="M19 5a10 10 0 0 1 0 14"/>
@@ -673,7 +674,7 @@ h1 {
 
     <div style="text-align:center;margin-top:16px;">
       <button class="flash-sound" id="flashSoundBtn">
-        🔊 발음 듣기
+        발음 듣기
       </button>
       <div class="sound-note" id="flashSoundNote"
         aria-live="polite">발음 듣기</div>
@@ -781,7 +782,7 @@ h1 {
         </div>
         <div class="review-list" id="reviewList"></div>
         <p class="review-note" id="reviewSoundNote">
-          🔊 버튼을 눌러 중국어 발음을 들어 보세요.
+          발음 버튼을 눌러 중국어 발음을 들어 보세요.
         </p>
         <button class="nav-btn next full-button" id="retryWrongBtn">
           틀린 단어만 다시 풀기 ↻
@@ -1282,12 +1283,29 @@ function renderWrongAnswers() {
     const soundButton = document.createElement("button");
     soundButton.type = "button";
     soundButton.className = "review-sound";
-    soundButton.textContent = "🔊";
+
+    // Same speaker icon as the vocabulary card.
+    // No speaker emoji is used.
+    soundButton.innerHTML = `
+      <svg viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+        <path d="M11 5 6 9H3v6h3l5 4V5Z"/>
+        <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
+        <path d="M19 5a10 10 0 0 1 0 14"/>
+      </svg>
+    `;
+
     soundButton.setAttribute(
       "aria-label", `${word.hanzi} 발음 듣기`
     );
     soundButton.disabled =
       !("speechSynthesis" in window);
+
     soundButton.addEventListener("click", () => {
       speakChinese(word.hanzi, el("reviewSoundNote"));
     });
@@ -1297,7 +1315,7 @@ function renderWrongAnswers() {
   });
 
   el("reviewSoundNote").textContent =
-    "🔊 버튼을 눌러 중국어 발음을 들어 보세요.";
+    "발음 버튼을 눌러 중국어 발음을 들어 보세요.";
 }
 
 function finishQuiz() {
