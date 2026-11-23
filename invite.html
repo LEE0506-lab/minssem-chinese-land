@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>학생 초대 수락 | 민쌤중국어 어휘랜드</title>
+  <style>
+    :root {
+      --green: #0f766e;
+      --bg: #fffcf7;
+      --text: #263b36;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Noto Sans KR", Arial, sans-serif;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid #e3ebe6;
+      padding: 20px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    a { color: var(--green); text-decoration: none; }
+    .brand { font-weight: 800; font-size: 19px; }
+    select, input, button {
+      font: inherit;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    select, input {
+      background: white;
+      border: 1px solid #dce8e2;
+    }
+    main {
+      max-width: 480px;
+      margin: 70px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e3ebe6;
+      border-radius: 22px;
+      padding: 32px;
+    }
+    h1 { margin-top: 0; font-size: 28px; }
+    p { line-height: 1.7; }
+    .muted { color: #71827c; }
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: 700;
+    }
+    input, button { width: 100%; }
+    button {
+      margin-top: 22px;
+      background: var(--green);
+      border: 0;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:disabled { opacity: .6; cursor: wait; }
+    .hidden { display: none; }
+    .error { color: #b42318; }
+    .success { color: var(--green); }
+    #status { margin-top: 18px; }
+  </style>
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html">✦ MINSSEM CHINESE</a>
+  <select id="language" aria-label="Language">
+    <option value="ko">한국어</option>
+    <option value="en">English</option>
+  </select>
+</header>
+
+<main>
+  <section class="card">
+    <h1 id="title">학생 계정 설정</h1>
+    <p id="intro" class="muted">
+      민쌤중국어 어휘랜드에 오신 것을 환영합니다.
+      사용할 비밀번호를 설정해 주세요.
+    </p>
+
+    <p id="checking" role="status">초대 링크를 확인하는 중...</p>
+
+    <form id="passwordForm" class="hidden">
+      <label for="password" id="passwordLabel">새 비밀번호</label>
+      <input id="password" type="password"
+        minlength="8" autocomplete="new-password" required>
+
+      <label for="confirm" id="confirmLabel">비밀번호 확인</label>
+      <input id="confirm" type="password"
+        minlength="8" autocomplete="new-password" required>
+
+      <button id="submit" type="submit">계정 활성화</button>
+    </form>
+
+    <p id="status" role="status" aria-live="polite"></p>
+    <p><a id="loginLink" href="login.html">로그인 화면으로 이동</a></p>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+"use strict";
+
+const client = window.supabase.createClient(
+  "https://vonuqedsenhnclxqpwnc.supabase.co",
+  "sb_publishable_dY0_xIWQN2iK6DJIAJ31zg_xdMsDhnl"
+);
+
+const words = {
+  ko: {
+    title: "학생 계정 설정",
+    intro: "민쌤중국어 어휘랜드에 오신 것을 환영합니다. 사용할 비밀번호를 설정해 주세요.",
+    checking: "초대 링크를 확인하는 중...",
+    password: "새 비밀번호",
+    confirm: "비밀번호 확인",
+    submit: "계정 활성화",
+    login: "로그인 화면으로 이동",
+    invalid: "초대 링크가 유효하지 않거나 만료되었습니다. 관리자에게 새 초대를 요청해 주세요.",
+    mismatch: "비밀번호가 일치하지 않습니다.",
+    short: "비밀번호는 8자 이상이어야 합니다.",
+    saving: "계정을 설정하는 중...",
+    failed: "비밀번호 설정에 실패했습니다. 다시 시도해 주세요.",
+    success: "계정 설정이 완료되었습니다! 로그인 화면으로 이동해 주세요."
+  },
+  en: {
+    title: "Set Up Your Student Account",
+    intro: "Welcome to Minssem Chinese Land. Please create a password for your account.",
+    checking: "Checking your invitation link...",
+    password: "New Password",
+    confirm: "Confirm Password",
+    submit: "Activate Account",
+    login: "Go to Login",
+    invalid: "This invitation link is invalid or expired. Please request a new invitation.",
+    mismatch: "Passwords do not match.",
+    short: "Your password must contain at least 8 characters.",
+    saving: "Setting up your account...",
+    failed: "Unable to set your password. Please try again.",
+    success: "Your account is ready! Please proceed to login."
+  }
+};
+
+let lang = localStorage.getItem("minssem-language") === "en" ? "en" : "ko";
+let invitationReady = false;
+let messageKey = "";
+
+function t(key) {
+  return words[lang][key];
+}
+
+function showMessage(key, type = "") {
+  messageKey = key;
+  const el = document.getElementById("status");
+  el.textContent = key ? t(key) : "";
+  el.className = type;
+}
+
+function translate() {
+  document.documentElement.lang = lang;
+  document.getElementById("language").value = lang;
+
+  const ids = {
+    title: "title",
+    intro: "intro",
+    passwordLabel: "password",
+    confirmLabel: "confirm",
+    submit: "submit",
+    loginLink: "login"
+  };
+
+  for (const [id, key] of Object.entries(ids)) {
+    document.getElementById(id).textContent = t(key);
+  }
+
+  if (!invitationReady) {
+    document.getElementById("checking").textContent = t("checking");
+  }
+  if (messageKey) {
+    document.getElementById("status").textContent = t(messageKey);
+  }
+}
+
+document.getElementById("language").addEventListener("change", e => {
+  lang = e.target.value;
+  localStorage.setItem("minssem-language", lang);
+  translate();
+});
+
+async function init() {
+  try {
+    const hash = new URLSearchParams(location.hash.slice(1));
+    const errorCode = hash.get("error");
+
+    if (errorCode) {
+      document.getElementById("checking").textContent = "";
+      showMessage("invalid", "error");
+      return;
+    }
+
+    // Supabase can provide a session in the URL fragment.
+    const accessToken = hash.get("access_token");
+    const refreshToken = hash.get("refresh_token");
+
+    if (accessToken && refreshToken) {
+      const { error } = await client.auth.setSession({
+        access_token: accessToken,
+        refresh_token: refreshToken
+      });
+      if (error) throw error;
+    }
+
+    const { data, error } = await client.auth.getUser();
+
+    if (error || !data.user) {
+      document.getElementById("checking").textContent = "";
+      showMessage("invalid", "error");
+      return;
+    }
+
+    invitationReady = true;
+    document.getElementById("checking").textContent = "";
+    document.getElementById("passwordForm").classList.remove("hidden");
+
+    // Remove tokens from the visible address bar.
+    if (location.hash) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+  } catch (error) {
+    console.error(error);
+    document.getElementById("checking").textContent = "";
+    showMessage("invalid", "error");
+  }
+}
+
+document.getElementById("passwordForm").addEventListener("submit", async e => {
+  e.preventDefault();
+
+  if (!invitationReady) return;
+
+  const password = document.getElementById("password").value;
+  const confirm = document.getElementById("confirm").value;
+
+  if (password.length < 8) {
+    showMessage("short", "error");
+    return;
+  }
+
+  if (password !== confirm) {
+    showMessage("mismatch", "error");
+    return;
+  }
+
+  const button = document.getElementById("submit");
+  button.disabled = true;
+  showMessage("saving");
+
+  const { error } = await client.auth.updateUser({ password });
+
+  if (error) {
+    console.error(error);
+    showMessage("failed", "error");
+    button.disabled = false;
+    return;
+  }
+
+  document.getElementById("passwordForm").classList.add("hidden");
+  showMessage("success", "success");
+  await client.auth.signOut();
+});
+
+translate();
+init();
+</script>
+</body>
+</html>
