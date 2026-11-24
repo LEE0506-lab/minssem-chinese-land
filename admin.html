@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -236,6 +235,8 @@
         </p>
 
         <form id="inviteForm" class="invite-form">
+          <label for="inviteName" id="inviteNameLabel">학생 이름</label>
+          <input id="inviteName" type="text" maxlength="100" required autocomplete="off" placeholder="예: 김민수">
           <label for="inviteEmail" id="emailLabel">
             학생 이메일
           </label>
@@ -279,6 +280,7 @@
             <tr>
               <th id="nameHeading">이름</th>
               <th id="roleHeading">역할</th>
+              <th id="manageHeading">관리</th>
             </tr>
           </thead>
           <tbody id="students"></tbody>
@@ -286,6 +288,7 @@
       </div>
 
       <p class="muted" id="listNote"></p>
+      <p id="editMessage" role="status" aria-live="polite"></p>
     </section>
 
   </div>
@@ -318,7 +321,8 @@ const words = {
     logout: "로그아웃",
     students: "등록된 학생",
     invite: "학생 초대",
-    inviteNote: "학생의 이메일 주소로 초대장을 보내세요.",
+    inviteNote: "학생의 이름과 이메일 주소를 입력하세요.",
+    inviteName: "학생 이름", namePlaceholder: "예: 김민수", manage: "관리", edit: "이름 수정", editPrompt: "새 학생 이름을 입력하세요.", nameInvalid: "이름을 1~100자로 입력해 주세요.", editSuccess: "이름을 저장했습니다.", editFailed: "이름 저장에 실패했습니다.", partial: "초대는 발송되었지만 이름 저장에 실패했습니다. 학생 목록에서 이름을 수정해 주세요.",
     emailLabel: "학생 이메일",
     inviteButton: "초대 이메일 보내기",
     inviting: "초대 이메일 발송 중...",
@@ -348,7 +352,8 @@ const words = {
     logout: "Log Out",
     students: "Registered Students",
     invite: "Invite Students",
-    inviteNote: "Send an invitation to a student's email address.",
+    inviteNote: "Enter the student's name and email address.",
+    inviteName: "Student Name", namePlaceholder: "e.g. Alex Kim", manage: "Manage", edit: "Edit Name", editPrompt: "Enter the new student name.", nameInvalid: "Enter a name of 1–100 characters.", editSuccess: "Name saved.", editFailed: "Unable to save name.", partial: "Invitation sent, but name could not be saved. Edit the name in the student list.",
     emailLabel: "Student Email",
     inviteButton: "Send Invitation",
     inviting: "Sending invitation...",
@@ -377,6 +382,8 @@ let lang =
 let studentRows = [];
 let listError = false;
 let inviteBusy = false;
+let editBusy = false;
+let editKey = "";
 let inviteMessageKey = "";
 let inviteMessageType = "";
 
@@ -414,7 +421,9 @@ function translate() {
     progressNote: "progressNote",
     listHeading: "list",
     nameHeading: "name",
-    roleHeading: "role"
+    roleHeading: "role",
+    inviteNameLabel: "inviteName",
+    manageHeading: "manage"
   };
 
   Object.entries(ids).forEach(([id, key]) => {
@@ -428,6 +437,8 @@ function translate() {
     showInviteMessage(inviteMessageKey, inviteMessageType);
   }
 
+  document.getElementById("inviteName").placeholder = t("namePlaceholder");
+  document.getElementById("editMessage").textContent = editKey ? t(editKey) : "";
   renderStudents();
 }
 
@@ -446,7 +457,14 @@ function renderStudents() {
     name.textContent = student.display_name || "—";
     role.textContent = t("student");
 
-    row.append(name, role);
+    const manage = document.createElement("td");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = t("edit");
+    button.disabled = editBusy;
+    button.addEventListener("click", () => editStudent(student));
+    manage.appendChild(button);
+    row.append(name, role, manage);
     tbody.appendChild(row);
   }
 
@@ -456,6 +474,39 @@ function renderStudents() {
       : studentRows.length === 0
         ? t("empty")
         : "";
+}
+
+async function editStudent(student) {
+  if (editBusy) return;
+  const value = window.prompt(t("editPrompt"), student.display_name || "");
+  if (value === null) return;
+  const name = value.trim();
+  const message = document.getElementById("editMessage");
+  if (!name || name.length > 100) {
+    editKey = "nameInvalid";
+    message.textContent = t(editKey);
+    message.className = "error";
+    return;
+  }
+  editBusy = true;
+  renderStudents();
+  try {
+    const { error } = await client.rpc("admin_update_student_name", {
+      p_student_id: student.id, p_display_name: name
+    });
+    if (error) throw error;
+    await loadStudents();
+    editKey = "editSuccess";
+    message.className = "success";
+  } catch (error) {
+    console.error("Name update error:", error);
+    editKey = "editFailed";
+    message.className = "error";
+  } finally {
+    editBusy = false;
+    message.textContent = t(editKey);
+    renderStudents();
+  }
 }
 
 async function loadStudents() {
@@ -511,6 +562,12 @@ document.getElementById("inviteForm")
     const inviteButton =
       document.getElementById("inviteButton");
 
+    const nameInput = document.getElementById("inviteName");
+    const displayName = nameInput.value.trim();
+    if (!displayName || displayName.length > 100) {
+      showInviteMessage("nameInvalid", "error");
+      return;
+    }
     const email = emailInput.value.trim().toLowerCase();
 
     if (!emailInput.checkValidity() || !email) {
@@ -544,7 +601,7 @@ document.getElementById("inviteForm")
             "apikey": SUPABASE_KEY,
             "Authorization": "Bearer " + accessToken
           },
-          body: JSON.stringify({ email })
+          body: JSON.stringify({ email, display_name: displayName })
         }
       );
 
@@ -568,8 +625,24 @@ document.getElementById("inviteForm")
         return;
       }
 
-      showInviteMessage("inviteSuccess", "success");
+      // Save via the existing administrator-only RPC as well, so older
+      // invitation functions that ignore display_name remain compatible.
       emailInput.value = "";
+      nameInput.value = "";
+      let nameSaved = false;
+      try {
+        if (result.invitedUserId) {
+          const { error } = await client.rpc("admin_update_student_name", {
+            p_student_id: result.invitedUserId,
+            p_display_name: displayName
+          });
+          if (error) throw error;
+          const { data: saved, error: readError } = await client.from("profiles")
+            .select("display_name").eq("id", result.invitedUserId).single();
+          nameSaved = !readError && saved?.display_name === displayName;
+        }
+      } catch (error) { console.error("Invited name save error:", error); }
+      showInviteMessage(nameSaved ? "inviteSuccess" : "partial", nameSaved ? "success" : "error");
 
       await loadStudents();
 
