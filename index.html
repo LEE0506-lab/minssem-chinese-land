@@ -241,6 +241,7 @@
       }
     }
   </style>
+<link rel="stylesheet" href="language.css">
 </head>
 
 <body>
@@ -527,9 +528,9 @@
     if (currentProfile.role === "student") {
       const progressLink = document.createElement("a");
 
-      progressLink.href = "progress.html";
+      progressLink.href = "wrong-notes.html";
       progressLink.className = "auth-link";
-      progressLink.textContent = t("myProgress");
+      progressLink.textContent = localStorage.getItem("minssem-language") === "en" ? "My Review Notes" : "나의 오답노트";
 
       area.appendChild(progressLink);
     }
