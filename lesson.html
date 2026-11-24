@@ -1357,8 +1357,14 @@ h1 {
 
 <section id="wordMatchSection" hidden data-i18n-ignore>
 <button class="text-back" id="wmBack" type="button"></button>
+<p class="eyebrow" id="wmEyebrow"></p>
 <h1 id="wmTitle"></h1><p class="subtitle" id="wmIntro"></p>
-<div id="wmModes" class="wm-panel"><button id="wmPractice" class="wm-action" type="button"></button><button id="wmChallenge" class="wm-action" type="button"></button></div>
+<div id="wmModes" class="mode-selection">
+<h2 id="wmModeTitle"></h2><p class="mode-description" id="wmModeDescription"></p>
+<div class="mode-cards">
+<button id="wmPractice" class="mode-card" type="button"><span class="mode-icon" aria-hidden="true">📖</span><span class="mode-title" id="wmPracticeTitle"></span><span class="mode-time" id="wmPracticeTime"></span><span class="mode-detail"><span id="wmPracticeDetail"></span><br><span id="wmPracticeDetail2"></span></span></button>
+<button id="wmChallenge" class="mode-card" type="button"><span class="mode-icon" aria-hidden="true">⚡</span><span class="mode-title" id="wmChallengeTitle"></span><span class="mode-time" id="wmChallengeTime"></span><span class="mode-detail"><span id="wmChallengeDetail"></span><br><span id="wmChallengeDetail2"></span></span></button>
+</div></div>
 <div id="wmPlay" class="wm-panel" hidden><div class="wm-meta"><span id="wmRound"></span><span id="wmCount"></span><span id="wmClock"></span></div><div class="progress-track"><div class="progress-fill" id="wmBar"></div></div><div class="wm-grid"><div id="wmLeft"></div><div id="wmRight"></div></div><p id="wmFeedback" role="status"></p><button id="wmNext" class="wm-action" type="button" hidden></button></div>
 <div id="wmResult" class="wm-panel" hidden><p id="wmSummary"></p><p id="wmBest"></p><button id="wmRetry" class="wm-action" type="button"></button><button id="wmMenu" class="wm-action" type="button"></button></div>
 </section>
