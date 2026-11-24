@@ -684,6 +684,7 @@ h1 {
 
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 "use strict";
 
@@ -756,6 +757,32 @@ function readProgress() {
 
 let stars = readProgress();
 let currentArea = null;
+let isAdmin = false;
+let roleCheckVersion = 0;
+const roleClient = window.supabase?.createClient(
+  "https://vonuqedsenhnclxqpwnc.supabase.co",
+  "sb_publishable_dY0_xIWQN2iK6DJIAJ31zg_xdMsDhnl"
+);
+async function refreshAdminAccess() {
+  const version = ++roleCheckVersion;
+  let admin = false;
+  try {
+    if (roleClient) {
+      const {data, error} = await roleClient.auth.getUser();
+      if (!error && data?.user) {
+        const result = await roleClient.from("profiles").select("role")
+          .eq("id", data.user.id).single();
+        admin = !result.error && result.data?.role === "admin";
+      }
+    }
+  } catch (error) { console.warn("Role check failed", error); }
+  if (version !== roleCheckVersion) return;
+  isAdmin = admin;
+  if (currentArea && !isAreaUnlocked(currentArea.id)) goBack();
+  else if (currentArea) renderAreaMap();
+  else renderAreaSelection();
+}
+
 
 function countCompleted(start, end) {
   let count = 0;
@@ -774,12 +801,14 @@ function countStars(start, end) {
 }
 
 function isAreaUnlocked(areaId) {
+  if (isAdmin && areas.some(a => a.id === areaId)) return true;
   if (areaId === 1) return true;
   const previous = areas[areaId - 2];
   return countCompleted(previous.start, previous.end) === 5;
 }
 
 function isLessonUnlocked(lesson) {
+  if (isAdmin && availableLessons.has(lesson)) return true;
   if (lesson === 1) return true;
 
   const area = areas.find(a =>
@@ -1139,6 +1168,7 @@ el("backButton").addEventListener("click", goBack);
 // Refresh progress when returning from a lesson.
 window.addEventListener("pageshow", () => {
   stars = readProgress();
+  refreshAdminAccess();
   if (currentArea) {
     renderAreaMap();
   } else {
@@ -1147,6 +1177,17 @@ window.addEventListener("pageshow", () => {
 });
 
 renderAreaSelection();
+refreshAdminAccess();
+roleClient?.auth.onAuthStateChange((event) => {
+  if (event === "SIGNED_OUT" || event === "SIGNED_IN" || event === "INITIAL_SESSION") {
+    isAdmin = false;
+    ++roleCheckVersion;
+    if (currentArea && !isAreaUnlocked(currentArea.id)) goBack();
+    else if (currentArea) renderAreaMap();
+    else renderAreaSelection();
+    setTimeout(refreshAdminAccess, 0);
+  }
+});
 </script>
 <script src="i18n.js"></script>
 </body>
