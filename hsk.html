@@ -155,9 +155,7 @@ footer {
 <body>
 
 <header>
-  <a href="index.html" id="brand">
-    ✦ 민쌤중국어 어휘랜드
-  </a>
+  <a href="index.html" id="brand" data-i18n-ignore="true"><svg class="brand-book" viewBox="0 0 56 56" aria-hidden="true"><path d="M4 8 Q17 5 26.5 14 L26.5 49 Q16 40 4 43 Z M52 8 Q39 5 29.5 14 L29.5 49 Q40 40 52 43 Z" fill="#417C69"/><path d="M10 17 Q16 16 21 20 M10 24 Q16 23 21 27 M10 31 Q16 30 21 34 M35 20 Q40 16 46 17 M35 27 Q40 23 46 24 M35 34 Q40 30 46 31" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"/></svg><span class="brand-copy"><span class="brand-ko" lang="ko">민쌤중국어</span><span class="brand-en" lang="en">CHINESE VOCABULARY LAND</span></span></a>
 
   <select
     id="minssemLanguage"
@@ -174,7 +172,7 @@ footer {
     ← 홈으로 돌아가기
   </a>
 
-  <div class="eyebrow">CHOOSE YOUR LEVEL</div>
+  
   <h1 id="pageTitle">HSK 3.0 학습 코스</h1>
   <p class="intro" id="pageIntro">
     나에게 맞는 급수를 선택하고 중국어 학습 모험을 시작해 보세요.<br>
@@ -193,35 +191,35 @@ footer {
       <div class="icon">🌿</div>
       <h2 id="level2">HSK 2급</h2>
       <p id="desc2">기초 표현과 어휘를 확장해요.</p>
-      <div class="status coming-soon">🔒 준비 중</div>
+      <div class="status coming-soon">준비 중</div>
     </div>
 
     <div class="card locked">
       <div class="icon">🌳</div>
       <h2 id="level3">HSK 3급</h2>
       <p id="desc3">다양한 상황에서 사용하는 어휘를 배워요.</p>
-      <div class="status coming-soon">🔒 준비 중</div>
+      <div class="status coming-soon">준비 중</div>
     </div>
 
     <div class="card locked">
       <div class="icon">⛰️</div>
       <h2 id="level4">HSK 4급</h2>
       <p id="desc4">더 풍부한 어휘와 표현에 도전해요.</p>
-      <div class="status coming-soon">🔒 준비 중</div>
+      <div class="status coming-soon">준비 중</div>
     </div>
 
     <div class="card locked">
       <div class="icon">🏔️</div>
       <h2 id="level5">HSK 5급</h2>
       <p id="desc5">심화 어휘를 익히며 실력을 높여요.</p>
-      <div class="status coming-soon">🔒 준비 중</div>
+      <div class="status coming-soon">준비 중</div>
     </div>
 
     <div class="card locked">
       <div class="icon">🏆</div>
       <h2 id="level6">HSK 6급</h2>
       <p id="desc6">고급 중국어 어휘를 정복해요.</p>
-      <div class="status coming-soon">🔒 준비 중</div>
+      <div class="status coming-soon">준비 중</div>
     </div>
   </div>
 </main>
@@ -253,7 +251,7 @@ const translations = {
       "고급 중국어 어휘를 정복해요."
     ],
     start: "학습 시작하기 →",
-    comingSoon: "🔒 준비 중",
+    comingSoon: "준비 중",
     footer: "© 2026 민쌤중국어 어휘랜드"
   },
 
@@ -274,7 +272,7 @@ const translations = {
       "Master advanced Chinese vocabulary."
     ],
     start: "Start Learning →",
-    comingSoon: "🔒 Coming Soon",
+    comingSoon: "Coming Soon",
     footer: "© 2026 Min's Chinese Vocabulary Land"
   }
 };
@@ -297,7 +295,7 @@ function setLanguage(language) {
     document.title = selected === "en" ? "HSK 3.0 | Min’s Chinese Vocabulary Land" : "HSK 3.0 | 민쌤중국어 어휘랜드";
   document.getElementById("minssemLanguage").value = selected;
 
-  document.getElementById("brand").textContent = t.brand;
+
   document.getElementById("backLink").textContent = t.backLink;
   document.getElementById("pageTitle").textContent = t.pageTitle;
   document.getElementById("pageIntro").innerHTML = t.pageIntro;
