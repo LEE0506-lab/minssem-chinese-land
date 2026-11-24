@@ -542,6 +542,13 @@ h1 {
   line-height:1.6;
 }
 
+#quizFeedback { text-align:left; }
+#quizAnswerDetail:not([hidden]) { display:flex; align-items:center; justify-content:space-between; gap:16px; margin:16px 0 22px; text-align:left; }
+.quiz-answer-word { font-size:36px; font-weight:700; line-height:1.3; margin-bottom:8px; }
+.quiz-answer-meaning { font-size:16px; color:var(--muted); line-height:1.6; overflow-wrap:anywhere; }
+.quiz-answer-audio { flex-shrink:0; width:44px; height:44px; display:grid; place-items:center; background:transparent; border:0; color:inherit; cursor:pointer; border-radius:10px; }
+.quiz-answer-audio:hover { background:#e8f4ef; }
+.quiz-answer-audio:focus-visible { outline:2px solid var(--teal); }
 .quiz-score {
   font-size:48px;
   font-weight:800;
@@ -1201,7 +1208,7 @@ h1 {
       <div class="quiz-feedback"
         id="quizFeedback"
         aria-live="polite"></div>
-      <div id="quizAnswerDetail" hidden style="text-align:center;margin:16px 0;line-height:1.8"></div>
+      <div id="quizAnswerDetail" hidden></div>
       <button type="button" class="nav-btn next full-button" id="quizNextQuestion" hidden></button>
 
     </div>
@@ -4230,12 +4237,20 @@ function scheduleNextQuestion() {
   const detail = el("quizAnswerDetail");
   detail.replaceChildren();
   const label = document.createElement("div");
-  label.textContent = `${word.hanzi} · ${word.pinyin} · ${currentMeaning(word)}`;
+  const hanzi = document.createElement("div");
+  hanzi.className = "quiz-answer-word";
+  hanzi.textContent = word.hanzi;
+  const meaning = document.createElement("div");
+  meaning.className = "quiz-answer-meaning";
+  meaning.textContent = `${word.pinyin} · ${currentMeaning(word)}`;
+  label.append(hanzi, meaning);
   detail.appendChild(label);
   const audio = document.createElement("button");
   audio.type = "button";
-  audio.className = "nav-btn prev";
-  audio.textContent = en ? "🔊 Listen" : "🔊 발음 듣기";
+  audio.className = "quiz-answer-audio";
+  audio.setAttribute("aria-label", en ? "Listen to pronunciation" : "발음 듣기");
+  audio.title = en ? "Listen" : "발음 듣기";
+  audio.innerHTML = '<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15 9a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg>';
   audio.onclick = () => speakChinese(word.hanzi);
   detail.appendChild(audio);
   detail.hidden = false;
