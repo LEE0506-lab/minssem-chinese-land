@@ -1201,6 +1201,8 @@ h1 {
       <div class="quiz-feedback"
         id="quizFeedback"
         aria-live="polite"></div>
+      <div id="quizAnswerDetail" hidden style="text-align:center;margin:16px 0;line-height:1.8"></div>
+      <button type="button" class="nav-btn next full-button" id="quizNextQuestion" hidden></button>
 
     </div>
 
@@ -3903,7 +3905,7 @@ function createQuizQuestions() {
     });
   });
 
-  return shuffle(questions);
+  return shuffle(questions).slice(0, 15);
 }
 
 function createQuizOptions(question) {
@@ -4059,6 +4061,8 @@ function renderQuizQuestion() {
       quizQuestions.length * 100}%`;
 
   el("quizFeedback").textContent = "";
+  el("quizAnswerDetail").hidden = true;
+  el("quizNextQuestion").hidden = true;
 
   const prompt = el("quizPrompt");
   const optionsContainer = el("quizOptions");
@@ -4165,7 +4169,7 @@ function checkQuizAnswer(selectedWord, selectedButton) {
     selectedButton.classList.add("correct");
 
     el("quizFeedback").textContent =
-      "정답이에요! 🎉";
+      (questionLanguage === "en" ? "Correct! 🎉" : "정답이에요! 🎉");
 
     el("quizFeedback").style.color =
       "#23845e";
@@ -4174,7 +4178,7 @@ function checkQuizAnswer(selectedWord, selectedButton) {
     selectedButton.classList.add("wrong");
 
     el("quizFeedback").textContent =
-      `아쉬워요! 정답은 ${correctWord.hanzi}입니다.`;
+      (questionLanguage === "en" ? "Incorrect. Check the correct answer." : "아쉬워요! 정답을 확인해 보세요.");
 
     el("quizFeedback").style.color =
       "#d15c4e";
@@ -4221,20 +4225,37 @@ function disableQuizOptions() {
 ====================================== */
 
 function scheduleNextQuestion() {
-  clearTimeout(nextQuestionTimer);
-
-  nextQuestionTimer = setTimeout(() => {
-    nextQuestionTimer = null;
+  const word = quizQuestions[quizIndex].word;
+  const en = localStorage.getItem("minssem-language") === "en";
+  const detail = el("quizAnswerDetail");
+  detail.replaceChildren();
+  const label = document.createElement("div");
+  label.textContent = `${word.hanzi} · ${word.pinyin} · ${currentMeaning(word)}`;
+  detail.appendChild(label);
+  const audio = document.createElement("button");
+  audio.type = "button";
+  audio.className = "nav-btn prev";
+  audio.textContent = en ? "🔊 Listen" : "🔊 발음 듣기";
+  audio.onclick = () => speakChinese(word.hanzi);
+  detail.appendChild(audio);
+  detail.hidden = false;
+  const next = el("quizNextQuestion");
+  next.textContent = quizIndex + 1 === quizQuestions.length
+    ? (en ? "View results →" : "결과 확인하기 →")
+    : (en ? "Next question →" : "다음 문제 →");
+  next.hidden = false;
+  next.onclick = () => {
+    if (next.hidden || !quizAnswered) return;
+    next.hidden = true;
+    stopSpeech();
     quizIndex++;
     renderQuizQuestion();
-  }, 1100);
+  };
 }
 
 function cancelNextQuestion() {
-  if (nextQuestionTimer !== null) {
-    clearTimeout(nextQuestionTimer);
-    nextQuestionTimer = null;
-  }
+  el("quizNextQuestion").hidden = true;
+  el("quizAnswerDetail").hidden = true;
 }
 
 /* ======================================
@@ -4312,7 +4333,7 @@ function handleTimeOut() {
   });
 
   el("quizFeedback").textContent =
-    `⏰ 시간 초과! 정답은 ${correctWord.hanzi}입니다.`;
+    (questionLanguage === "en" ? "⏰ Time is up! Check the correct answer." : "⏰ 시간 초과! 정답을 확인해 보세요.");
 
   el("quizFeedback").style.color =
     "#d15c4e";
@@ -4604,7 +4625,7 @@ function retryWrongWords() {
         word
       }
     ])
-  );
+  ).slice(0, 15);
 
   beginTracking("review");
   // 오답 재시험은 연습 모드로 진행
