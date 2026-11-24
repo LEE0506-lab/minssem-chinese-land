@@ -265,7 +265,7 @@
       <section class="card">
         <h2 id="progressHeading">학습 진도</h2>
         <p class="muted" id="progressNote">
-          학생별 진도 연동 준비 중
+          학생 목록에서 학습 상세 보기를 선택하세요.
         </p>
       </section>
 
@@ -333,7 +333,7 @@ const words = {
     inviteForbidden: "학생 초대 권한이 없습니다.",
     inviteAlreadyExists: "이미 등록된 이메일일 수 있습니다. Supabase 사용자 목록을 확인해 주세요.",
     progress: "학습 진도",
-    progressNote: "학생별 진도 연동 준비 중",
+    progressNote: "학생 목록에서 학습 상세 보기를 선택하세요.",
     list: "학생 목록",
     name: "이름",
     role: "역할",
@@ -364,7 +364,7 @@ const words = {
     inviteForbidden: "You do not have permission to invite students.",
     inviteAlreadyExists: "This email may already be registered. Check the Supabase user list.",
     progress: "Learning Progress",
-    progressNote: "Student progress integration coming soon",
+    progressNote: "Select View Learning Details in the student list.",
     list: "Student List",
     name: "Name",
     role: "Role",
@@ -465,6 +465,11 @@ function renderStudents() {
     button.disabled = editBusy;
     button.addEventListener("click", () => editStudent(student));
     manage.appendChild(button);
+    const detail = document.createElement("a");
+    detail.href = "student-detail.html?id=" + encodeURIComponent(student.id);
+    detail.textContent = lang === "en" ? "View Learning Details" : "학습 상세 보기";
+    detail.style.cssText = "display:inline-block;margin:8px 0 0 12px;font-weight:700";
+    manage.appendChild(detail);
     row.append(name, role, manage);
     tbody.appendChild(row);
   }
