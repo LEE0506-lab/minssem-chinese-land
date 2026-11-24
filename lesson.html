@@ -1327,8 +1327,21 @@ h1 {
 
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 "use strict";
+  const SUPABASE_URL =
+    "https://vonuqedsenhnclxqpwnc.supabase.co";
+
+  const SUPABASE_KEY =
+    "sb_publishable_dY0_xIWQN2iK6DJIAJ31zg_xdMsDhnl";
+
+  const supabaseClient = window.supabase?.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+
 
 function currentMeaning(word) {
   return localStorage.getItem("minssem-language") === "en" ? word.en : word.ko;
@@ -3914,6 +3927,75 @@ function createQuizOptions(question) {
    QUIZ START
 ====================================== */
 
+
+let tracking = null;
+let questionStarted = 0;
+let questionPrompt = "";
+let questionLanguage = "ko";
+function beginTracking(mode) {
+  const run = {id: crypto.randomUUID(), started: Date.now(), mode,
+    total: quizQuestions.length, attempts: []};
+  tracking = run;
+  run.ready = (async () => {
+    if (!supabaseClient) throw new Error("Supabase unavailable");
+    const {data, error} = await supabaseClient.auth.getUser();
+    if (error || !data.user) throw new Error("Login required");
+    run.user = data.user.id;
+    const result = await supabaseClient.from("learning_sessions").insert({
+      id: run.id, user_id: run.user, course: "hsk1", lesson_number: lessonNumber,
+      game_type: mode, total_questions: run.total,
+      started_at: new Date(run.started).toISOString()
+    });
+    if (result.error) throw result.error;
+  })();
+  run.ready.catch(error => console.warn("Learning record:", error));
+  run.queue = run.ready;
+}
+function recordAttempt(question, selected, correct) {
+  const run = tracking;
+  if (!run) return;
+  const word = question.word;
+  const answer = w => question.type === "hanziToMeaning" ? w[questionLanguage] : w.hanzi;
+  const row = {session_id: run.id, word: word.hanzi, pinyin: word.pinyin,
+    meaning_ko: word.ko, meaning_en: word.en, question_type: question.type,
+    question_text: questionPrompt, selected_answer: selected ? answer(selected) : null,
+    correct_answer: answer(word), is_correct: correct,
+    response_time_ms: Math.max(0, Math.round(performance.now()-questionStarted))};
+  run.attempts.push(row);
+  run.queue = run.queue.then(async () => {
+    const {error} = await supabaseClient.from("question_attempts").insert({...row,user_id:run.user});
+    if (error) throw error;
+  });
+  run.queue.catch(error => console.warn("Attempt record:", error));
+}
+function finishTracking() {
+  const run = tracking;
+  tracking = null;
+  if (!run) return;
+  const completed = Date.now();
+  const status = document.createElement("p");
+  status.setAttribute("role", "status");
+  status.textContent = "학습 기록 저장 중…";
+  const old = document.getElementById("trackingStatus");
+  if (old) old.remove();
+  status.id = "trackingStatus";
+  el("resultDetail").after(status);
+  run.queue.then(async () => {
+    const correct = run.attempts.filter(a => a.is_correct).length;
+    const {error} = await supabaseClient.from("learning_sessions").update({
+      correct_count: correct, wrong_count: run.attempts.length-correct,
+      accuracy: run.total ? Math.round(correct/run.total*10000)/100 : 0,
+      duration_seconds: Math.round((completed-run.started)/1000),
+      completed_at: new Date(completed).toISOString()
+    }).eq("id",run.id).eq("user_id",run.user);
+    if (error) throw error;
+    status.textContent = "학습 기록을 저장했습니다. / Learning record saved.";
+  }).catch(error => {
+    console.warn("Learning record:", error);
+    status.textContent = "학습 기록 저장 실패. 로그인 및 연결을 확인하세요. / Record not saved.";
+  });
+}
+
 function startQuiz(mode) {
   if (!words.length) {
     showUnavailableLesson();
@@ -3929,6 +4011,7 @@ function startQuiz(mode) {
       : "practice";
 
   quizQuestions = createQuizQuestions();
+  beginTracking(quizMode);
 
   quizIndex = 0;
   quizCorrectCount = 0;
@@ -4049,6 +4132,9 @@ function renderQuizQuestion() {
     optionsContainer.appendChild(button);
   });
 
+  questionStarted = performance.now();
+  questionPrompt = prompt.textContent;
+  questionLanguage = localStorage.getItem("minssem-language") === "en" ? "en" : "ko";
   if (quizMode === "challenge") {
     startTimer();
   }
@@ -4072,6 +4158,7 @@ function checkQuizAnswer(selectedWord, selectedButton) {
   const isCorrect =
     selectedWord.hanzi === correctWord.hanzi;
 
+  recordAttempt(question, selectedWord, isCorrect);
   if (isCorrect) {
     quizCorrectCount++;
 
@@ -4216,6 +4303,7 @@ function handleTimeOut() {
   const question = quizQuestions[quizIndex];
   const correctWord = question.word;
 
+  recordAttempt(question, null, false);
   wrongAnswers.push({
     questionType: question.type,
     word: correctWord,
@@ -4345,6 +4433,7 @@ function finishQuiz() {
       : "다시 연습하기 →";
 
   renderWrongAnswerReview();
+  finishTracking();
 
   updateBackLinks();
 
@@ -4517,6 +4606,7 @@ function retryWrongWords() {
     ])
   );
 
+  beginTracking("review");
   // 오답 재시험은 연습 모드로 진행
   quizMode = "practice";
   quizIndex = 0;
