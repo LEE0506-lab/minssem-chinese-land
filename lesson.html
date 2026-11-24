@@ -759,6 +759,11 @@ h1 {
   color:var(--dark);
 }
 
+.stage-group-heading { margin: 18px 0 0; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; font-weight: 800; color: var(--dark); }
+.stage-group-heading:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.stage-choice.stage-choice-pending { background: #f8faf9; cursor: not-allowed; }
+.stage-choice.stage-choice-pending .stage-choice-icon { background: #e9eeeb; }
+.stage-choice.stage-choice-pending:hover { border-color: var(--line); background: #f8faf9; }
 .stage-choice:hover {
   border-color:#8bcbb4;
   background:#f4fbf7;
@@ -874,7 +879,7 @@ h1 {
       <span class="stage-best-label">최고 기록</span>
       <span class="stage-best-stars"
         id="stageBestStars">☆☆☆</span>
-      <span class="stage-best-badge">학습 완료</span>
+      <span class="stage-best-badge" id="stageCompletedBadge" hidden>학습 완료</span>
     </div>
 
     <h2 class="stage-heading">
@@ -882,6 +887,7 @@ h1 {
     </h2>
 
     <div class="stage-choices">
+      <h3 class="stage-group-heading" data-i18n-ignore data-menu-en="Learning">학습하기</h3>
 
       <button class="stage-choice"
         id="chooseVocabBtn" type="button">
@@ -907,6 +913,7 @@ h1 {
         <span class="stage-choice-arrow">›</span>
       </button>
 
+      <h3 class="stage-group-heading" data-i18n-ignore data-menu-en="Games">게임하기</h3>
       <button class="stage-choice"
         id="chooseQuizBtn" type="button">
         <span class="stage-choice-icon">⚡</span>
@@ -917,6 +924,15 @@ h1 {
           </span>
         </span>
         <span class="stage-choice-arrow">›</span>
+      </button>
+      <h3 class="stage-group-heading" data-i18n-ignore data-menu-en="Assessment">평가하기</h3>
+      <button class="stage-choice stage-choice-pending" type="button" disabled>
+        <span class="stage-choice-icon" aria-hidden="true">📋</span>
+        <span class="stage-choice-copy">
+          <span class="stage-choice-title" data-i18n-ignore data-menu-en="Lesson Test">단원 테스트</span>
+          <span class="stage-choice-description" data-i18n-ignore data-menu-en="Textbook-based test · Coming soon">교재 기반 테스트 · 준비 중</span>
+        </span>
+        <span class="stage-choice-arrow" aria-hidden="true">🔒</span>
       </button>
 
     </div>
@@ -3382,16 +3398,15 @@ function isLessonCompleted() {
 
 function updateStageStars() {
   const count = getBestStars();
+  el("stageCompletedBadge").hidden = count < 1;
 
   el("stageBestStars").textContent =
     "★".repeat(count) + "☆".repeat(3 - count);
 }
 
 function updateBackLinks() {
-  const completed = isLessonCompleted();
-
-  el("vocabStageBack").hidden = !completed;
-  el("flashStageBack").hidden = !completed;
+  el("vocabStageBack").hidden = false;
+  el("flashStageBack").hidden = false;
 
   const quizVisible = !el("quizSection").hidden;
   const modeVisible = !el("modeSelection").hidden;
@@ -3403,7 +3418,7 @@ function updateBackLinks() {
 
   // 퀴즈 모드 선택 화면에서는 단계 선택 가능
   el("quizStageBack").hidden =
-    !completed || !quizVisible || !modeVisible;
+    !quizVisible || !modeVisible;
 }
 
 function showStage(stage) {
@@ -3455,11 +3470,7 @@ function openLesson() {
     return;
   }
 
-  if (isLessonCompleted()) {
-    showStageSelection();
-  } else {
-    resetVocab();
-  }
+  showStageSelection();
 }
 
 function showUnavailableLesson() {
@@ -4647,6 +4658,11 @@ window.addEventListener("pagehide", () => {
   stopSpeech();
 });
 
+if (localStorage.getItem("minssem-language") === "en") {
+  document.querySelectorAll("[data-menu-en]").forEach(node => {
+    node.textContent = node.dataset.menuEn;
+  });
+}
 initializeLesson();
 
 </script>
