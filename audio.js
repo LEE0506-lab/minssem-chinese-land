@@ -25,16 +25,16 @@
     u.voice=voice; u.lang=voice.lang; u.rate=0.82; u.pitch=1;
     active={...job,u};
     u.onstart=()=>{if(active?.u===u) setNote(job.note,msg('발음 재생 중...','Playing...'));};
-    u.onend=()=>{if(active?.u===u){active=null;setNote(job.note,ready());}};
-    u.onerror=e=>{if(active?.u===u){active=null;setNote(job.note,['canceled','interrupted'].includes(e.error)?ready():msg('발음을 재생할 수 없어요.','Unable to play pronunciation.'));}};
+    u.onend=()=>{if(active?.u===u){active=null;setNote(job.note,ready());job.onDone?.(true);}};
+    u.onerror=e=>{if(active?.u===u){active=null;setNote(job.note,['canceled','interrupted'].includes(e.error)?ready():msg('발음을 재생할 수 없어요.','Unable to play pronunciation.'));job.onDone?.(false);}};
     synth.speak(u);
   }
   function refresh(){const v=preferred();if(pending && v) play(v);}
   window.stopSpeech=stop;
-  window.speakChinese=(text,note)=>{
+  window.speakChinese=(text,note,onDone)=>{
     stop();
-    if(!synth || !window.SpeechSynthesisUtterance){setNote(note,msg('음성을 지원하지 않는 브라우저예요.','Speech is not supported.'));return;}
-    pending={text,note};
+    if(!synth || !window.SpeechSynthesisUtterance){setNote(note,msg('음성을 지원하지 않는 브라우저예요.','Speech is not supported.'));onDone?.(false);return;}
+    pending={text,note,onDone};
     const v=selected || preferred();
     if(v){play(v);return;}
     setNote(note,msg('음성 준비 중...','Loading voice...'));
@@ -44,7 +44,7 @@
       if(fallback){play(fallback);return;}
       const message=msg('중국어 음성이 준비되지 않았어요. 다시 눌러 주세요.','Chinese voice is not ready. Please try again.');
       if(pending.note)setNote(pending.note,message);else window.alert(message);
-      pending=null;
+      const failed=pending;pending=null;failed.onDone?.(false);
     },3500);
   };
   if(synth){synth.addEventListener('voiceschanged',refresh);synth.getVoices();window.addEventListener('pagehide',stop);}

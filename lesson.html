@@ -929,6 +929,7 @@ h1 {
         <span class="stage-choice-icon ui-tone" style="--icon-bg:#FCEBDD;--icon-fg:#C47D48"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.39 4.39a1 1 0 0 0 1.68-.47 2.5 2.5 0 1 1 3.01 3.01 1 1 0 0 0-.47 1.68l1.68 1.68a2.41 2.41 0 0 1 0 3.42l-1.68 1.68a1 1 0 0 1-1.68-.47 2.5 2.5 0 1 0-3.01 3.01 1 1 0 0 1 .47 1.68l-1.68 1.68a2.41 2.41 0 0 1-3.42 0l-1.68-1.68a1 1 0 0 0-1.68.47 2.5 2.5 0 1 1-3.01-3.01 1 1 0 0 0 .47-1.68l-1.68-1.68a2.41 2.41 0 0 1 0-3.42l1.68-1.68a1 1 0 0 1 1.68.47 2.5 2.5 0 1 0 3.01-3.01 1 1 0 0 1-.47-1.68l1.68-1.68a2.41 2.41 0 0 1 3.42 0z"/></svg></span>
         <span class="stage-choice-copy"><span class="stage-choice-title" data-i18n-ignore data-menu-en="Word Match">단어 매칭</span><span class="stage-choice-description" data-i18n-ignore data-menu-en="Match words and meanings">한자와 뜻 연결하기</span></span><span class="stage-choice-arrow">›</span>
       </button>
+<button class="stage-choice" id="chooseListeningBtn" type="button"><span class="stage-choice-icon ui-tone" style="--icon-bg:#E0F2F4;--icon-fg:#388A96"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M3 14v-3a9 9 0 0 1 18 0v3"/><rect x="3" y="13" width="5" height="8" rx="2"/><rect x="16" y="13" width="5" height="8" rx="2"/></svg></span><span class="stage-choice-copy"><span class="stage-choice-title" data-i18n-ignore data-menu-en="Listening Quiz">듣기 퀴즈</span><span class="stage-choice-description" data-i18n-ignore data-menu-en="Listen and choose the meaning">발음을 듣고 뜻 선택하기</span></span><span class="stage-choice-arrow">›</span></button>
       <h3 class="stage-group-heading" data-i18n-ignore data-menu-en="Assessment">평가하기</h3>
       <button class="stage-choice stage-choice-pending" type="button" disabled>
         <span class="stage-choice-icon" aria-hidden="true">📋</span>
@@ -1368,6 +1369,17 @@ h1 {
 <div id="wmPlay" class="wm-panel" hidden><div class="wm-meta"><span id="wmRound"></span><span id="wmCount"></span><span id="wmClock"></span></div><div class="progress-track"><div class="progress-fill" id="wmBar"></div></div><div class="wm-grid"><div id="wmLeft"></div><div id="wmRight"></div></div><p id="wmFeedback" role="status"></p><button id="wmNext" class="wm-action" type="button" hidden></button></div>
 <div id="wmResult" class="wm-panel" hidden><p id="wmSummary"></p><p id="wmBest"></p><button id="wmRetry" class="wm-action" type="button"></button><button id="wmMenu" class="wm-action" type="button"></button></div>
 </section>
+<section id="listeningSection" hidden data-i18n-ignore>
+<button class="text-back" id="lqBack" type="button"></button>
+<p class="eyebrow" id="lqEyebrow"></p>
+<h1 id="lqTitle"></h1><p class="subtitle" id="lqIntro"></p>
+<div id="lqModes" class="mode-selection">
+<h2 id="lqModeTitle"></h2><p class="mode-description" id="lqModeDescription"></p>
+<div class="mode-cards">
+<button id="lqPractice" class="mode-card" type="button"><span class="mode-icon" aria-hidden="true">📖</span><span class="mode-title" id="lqPracticeTitle"></span><span class="mode-time" id="lqPracticeTime"></span><span class="mode-detail"><span id="lqPracticeDetail"></span><br><span id="lqPracticeDetail2"></span></span></button>
+<button id="lqChallenge" class="mode-card" type="button"><span class="mode-icon" aria-hidden="true">⚡</span><span class="mode-title" id="lqChallengeTitle"></span><span class="mode-time" id="lqChallengeTime"></span><span class="mode-detail"><span id="lqChallengeDetail"></span><br><span id="lqChallengeDetail2"></span></span></button>
+</div></div>
+<div id="lqPlay" class="wm-panel" hidden><div class="wm-meta"><span id="lqCount"></span><span id="lqClock"></span></div><div class="progress-track"><div class="progress-fill" id="lqBar"></div></div><div class="lq-audio"><button id="lqListen" type="button" aria-label="Listen"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4zM15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></svg></button><p id="lqNote" role="status"></p><small id="lqRemaining"></small></div><div id="lqOptions"></div><div id="lqFeedback" role="status"></div><button id="lqAnswerAudio" class="wm-action" hidden type="button"></button><button id="lqNext" class="wm-action" hidden type="button"></button></div><div id="lqResult" class="wm-panel" hidden><p id="lqSummary"></p><p id="lqBest"></p><button id="lqRetry" class="wm-action" type="button"></button><button id="lqMenu" class="wm-action" type="button"></button></div></section>
 </main>
 
 <script src="audio.js"></script>
@@ -3445,7 +3457,7 @@ function showStage(stage) {
     "flashSection",
     "quizSection",
     "unavailableSection",
-    "wordMatchSection"
+    "wordMatchSection", "listeningSection"
   ].forEach(id => {
     el(id).hidden = id !== stage;
   });
@@ -4685,6 +4697,7 @@ initializeLesson();
 
 </script>
 <script src="word-match.js"></script>
+<script src="listening-quiz.js"></script>
 <script src="i18n.js"></script>
 </body>
 </html>
