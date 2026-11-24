@@ -925,6 +925,10 @@ h1 {
         </span>
         <span class="stage-choice-arrow">›</span>
       </button>
+      <button class="stage-choice" id="chooseMatchBtn" type="button">
+        <span class="stage-choice-icon ui-tone" style="--icon-bg:#FCEBDD;--icon-fg:#C47D48"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3H5v7h2a2 2 0 1 1 0 4H5v7h7v-2a2 2 0 1 1 4 0v2h5v-7h-2a2 2 0 1 1 0-4h2V3h-5v2a2 2 0 1 1-4 0z"/></svg></span>
+        <span class="stage-choice-copy"><span class="stage-choice-title" data-i18n-ignore data-menu-en="Word Match">단어 매칭</span><span class="stage-choice-description" data-i18n-ignore data-menu-en="Match words and meanings">한자와 뜻 연결하기</span></span><span class="stage-choice-arrow">›</span>
+      </button>
       <h3 class="stage-group-heading" data-i18n-ignore data-menu-en="Assessment">평가하기</h3>
       <button class="stage-choice stage-choice-pending" type="button" disabled>
         <span class="stage-choice-icon" aria-hidden="true">📋</span>
@@ -1351,6 +1355,13 @@ h1 {
 
 </section>
 
+<section id="wordMatchSection" hidden data-i18n-ignore>
+<button class="text-back" id="wmBack" type="button"></button>
+<h1 id="wmTitle"></h1><p class="subtitle" id="wmIntro"></p>
+<div id="wmModes" class="wm-panel"><button id="wmPractice" class="wm-action" type="button"></button><button id="wmChallenge" class="wm-action" type="button"></button></div>
+<div id="wmPlay" class="wm-panel" hidden><div class="wm-meta"><span id="wmRound"></span><span id="wmCount"></span><span id="wmClock"></span></div><div class="progress-track"><div class="progress-fill" id="wmBar"></div></div><div class="wm-grid"><div id="wmLeft"></div><div id="wmRight"></div></div><p id="wmFeedback" role="status"></p><button id="wmNext" class="wm-action" type="button" hidden></button></div>
+<div id="wmResult" class="wm-panel" hidden><p id="wmSummary"></p><p id="wmBest"></p><button id="wmRetry" class="wm-action" type="button"></button><button id="wmMenu" class="wm-action" type="button"></button></div>
+</section>
 </main>
 
 <script src="audio.js"></script>
@@ -3427,7 +3438,8 @@ function showStage(stage) {
     "vocabSection",
     "flashSection",
     "quizSection",
-    "unavailableSection"
+    "unavailableSection",
+    "wordMatchSection"
   ].forEach(id => {
     el(id).hidden = id !== stage;
   });
@@ -4666,6 +4678,7 @@ if (localStorage.getItem("minssem-language") === "en") {
 initializeLesson();
 
 </script>
+<script src="word-match.js"></script>
 <script src="i18n.js"></script>
 </body>
 </html>
