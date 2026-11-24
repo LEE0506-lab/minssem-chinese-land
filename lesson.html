@@ -852,6 +852,7 @@ h1 {
 <link rel="stylesheet" href="language.css">
 <link rel="stylesheet" href="ui.css">
 <script defer src="icons.js"></script>
+<style>.account-best{display:block;margin-top:10px;padding-top:8px;border-top:1px solid #DDE7E2;color:#417C69;font-size:13px;font-weight:600;line-height:1.5;white-space:normal}</style>
 </head>
 
 <body>
@@ -3501,6 +3502,7 @@ function showStageSelection() {
 
   updateStageStars();
   showStage("stageSelectionSection");
+  window.GameRecords?.refresh();
 }
 
 function openLesson() {
@@ -3974,6 +3976,11 @@ function finishTracking() {
   if (old) old.remove();
   status.id = "trackingStatus";
   el("resultDetail").after(status);
+  const bestNode = document.createElement('p');
+  bestNode.setAttribute('data-i18n-ignore','');
+  status.after(bestNode);
+  document.getElementById('speedAccountBest')?.remove();
+  bestNode.id='speedAccountBest';
   run.queue.then(async () => {
     const correct = run.attempts.filter(a => a.is_correct).length;
     const {error} = await supabaseClient.from("learning_sessions").update({
@@ -3986,6 +3993,7 @@ function finishTracking() {
     }).eq("id",run.id).eq("user_id",run.user);
     if (error) throw error;
     status.textContent = "학습 기록을 저장했습니다.";
+    if(run.mode==='challenge' && bestNode.isConnected) await window.GameRecords.showBest('speed_quiz',run.total,run.id,bestNode,{total_questions:run.total,correct_count:correct,mistake_count:run.attempts.length-correct,duration_ms:Math.max(0,completed-run.started),completed_at:new Date(completed).toISOString()});
   }).catch(error => {
     console.warn("Learning record:", error);
     status.textContent = "학습 기록 저장 실패. 로그인 및 연결을 확인하세요.";
