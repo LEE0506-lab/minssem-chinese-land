@@ -280,7 +280,7 @@
 
     </div>
 
-    <div id="gameStats"></div>
+    
     <section class="card">
       <h2 id="listHeading">학생 목록</h2>
 
@@ -306,7 +306,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 
-<script src="admin-games.js"></script>
+
 <script>
 "use strict";
 
@@ -455,9 +455,6 @@ function translate() {
 }
 
 let overviewData = null;
-let gameStats=null;
-function renderGameStats(){const root=document.getElementById("gameStats");if(gameStats)AdminGames.mount(root,gameStats.sessions,gameStats.attempts,new Map(studentRows.map(x=>[x.id,x.display_name])),lang);else root.textContent=bi("게임 통계 조회 중 또는 조회 실패","Game statistics loading or unavailable");}
-async function loadGameStats(){try{const [sessions,attempts]=await Promise.all([AdminGames.read(client,"learning_sessions"),AdminGames.read(client,"question_attempts")]);const ids=new Set(studentRows.map(x=>x.id));gameStats={sessions:sessions.filter(x=>ids.has(x.user_id)),attempts};}catch(e){console.error(e);gameStats=null;}renderGameStats();}
 const bi = (ko,en) => lang === 'en' ? en : ko;
 function bar(n) { const a=document.createElement('div');a.className='progress-track';const b=document.createElement('div');b.className='progress-fill';b.style.width=Math.max(0,Math.min(100,n))+'%';a.append(b);return a; }
 function metric(root,label,value){const a=document.createElement('div');a.className='summary-line';const l=document.createElement('span');l.textContent=label;const v=document.createElement('strong');v.textContent=value;a.append(l,v);root.append(a);}
@@ -465,7 +462,7 @@ function renderOverview(){const a=document.getElementById('overview'),b=document
 async function loadOverview(){overviewData=null;try{const m=new Map(studentRows.map(x=>[x.id,{done:0,stars:0,quizzes:0,questions:0,correct:0}]));for(const table of ['lesson_progress','learning_sessions']){for(let i=0;;i+=500){const {data,error}=await client.from(table).select(table==='lesson_progress'?'user_id,lesson_number,stars':'user_id,id,completed_at,total_questions,correct_count').eq('course','hsk1').order('user_id').order(table==='lesson_progress'?'lesson_number':'id').range(i,i+499);if(error)throw error;for(const r of data){const x=m.get(r.user_id);if(!x)continue;if(table==='lesson_progress'){if(r.stars>0)x.done++;x.stars+=Number(r.stars)||0;}else if(r.completed_at){x.quizzes++;x.questions+=Number(r.total_questions)||0;x.correct+=Number(r.correct_count)||0;}}if(data.length<500)break;}}overviewData=m;}catch(e){console.error('Overview error',e);}renderStudents();}
 function renderStudents() {
   renderOverview();
-  renderGameStats();
+
   const tbody = document.getElementById("students");
   tbody.replaceChildren();
 
@@ -553,7 +550,7 @@ async function loadStudents() {
   }
 
   renderStudents();
-  if (!listError) {await loadOverview(); await loadGameStats();}
+  if (!listError) {await loadOverview();}
 }
 
 document.getElementById("language")
