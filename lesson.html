@@ -930,6 +930,7 @@ h1 {
         <span class="stage-choice-copy"><span class="stage-choice-title" data-i18n-ignore data-menu-en="Word Match">단어 매칭</span><span class="stage-choice-description" data-i18n-ignore data-menu-en="Match words and meanings">한자와 뜻 연결하기</span></span><span class="stage-choice-arrow">›</span>
       </button>
 <button class="stage-choice" id="chooseListeningBtn" type="button"><span class="stage-choice-icon ui-tone" style="--icon-bg:#E0F2F4;--icon-fg:#388A96"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M3 14v-3a9 9 0 0 1 18 0v3"/><rect x="3" y="13" width="5" height="8" rx="2"/><rect x="16" y="13" width="5" height="8" rx="2"/></svg></span><span class="stage-choice-copy"><span class="stage-choice-title" data-i18n-ignore data-menu-en="Listening Quiz">듣기 퀴즈</span><span class="stage-choice-description" data-i18n-ignore data-menu-en="Listen and choose the meaning">발음을 듣고 뜻 선택하기</span></span><span class="stage-choice-arrow">›</span></button>
+<button class="stage-choice" id="chooseBuilderBtn" type="button"><span class="stage-choice-icon ui-tone" style="--icon-bg:#E9EDFA;--icon-fg:#687BB8"><svg class="ui-icon" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 13h.01M10 13h.01M14 13h.01M18 13h.01M8 16h8"/></svg></span><span class="stage-choice-copy"><span class="stage-choice-title" data-i18n-ignore data-menu-en="Character Builder">한자 조합</span><span class="stage-choice-description" data-i18n-ignore data-menu-en="Build words with Chinese characters">한자를 올바른 순서로 조합하기</span></span><span class="stage-choice-arrow">›</span></button>
       <h3 class="stage-group-heading" data-i18n-ignore data-menu-en="Assessment">평가하기</h3>
       <button class="stage-choice stage-choice-pending" type="button" disabled>
         <span class="stage-choice-icon" aria-hidden="true">📋</span>
@@ -1380,6 +1381,17 @@ h1 {
 <button id="lqChallenge" class="mode-card" type="button"><span class="mode-icon" aria-hidden="true">⚡</span><span class="mode-title" id="lqChallengeTitle"></span><span class="mode-time" id="lqChallengeTime"></span><span class="mode-detail"><span id="lqChallengeDetail"></span><br><span id="lqChallengeDetail2"></span></span></button>
 </div></div>
 <div id="lqPlay" class="wm-panel" hidden><div class="wm-meta"><span id="lqCount"></span><span id="lqClock"></span></div><div class="progress-track"><div class="progress-fill" id="lqBar"></div></div><div class="lq-audio"><button id="lqListen" type="button" aria-label="Listen"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4zM15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></svg></button><p id="lqNote" role="status"></p><small id="lqRemaining"></small></div><div id="lqOptions"></div><div id="lqFeedback" role="status"></div><button id="lqAnswerAudio" class="wm-action" hidden type="button"></button><button id="lqNext" class="wm-action" hidden type="button"></button></div><div id="lqResult" class="wm-panel" hidden><p id="lqSummary"></p><p id="lqBest"></p><button id="lqRetry" class="wm-action" type="button"></button><button id="lqMenu" class="wm-action" type="button"></button></div></section>
+<section id="builderSection" hidden data-i18n-ignore>
+<button class="text-back" id="cbBack" type="button"></button>
+<p class="eyebrow" id="cbEyebrow"></p>
+<h1 id="cbTitle"></h1><p class="subtitle" id="cbIntro"></p>
+<div id="cbModes" class="mode-selection">
+<h2 id="cbModeTitle"></h2><p class="mode-description" id="cbModeDescription"></p>
+<div class="mode-cards">
+<button id="cbPractice" class="mode-card" type="button"><span class="mode-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M12 7v14M3 4h4a5 5 0 0 1 5 3 5 5 0 0 1 5-3h4v14h-4a5 5 0 0 0-5 3 5 5 0 0 0-5-3H3z"/></svg></span><span class="mode-title" id="cbPracticeTitle"></span><span class="mode-time" id="cbPracticeTime"></span><span class="mode-detail"><span id="cbPracticeDetail"></span><br><span id="cbPracticeDetail2"></span></span></button>
+<button id="cbChallenge" class="mode-card" type="button"><span class="mode-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-12h-7z"/></svg></span><span class="mode-title" id="cbChallengeTitle"></span><span class="mode-time" id="cbChallengeTime"></span><span class="mode-detail"><span id="cbChallengeDetail"></span><br><span id="cbChallengeDetail2"></span></span></button>
+</div></div>
+<div id="cbPlay" class="wm-panel" hidden><div class="wm-meta"><span id="cbCount"></span><span id="cbClock"></span></div><div class="progress-track"><div class="progress-fill" id="cbBar"></div></div><div class="cb-prompt"><p id="cbPrompt"></p><h2 id="cbMeaning"></h2><p id="cbPinyin"></p></div><div id="cbSlots"></div><div id="cbOptions"></div><button id="cbClear" type="button"></button><button id="cbCheck" class="wm-action" type="button"></button><div id="cbFeedback" role="status"></div><button id="cbAnswerAudio" class="wm-action" hidden type="button"></button><button id="cbNext" class="wm-action" hidden type="button"></button></div><div id="cbResult" class="wm-panel" hidden><p id="cbSummary"></p><p id="cbBest"></p><button id="cbRetry" class="wm-action" type="button"></button><button id="cbMenu" class="wm-action" type="button"></button></div></section>
 </main>
 
 <script src="audio.js"></script>
@@ -3457,7 +3469,7 @@ function showStage(stage) {
     "flashSection",
     "quizSection",
     "unavailableSection",
-    "wordMatchSection", "listeningSection"
+    "wordMatchSection", "listeningSection", "builderSection"
   ].forEach(id => {
     el(id).hidden = id !== stage;
   });
@@ -4698,6 +4710,7 @@ initializeLesson();
 </script>
 <script src="word-match.js"></script>
 <script src="listening-quiz.js"></script>
+<script src="character-builder.js"></script>
 <script src="i18n.js"></script>
 </body>
 </html>
