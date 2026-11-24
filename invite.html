@@ -169,6 +169,7 @@ function showMessage(key, type = "") {
 
 function translate() {
   document.documentElement.lang = lang;
+    document.title = lang === "en" ? "Accept Invitation | Min’s Chinese Vocabulary Land" : "학생 초대 수락 | 민쌤중국어 어휘랜드";
   document.getElementById("language").value = lang;
 
   const ids = {

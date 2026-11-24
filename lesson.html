@@ -939,7 +939,7 @@ h1 {
   <p class="eyebrow">HSK 1급 · 제1과</p>
   <h1>AI小语，你好！</h1>
   <p class="subtitle">
-    단어 학습 · Vocabulary Learning
+    단어 학습
   </p>
 
   <div class="progress-top">
@@ -3998,10 +3998,10 @@ function finishTracking() {
       completed_at: new Date(completed).toISOString()
     }).eq("id",run.id).eq("user_id",run.user);
     if (error) throw error;
-    status.textContent = "학습 기록을 저장했습니다. / Learning record saved.";
+    status.textContent = "학습 기록을 저장했습니다.";
   }).catch(error => {
     console.warn("Learning record:", error);
-    status.textContent = "학습 기록 저장 실패. 로그인 및 연결을 확인하세요. / Record not saved.";
+    status.textContent = "학습 기록 저장 실패. 로그인 및 연결을 확인하세요.";
   });
 }
 

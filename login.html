@@ -264,6 +264,7 @@
 
   function updateLanguage() {
     document.documentElement.lang = language;
+    document.title = language === "en" ? "Log In | Min’s Chinese Vocabulary Land" : "로그인 | 민쌤중국어 어휘랜드";
     languageSelect.value = language;
 
     document.getElementById("title").textContent = t("title");

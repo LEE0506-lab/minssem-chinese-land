@@ -406,6 +406,7 @@ function showInviteMessage(key = "", type = "") {
 
 function translate() {
   document.documentElement.lang = lang;
+    document.title = lang === "en" ? "Admin Dashboard | Min’s Chinese Vocabulary Land" : "관리자 페이지 | 민쌤중국어 어휘랜드";
   document.getElementById("language").value = lang;
 
   const ids = {

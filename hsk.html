@@ -291,6 +291,7 @@ function setLanguage(language) {
   const t = translations[selected];
 
   document.documentElement.lang = selected;
+    document.title = selected === "en" ? "HSK 3.0 | Min’s Chinese Vocabulary Land" : "HSK 3.0 | 민쌤중국어 어휘랜드";
   document.getElementById("minssemLanguage").value = selected;
 
   document.getElementById("brand").textContent = t.brand;
