@@ -1337,6 +1337,7 @@ h1 {
 
 </main>
 
+<script src="audio.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 "use strict";
@@ -3515,78 +3516,7 @@ el("quizStageBack").addEventListener(
    CHINESE SPEECH
 ====================================== */
 
-function stopSpeech() {
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-  }
-}
 
-function getChineseVoice() {
-  if (!("speechSynthesis" in window)) {
-    return null;
-  }
-
-  const voices = window.speechSynthesis.getVoices();
-
-  return voices.find(voice =>
-    voice.lang.toLowerCase() === "zh-cn" &&
-    /google/i.test(voice.name)
-  ) || voices.find(voice =>
-    voice.lang.toLowerCase() === "zh-cn"
-  ) || voices.find(voice =>
-    voice.lang.toLowerCase().startsWith("zh")
-  ) || null;
-}
-
-function speakChinese(text, note) {
-  if (!("speechSynthesis" in window)) {
-    if (note) {
-      note.textContent =
-        "음성을 지원하지 않는 브라우저예요.";
-    }
-    return;
-  }
-
-  stopSpeech();
-
-  const utterance =
-    new SpeechSynthesisUtterance(text);
-
-  utterance.lang = "zh-CN";
-  utterance.rate = 0.82;
-  utterance.pitch = 1;
-
-  const voice = getChineseVoice();
-
-  if (voice) {
-    utterance.voice = voice;
-  }
-
-  if (note) {
-    utterance.onstart = () => {
-      note.textContent = "발음 재생 중...";
-    };
-
-    utterance.onend = () => {
-      note.textContent = "발음 듣기";
-    };
-
-    utterance.onerror = event => {
-      if (
-        ["canceled", "interrupted"].includes(
-          event.error
-        )
-      ) {
-        return;
-      }
-
-      note.textContent =
-        "발음을 재생할 수 없어요.";
-    };
-  }
-
-  window.speechSynthesis.speak(utterance);
-}
 
 /* ======================================
    STEP 1: VOCABULARY LEARNING
