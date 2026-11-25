@@ -524,6 +524,11 @@
 
     // 학생 계정
     if (currentProfile.role === "student") {
+      const myPageLink = document.createElement("a");
+      myPageLink.href = "mypage.html";
+      myPageLink.className = "auth-link";
+      myPageLink.textContent = currentLanguage === "en" ? "My Learning" : "마이페이지";
+      area.appendChild(myPageLink);
       const progressLink = document.createElement("a");
 
       progressLink.href = "wrong-notes.html";
