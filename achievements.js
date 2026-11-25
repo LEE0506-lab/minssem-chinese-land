@@ -1,29 +1,59 @@
 'use strict';
 const client=window.MinssemBackend.client;
-const $=id=>document.getElementById(id);let lang=localStorage.getItem('minssem-language')==='en'?'en':'ko',filter=0,earned=null,failed=false,assessmentProgress=null,progressFailed=false;
+const $=id=>document.getElementById(id);let lang=localStorage.getItem('minssem-language')==='en'?'en':'ko',filter=0,earned=null,failed=false,badgeProgress={},progressFailed=false,progressLoading=true;
 const tr=(a,b)=>lang==='ko'?a:b;
 const categories=[['전체','All'],['학습','Learning'],['게임','Games'],['꾸준함','Consistency'],['복습','Review'],['평가','Assessment']];
 const data=[
 ['first_lesson',1,'첫걸음','First Steps','첫 레슨 완료','Complete 1 lesson','sprout'],['five_lessons',1,'성장하는 새싹','Growing Sprout','5개 레슨 완료','Complete 5 lessons','leaf'],['ten_lessons',1,'꾸준한 탐험가','Steady Explorer','10개 레슨 완료','Complete 10 lessons','compass'],['hsk1_master',1,'HSK 1급 정복','HSK 1 Master','15개 레슨 완료','Complete 15 lessons','trophy'],
-['first_challenge',2,'첫 도전','First Challenge','첫 도전 모드 완료','Complete a challenge','game'],['speed_master',2,'스피드 마스터','Speed Master','스피드 퀴즈 만점','Perfect Speed Quiz score','zap'],['perfect_match',2,'완벽한 연결','Perfect Match','단어 매칭 실수 0회','Word Match with zero mistakes','puzzle'],['listening_master',2,'듣기 마스터','Listening Master','듣기 퀴즈 만점','Perfect Listening Quiz score','headphones'],['character_master',2,'한자 마스터','Character Master','한자 조합 만점','Perfect Character Builder score','keyboard'],['game_master',2,'게임 마스터','Game Master','네 가지 게임 최고 성적 달성','Master all four games','trophy'],
+['first_challenge',2,'첫 도전','First Challenge','첫 도전 모드 완료','Complete a challenge','game'],['speed_master',2,'스피드 마스터','Speed Master','스피드 퀴즈 만점','Perfect Speed Quiz score','zap'],['perfect_match',2,'완벽한 연결','Perfect Match','단어 매칭 만점 및 실수 0회','Perfect Word Match with zero mistakes','puzzle'],['listening_master',2,'듣기 마스터','Listening Master','듣기 퀴즈 만점','Perfect Listening Quiz score','headphones'],['character_master',2,'한자 마스터','Character Master','한자 조합 만점','Perfect Character Builder score','keyboard'],['game_master',2,'게임 마스터','Game Master','네 가지 게임 최고 성적 달성','Master all four games','trophy'],
 ...[[3,'작심삼일','Three-Day Streak'],[7,'일주일의 노력','One Week Strong'],[14,'학습 습관','Study Habit'],[30,'한 달의 성장','A Month of Growth']].map(([n,k,e])=>['streak_'+n,3,k,e,n+'일 연속 학습','Study '+n+' days in a row','calendar']),
 ['first_review',4,'다시 도전','Try Again','첫 취약 단어 극복','Master your first review word','book'],['review_10',4,'오답 극복','Overcoming Mistakes','취약 단어 10개 극복','Master 10 review words','target'],['review_50',4,'복습 마스터','Review Master','취약 단어 50개 극복','Master 50 review words','trophy'],
 ['perfect_lesson',5,'완벽한 레슨','Perfect Lesson','첫 별 3개 획득','Earn 3 stars in a lesson','star'],['stars_15',5,'빛나는 여정','Shining Journey','별 15개 획득','Earn 15 stars','star'],['stars_45',5,'별의 정복자','Star Conqueror','별 45개 획득','Earn 45 stars','trophy']];
 const paths={sprout:'<path d="M12 22V10M12 15C4 15 3 9 3 5c6 0 9 3 9 8M12 12c0-6 4-9 9-9 0 6-3 9-9 9"/>',leaf:'<path d="M20 3C5 3 2 10 5 17s17 4 15-14ZM4 21 15 10"/>',compass:'<circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6z"/>',trophy:'<path d="M7 3h10v8a5 5 0 0 1-10 0zM7 5H3v3a4 4 0 0 0 4 4m10-7h4v3a4 4 0 0 1-4 4M12 16v5m-5 0h10"/>',game:'<path d="M7 7h10c3 0 4 3 5 9s-4 4-7 0H9c-3 4-8 6-7 0s2-9 5-9ZM7 10v5m-2-2h4m7-2h.01m3 3h.01"/>',zap:'<path d="m13 2-9 12h7l-1 8 10-12h-7z"/>',puzzle:'<path d="M4 4h6v3a2 2 0 0 0 4 0V4h6v6h-3a2 2 0 0 0 0 4h3v6h-6v-3a2 2 0 0 0-4 0v3H4v-6h3a2 2 0 0 0 0-4H4z"/>',headphones:'<path d="M3 14v-3a9 9 0 0 1 18 0v3M3 13h4v7H5a2 2 0 0 1-2-2zM21 13h-4v7h2a2 2 0 0 0 2-2z"/>',keyboard:'<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h1m3 0h1m3 0h1m3 0h1M6 13h1m3 0h1m3 0h1M8 16h8"/>',calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-13 5 3 3 5-5"/>',book:'<path d="M12 7C9 4 5 4 2 5v15c4-1 7-1 10 1 3-2 6-2 10-1V5c-3-1-7-1-10 2v14"/>',target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',star:'<path d="m12 3 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/>'};
 const colors=[null,['#E2F1EA','#417C69'],['#FFF2D9','#98681B'],['#E6EEF9','#5279B5'],['#E0F2F4','#287681'],['#E9EDFA','#5264A0']];
 function el(t,v,p,c){const n=document.createElement(t);if(v!==null)n.textContent=v;if(c)n.className=c;p.append(n);return n}
-function renderAssessmentProgress(key,box,ok){
-  const max=key==='perfect_lesson'?1:key==='stars_15'?15:45;
-  const wrap=el('div',null,box,'assessment-progress');
-  if(!assessmentProgress&&!ok){el('span',progressFailed?tr('진행률 조회 실패','Unable to load progress'):tr('진행률 불러오는 중…','Loading progress…'),wrap,'muted');return;}
-  const value=ok?max:key==='perfect_lesson'?Number(assessmentProgress.stars.some(s=>s===3)):Math.min(max,assessmentProgress.totalStars);
-  const pct=Math.floor(value/max*100);
-  const label=el('div',null,wrap,'assessment-progress-label');
-  el('span',value+' / '+max,label);el('span',pct+'%',label);
-  const bar=el('div',null,wrap,'assessment-progress-bar');
-  bar.setAttribute('role','progressbar');bar.setAttribute('aria-label',tr('배지 진행률','Badge progress'));bar.setAttribute('aria-valuemin','0');bar.setAttribute('aria-valuemax',String(max));bar.setAttribute('aria-valuenow',String(value));
-  el('span',null,bar).style.width=pct+'%';
+const targets={first_lesson:1,five_lessons:5,ten_lessons:10,hsk1_master:15,first_challenge:1,speed_master:1,perfect_match:1,listening_master:1,character_master:1,game_master:4,streak_3:3,streak_7:7,streak_14:14,streak_30:30,first_review:1,review_10:10,review_50:50,perfect_lesson:1,stars_15:15,stars_45:45};
+async function readAll(table,columns,uid,order){
+  const rows=[];let offset=0;
+  while(true){
+    let q=client.from(table).select(columns).eq('user_id',uid);
+    for(const col of order)q=q.order(col,{ascending:true});
+    const r=await q.range(offset,offset+499);
+    if(r.error)throw r.error;
+    if(!r.data.length)return rows;
+    rows.push(...r.data);offset+=r.data.length;
+  }
 }
-function render(){document.documentElement.lang=lang;$('lang').value=lang;$('title').textContent=tr('나의 업적 및 배지','My achievements and badges');$('back').textContent=tr('← 마이페이지로 돌아가기','← Back to My Page');$('intro').textContent=tr('학습을 통해 새로운 배지를 획득해 보세요.','Earn new badges as you learn.');$('status').textContent=failed?tr('배지 조회 실패. 새로고침해 주세요.','Unable to load badges. Please refresh.'):earned===null?tr('배지를 불러오는 중…','Loading badges…'):'';$('summary').hidden=earned===null;$('filters').replaceChildren();$('badges').replaceChildren();if(earned===null)return;const count=data.filter(d=>d[0]&&earned.has(d[0])).length;$('label').textContent=tr('획득한 배지','Badges earned');$('count').textContent=count+' / 20';$('progress').style.width=count*5+'%';$('percent').textContent=tr('전체 배지의 '+count*5+'%를 획득했어요.', 'You earned '+count*5+'% of all badges.');categories.forEach((c,i)=>{const b=el('button',tr(...c),$('filters'));b.type='button';b.setAttribute('aria-pressed',String(i===filter));b.onclick=()=>{filter=i;render()}});data.filter(d=>!filter||d[1]===filter).forEach(d=>{const [key,cat,k,e,kc,ec,ico]=d,ok=key&&earned.has(key),box=el('article',null,$('badges'),'mp-card achievement'+(ok?'':' locked'));const icon=el('div',null,box,'mp-icon');const [bg,fg]=ok?colors[cat]:['#EEF1EF','#9AA9A2'];icon.style.background=bg;icon.style.color=fg;icon.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+paths[ico]+'</svg>';el('strong',tr(k,e),box);el('p',tr(kc,ec),box,'muted condition');if(cat===5)renderAssessmentProgress(key,box,ok);el('span',ok?tr('획득 완료','Earned'):key?tr('미획득','Not earned'):tr('평가 연동 예정','Assessment coming soon'),box,'badge-state')})}
+function lessonMetrics(rows){
+  const best=new Map();let completed=new Set();
+  for(const r of rows){if(r.course!=='hsk1'||r.lesson_number<1||r.lesson_number>15)continue; if(r.stars>=1)completed.add(r.lesson_number);best.set(r.lesson_number,Math.max(best.get(r.lesson_number)??-Infinity,r.stars));}
+  const stars=[...best.values()],n=completed.size,total=stars.reduce((a,b)=>a+b,0);
+  return {first_lesson:n,five_lessons:n,ten_lessons:n,hsk1_master:n,perfect_lesson:Number(stars.includes(3)),stars_15:total,stars_45:total};
+}
+function sessionMetrics(rows){
+  const types={speed_quiz:'speed_master',word_match:'perfect_match',listening_quiz:'listening_master',character_builder:'character_master'};
+  const result={first_challenge:0,speed_master:0,perfect_match:0,listening_master:0,character_master:0,game_master:0};
+  const days=new Set(),fmt=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'});
+  for(const r of rows){if(!r.completed_at)continue;const parts=Object.fromEntries(fmt.formatToParts(new Date(r.completed_at)).map(x=>[x.type,x.value]));days.add(Date.UTC(+parts.year,+parts.month-1,+parts.day)/86400000);
+    if(r.game_mode!=='challenge'||!Object.hasOwn(types,r.game_type))continue;result.first_challenge=1;
+    if(r.total_questions>0&&r.correct_count===r.total_questions&&(r.game_type!=='word_match'||r.mistake_count===0))result[types[r.game_type]]=1;
+  }
+  result.game_master=Object.values(types).reduce((n,k)=>n+result[k],0);
+  let longest=0,run=0,prev=null;for(const day of [...days].sort((a,b)=>a-b)){run=prev!==null&&day===prev+1?run+1:1;longest=Math.max(longest,run);prev=day;}
+  for(const n of [3,7,14,30])result['streak_'+n]=longest;return result;
+}
+function reviewMetrics(rows){const n=new Set(rows.filter(r=>r.streak>=3&&r.word!==null).map(r=>r.word)).size;return {first_review:n,review_10:n,review_50:n};}
+function renderBadgeProgress(key,box,ok){
+  const max=targets[key],wrap=el('div',null,box,'badge-progress');
+  if(!ok&&!Object.hasOwn(badgeProgress,key)){el('span',progressLoading?tr('진행률 불러오는 중…','Loading progress…'):tr('진행률 조회 실패','Unable to load progress'),wrap,'muted');return;}
+  const value=ok?max:Math.max(0,Math.min(max,badgeProgress[key])),pct=Math.floor(value/max*100);
+  const label=el('div',null,wrap,'badge-progress-label');el('span',value+' / '+max,label);el('span',pct+'%',label);
+  const bar=el('div',null,wrap,'badge-progress-bar');bar.setAttribute('role','progressbar');bar.setAttribute('aria-label',tr('배지 진행률','Badge progress'));bar.setAttribute('aria-valuemin','0');bar.setAttribute('aria-valuemax',String(max));bar.setAttribute('aria-valuenow',String(value));el('span',null,bar).style.width=pct+'%';
+}
+function render(){document.documentElement.lang=lang;$('lang').value=lang;$('title').textContent=tr('나의 업적 및 배지','My achievements and badges');$('back').textContent=tr('← 마이페이지로 돌아가기','← Back to My Page');$('intro').textContent=tr('학습을 통해 새로운 배지를 획득해 보세요.','Earn new badges as you learn.');$('status').textContent=failed?tr('배지 조회 실패. 새로고침해 주세요.','Unable to load badges. Please refresh.'):earned===null?tr('배지를 불러오는 중…','Loading badges…'):'';$('summary').hidden=earned===null;$('filters').replaceChildren();$('badges').replaceChildren();if(earned===null)return;const count=data.filter(d=>d[0]&&earned.has(d[0])).length;$('label').textContent=tr('획득한 배지','Badges earned');$('count').textContent=count+' / 20';$('progress').style.width=count*5+'%';$('percent').textContent=tr('전체 배지의 '+count*5+'%를 획득했어요.', 'You earned '+count*5+'% of all badges.');categories.forEach((c,i)=>{const b=el('button',tr(...c),$('filters'));b.type='button';b.setAttribute('aria-pressed',String(i===filter));b.onclick=()=>{filter=i;render()}});data.filter(d=>!filter||d[1]===filter).forEach(d=>{const [key,cat,k,e,kc,ec,ico]=d,ok=key&&earned.has(key),box=el('article',null,$('badges'),'mp-card achievement'+(ok?'':' locked'));const icon=el('div',null,box,'mp-icon');const [bg,fg]=ok?colors[cat]:['#EEF1EF','#9AA9A2'];icon.style.background=bg;icon.style.color=fg;icon.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+paths[ico]+'</svg>';el('strong',tr(k,e),box);el('p',tr(kc,ec),box,'muted condition');renderBadgeProgress(key,box,ok);el('span',ok?tr('획득 완료','Earned'):key?tr('미획득','Not earned'):tr('평가 연동 예정','Assessment coming soon'),box,'badge-state')})}
 $('lang').onchange=e=>{lang=e.target.value;localStorage.setItem('minssem-language',lang);render()};
-async function init(){render();try{const {data,error}=await window.MinssemAuth.getUser();if(error||!data.user){location.replace('login.html');return}const r=await client.from('student_achievements').select('achievement_key,earned_at').eq('user_id',data.user.id);if(r.error)throw r.error;earned=new Set(r.data.map(x=>x.achievement_key));render();try{assessmentProgress=await window.MinssemProgress.load({userId:data.user.id,course:'hsk1',lessonCount:15})}catch(e){progressFailed=true;console.error(e)}}catch(e){failed=true;console.error(e)}render()}init();
+async function init(){render();try{const {data,error}=await window.MinssemAuth.getUser();if(error||!data.user){location.replace('login.html');return}const r=await client.from('student_achievements').select('achievement_key,earned_at').eq('user_id',data.user.id);if(r.error)throw r.error;earned=new Set(r.data.map(x=>x.achievement_key));render();const uid=data.user.id;const jobs=[
+    readAll('lesson_progress','course,lesson_number,stars',uid,['course','lesson_number']).then(lessonMetrics),
+    readAll('learning_sessions','id,game_type,game_mode,total_questions,correct_count,mistake_count,completed_at',uid,['id']).then(sessionMetrics),
+    readAll('vocabulary_reviews','id,word,streak',uid,['id']).then(reviewMetrics)
+  ];const results=await Promise.allSettled(jobs);for(const r of results){if(r.status==='fulfilled')Object.assign(badgeProgress,r.value);else{progressFailed=true;console.error(r.reason);}}progressLoading=false;}catch(e){failed=true;console.error(e)}render()}init();
