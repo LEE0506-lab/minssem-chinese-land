@@ -850,7 +850,7 @@ h1 {
 .meaning-ko,.flash-ko,.quiz-korean,.quiz-option-ko,.review-ko {display:none!important;}
 </style>
 <link rel="stylesheet" href="language.css?v=2">
-<link rel="stylesheet" href="ui.css?v=2">
+<link rel="stylesheet" href="ui.css?v=3">
 <link rel="stylesheet" href="game-compact.css?v=2">
 <script defer src="icons.js"></script>
 <style>.account-best{display:block;margin-top:10px;padding-top:8px;border-top:1px solid #DDE7E2;color:#417C69;font-size:13px;font-weight:600;line-height:1.5;white-space:normal}</style>
@@ -1379,7 +1379,7 @@ h1 {
 <button id="cbPractice" class="mode-card" type="button"><span class="mode-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M12 7v14M3 4h4a5 5 0 0 1 5 3 5 5 0 0 1 5-3h4v14h-4a5 5 0 0 0-5 3 5 5 0 0 0-5-3H3z"/></svg></span><span class="mode-title" id="cbPracticeTitle"></span><span class="mode-time" id="cbPracticeTime"></span><span class="mode-detail"><span id="cbPracticeDetail"></span><br><span id="cbPracticeDetail2"></span></span></button>
 <button id="cbChallenge" class="mode-card" type="button"><span class="mode-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-12h-7z"/></svg></span><span class="mode-title" id="cbChallengeTitle"></span><span class="mode-time" id="cbChallengeTime"></span><span class="mode-detail"><span id="cbChallengeDetail"></span><br><span id="cbChallengeDetail2"></span></span></button>
 </div></div>
-<div id="cbPlay" class="wm-panel" hidden><div class="wm-meta"><span id="cbCount"></span><span id="cbClock"></span></div><div class="progress-track"><div class="progress-fill" id="cbBar"></div></div><div class="cb-prompt"><p id="cbPrompt"></p><h2 id="cbMeaning"></h2><p id="cbPinyin"></p></div><div id="cbSlots"></div><div id="cbOptions"></div><button id="cbClear" type="button"></button><button id="cbCheck" class="wm-action" type="button"></button><div id="cbFeedback" role="status"></div><button id="cbAnswerAudio" class="wm-action" hidden type="button"></button><button id="cbNext" class="wm-action" hidden type="button"></button></div><div id="cbResult" class="wm-panel" hidden><p id="cbSummary"></p><p id="cbBest"></p><button id="cbRetry" class="wm-action" type="button"></button><button id="cbMenu" class="wm-action" type="button"></button></div></section>
+<div id="cbPlay" class="wm-panel" hidden><div class="wm-meta"><span id="cbCount"></span><span id="cbClock"></span></div><div class="progress-track"><div class="progress-fill" id="cbBar"></div></div><div class="cb-prompt"><p id="cbPrompt"></p><h2 id="cbMeaning"></h2><p id="cbPinyin" class="pinyin"></p></div><div id="cbSlots"></div><div id="cbOptions"></div><button id="cbClear" type="button"></button><button id="cbCheck" class="wm-action" type="button"></button><div id="cbFeedback" role="status"></div><button id="cbAnswerAudio" class="wm-action" hidden type="button"></button><button id="cbNext" class="wm-action" hidden type="button"></button></div><div id="cbResult" class="wm-panel" hidden><p id="cbSummary"></p><p id="cbBest"></p><button id="cbRetry" class="wm-action" type="button"></button><button id="cbMenu" class="wm-action" type="button"></button></div></section>
 </main>
 
 <script src="audio.js"></script>
@@ -3578,7 +3578,7 @@ function renderWord() {
     ).padStart(2, "0")}`;
 
   el("hanzi").textContent = word.hanzi;
-  el("pinyin").textContent = word.pinyin;
+  el("pinyin").textContent = String(word.pinyin||'').normalize('NFC');
   el("meaningEn").textContent = currentMeaning(word);
   el("meaningKo").textContent = "";
 
@@ -3689,7 +3689,7 @@ function renderFlash() {
     ).padStart(2, "0")}`;
 
   el("flashHanzi").textContent = word.hanzi;
-  el("flashPinyin").textContent = word.pinyin;
+  el("flashPinyin").textContent = String(word.pinyin||'').normalize('NFC');
   el("flashEn").textContent = currentMeaning(word);
   el("flashKo").textContent = "";
 
@@ -4434,7 +4434,7 @@ function renderWrongAnswerReview() {
 
     const pinyin = document.createElement("div");
     pinyin.className = "review-pinyin";
-    pinyin.textContent = word.pinyin;
+    pinyin.textContent = String(word.pinyin||'').normalize('NFC');
 
     wordInfo.appendChild(hanzi);
     wordInfo.appendChild(pinyin);
@@ -4612,7 +4612,7 @@ if (localStorage.getItem("minssem-language") === "en") {
 initializeLesson();
 
 </script>
-<script src="game-ui.js?v=2"></script>
+<script src="game-ui.js?v=3"></script>
 <script src="game-records.js"></script>
 <script src="game-review.js"></script>
 <script src="word-match.js?v=2"></script>
