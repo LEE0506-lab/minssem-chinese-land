@@ -245,6 +245,14 @@
 <link rel="stylesheet" href="ui.css?v=20261125b">
 <script defer src="icons.js"></script>
 <link rel="stylesheet" href="bilingual-layout.css?v=2"><style>header .header-right,header .auth-area{gap:12px!important}header .auth-area .auth-link,header .auth-area .auth-name{min-width:0!important;width:auto!important;padding-inline:4px!important;white-space:nowrap} @media(max-width:600px){header .header-right,header .auth-area{gap:8px!important}}</style>
+<style id="course-spacing-update">
+#courses .courses > .course { box-sizing: border-box; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 28px; min-height: 240px; height: auto; gap: 0; }
+#courses .course .course-icon { margin: 0 0 20px; }
+#courses .course h3 { margin: 0 0 16px; }
+#courses .course p:not(.comingSoon) { margin: 0 0 24px; min-height: 0; }
+#courses .course #startLink, #courses .course .comingSoon { margin: auto 0 0; padding: 0; min-height: 0; line-height: 1.6; }
+@media (max-width: 700px) { #courses .courses > .course { min-height: 0; padding: 24px; } }
+</style>
 </head>
 
 <body>
