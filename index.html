@@ -351,7 +351,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="supabase-client.js?v=1"></script>
+<script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script>
 
 <script>
   "use strict";
@@ -553,7 +553,7 @@
       logout.disabled = true;
 
       const { error } =
-        await supabaseClient.auth.signOut();
+        await window.MinssemAuth.signOut();
 
       if (error) {
         console.error("Logout failed:", error);
@@ -575,7 +575,7 @@
   async function loadAuthState() {
     try {
       const { data, error } =
-        await supabaseClient.auth.getUser();
+        await window.MinssemAuth.getUser();
 
       if (error || !data.user) {
         currentProfile = null;
@@ -584,11 +584,7 @@
       }
 
       const { data: profile, error: profileError } =
-        await supabaseClient
-          .from("profiles")
-          .select("display_name, role")
-          .eq("id", data.user.id)
-          .single();
+        await window.MinssemAuth.getProfile(data.user.id);
 
       if (
         profileError ||

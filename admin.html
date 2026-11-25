@@ -310,7 +310,7 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="supabase-client.js?v=1"></script>
+<script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script>
 
 
 <script>
@@ -572,7 +572,7 @@ document.getElementById("logout")
     const button = document.getElementById("logout");
     button.disabled = true;
 
-    const { error } = await client.auth.signOut();
+    const { error } = await window.MinssemAuth.signOut();
 
     if (error) {
       button.disabled = false;
@@ -616,7 +616,7 @@ document.getElementById("inviteForm")
 
     try {
       const { data: sessionData, error: sessionError } =
-        await client.auth.getSession();
+        await window.MinssemAuth.getSession();
 
       const accessToken =
         sessionData?.session?.access_token;
@@ -696,7 +696,7 @@ async function init() {
   status.textContent = t("loading");
 
   try {
-    const { data, error } = await client.auth.getUser();
+    const { data, error } = await window.MinssemAuth.getUser();
 
     if (error || !data.user) {
       status.textContent = t("denied");
@@ -704,11 +704,7 @@ async function init() {
     }
 
     const { data: profile, error: profileError } =
-      await client
-        .from("profiles")
-        .select("role")
-        .eq("id", data.user.id)
-        .single();
+      await window.MinssemAuth.getProfile(data.user.id);
 
     if (profileError || profile?.role !== "admin") {
       status.textContent = t("denied");

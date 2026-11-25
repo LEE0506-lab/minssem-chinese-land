@@ -685,7 +685,7 @@ h1 {
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="supabase-client.js?v=1"></script>
+<script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script>
 <script>
 "use strict";
 
@@ -752,10 +752,9 @@ async function refreshAdminAccess() {
   let admin = false;
   try {
     if (roleClient) {
-      const {data, error} = await roleClient.auth.getUser();
+      const {data, error} = await window.MinssemAuth.getUser();
       if (!error && data?.user) {
-        const result = await roleClient.from("profiles").select("role")
-          .eq("id", data.user.id).single();
+        const result = await window.MinssemAuth.getProfile(data.user.id);
         admin = !result.error && result.data?.role === "admin";
       }
     }

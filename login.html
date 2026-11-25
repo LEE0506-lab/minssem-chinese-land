@@ -201,7 +201,7 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="supabase-client.js?v=1"></script>
+<script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script>
 
 <script>
   const SUPABASE_URL = window.MinssemBackend.url;
@@ -315,11 +315,7 @@
       const user = data.user;
 
 const { data: profile, error: profileError } =
-  await client
-    .from("profiles")
-    .select("id, display_name, role")
-    .eq("id", user.id)
-    .maybeSingle();
+  await window.MinssemAuth.getProfile(user.id);
 
 if (profileError) {
   console.error("Profile query error:", profileError);

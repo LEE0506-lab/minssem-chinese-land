@@ -115,7 +115,7 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="supabase-client.js?v=1"></script>
+<script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script>
 <script>
 "use strict";
 
@@ -224,7 +224,7 @@ async function init() {
       if (error) throw error;
     }
 
-    const { data, error } = await client.auth.getUser();
+    const { data, error } = await window.MinssemAuth.getUser();
 
     if (error || !data.user) {
       document.getElementById("checking").textContent = "";
@@ -280,7 +280,7 @@ document.getElementById("passwordForm").addEventListener("submit", async e => {
 
   document.getElementById("passwordForm").classList.add("hidden");
   showMessage("success", "success");
-  await client.auth.signOut();
+  await window.MinssemAuth.signOut();
 });
 
 translate();
