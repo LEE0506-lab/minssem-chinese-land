@@ -567,10 +567,9 @@ h1 {
   * { transition: none !important; }
 }
 </style>
-<link rel="stylesheet" href="language.css?v=20261125b">
-<link rel="stylesheet" href="ui.css?v=20261125b">
+<link rel="stylesheet" href="language.css">
+<link rel="stylesheet" href="ui.css">
 <script defer src="icons.js"></script>
-<link rel="stylesheet" href="bilingual-layout.css?v=2">
 </head>
 
 <body>
@@ -627,7 +626,9 @@ h1 {
     <div class="progress-track">
       <div class="progress-fill" id="totalProgressFill"></div>
     </div>
-    <div class="progress-caption">레슨마다 최대 3개의 별을 획득할 수 있어요.</div>
+    <div class="progress-caption">
+      레슨마다 최대 3개의 별을 획득할 수 있어요.
+    </div>
   </div>
 
   <h2 class="section-title">학습 구역</h2>
@@ -687,7 +688,7 @@ h1 {
 <script>
 "use strict";
 
-const STORAGE_KEY = "minssem-hsk1-progress";
+
 const TOTAL_LESSONS = 15;
 const MAX_STARS = 3;
 
@@ -736,22 +737,8 @@ function el(id) {
 }
 
 function readProgress() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return Array(TOTAL_LESSONS).fill(0);
-
-    const parsed = JSON.parse(raw);
-    if (!parsed || !Array.isArray(parsed.stars)) {
-      return Array(TOTAL_LESSONS).fill(0);
-    }
-
-    return Array.from({length: TOTAL_LESSONS}, (_, i) => {
-      const value = Number(parsed.stars[i]) || 0;
-      return Math.max(0, Math.min(3, Math.floor(value)));
-    });
-  } catch (error) {
-    return Array(TOTAL_LESSONS).fill(0);
-  }
+  // Assessment is not released; legacy game stars are not assessment results.
+  return Array(TOTAL_LESSONS).fill(0);
 }
 
 let stars = readProgress();
@@ -1188,6 +1175,6 @@ roleClient?.auth.onAuthStateChange((event) => {
   }
 });
 </script>
-<script src="i18n.js?v=20261125c"></script>
+<script src="i18n.js"></script>
 </body>
 </html>
