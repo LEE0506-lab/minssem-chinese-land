@@ -4675,7 +4675,7 @@ el("retryWrongBtn").addEventListener(
 async function initializeLesson() {
   let admin = false;
   try { const {data} = await supabaseClient.auth.getUser(); if(data?.user){const r=await supabaseClient.from("profiles").select("role").eq("id",data.user.id).maybeSingle(); admin=r.data?.role==="admin";} } catch(e) {}
-  if (lessonNumber===1 && admin) { const b=el("chooseAssessmentBtn"); b.disabled=false; b.querySelector(".stage-choice-description").textContent="평가 시스템 테스트"; b.querySelector(".stage-choice-description").dataset.menuEn="Assessment preview"; b.querySelector(".stage-choice-arrow").textContent="›"; b.onclick=()=>location.href="assessment.html?course=hsk1&type=lesson&lesson=1"; }
+  if (lessonNumber===1 && admin) { const b=el("chooseAssessmentBtn"); b.disabled=false; b.classList.remove("stage-choice-pending"); b.style.cursor="pointer"; b.querySelector(".stage-choice-description").textContent="단원 학습 성취도 평가"; b.querySelector(".stage-choice-description").dataset.menuEn="Lesson learning assessment"; b.querySelector(".stage-choice-arrow").textContent="›"; b.onclick=()=>location.href="assessment.html?course=hsk1&type=lesson&lesson=1"; }
   if (!lesson || !words.length) {
     showUnavailableLesson();
     return;
