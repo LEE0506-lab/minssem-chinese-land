@@ -193,7 +193,7 @@
 <link rel="stylesheet" href="ui.css?v=20261125b">
 <script defer src="icons.js"></script>
 <link rel="stylesheet" href="bilingual-layout.css?v=2">
-</head>
+<style>.admin-filters{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 20px}.admin-filters input{flex:1;min-width:160px}.admin-filters select{min-height:44px;border:1px solid #DDE7E2;border-radius:10px;padding:8px;background:white;color:#243B34}.activity-row{display:grid;grid-template-columns:85px 1fr 48px;align-items:center;gap:12px;margin:10px 0}.activity-row .progress-track{margin:0}</style></head>
 
 <body>
 <header>
@@ -282,16 +282,17 @@
     </div>
 
     
+    <section class="card"><h2 id="activityHeading"></h2><div id="activityChart"></div></section>
     <section class="card">
       <h2 id="listHeading">학생 목록</h2>
 
-      <div class="table-wrap">
+      <div class="admin-filters"><input id="studentSearch" type="search"><select id="studentSort"></select></div><div class="table-wrap">
         <table>
           <thead>
             <tr>
               <th id="nameHeading">이름</th>
-              <th id="roleHeading">역할</th><th id="studentProgressHeading">학습 진도</th>
-              <th id="manageHeading">관리</th>
+              <th id="roleHeading" hidden>역할</th><th id="studentProgressHeading">학습 진도</th>
+              <th id="accuracyHeading"></th><th id="recentHeading"></th><th id="manageHeading">관리</th>
             </tr>
           </thead>
           <tbody id="students"></tbody>
@@ -456,13 +457,18 @@ function translate() {
 }
 
 let overviewData = null;
+const dayKey=d=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(d);
+let activityDays=new Map();
+function renderActivity(){const root=document.getElementById('activityChart');root.replaceChildren();document.getElementById('activityHeading').textContent=bi('최근 7일 학습 활동','Learning activity · Last 7 days');if(!overviewData){root.textContent=bi('기록 조회 중 또는 조회 불가','Loading or unavailable');return;}const days=Array.from({length:7},(_,i)=>dayKey(new Date(Date.now()-(6-i)*86400000)));const max=Math.max(1,...days.map(d=>activityDays.get(d)||0));for(const d of days){const r=document.createElement('div');r.className='activity-row';const l=document.createElement('span');l.textContent=d.slice(5);const n=document.createElement('strong');n.textContent=activityDays.get(d)||0;r.append(l,bar((activityDays.get(d)||0)/max*100),n);root.append(r);}const note=document.createElement('p');note.className='muted';note.textContent=bi('완료된 학습 세션 · 한국 시간','Completed sessions · Korea time');root.append(note);}
+
 const bi = (ko,en) => lang === 'en' ? en : ko;
 function bar(n) { const a=document.createElement('div');a.className='progress-track';const b=document.createElement('div');b.className='progress-fill';b.style.width=Math.max(0,Math.min(100,n))+'%';a.append(b);return a; }
 function metric(root,label,value){const a=document.createElement('div');a.className='summary-line';const l=document.createElement('span');l.textContent=label;const v=document.createElement('strong');v.textContent=value;a.append(l,v);root.append(a);}
-function renderOverview(){const a=document.getElementById('overview'),b=document.getElementById('participation'),note=document.getElementById('progressNote');a.replaceChildren();b.replaceChildren();document.getElementById('progressHeading').textContent=bi('전체 학습 현황','Overall Learning');document.getElementById('studentProgressHeading').textContent=bi('학습 진도','Progress');if(!overviewData){note.textContent=bi('학습 기록을 불러올 수 없거나 조회 중입니다.','Learning records unavailable or loading.');return;}const vals=[...overviewData.values()],n=vals.length,done=vals.reduce((s,x)=>s+x.done,0),q=vals.reduce((s,x)=>s+x.questions,0),c=vals.reduce((s,x)=>s+x.correct,0),pct=n?Math.round(done/(15*n)*100):0;metric(b,bi('학습 참여 학생','Active learners'),vals.filter(x=>x.done||x.quizzes).length);metric(b,bi('미학습 학생','Not started'),vals.filter(x=>!x.done&&!x.quizzes).length);metric(a,bi('평균 학습 진도','Average progress'),n?pct+'%':'—');a.append(bar(pct));metric(a,bi('전체 정답률','Overall accuracy'),q?Math.round(c/q*100)+'%':'—');metric(a,bi('누적 퀴즈','Completed quizzes'),vals.reduce((s,x)=>s+x.quizzes,0));metric(a,bi('획득한 별','Stars earned'),vals.reduce((s,x)=>s+x.stars,0));note.textContent=bi('HSK 1급 기준','Based on HSK 1');}
-async function loadOverview(){overviewData=null;try{const m=new Map(studentRows.map(x=>[x.id,{done:0,stars:0,quizzes:0,questions:0,correct:0}]));for(const table of ['lesson_progress','learning_sessions']){for(let i=0;;i+=500){const {data,error}=await client.from(table).select(table==='lesson_progress'?'user_id,lesson_number,stars':'user_id,id,completed_at,total_questions,correct_count').eq('course','hsk1').order('user_id').order(table==='lesson_progress'?'lesson_number':'id').range(i,i+499);if(error)throw error;for(const r of data){const x=m.get(r.user_id);if(!x)continue;if(table==='lesson_progress'){if(r.stars>0)x.done++;x.stars+=Number(r.stars)||0;}else if(r.completed_at){x.quizzes++;x.questions+=Number(r.total_questions)||0;x.correct+=Number(r.correct_count)||0;}}if(data.length<500)break;}}overviewData=m;}catch(e){console.error('Overview error',e);}renderStudents();}
+function renderOverview(){const a=document.getElementById('overview'),b=document.getElementById('participation'),note=document.getElementById('progressNote');a.replaceChildren();b.replaceChildren();document.getElementById('progressHeading').textContent=bi('전체 학습 현황','Overall Learning');document.getElementById('studentProgressHeading').textContent=bi('학습 진도','Progress');if(!overviewData){note.textContent=bi('학습 기록을 불러올 수 없거나 조회 중입니다.','Learning records unavailable or loading.');return;}const vals=[...overviewData.values()],n=vals.length,done=vals.reduce((s,x)=>s+x.done,0),q=vals.reduce((s,x)=>s+x.questions,0),c=vals.reduce((s,x)=>s+x.correct,0),pct=n?Math.round(done/(15*n)*100):0;metric(b,bi('오늘 학습한 학생','Learned today'),vals.filter(x=>x.last&&dayKey(new Date(x.last))===dayKey(new Date())).length);metric(b,bi('학습 참여 학생','Active learners'),vals.filter(x=>x.done||x.quizzes).length);metric(b,bi('미학습 학생','Not started'),vals.filter(x=>!x.done&&!x.quizzes).length);metric(a,bi('평균 학습 진도','Average progress'),n?pct+'%':'—');a.append(bar(pct));metric(a,bi('전체 정답률','Overall accuracy'),q?Math.round(c/q*100)+'%':'—');metric(a,bi('누적 퀴즈','Completed quizzes'),vals.reduce((s,x)=>s+x.quizzes,0));metric(a,bi('획득한 별','Stars earned'),vals.reduce((s,x)=>s+x.stars,0));note.textContent=bi('HSK 1급 기준','Based on HSK 1');}
+async function loadOverview(){overviewData=null;activityDays=new Map();try{const m=new Map(studentRows.map(x=>[x.id,{done:0,stars:0,quizzes:0,questions:0,correct:0,last:null}]));for(const table of ['lesson_progress','learning_sessions']){for(let i=0;;i+=500){const {data,error}=await client.from(table).select(table==='lesson_progress'?'user_id,lesson_number,stars':'user_id,id,completed_at,total_questions,correct_count').eq('course','hsk1').order('user_id').order(table==='lesson_progress'?'lesson_number':'id').range(i,i+499);if(error)throw error;for(const r of data){const x=m.get(r.user_id);if(!x)continue;if(table==='lesson_progress'){if(r.stars>0)x.done++;x.stars+=Number(r.stars)||0;}else if(r.completed_at){x.quizzes++;if(!x.last||r.completed_at>x.last)x.last=r.completed_at;const day=dayKey(new Date(r.completed_at));activityDays.set(day,(activityDays.get(day)||0)+1);x.questions+=Number(r.total_questions)||0;x.correct+=Number(r.correct_count)||0;}}if(data.length<500)break;}}overviewData=m;}catch(e){console.error('Overview error',e);}renderStudents();}
 function renderStudents() {
-  renderOverview();
+  renderOverview();renderActivity();
+  const search=document.getElementById('studentSearch'),sort=document.getElementById('studentSort');search.placeholder=bi('학생 이름 검색','Search student name');search.setAttribute('aria-label',search.placeholder);sort.setAttribute('aria-label',bi('정렬','Sort'));const selected=sort.value||'name';sort.replaceChildren();for(const [v,k,e] of [['name','이름순','Name'],['progress','학습 진도순','Progress'],['accuracy','정답률순','Accuracy'],['recent','최근 학습순','Recent activity']]){const o=document.createElement('option');o.value=v;o.textContent=bi(k,e);sort.append(o);}sort.value=selected;document.getElementById('accuracyHeading').textContent=bi('정답률','Accuracy');document.getElementById('recentHeading').textContent=bi('최근 학습','Last activity');
 
   const tbody = document.getElementById("students");
   tbody.replaceChildren();
@@ -470,7 +476,9 @@ function renderStudents() {
   document.getElementById("studentCount").textContent =
     listError ? "—" : String(studentRows.length);
 
-  for (const student of studentRows) {
+  const value=x=>{const a=overviewData?.get(x.id);return selected==='progress'?a?.done??-1:selected==='accuracy'?(a?.questions?a.correct/a.questions:-1):selected==='recent'?(a?.last?Date.parse(a.last):-1):0;};
+  const filtered=studentRows.filter(x=>(x.display_name||'').toLowerCase().includes(search.value.trim().toLowerCase())).sort((a,b)=>value(b)-value(a)||(a.display_name||'').localeCompare(b.display_name||'',lang));
+  for (const student of filtered) {
     const row = document.createElement("tr");
     const name = document.createElement("td");
     const role = document.createElement("td");
@@ -491,7 +499,7 @@ function renderStudents() {
     detail.className = "detail-link";
     actions.appendChild(detail);
     const progress=document.createElement("td");const stats=overviewData?.get(student.id);progress.textContent=stats?stats.done+" / 15":"—";if(stats)progress.append(bar(stats.done/15*100));
-    row.append(name, role, progress, manage);
+    const accuracy=document.createElement('td'),recent=document.createElement('td');accuracy.textContent=stats?.questions?Math.round(stats.correct/stats.questions*100)+'%':'—';recent.textContent=stats?.last?dayKey(new Date(stats.last)):'—';row.append(name,progress,accuracy,recent,manage);
     tbody.appendChild(row);
   }
 
@@ -500,9 +508,10 @@ function renderStudents() {
       ? t("listError")
       : studentRows.length === 0
         ? t("empty")
-        : "";
+        : filtered.length===0?bi("검색 결과가 없습니다.","No matching students."): "";
 }
 
+document.getElementById('studentSearch').addEventListener('input',renderStudents);document.getElementById('studentSort').addEventListener('change',renderStudents);
 async function editStudent(student) {
   if (editBusy) return;
   const value = window.prompt(t("editPrompt"), student.display_name || "");
