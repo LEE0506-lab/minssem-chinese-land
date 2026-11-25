@@ -13,6 +13,8 @@
   "학습 구역": "Learning Areas",
   "구역 학습 진행률": "Area Progress",
   "별 1개 이상을 획득하면 해당 레슨이 완료됩니다.": "Earn at least one star to complete a lesson.",
+  "레슨마다 최대 3의 별을 획득할 수 있어요.": "Earn up to three stars per lesson.",
+  "단원 학습 성취도 평가": "Assess your understanding of the lesson",
   "레슨마다 최대 3개의 별을 획득할 수 있어요.": "Earn up to three stars per lesson.",
   "새싹의 시작": "The Beginning",
   "성장의 여정": "Journey of Growth",
@@ -152,6 +154,8 @@
   function translateText(text) {
     if (language !== "en") return text;
     let out = text;
+    const exact = text.trim().replace(/\s+/g, " ");
+    if (DICT[exact]) return text.replace(text.trim(), DICT[exact]);
     out = out.replace(/제(\d+)과 단어 (\d+)개를 모두 살펴봤어요\./g, 'You studied all $2 words in Lesson $1.')
       .replace(/제(\d+)과에서 별을 1개 이상 획득하면 열려요\./g, 'Earn at least one star in Lesson $1 to unlock.')
       .replace(/이 구역에서 (\d+)개 레슨을 더 완료하면 다음 구역으로 나아갈 수 있어요\./g, 'Complete $1 more lessons in this area to unlock the next area.')

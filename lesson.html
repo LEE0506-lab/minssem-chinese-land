@@ -854,7 +854,7 @@ h1 {
 <link rel="stylesheet" href="game-compact.css?v=20261125b">
 <script defer src="icons.js"></script>
 <style>.account-best{display:block;margin-top:10px;padding-top:8px;border-top:1px solid #DDE7E2;color:#417C69;font-size:13px;font-weight:600;line-height:1.5;white-space:normal}</style>
-<link rel="stylesheet" href="bilingual-layout.css?v=1">
+<link rel="stylesheet" href="bilingual-layout.css?v=2">
 </head>
 
 <body>
@@ -4566,7 +4566,7 @@ el("retryWrongBtn").addEventListener(
 async function initializeLesson() {
   let admin = false;
   try { const {data} = await supabaseClient.auth.getUser(); if(data?.user){const r=await supabaseClient.from("profiles").select("role").eq("id",data.user.id).maybeSingle(); admin=r.data?.role==="admin";} } catch(e) {}
-  if (lessonNumber===1 && admin) { const b=el("chooseAssessmentBtn"); b.disabled=false; b.classList.remove("stage-choice-pending"); b.style.cursor="pointer"; b.querySelector(".stage-choice-description").textContent="단원 학습 성취도 평가"; b.querySelector(".stage-choice-description").dataset.menuEn="Lesson learning assessment"; b.querySelector(".stage-choice-arrow").textContent="›"; b.onclick=()=>location.href="assessment.html?course=hsk1&type=lesson&lesson=1"; }
+  if (lessonNumber===1 && admin) { const b=el("chooseAssessmentBtn"); b.disabled=false; b.classList.remove("stage-choice-pending"); b.style.cursor="pointer"; b.querySelector(".stage-choice-description").textContent=localStorage.getItem("minssem-language")==="en"?"Assess your understanding of the lesson":"단원 학습 성취도 평가"; b.querySelector(".stage-choice-description").dataset.menuEn="Assess your understanding of the lesson"; b.querySelector(".stage-choice-arrow").textContent="›"; b.onclick=()=>location.href="assessment.html?course=hsk1&type=lesson&lesson=1"; }
   if (!lesson || !words.length) {
     showUnavailableLesson();
     return;
@@ -4619,6 +4619,6 @@ initializeLesson();
 <script src="word-match.js?v=2"></script>
 <script src="listening-quiz.js?v=2"></script>
 <script src="character-builder.js?v=2"></script>
-<script src="i18n.js?v=20261125b"></script>
+<script src="i18n.js?v=20261125c"></script>
 </body>
 </html>
