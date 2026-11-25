@@ -217,7 +217,7 @@
       select.id = 'minssemLanguage'; select.setAttribute('aria-label','Language / 언어');
       select.innerHTML = '<option value="ko">한국어</option><option value="en">English</option>';
       select.value = language; select.addEventListener('change', e => setLanguage(e.target.value));
-      select.style.cssText = 'margin-left:auto;margin-right:14px;border:1px solid #dce5df;border-radius:9px;padding:8px;background:white;color:#263b36;font:600 12px inherit;max-width:110px';
+      select.style.cssText = 'margin-left:auto;margin-right:0';
       bar.insertBefore(select,bar.lastElementChild);
     }
     apply();
