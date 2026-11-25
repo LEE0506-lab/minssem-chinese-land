@@ -1,5 +1,5 @@
 'use strict';
-const client=window.supabase.createClient('https://vonuqedsenhnclxqpwnc.supabase.co','sb_publishable_dY0_xIWQN2iK6DJIAJ31zg_xdMsDhnl');
+const client=window.MinssemBackend.client;
 const $=id=>document.getElementById(id);let lang=localStorage.getItem('minssem-language')==='en'?'en':'ko',filter=0,earned=null,failed=false;
 const tr=(a,b)=>lang==='ko'?a:b;
 const categories=[['전체','All'],['학습','Learning'],['게임','Games'],['꾸준함','Consistency'],['복습','Review'],['평가','Assessment']];

@@ -351,6 +351,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-client.js?v=1"></script>
 
 <script>
   "use strict";
@@ -359,16 +360,11 @@
   // 1. Supabase 설정
   // ==========================================
 
-  const SUPABASE_URL =
-    "https://vonuqedsenhnclxqpwnc.supabase.co";
+  const SUPABASE_URL = window.MinssemBackend.url;
 
-  const SUPABASE_KEY =
-    "sb_publishable_dY0_xIWQN2iK6DJIAJ31zg_xdMsDhnl";
+  const SUPABASE_KEY = window.MinssemBackend.key;
 
-  const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-  );
+  const supabaseClient = window.MinssemBackend.client;
 
   // ==========================================
   // 2. 언어 설정

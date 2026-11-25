@@ -115,13 +115,11 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-client.js?v=1"></script>
 <script>
 "use strict";
 
-const client = window.supabase.createClient(
-  "https://vonuqedsenhnclxqpwnc.supabase.co",
-  "sb_publishable_dY0_xIWQN2iK6DJIAJ31zg_xdMsDhnl"
-);
+const client = window.MinssemBackend.client;
 
 const words = {
   ko: {
