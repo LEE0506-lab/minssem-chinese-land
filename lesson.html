@@ -933,8 +933,8 @@ h1 {
 <button class="stage-choice" id="chooseListeningBtn" type="button"><span class="stage-choice-icon ui-tone" style="--icon-bg:#E0F2F4;--icon-fg:#388A96"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M3 14v-3a9 9 0 0 1 18 0v3"/><rect x="3" y="13" width="5" height="8" rx="2"/><rect x="16" y="13" width="5" height="8" rx="2"/></svg></span><span class="stage-choice-copy"><span class="stage-choice-title" data-i18n-ignore data-menu-en="Listening Quiz">듣기 퀴즈</span><span class="stage-choice-description" data-i18n-ignore data-menu-en="Listen and choose the meaning">발음을 듣고 뜻 선택하기</span></span><span class="stage-choice-arrow">›</span></button>
 <button class="stage-choice" id="chooseBuilderBtn" type="button"><span class="stage-choice-icon ui-tone" style="--icon-bg:#E9EDFA;--icon-fg:#687BB8"><svg class="ui-icon" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 13h.01M10 13h.01M14 13h.01M18 13h.01M8 16h8"/></svg></span><span class="stage-choice-copy"><span class="stage-choice-title" data-i18n-ignore data-menu-en="Character Builder">한자 조합</span><span class="stage-choice-description" data-i18n-ignore data-menu-en="Build words with Chinese characters">한자를 올바른 순서로 조합하기</span></span><span class="stage-choice-arrow">›</span></button>
       <h3 class="stage-group-heading" data-i18n-ignore data-menu-en="Assessment">평가하기</h3>
-      <button class="stage-choice stage-choice-pending" type="button" disabled>
-        <span class="stage-choice-icon" aria-hidden="true">📋</span>
+      <button class="stage-choice stage-choice-pending" id="chooseAssessmentBtn" type="button" disabled>
+        <span class="stage-choice-icon ui-tone" style="--icon-bg:#E5ECE9;--icon-fg:#4B6B60"><svg class="ui-icon" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 13l2 2 4-4"/></svg></span>
         <span class="stage-choice-copy">
           <span class="stage-choice-title" data-i18n-ignore data-menu-en="Lesson Test">단원 테스트</span>
           <span class="stage-choice-description" data-i18n-ignore data-menu-en="Textbook-based test · Coming soon">교재 기반 테스트 · 준비 중</span>
@@ -4672,7 +4672,10 @@ el("retryWrongBtn").addEventListener(
    PAGE INITIALIZATION
 ====================================== */
 
-function initializeLesson() {
+async function initializeLesson() {
+  let admin = false;
+  try { const {data} = await supabaseClient.auth.getUser(); if(data?.user){const r=await supabaseClient.from("profiles").select("role").eq("id",data.user.id).maybeSingle(); admin=r.data?.role==="admin";} } catch(e) {}
+  if (lessonNumber===1 && admin) { const b=el("chooseAssessmentBtn"); b.disabled=false; b.querySelector(".stage-choice-description").textContent="평가 시스템 테스트"; b.querySelector(".stage-choice-description").dataset.menuEn="Assessment preview"; b.querySelector(".stage-choice-arrow").textContent="›"; b.onclick=()=>location.href="assessment.html?course=hsk1&type=lesson&lesson=1"; }
   if (!lesson || !words.length) {
     showUnavailableLesson();
     return;
@@ -4681,7 +4684,7 @@ function initializeLesson() {
   setLessonLabels();
 
   // 학습 지도의 잠금 상태 확인
-  if (lessonNumber > 1) {
+  if (lessonNumber > 1 && !admin) {
     const progress = readProgress();
 
     const previousLessonStars =

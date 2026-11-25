@@ -1,0 +1,280 @@
+[
+  {
+    "id": "L01-01",
+    "type": "choice",
+    "ko": "선생님에게 정중하게 인사하세요.",
+    "en": "Greet your teacher politely.",
+    "answer": "您好！",
+    "options": [
+      "您好！",
+      "谢谢！",
+      "再见！"
+    ]
+  },
+  {
+    "id": "L01-02",
+    "type": "choice",
+    "ko": "헤어질 때 하는 말은?",
+    "en": "What do you say when leaving?",
+    "answer": "再见！",
+    "options": [
+      "你好！",
+      "再见！",
+      "不客气！"
+    ]
+  },
+  {
+    "id": "L01-03",
+    "type": "choice",
+    "ko": "감사를 표현하세요.",
+    "en": "Express thanks.",
+    "answer": "谢谢！",
+    "options": [
+      "谢谢！",
+      "再见！",
+      "你好！"
+    ]
+  },
+  {
+    "id": "L01-04",
+    "type": "blank",
+    "ko": "빈칸을 채우세요.",
+    "en": "Fill in the blank.",
+    "prompt": "你____！",
+    "answer": "好",
+    "options": [
+      "好",
+      "们",
+      "谢"
+    ]
+  },
+  {
+    "id": "L01-05",
+    "type": "blank",
+    "ko": "빈칸을 채우세요.",
+    "en": "Fill in the blank.",
+    "prompt": "不____气！",
+    "answer": "客",
+    "options": [
+      "客",
+      "好",
+      "见"
+    ]
+  },
+  {
+    "id": "L01-06",
+    "type": "blank",
+    "ko": "빈칸을 채우세요.",
+    "en": "Fill in the blank.",
+    "prompt": "____见！",
+    "answer": "再",
+    "options": [
+      "再",
+      "你",
+      "不"
+    ]
+  },
+  {
+    "id": "L01-07",
+    "type": "order",
+    "ko": "올바른 순서로 배열하세요.",
+    "en": "Put the words in order.",
+    "tokens": [
+      "老师",
+      "，",
+      "您好",
+      "！"
+    ],
+    "answer": [
+      "老师",
+      "，",
+      "您好",
+      "！"
+    ]
+  },
+  {
+    "id": "L01-08",
+    "type": "order",
+    "ko": "올바른 순서로 배열하세요.",
+    "en": "Put the words in order.",
+    "tokens": [
+      "大家",
+      "好",
+      "！"
+    ],
+    "answer": [
+      "大家",
+      "好",
+      "！"
+    ]
+  },
+  {
+    "id": "L01-09",
+    "type": "order",
+    "ko": "올바른 순서로 배열하세요.",
+    "en": "Put the words in order.",
+    "tokens": [
+      "同学",
+      "们",
+      "，",
+      "再见",
+      "！"
+    ],
+    "answer": [
+      "同学",
+      "们",
+      "，",
+      "再见",
+      "！"
+    ]
+  },
+  {
+    "id": "L01-10",
+    "type": "match",
+    "ko": "인사와 응답을 연결하세요.",
+    "en": "Match each greeting to its response.",
+    "pairs": [
+      [
+        "谢谢！",
+        "不客气！"
+      ],
+      [
+        "你好！",
+        "你好！"
+      ],
+      [
+        "再见！",
+        "再见！"
+      ]
+    ],
+    "answer": [
+      "不客气！",
+      "你好！",
+      "再见！"
+    ]
+  },
+  {
+    "id": "L01-11",
+    "type": "match",
+    "ko": "인사와 응답을 연결하세요.",
+    "en": "Match each greeting to its response.",
+    "pairs": [
+      [
+        "老师，您好！",
+        "你好！"
+      ],
+      [
+        "谢谢老师！",
+        "不客气！"
+      ]
+    ],
+    "answer": [
+      "你好！",
+      "不客气！"
+    ]
+  },
+  {
+    "id": "L01-12",
+    "type": "listening",
+    "ko": "음성을 듣고 같은 문장을 고르세요.",
+    "en": "Listen and choose the matching sentence.",
+    "audio": "大家好！",
+    "answer": "大家好！",
+    "options": [
+      "大家好！",
+      "老师好！",
+      "你好！"
+    ]
+  },
+  {
+    "id": "L01-13",
+    "type": "listening",
+    "ko": "음성을 듣고 같은 문장을 고르세요.",
+    "en": "Listen and choose the matching sentence.",
+    "audio": "不客气！",
+    "answer": "不客气！",
+    "options": [
+      "谢谢！",
+      "不客气！",
+      "再见！"
+    ]
+  },
+  {
+    "id": "L01-14",
+    "type": "listening",
+    "ko": "음성을 듣고 같은 문장을 고르세요.",
+    "en": "Listen and choose the matching sentence.",
+    "audio": "老师，您好！",
+    "answer": "老师，您好！",
+    "options": [
+      "老师，您好！",
+      "同学，你好！",
+      "大家好！"
+    ]
+  },
+  {
+    "id": "L01-15",
+    "type": "picture",
+    "ko": "표현과 가장 가까운 그림을 고르세요.",
+    "en": "Choose the picture that best matches the expression.",
+    "prompt": "大家",
+    "answer": "group",
+    "options": [
+      "wave",
+      "book",
+      "group"
+    ]
+  },
+  {
+    "id": "L01-16",
+    "type": "picture",
+    "ko": "표현과 가장 가까운 그림을 고르세요.",
+    "en": "Choose the picture that best matches the expression.",
+    "prompt": "你好！",
+    "answer": "wave",
+    "options": [
+      "wave",
+      "book",
+      "group"
+    ]
+  },
+  {
+    "id": "L01-17",
+    "type": "reading",
+    "ko": "B가 한 말은?",
+    "en": "What did B say?",
+    "passage": "A：谢谢！\nB：不客气！",
+    "answer": "不客气！",
+    "options": [
+      "不客气！",
+      "再见！",
+      "你好！"
+    ]
+  },
+  {
+    "id": "L01-18",
+    "type": "reading",
+    "ko": "학생이 누구에게 인사하나요?",
+    "en": "Who is the student greeting?",
+    "passage": "学生：老师，您好！\n老师：你好！",
+    "answer": "老师",
+    "options": [
+      "老师",
+      "同学",
+      "学生"
+    ]
+  },
+  {
+    "id": "L01-19",
+    "type": "reading",
+    "ko": "A가 한 말은?",
+    "en": "What did A say?",
+    "passage": "A：大家好！\nB：你好！",
+    "answer": "大家好！",
+    "options": [
+      "大家好！",
+      "谢谢！",
+      "再见！"
+    ]
+  }
+]
