@@ -685,7 +685,7 @@ h1 {
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script>
+<script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script><script src="progress.js?v=1"></script>
 <script>
 "use strict";
 
@@ -737,71 +737,24 @@ function el(id) {
   return document.getElementById(id);
 }
 
-function readProgress() {
-  // Assessment is not released; legacy game stars are not assessment results.
-  return Array(TOTAL_LESSONS).fill(0);
+let progress=null, stars=[], currentArea=null, isAdmin=false, roleCheckVersion=0;
+const roleClient=window.MinssemBackend.client;
+async function refreshAdminAccess(){
+ const version=++roleCheckVersion; progress=null; isAdmin=false;
+ el('areaMap').hidden=true; el('areaSelection').hidden=false;
+ el('totalProgress').textContent='—'; el('totalStars').textContent='—'; el('totalProgressFill').style.width='0%';
+ el('areaList').textContent='Loading / 불러오는 중…';
+ try {const {data,error}=await window.MinssemAuth.getUser(); if(error||!data?.user){location.replace('login.html');return;}
+ const p=await window.MinssemAuth.getProfile(data.user.id); if(p.error||!p.data)throw p.error||Error('Profile missing');
+ const next=await window.MinssemProgress.load({userId:data.user.id}); if(version!==roleCheckVersion)return;
+ progress=next;stars=next.stars;isAdmin=p.data.role==='admin';
+ if(currentArea&&isAreaUnlocked(currentArea.id))openArea(currentArea.id);else {currentArea=null;renderAreaSelection();}
+ }catch(e){if(version===roleCheckVersion){console.error(e);el('areaList').textContent='Unable to load progress / 진행률 조회 실패. 새로고침해 주세요.';}}
 }
-
-let stars = readProgress();
-let currentArea = null;
-let isAdmin = false;
-let roleCheckVersion = 0;
-const roleClient = window.MinssemBackend.client;
-async function refreshAdminAccess() {
-  const version = ++roleCheckVersion;
-  let admin = false;
-  try {
-    if (roleClient) {
-      const {data, error} = await window.MinssemAuth.getUser();
-      if (!error && data?.user) {
-        const result = await window.MinssemAuth.getProfile(data.user.id);
-        admin = !result.error && result.data?.role === "admin";
-      }
-    }
-  } catch (error) { console.warn("Role check failed", error); }
-  if (version !== roleCheckVersion) return;
-  isAdmin = admin;
-  if (currentArea && !isAreaUnlocked(currentArea.id)) goBack();
-  else if (currentArea) renderAreaMap();
-  else renderAreaSelection();
-}
-
-
-function countCompleted(start, end) {
-  let count = 0;
-  for (let n = start; n <= end; n++) {
-    if (stars[n - 1] >= 1) count++;
-  }
-  return count;
-}
-
-function countStars(start, end) {
-  let total = 0;
-  for (let n = start; n <= end; n++) {
-    total += stars[n - 1];
-  }
-  return total;
-}
-
-function isAreaUnlocked(areaId) {
-  if (isAdmin && areas.some(a => a.id === areaId)) return true;
-  if (areaId === 1) return true;
-  const previous = areas[areaId - 2];
-  return countCompleted(previous.start, previous.end) === 5;
-}
-
-function isLessonUnlocked(lesson) {
-  if (isAdmin && availableLessons.has(lesson)) return true;
-  if (lesson === 1) return true;
-
-  const area = areas.find(a =>
-    lesson >= a.start && lesson <= a.end
-  );
-
-  if (!area || !isAreaUnlocked(area.id)) return false;
-
-  return stars[lesson - 2] >= 1;
-}
+function countCompleted(start,end){return progress.range(start,end).completed;}
+function countStars(start,end){return progress.range(start,end).stars;}
+function isAreaUnlocked(id){const a=areas.find(x=>x.id===id);return !!a&&isLessonUnlocked(a.start);}
+function isLessonUnlocked(n){return !!progress&&availableLessons.has(n)&&progress.isLessonUnlocked(n,{admin:isAdmin});}
 
 function iconSvg(name) {
   const common = `fill="none" stroke="currentColor"
@@ -858,7 +811,7 @@ function starSvg(filled) {
 }
 
 function renderAreaSelection() {
-  stars = readProgress();
+  if (!progress) return;
 
   const completed = countCompleted(1, TOTAL_LESSONS);
   const earned = countStars(1, TOTAL_LESSONS);
@@ -937,7 +890,7 @@ function renderAreaSelection() {
 }
 
 function openArea(areaId) {
-  stars = readProgress();
+  if (!progress) return;
 
   if (!isAreaUnlocked(areaId)) return;
 
@@ -967,7 +920,7 @@ function openArea(areaId) {
 function renderAreaMap() {
   if (!currentArea) return;
 
-  stars = readProgress();
+  if (!progress) return;
 
   const area = currentArea;
   const completed = countCompleted(area.start, area.end);
@@ -1148,29 +1101,8 @@ function goBack() {
 
 el("backButton").addEventListener("click", goBack);
 
-// Refresh progress when returning from a lesson.
-window.addEventListener("pageshow", () => {
-  stars = readProgress();
-  refreshAdminAccess();
-  if (currentArea) {
-    renderAreaMap();
-  } else {
-    renderAreaSelection();
-  }
-});
-
-renderAreaSelection();
-refreshAdminAccess();
-roleClient?.auth.onAuthStateChange((event) => {
-  if (event === "SIGNED_OUT" || event === "SIGNED_IN" || event === "INITIAL_SESSION") {
-    isAdmin = false;
-    ++roleCheckVersion;
-    if (currentArea && !isAreaUnlocked(currentArea.id)) goBack();
-    else if (currentArea) renderAreaMap();
-    else renderAreaSelection();
-    setTimeout(refreshAdminAccess, 0);
-  }
-});
+window.addEventListener('pageshow',refreshAdminAccess);
+roleClient.auth.onAuthStateChange(event=>{if(event==='SIGNED_OUT'||event==='SIGNED_IN')setTimeout(refreshAdminAccess,0);});
 </script>
 <script src="i18n.js"></script>
 </body>

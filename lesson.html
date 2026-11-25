@@ -1389,7 +1389,7 @@ h1 {
 
 <script src="audio.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script>
+<script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script><script src="progress.js?v=1"></script>
 <script>
 "use strict";
   const SUPABASE_URL = window.MinssemBackend.url;
@@ -1409,7 +1409,7 @@ function currentMeaning(word) {
    HSK 1 LESSON DATA
 ====================================== */
 
-const STORAGE_KEY = "minssem-hsk1-progress";
+
 const TOTAL_LESSONS = 15;
 const MAX_STARS = 3;
 
@@ -3281,46 +3281,8 @@ function el(id) {
   return document.getElementById(id);
 }
 
-function readProgress() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-
-    if (!raw) {
-      return Array(TOTAL_LESSONS).fill(0);
-    }
-
-    const parsed = JSON.parse(raw);
-
-    if (!parsed || !Array.isArray(parsed.stars)) {
-      return Array(TOTAL_LESSONS).fill(0);
-    }
-
-    return Array.from(
-      {length: TOTAL_LESSONS},
-      (_, i) => {
-        const value = Number(parsed.stars[i]) || 0;
-
-        return Math.max(
-          0,
-          Math.min(MAX_STARS, Math.floor(value))
-        );
-      }
-    );
-
-  } catch (error) {
-    return Array(TOTAL_LESSONS).fill(0);
-  }
-}
-
-function getBestStars() {
-  if (!lessonNumber) return 0;
-
-  const stars = readProgress();
-
-  return stars[lessonNumber - 1] || 0;
-}
-
-
+let assessmentProgress=null;
+function getBestStars(){return assessmentProgress?.stars[lessonNumber-1]??0;}
 
 function setStageMemory(stage) {
   try {
@@ -3410,7 +3372,8 @@ function isLessonCompleted() {
 function updateStageStars() {
   // Assessment is currently an admin-only preview and does not save results.
   // Legacy local game stars must not be displayed as assessment rewards.
-  el("stageBestStars").textContent = "☆☆☆";
+  const n=getBestStars(); el("stageBestStars").textContent = "★".repeat(n)+"☆".repeat(3-n);
+  const badge=el("stageCompletedBadge"); badge.textContent=n?"학습 완료":"준비 중";badge.dataset.menuEn=n?"Completed":"Coming Soon";if(localStorage.getItem("minssem-language")==="en")badge.textContent=badge.dataset.menuEn;
   el("stageCompletedBadge").hidden = false;
 }
 
@@ -4565,8 +4528,8 @@ el("retryWrongBtn").addEventListener(
 ====================================== */
 
 async function initializeLesson() {
-  let admin = false;
-  try { const {data} = await window.MinssemAuth.getUser(); if(data?.user){const r=await window.MinssemAuth.getProfile(data.user.id); admin=r.data?.role==="admin";} } catch(e) {}
+  let admin=false;
+  try {const {data,error}=await window.MinssemAuth.getUser();if(error||!data?.user){location.replace('login.html');return;}const p=await window.MinssemAuth.getProfile(data.user.id);if(p.error||!p.data)throw p.error||Error('Profile missing');admin=p.data.role==='admin';assessmentProgress=await window.MinssemProgress.load({userId:data.user.id});}catch(e){console.error(e);el('unavailableTitle').textContent='진행률 조회 실패 / Unable to load progress';el('unavailableDescription').textContent='새로고침해 주세요 / Please refresh';showStage('unavailableSection');return;}
   if (lessonNumber===1 && admin) { const b=el("chooseAssessmentBtn"); b.disabled=false; b.classList.remove("stage-choice-pending"); b.style.cursor="pointer"; b.querySelector(".stage-choice-description").textContent=localStorage.getItem("minssem-language")==="en"?"Assess your understanding of the lesson":"단원 학습 성취도 평가"; b.querySelector(".stage-choice-description").dataset.menuEn="Assess your understanding of the lesson"; b.querySelector(".stage-choice-arrow").textContent="›"; b.onclick=()=>location.href="assessment.html?course=hsk1&type=lesson&lesson=1"; }
   if (!lesson || !words.length) {
     showUnavailableLesson();
@@ -4576,13 +4539,7 @@ async function initializeLesson() {
   setLessonLabels();
 
   // 학습 지도의 잠금 상태 확인
-  if (lessonNumber > 1 && !admin) {
-    const progress = readProgress();
-
-    const previousLessonStars =
-      progress[lessonNumber - 2] || 0;
-
-    if (previousLessonStars < 1) {
+  if (!assessmentProgress.isLessonUnlocked(lessonNumber,{admin})) {
       el("unavailableEyebrow").textContent =
         `HSK 1급 · 제${lessonNumber}과`;
 
@@ -4594,7 +4551,6 @@ async function initializeLesson() {
 
       showStage("unavailableSection");
       return;
-    }
   }
 
   openLesson();
