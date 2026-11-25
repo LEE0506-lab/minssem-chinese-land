@@ -734,6 +734,10 @@ h1 {
   font-weight:700;
 }
 
+.stage-best.assessment-pending { background:#F5F8F6; border-color:#DDE7E2; }
+.stage-best.assessment-pending .stage-best-stars { color:#AABBB2; }
+.stage-best.assessment-pending .stage-best-badge { background:#E5ECE9; color:#61786D; }
+
 .stage-heading {
   font-size:18px;
   font-weight:800;
@@ -878,11 +882,11 @@ h1 {
 
   <div class="stage-selection-card">
 
-    <div class="stage-best">
-      <span class="stage-best-label">최고 기록</span>
+    <div class="stage-best assessment-pending">
+      <span class="stage-best-label" data-i18n-ignore data-menu-en="Lesson Assessment">레슨 평가</span>
       <span class="stage-best-stars"
         id="stageBestStars">☆☆☆</span>
-      <span class="stage-best-badge" id="stageCompletedBadge" hidden>학습 완료</span>
+      <span class="stage-best-badge" id="stageCompletedBadge" data-i18n-ignore data-menu-en="Coming Soon">준비 중</span>
     </div>
 
     <h2 class="stage-heading">
@@ -3408,11 +3412,10 @@ function isLessonCompleted() {
 }
 
 function updateStageStars() {
-  const count = getBestStars();
-  el("stageCompletedBadge").hidden = count < 1;
-
-  el("stageBestStars").textContent =
-    "★".repeat(count) + "☆".repeat(3 - count);
+  // Assessment is currently an admin-only preview and does not save results.
+  // Legacy local game stars must not be displayed as assessment rewards.
+  el("stageBestStars").textContent = "☆☆☆";
+  el("stageCompletedBadge").hidden = false;
 }
 
 function updateBackLinks() {
