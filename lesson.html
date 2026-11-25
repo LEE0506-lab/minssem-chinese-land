@@ -849,9 +849,9 @@ h1 {
 }
 .meaning-ko,.flash-ko,.quiz-korean,.quiz-option-ko,.review-ko {display:none!important;}
 </style>
-<link rel="stylesheet" href="language.css">
-<link rel="stylesheet" href="ui.css">
-<link rel="stylesheet" href="game-compact.css">
+<link rel="stylesheet" href="language.css?v=2">
+<link rel="stylesheet" href="ui.css?v=2">
+<link rel="stylesheet" href="game-compact.css?v=2">
 <script defer src="icons.js"></script>
 <style>.account-best{display:block;margin-top:10px;padding-top:8px;border-top:1px solid #DDE7E2;color:#417C69;font-size:13px;font-weight:600;line-height:1.5;white-space:normal}</style>
 </head>
@@ -3355,7 +3355,7 @@ function setLessonLabels() {
     if (
       node.id !== "unavailableEyebrow"
     ) {
-      node.textContent = `HSK 1급 · 제${lessonNumber}과`;
+      node.textContent = localStorage.getItem("minssem-language") === "en" ? `HSK Level 1 · Lesson ${lessonNumber}` : `HSK 1급 · 제${lessonNumber}과`;
     }
   });
 
@@ -3996,8 +3996,8 @@ function startQuiz(mode) {
 
   el("quizModeLabel").textContent =
     quizMode === "challenge"
-      ? "⚡ 도전 모드"
-      : "📖 연습 모드";
+      ? "도전 모드"
+      : "연습 모드";
 
   el("timerArea").hidden =
     quizMode !== "challenge";
@@ -4198,24 +4198,7 @@ function scheduleNextQuestion() {
   const word = quizQuestions[quizIndex].word;
   const en = localStorage.getItem("minssem-language") === "en";
   const detail = el("quizAnswerDetail");
-  detail.replaceChildren();
-  const label = document.createElement("div");
-  const hanzi = document.createElement("div");
-  hanzi.className = "quiz-answer-word";
-  hanzi.textContent = word.hanzi;
-  const meaning = document.createElement("div");
-  meaning.className = "quiz-answer-meaning";
-  meaning.textContent = `${word.pinyin} · ${currentMeaning(word)}`;
-  label.append(hanzi, meaning);
-  detail.appendChild(label);
-  const audio = document.createElement("button");
-  audio.type = "button";
-  audio.className = "quiz-answer-audio";
-  audio.setAttribute("aria-label", en ? "Listen to pronunciation" : "발음 듣기");
-  audio.title = en ? "Listen" : "발음 듣기";
-  audio.innerHTML = '<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15 9a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg>';
-  audio.onclick = () => speakChinese(word.hanzi);
-  detail.appendChild(audio);
+  GameUI.answerDetail(detail, word);
   detail.hidden = false;
   const next = el("quizNextQuestion");
   next.textContent = quizIndex + 1 === quizQuestions.length
@@ -4557,7 +4540,7 @@ function retryWrongWords() {
   el("quizPlay").hidden = false;
 
   el("quizModeLabel").textContent =
-    "📖 오답 복습 모드";
+    "오답 복습 모드";
 
   el("timerArea").hidden = true;
 
@@ -4629,11 +4612,12 @@ if (localStorage.getItem("minssem-language") === "en") {
 initializeLesson();
 
 </script>
+<script src="game-ui.js?v=2"></script>
 <script src="game-records.js"></script>
 <script src="game-review.js"></script>
-<script src="word-match.js"></script>
-<script src="listening-quiz.js"></script>
-<script src="character-builder.js"></script>
-<script src="i18n.js"></script>
+<script src="word-match.js?v=2"></script>
+<script src="listening-quiz.js?v=2"></script>
+<script src="character-builder.js?v=2"></script>
+<script src="i18n.js?v=2"></script>
 </body>
 </html>

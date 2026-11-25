@@ -203,6 +203,8 @@
     updating = false;
   }
   function setLanguage(next) {
+    const active = ['quiz','wm','lq','cb'].some(p => {const e=document.getElementById(p+'Play');return e&&!e.hidden&&!e.closest('section[hidden]');});
+    if(active && !confirm(language==='en'?'Changing language restarts the current game. Continue?':'언어를 변경하면 현재 게임이 초기화됩니다. 계속할까요?')) {const select=document.getElementById('minssemLanguage');if(select)select.value=language;return;}
     language = next === 'en' ? 'en' : 'ko';
     localStorage.setItem(KEY, language);
     // Re-render page to refresh word meanings and quiz options consistently.
