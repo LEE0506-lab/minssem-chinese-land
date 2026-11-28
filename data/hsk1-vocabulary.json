@@ -1,0 +1,6290 @@
+{
+  "1": {
+    "title": "AI小语，你好！",
+    "words": [
+      {
+        "hanzi": "你好",
+        "pinyin": "nǐ hǎo",
+        "en": "hello",
+        "ko": "안녕하세요",
+        "id": "hsk1-01-01",
+        "enOriginal": "hello",
+        "koOriginal": "안녕하세요",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "王老师",
+        "pinyin": "Wáng lǎoshī",
+        "en": "Ms. Wang",
+        "ko": "왕 선생님",
+        "id": "hsk1-01-02",
+        "enOriginal": "Ms. Wang",
+        "koOriginal": "왕 선생님",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "大家",
+        "pinyin": "dàjiā",
+        "en": "everybody",
+        "ko": "모두, 여러분",
+        "id": "hsk1-01-03",
+        "enOriginal": "everybody",
+        "koOriginal": "모두, 여러분",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "好",
+        "pinyin": "hǎo",
+        "en": "good; fine",
+        "ko": "좋다, 괜찮다",
+        "id": "hsk1-01-04",
+        "enOriginal": "good; fine",
+        "koOriginal": "좋다, 괜찮다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "学生",
+        "pinyin": "xuéshēng",
+        "en": "student",
+        "ko": "학생",
+        "id": "hsk1-01-05",
+        "enOriginal": "student",
+        "koOriginal": "학생",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "们",
+        "pinyin": "men",
+        "en": "used after a personal pronoun or a noun to show plural number",
+        "ko": "복수를 나타내는 접미사",
+        "id": "hsk1-01-06",
+        "enOriginal": "used after a personal pronoun or a noun to show plural number",
+        "koOriginal": "복수를 나타내는 접미사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "老师",
+        "pinyin": "lǎoshī",
+        "en": "teacher",
+        "ko": "선생님",
+        "id": "hsk1-01-07",
+        "enOriginal": "teacher",
+        "koOriginal": "선생님",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "您",
+        "pinyin": "nín",
+        "en": "you",
+        "ko": "당신(존칭)",
+        "id": "hsk1-01-08",
+        "enOriginal": "you",
+        "koOriginal": "당신(존칭)",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "你们",
+        "pinyin": "nǐmen",
+        "en": "(plural) you",
+        "ko": "너희들, 여러분",
+        "id": "hsk1-01-09",
+        "enOriginal": "(plural) you",
+        "koOriginal": "너희들, 여러분",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "谢谢",
+        "pinyin": "xièxie",
+        "en": "thank you",
+        "ko": "감사합니다",
+        "id": "hsk1-01-10",
+        "enOriginal": "thank you",
+        "koOriginal": "감사합니다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "不客气",
+        "pinyin": "bú kèqi",
+        "en": "you're welcome",
+        "ko": "천만에요",
+        "id": "hsk1-01-11",
+        "enOriginal": "you're welcome",
+        "koOriginal": "천만에요",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "同学",
+        "pinyin": "tóngxué",
+        "en": "classmate",
+        "ko": "같은 반 친구, 학우",
+        "id": "hsk1-01-12",
+        "enOriginal": "classmate",
+        "koOriginal": "같은 반 친구, 학우",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "再见",
+        "pinyin": "zàijiàn",
+        "en": "goodbye",
+        "ko": "안녕히 가세요, 또 만나요",
+        "id": "hsk1-01-13",
+        "enOriginal": "goodbye",
+        "koOriginal": "안녕히 가세요, 또 만나요",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "2": {
+    "title": "我叫李文",
+    "words": [
+      {
+        "hanzi": "请问",
+        "pinyin": "qǐngwèn",
+        "en": "excuse me",
+        "ko": "실례합니다",
+        "id": "hsk1-02-01",
+        "enOriginal": "excuse me",
+        "koOriginal": "실례합니다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "你",
+        "pinyin": "nǐ",
+        "en": "(singular) you",
+        "ko": "너, 당신(단수)",
+        "id": "hsk1-02-02",
+        "enOriginal": "(singular) you",
+        "koOriginal": "너, 당신(단수)",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "叫",
+        "pinyin": "jiào",
+        "en": "be called as",
+        "ko": "~라고 불리다",
+        "id": "hsk1-02-03",
+        "enOriginal": "be called as",
+        "koOriginal": "~라고 불리다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "什么",
+        "pinyin": "shénme",
+        "en": "what",
+        "ko": "무엇",
+        "id": "hsk1-02-04",
+        "enOriginal": "what",
+        "koOriginal": "무엇",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "名字",
+        "pinyin": "míngzi",
+        "en": "name",
+        "ko": "이름",
+        "id": "hsk1-02-05",
+        "enOriginal": "name",
+        "koOriginal": "이름",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "我",
+        "pinyin": "wǒ",
+        "en": "I; me",
+        "ko": "나, 저",
+        "id": "hsk1-02-06",
+        "enOriginal": "I; me",
+        "koOriginal": "나, 저",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "不",
+        "pinyin": "bù",
+        "en": "not; no",
+        "ko": "~않다, 아니다",
+        "id": "hsk1-02-07",
+        "enOriginal": "not; no",
+        "koOriginal": "~않다, 아니다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "是",
+        "pinyin": "shì",
+        "en": "be",
+        "ko": "~이다",
+        "id": "hsk1-02-08",
+        "enOriginal": "be",
+        "koOriginal": "~이다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "对不起",
+        "pinyin": "duìbuqǐ",
+        "en": "sorry",
+        "ko": "미안합니다",
+        "id": "hsk1-02-09",
+        "enOriginal": "sorry",
+        "koOriginal": "미안합니다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "没关系",
+        "pinyin": "méi guānxi",
+        "en": "that's all right; never mind",
+        "ko": "괜찮아요, 신경 쓰지 마세요",
+        "id": "hsk1-02-10",
+        "enOriginal": "that's all right; never mind",
+        "koOriginal": "괜찮아요, 신경 쓰지 마세요",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "没事",
+        "pinyin": "méishì",
+        "en": "it doesn't matter",
+        "ko": "괜찮아요, 별일 아니에요",
+        "id": "hsk1-02-11",
+        "enOriginal": "it doesn't matter",
+        "koOriginal": "괜찮아요, 별일 아니에요",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "很",
+        "pinyin": "hěn",
+        "en": "very",
+        "ko": "매우, 아주",
+        "id": "hsk1-02-12",
+        "enOriginal": "very",
+        "koOriginal": "매우, 아주",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "高兴",
+        "pinyin": "gāoxìng",
+        "en": "glad; happy",
+        "ko": "기쁘다, 즐겁다",
+        "id": "hsk1-02-13",
+        "enOriginal": "glad; happy",
+        "koOriginal": "기쁘다, 즐겁다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "认识",
+        "pinyin": "rènshi",
+        "en": "know; become acquainted with",
+        "ko": "알다, 알게 되다",
+        "id": "hsk1-02-14",
+        "enOriginal": "know; become acquainted with",
+        "koOriginal": "알다, 알게 되다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "也",
+        "pinyin": "yě",
+        "en": "also; too",
+        "ko": "또한, 역시, ~도",
+        "id": "hsk1-02-15",
+        "enOriginal": "also; too",
+        "koOriginal": "또한, 역시, ~도",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "3": {
+    "title": "我是中国人",
+    "words": [
+      {
+        "hanzi": "人",
+        "pinyin": "rén",
+        "en": "human; person",
+        "ko": "인간, 사람",
+        "id": "hsk1-03-01",
+        "enOriginal": "human; person",
+        "koOriginal": "인간, 사람",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "的",
+        "pinyin": "de",
+        "en": "used after an attributive",
+        "ko": "관형어 뒤에 사용하는 조사",
+        "id": "hsk1-03-02",
+        "enOriginal": "used after an attributive",
+        "koOriginal": "관형어 뒤에 사용하는 조사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "中国",
+        "pinyin": "Zhōngguó",
+        "en": "China",
+        "ko": "중국",
+        "id": "hsk1-03-03",
+        "enOriginal": "China",
+        "koOriginal": "중국",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "法国",
+        "pinyin": "Fǎguó",
+        "en": "France",
+        "ko": "프랑스",
+        "id": "hsk1-03-04",
+        "enOriginal": "France",
+        "koOriginal": "프랑스",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "中文",
+        "pinyin": "Zhōngwén",
+        "en": "Chinese language",
+        "ko": "중국어",
+        "id": "hsk1-03-05",
+        "enOriginal": "Chinese language",
+        "koOriginal": "중국어",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "这",
+        "pinyin": "zhè",
+        "en": "this",
+        "ko": "이, 이것",
+        "id": "hsk1-03-06",
+        "enOriginal": "this",
+        "koOriginal": "이, 이것",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "谁",
+        "pinyin": "shéi / shuí",
+        "en": "who",
+        "ko": "누구",
+        "id": "hsk1-03-07",
+        "enOriginal": "who",
+        "koOriginal": "누구",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "女朋友",
+        "pinyin": "nǚpéngyou",
+        "en": "girlfriend",
+        "ko": "여자 친구",
+        "id": "hsk1-03-08",
+        "enOriginal": "girlfriend",
+        "koOriginal": "여자 친구",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "哪",
+        "pinyin": "nǎ",
+        "en": "which",
+        "ko": "어느, 어떤",
+        "id": "hsk1-03-09",
+        "enOriginal": "which",
+        "koOriginal": "어느, 어떤",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "国",
+        "pinyin": "guó",
+        "en": "country",
+        "ko": "나라, 국가",
+        "id": "hsk1-03-10",
+        "enOriginal": "country",
+        "koOriginal": "나라, 국가",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "她",
+        "pinyin": "tā",
+        "en": "she; her",
+        "ko": "그녀",
+        "id": "hsk1-03-11",
+        "enOriginal": "she; her",
+        "koOriginal": "그녀",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "泰国",
+        "pinyin": "Tàiguó",
+        "en": "Thailand",
+        "ko": "태국",
+        "id": "hsk1-03-12",
+        "enOriginal": "Thailand",
+        "koOriginal": "태국",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "喂",
+        "pinyin": "wèi",
+        "en": "hello; hey",
+        "ko": "여보세요, 안녕",
+        "id": "hsk1-03-13",
+        "enOriginal": "hello; hey",
+        "koOriginal": "여보세요, 안녕",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "姐姐",
+        "pinyin": "jiějie",
+        "en": "elder sister",
+        "ko": "언니, 누나",
+        "id": "hsk1-03-14",
+        "enOriginal": "elder sister",
+        "koOriginal": "언니, 누나",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "工作",
+        "pinyin": "gōngzuò",
+        "en": "job",
+        "ko": "일, 직업",
+        "id": "hsk1-03-15",
+        "enOriginal": "job",
+        "koOriginal": "일, 직업",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "还",
+        "pinyin": "hái",
+        "en": "still",
+        "ko": "아직, 여전히",
+        "id": "hsk1-03-16",
+        "enOriginal": "still",
+        "koOriginal": "아직, 여전히",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "忙",
+        "pinyin": "máng",
+        "en": "busy",
+        "ko": "바쁘다",
+        "id": "hsk1-03-17",
+        "enOriginal": "busy",
+        "koOriginal": "바쁘다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "吗",
+        "pinyin": "ma",
+        "en": "used at the end of a question",
+        "ko": "의문문 끝에 사용하는 조사",
+        "id": "hsk1-03-18",
+        "enOriginal": "used at the end of a question",
+        "koOriginal": "의문문 끝에 사용하는 조사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "对",
+        "pinyin": "duì",
+        "en": "right",
+        "ko": "맞다, 옳다",
+        "id": "hsk1-03-19",
+        "enOriginal": "right",
+        "koOriginal": "맞다, 옳다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "太",
+        "pinyin": "tài",
+        "en": "too; excessively",
+        "ko": "너무, 지나치게",
+        "id": "hsk1-03-20",
+        "enOriginal": "too; excessively",
+        "koOriginal": "너무, 지나치게",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "我们",
+        "pinyin": "wǒmen",
+        "en": "we; us",
+        "ko": "우리, 우리들",
+        "id": "hsk1-03-21",
+        "enOriginal": "we; us",
+        "koOriginal": "우리, 우리들",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "想",
+        "pinyin": "xiǎng",
+        "en": "miss",
+        "ko": "그리워하다, 보고 싶다",
+        "id": "hsk1-03-22",
+        "enOriginal": "miss",
+        "koOriginal": "그리워하다, 보고 싶다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "4": {
+    "title": "我有两个孩子",
+    "words": [
+      {
+        "hanzi": "有",
+        "pinyin": "yǒu",
+        "en": "have",
+        "ko": "있다, 가지고 있다",
+        "id": "hsk1-04-01",
+        "enOriginal": "have",
+        "koOriginal": "있다, 가지고 있다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "多少",
+        "pinyin": "duōshao",
+        "en": "how many/much",
+        "ko": "얼마나, 몇",
+        "id": "hsk1-04-02",
+        "enOriginal": "how many/much",
+        "koOriginal": "얼마나, 몇",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "个",
+        "pinyin": "gè",
+        "en": "a general measure word",
+        "ko": "일반적으로 사용하는 양사",
+        "id": "hsk1-04-03",
+        "enOriginal": "a general measure word",
+        "koOriginal": "일반적으로 사용하는 양사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "哥哥",
+        "pinyin": "gēge",
+        "en": "elder brother",
+        "ko": "형, 오빠",
+        "id": "hsk1-04-04",
+        "enOriginal": "elder brother",
+        "koOriginal": "형, 오빠",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "呢",
+        "pinyin": "ne",
+        "en": "used at the end of a question",
+        "ko": "의문문 끝에 사용하는 조사",
+        "id": "hsk1-04-05",
+        "enOriginal": "used at the end of a question",
+        "koOriginal": "의문문 끝에 사용하는 조사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "没有",
+        "pinyin": "méiyǒu",
+        "en": "not have",
+        "ko": "없다, 가지고 있지 않다",
+        "id": "hsk1-04-06",
+        "enOriginal": "not have",
+        "koOriginal": "없다, 가지고 있지 않다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "家",
+        "pinyin": "jiā",
+        "en": "family",
+        "ko": "가족",
+        "id": "hsk1-04-07",
+        "enOriginal": "family",
+        "koOriginal": "가족",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "几",
+        "pinyin": "jǐ",
+        "en": "how many",
+        "ko": "몇",
+        "id": "hsk1-04-08",
+        "enOriginal": "how many",
+        "koOriginal": "몇",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "口",
+        "pinyin": "kǒu",
+        "en": "for family members, knives, etc.",
+        "ko": "가족 구성원, 칼 등을 세는 양사",
+        "id": "hsk1-04-09",
+        "enOriginal": "for family members, knives, etc.",
+        "koOriginal": "가족 구성원, 칼 등을 세는 양사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "爸爸",
+        "pinyin": "bàba",
+        "en": "father",
+        "ko": "아빠, 아버지",
+        "id": "hsk1-04-10",
+        "enOriginal": "father",
+        "koOriginal": "아빠, 아버지",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "妈妈",
+        "pinyin": "māma",
+        "en": "mother",
+        "ko": "엄마, 어머니",
+        "id": "hsk1-04-11",
+        "enOriginal": "mother",
+        "koOriginal": "엄마, 어머니",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "妹妹",
+        "pinyin": "mèimei",
+        "en": "younger sister",
+        "ko": "여동생",
+        "id": "hsk1-04-12",
+        "enOriginal": "younger sister",
+        "koOriginal": "여동생",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "和",
+        "pinyin": "hé",
+        "en": "and",
+        "ko": "~와, 그리고",
+        "id": "hsk1-04-13",
+        "enOriginal": "and",
+        "koOriginal": "~와, 그리고",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "儿子",
+        "pinyin": "érzi",
+        "en": "son",
+        "ko": "아들",
+        "id": "hsk1-04-14",
+        "enOriginal": "son",
+        "koOriginal": "아들",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "孩子",
+        "pinyin": "háizi",
+        "en": "children",
+        "ko": "아이, 자녀",
+        "id": "hsk1-04-15",
+        "enOriginal": "children",
+        "koOriginal": "아이, 자녀",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "女儿",
+        "pinyin": "nǚ'ér",
+        "en": "daughter",
+        "ko": "딸",
+        "id": "hsk1-04-16",
+        "enOriginal": "daughter",
+        "koOriginal": "딸",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "岁",
+        "pinyin": "suì",
+        "en": "year (of age)",
+        "ko": "살(나이)",
+        "id": "hsk1-04-17",
+        "enOriginal": "year (of age)",
+        "koOriginal": "살(나이)",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "他",
+        "pinyin": "tā",
+        "en": "he; him",
+        "ko": "그, 그를",
+        "id": "hsk1-04-18",
+        "enOriginal": "he; him",
+        "koOriginal": "그, 그를",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "今年",
+        "pinyin": "jīnnián",
+        "en": "this year",
+        "ko": "올해",
+        "id": "hsk1-04-19",
+        "enOriginal": "this year",
+        "koOriginal": "올해",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "多",
+        "pinyin": "duō",
+        "en": "how; to what extent",
+        "ko": "얼마나, 어느 정도",
+        "id": "hsk1-04-20",
+        "enOriginal": "how; to what extent",
+        "koOriginal": "얼마나, 어느 정도",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "大",
+        "pinyin": "dà",
+        "en": "(of age) old",
+        "ko": "나이가 ~이다",
+        "id": "hsk1-04-21",
+        "enOriginal": "(of age) old",
+        "koOriginal": "나이가 ~이다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "5": {
+    "title": "今天我休息",
+    "words": [
+      {
+        "hanzi": "今天",
+        "pinyin": "jīntiān",
+        "en": "today",
+        "ko": "오늘",
+        "id": "hsk1-05-01",
+        "enOriginal": "today",
+        "koOriginal": "오늘",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "号",
+        "pinyin": "hào",
+        "en": "date",
+        "ko": "날짜, 일",
+        "id": "hsk1-05-02",
+        "enOriginal": "date",
+        "koOriginal": "날짜, 일",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "月",
+        "pinyin": "yuè",
+        "en": "month",
+        "ko": "월, 달",
+        "id": "hsk1-05-03",
+        "enOriginal": "month",
+        "koOriginal": "월, 달",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "日",
+        "pinyin": "rì",
+        "en": "day",
+        "ko": "일, 날",
+        "id": "hsk1-05-04",
+        "enOriginal": "day",
+        "koOriginal": "일, 날",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "星期",
+        "pinyin": "xīngqī",
+        "en": "week",
+        "ko": "주, 일주일",
+        "id": "hsk1-05-05",
+        "enOriginal": "week",
+        "koOriginal": "주, 일주일",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "星期日",
+        "pinyin": "Xīngqīrì",
+        "en": "Sunday",
+        "ko": "일요일",
+        "id": "hsk1-05-06",
+        "enOriginal": "Sunday",
+        "koOriginal": "일요일",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "星期天",
+        "pinyin": "Xīngqītiān",
+        "en": "Sunday",
+        "ko": "일요일",
+        "id": "hsk1-05-07",
+        "enOriginal": "Sunday",
+        "koOriginal": "일요일",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "休息",
+        "pinyin": "xiūxi",
+        "en": "have a rest",
+        "ko": "쉬다, 휴식하다",
+        "id": "hsk1-05-08",
+        "enOriginal": "have a rest",
+        "koOriginal": "쉬다, 휴식하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "会",
+        "pinyin": "huì",
+        "en": "can; be able to",
+        "ko": "~할 수 있다",
+        "id": "hsk1-05-09",
+        "enOriginal": "can; be able to",
+        "koOriginal": "~할 수 있다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "做饭",
+        "pinyin": "zuò fàn",
+        "en": "cook",
+        "ko": "요리하다, 밥을 짓다",
+        "id": "hsk1-05-10",
+        "enOriginal": "cook",
+        "koOriginal": "요리하다, 밥을 짓다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "做",
+        "pinyin": "zuò",
+        "en": "make; produce",
+        "ko": "만들다, 생산하다",
+        "id": "hsk1-05-11",
+        "enOriginal": "make; produce",
+        "koOriginal": "만들다, 생산하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "面条儿",
+        "pinyin": "miàntiáor",
+        "en": "noodles",
+        "ko": "국수, 면",
+        "id": "hsk1-05-12",
+        "enOriginal": "noodles",
+        "koOriginal": "국수, 면",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "饺子",
+        "pinyin": "jiǎozi",
+        "en": "jiaozi",
+        "ko": "중국식 만두",
+        "id": "hsk1-05-13",
+        "enOriginal": "jiaozi",
+        "koOriginal": "중국식 만두",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "一些",
+        "pinyin": "yìxiē",
+        "en": "some",
+        "ko": "약간, 일부",
+        "id": "hsk1-05-14",
+        "enOriginal": "some",
+        "koOriginal": "약간, 일부",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "菜",
+        "pinyin": "cài",
+        "en": "dish; course",
+        "ko": "요리, 음식",
+        "id": "hsk1-05-15",
+        "enOriginal": "dish; course",
+        "koOriginal": "요리, 음식",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "下班",
+        "pinyin": "xiàbān",
+        "en": "get off work",
+        "ko": "퇴근하다",
+        "id": "hsk1-05-16",
+        "enOriginal": "get off work",
+        "koOriginal": "퇴근하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "新",
+        "pinyin": "xīn",
+        "en": "new",
+        "ko": "새롭다, 새로운",
+        "id": "hsk1-05-17",
+        "enOriginal": "new",
+        "koOriginal": "새롭다, 새로운",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "电脑",
+        "pinyin": "diànnǎo",
+        "en": "computer",
+        "ko": "컴퓨터",
+        "id": "hsk1-05-18",
+        "enOriginal": "computer",
+        "koOriginal": "컴퓨터",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "真",
+        "pinyin": "zhēn",
+        "en": "really; truly",
+        "ko": "정말, 진실로",
+        "id": "hsk1-05-19",
+        "enOriginal": "really; truly",
+        "koOriginal": "정말, 진실로",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "好看",
+        "pinyin": "hǎokàn",
+        "en": "good-looking; nice",
+        "ko": "보기 좋다, 예쁘다",
+        "id": "hsk1-05-20",
+        "enOriginal": "good-looking; nice",
+        "koOriginal": "보기 좋다, 예쁘다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "喜欢",
+        "pinyin": "xǐhuan",
+        "en": "like",
+        "ko": "좋아하다",
+        "id": "hsk1-05-21",
+        "enOriginal": "like",
+        "koOriginal": "좋아하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "它",
+        "pinyin": "tā",
+        "en": "it",
+        "ko": "그것",
+        "id": "hsk1-05-22",
+        "enOriginal": "it",
+        "koOriginal": "그것",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "6": {
+    "title": "你的手机号是多少？",
+    "words": [
+      {
+        "hanzi": "手机",
+        "pinyin": "shǒujī",
+        "en": "cell phone",
+        "ko": "휴대전화",
+        "id": "hsk1-06-01",
+        "enOriginal": "cell phone",
+        "koOriginal": "휴대전화",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "电话",
+        "pinyin": "diànhuà",
+        "en": "telephone (set); (telephone/phone) call",
+        "ko": "전화기, 전화 통화",
+        "id": "hsk1-06-02",
+        "enOriginal": "telephone (set); (telephone/phone) call",
+        "koOriginal": "전화기, 전화 통화",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "号",
+        "pinyin": "hào",
+        "en": "number",
+        "ko": "번호",
+        "id": "hsk1-06-03",
+        "enOriginal": "number",
+        "koOriginal": "번호",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "明天",
+        "pinyin": "míngtiān",
+        "en": "tomorrow",
+        "ko": "내일",
+        "id": "hsk1-06-04",
+        "enOriginal": "tomorrow",
+        "koOriginal": "내일",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "去",
+        "pinyin": "qù",
+        "en": "go to",
+        "ko": "~에 가다",
+        "id": "hsk1-06-05",
+        "enOriginal": "go to",
+        "koOriginal": "~에 가다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "哪儿",
+        "pinyin": "nǎr",
+        "en": "where",
+        "ko": "어디",
+        "id": "hsk1-06-06",
+        "enOriginal": "where",
+        "koOriginal": "어디",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "想",
+        "pinyin": "xiǎng",
+        "en": "want; would like",
+        "ko": "원하다, ~하고 싶다",
+        "id": "hsk1-06-07",
+        "enOriginal": "want; would like",
+        "koOriginal": "원하다, ~하고 싶다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "超市",
+        "pinyin": "chāoshì",
+        "en": "supermarket",
+        "ko": "슈퍼마켓",
+        "id": "hsk1-06-08",
+        "enOriginal": "supermarket",
+        "koOriginal": "슈퍼마켓",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "买",
+        "pinyin": "mǎi",
+        "en": "buy",
+        "ko": "사다",
+        "id": "hsk1-06-09",
+        "enOriginal": "buy",
+        "koOriginal": "사다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "东西",
+        "pinyin": "dōngxi",
+        "en": "thing",
+        "ko": "물건",
+        "id": "hsk1-06-10",
+        "enOriginal": "thing",
+        "koOriginal": "물건",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "些",
+        "pinyin": "xiē",
+        "en": "some; a few",
+        "ko": "약간, 몇몇",
+        "id": "hsk1-06-11",
+        "enOriginal": "some; a few",
+        "koOriginal": "약간, 몇몇",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "牛奶",
+        "pinyin": "niúnǎi",
+        "en": "(cow's) milk",
+        "ko": "우유",
+        "id": "hsk1-06-12",
+        "enOriginal": "(cow's) milk",
+        "koOriginal": "우유",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "吃",
+        "pinyin": "chī",
+        "en": "eat; have",
+        "ko": "먹다",
+        "id": "hsk1-06-13",
+        "enOriginal": "eat; have",
+        "koOriginal": "먹다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "晚饭",
+        "pinyin": "wǎnfàn",
+        "en": "dinner; supper",
+        "ko": "저녁 식사",
+        "id": "hsk1-06-14",
+        "enOriginal": "dinner; supper",
+        "koOriginal": "저녁 식사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "那边",
+        "pinyin": "nàbian",
+        "en": "there",
+        "ko": "저쪽, 거기",
+        "id": "hsk1-06-15",
+        "enOriginal": "there",
+        "koOriginal": "저쪽, 거기",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "包子",
+        "pinyin": "bāozi",
+        "en": "steamed stuffed bun",
+        "ko": "속을 넣은 찐빵",
+        "id": "hsk1-06-16",
+        "enOriginal": "steamed stuffed bun",
+        "koOriginal": "속을 넣은 찐빵",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "非常",
+        "pinyin": "fēicháng",
+        "en": "very; extremely",
+        "ko": "매우, 극히",
+        "id": "hsk1-06-17",
+        "enOriginal": "very; extremely",
+        "koOriginal": "매우, 극히",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "好吃",
+        "pinyin": "hǎochī",
+        "en": "tasty; delicious",
+        "ko": "맛있다",
+        "id": "hsk1-06-18",
+        "enOriginal": "tasty; delicious",
+        "koOriginal": "맛있다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "米饭",
+        "pinyin": "mǐfàn",
+        "en": "(cooked) rice",
+        "ko": "밥, 쌀밥",
+        "id": "hsk1-06-19",
+        "enOriginal": "(cooked) rice",
+        "koOriginal": "밥, 쌀밥",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "怎么",
+        "pinyin": "zěnme",
+        "en": "(indicating nature, condition or manner, etc.) how",
+        "ko": "(성질·상태·방식 등을 나타냄) 어떻게",
+        "id": "hsk1-06-20",
+        "enOriginal": "(indicating nature, condition or manner, etc.) how",
+        "koOriginal": "어떻게",
+        "usageNoteEn": "indicating nature, condition or manner, etc.",
+        "usageNoteKo": "성질·상태·방식 등을 나타냄",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "坐",
+        "pinyin": "zuò",
+        "en": "take; travel by or on",
+        "ko": "타다, ~로 이동하다",
+        "id": "hsk1-06-21",
+        "enOriginal": "take; travel by or on",
+        "koOriginal": "타다, ~로 이동하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "出租车",
+        "pinyin": "chūzūchē",
+        "en": "taxi",
+        "ko": "택시",
+        "id": "hsk1-06-22",
+        "enOriginal": "taxi",
+        "koOriginal": "택시",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "7": {
+    "title": "我晚上六点半下班",
+    "words": [
+      {
+        "hanzi": "现在",
+        "pinyin": "xiànzài",
+        "en": "now",
+        "ko": "지금, 현재",
+        "id": "hsk1-07-01",
+        "enOriginal": "now",
+        "koOriginal": "지금, 현재",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "点",
+        "pinyin": "diǎn",
+        "en": "o'clock",
+        "ko": "시(시간 단위)",
+        "id": "hsk1-07-02",
+        "enOriginal": "o'clock",
+        "koOriginal": "시(시간 단위)",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "早上",
+        "pinyin": "zǎoshang",
+        "en": "(early) morning",
+        "ko": "아침, 이른 아침",
+        "id": "hsk1-07-03",
+        "enOriginal": "(early) morning",
+        "koOriginal": "아침, 이른 아침",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "上午",
+        "pinyin": "shàngwǔ",
+        "en": "morning",
+        "ko": "오전",
+        "id": "hsk1-07-04",
+        "enOriginal": "morning",
+        "koOriginal": "오전",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "分",
+        "pinyin": "fēn",
+        "en": "minute",
+        "ko": "분",
+        "id": "hsk1-07-05",
+        "enOriginal": "minute",
+        "koOriginal": "분",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "课",
+        "pinyin": "kè",
+        "en": "class; lesson",
+        "ko": "수업, 과",
+        "id": "hsk1-07-06",
+        "enOriginal": "class; lesson",
+        "koOriginal": "수업, 과",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "下午",
+        "pinyin": "xiàwǔ",
+        "en": "afternoon",
+        "ko": "오후",
+        "id": "hsk1-07-07",
+        "enOriginal": "afternoon",
+        "koOriginal": "오후",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "见",
+        "pinyin": "jiàn",
+        "en": "meet",
+        "ko": "만나다",
+        "id": "hsk1-07-08",
+        "enOriginal": "meet",
+        "koOriginal": "만나다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "吧",
+        "pinyin": "ba",
+        "en": "used at the end of a sentence to express suggestions, consultations, advice, or requests",
+        "ko": "제안, 상의, 권유, 요청을 나타내는 문장 끝 조사",
+        "id": "hsk1-07-09",
+        "enOriginal": "used at the end of a sentence to express suggestions, consultations, advice, or requests",
+        "koOriginal": "제안, 상의, 권유, 요청을 나타내는 문장 끝 조사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "电影院",
+        "pinyin": "diànyǐngyuàn",
+        "en": "cinema",
+        "ko": "영화관",
+        "id": "hsk1-07-10",
+        "enOriginal": "cinema",
+        "koOriginal": "영화관",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "看",
+        "pinyin": "kàn",
+        "en": "watch; see; read; look at",
+        "ko": "보다, 시청하다, 읽다",
+        "id": "hsk1-07-11",
+        "enOriginal": "watch; see; read; look at",
+        "koOriginal": "보다, 시청하다, 읽다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "电影",
+        "pinyin": "diànyǐng",
+        "en": "movie; film",
+        "ko": "영화",
+        "id": "hsk1-07-12",
+        "enOriginal": "movie; film",
+        "koOriginal": "영화",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "事",
+        "pinyin": "shì",
+        "en": "thing; affair",
+        "ko": "일, 사건",
+        "id": "hsk1-07-13",
+        "enOriginal": "thing; affair",
+        "koOriginal": "일, 사건",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "上课",
+        "pinyin": "shàngkè",
+        "en": "attend a class",
+        "ko": "수업을 듣다",
+        "id": "hsk1-07-14",
+        "enOriginal": "attend a class",
+        "koOriginal": "수업을 듣다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "呢",
+        "pinyin": "ne",
+        "en": "marker of a declarative sentence",
+        "ko": "평서문에 사용하는 어기조사",
+        "id": "hsk1-07-15",
+        "enOriginal": "marker of a declarative sentence",
+        "koOriginal": "평서문에 사용하는 어기조사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "半",
+        "pinyin": "bàn",
+        "en": "half",
+        "ko": "반, 절반",
+        "id": "hsk1-07-16",
+        "enOriginal": "half",
+        "koOriginal": "반, 절반",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "下课",
+        "pinyin": "xiàkè",
+        "en": "dismiss a class",
+        "ko": "수업을 마치다",
+        "id": "hsk1-07-17",
+        "enOriginal": "dismiss a class",
+        "koOriginal": "수업을 마치다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "在",
+        "pinyin": "zài",
+        "en": "be at/in/on",
+        "ko": "~에 있다",
+        "id": "hsk1-07-18",
+        "enOriginal": "be at/in/on",
+        "koOriginal": "~에 있다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "家",
+        "pinyin": "jiā",
+        "en": "home",
+        "ko": "집",
+        "id": "hsk1-07-19",
+        "enOriginal": "home",
+        "koOriginal": "집",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "里",
+        "pinyin": "li / lǐ",
+        "en": "inner; inside",
+        "ko": "안, 내부",
+        "id": "hsk1-07-20",
+        "enOriginal": "inner; inside",
+        "koOriginal": "안, 내부",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "晚上",
+        "pinyin": "wǎnshang",
+        "en": "evening",
+        "ko": "저녁, 밤",
+        "id": "hsk1-07-21",
+        "enOriginal": "evening",
+        "koOriginal": "저녁, 밤",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "医院",
+        "pinyin": "yīyuàn",
+        "en": "hospital",
+        "ko": "병원",
+        "id": "hsk1-07-22",
+        "enOriginal": "hospital",
+        "koOriginal": "병원",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "上班",
+        "pinyin": "shàngbān",
+        "en": "go to work",
+        "ko": "출근하다",
+        "id": "hsk1-07-23",
+        "enOriginal": "go to work",
+        "koOriginal": "출근하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "店",
+        "pinyin": "diàn",
+        "en": "shop; store",
+        "ko": "가게, 상점",
+        "id": "hsk1-07-24",
+        "enOriginal": "shop; store",
+        "koOriginal": "가게, 상점",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "菜",
+        "pinyin": "cài",
+        "en": "vegetable; greens",
+        "ko": "채소, 야채",
+        "id": "hsk1-07-25",
+        "enOriginal": "vegetable; greens",
+        "koOriginal": "채소, 야채",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "分钟",
+        "pinyin": "fēnzhōng",
+        "en": "minute",
+        "ko": "분",
+        "id": "hsk1-07-26",
+        "enOriginal": "minute",
+        "koOriginal": "분",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "后",
+        "pinyin": "hòu",
+        "en": "after; later",
+        "ko": "~후, 나중에",
+        "id": "hsk1-07-27",
+        "enOriginal": "after; later",
+        "koOriginal": "~후, 나중에",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "8": {
+    "title": "我爸爸也在医院工作",
+    "words": [
+      {
+        "hanzi": "房间",
+        "pinyin": "fángjiān",
+        "en": "room",
+        "ko": "방",
+        "id": "hsk1-08-01",
+        "enOriginal": "room",
+        "koOriginal": "방",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "外",
+        "pinyin": "wài",
+        "en": "outside",
+        "ko": "밖, 바깥",
+        "id": "hsk1-08-02",
+        "enOriginal": "outside",
+        "koOriginal": "밖, 바깥",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "只",
+        "pinyin": "zhī",
+        "en": "for certain animals",
+        "ko": "특정 동물을 세는 양사",
+        "id": "hsk1-08-03",
+        "enOriginal": "for certain animals",
+        "koOriginal": "특정 동물을 세는 양사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "小",
+        "pinyin": "xiǎo",
+        "en": "small; little",
+        "ko": "작다, 작은",
+        "id": "hsk1-08-04",
+        "enOriginal": "small; little",
+        "koOriginal": "작다, 작은",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "猫",
+        "pinyin": "māo",
+        "en": "cat",
+        "ko": "고양이",
+        "id": "hsk1-08-05",
+        "enOriginal": "cat",
+        "koOriginal": "고양이",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "没",
+        "pinyin": "méi",
+        "en": "no; not; not yet",
+        "ko": "아니다, ~하지 않았다, 아직 ~하지 않았다",
+        "id": "hsk1-08-06",
+        "enOriginal": "no; not; not yet",
+        "koOriginal": "아니다, ~하지 않았다, 아직 ~하지 않았다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "看见",
+        "pinyin": "kànjiàn",
+        "en": "see; catch sight of",
+        "ko": "보다, 눈에 띄다",
+        "id": "hsk1-08-07",
+        "enOriginal": "see; catch sight of",
+        "koOriginal": "보다, 눈에 띄다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "桌子",
+        "pinyin": "zhuōzi",
+        "en": "table; desk",
+        "ko": "탁자, 책상",
+        "id": "hsk1-08-08",
+        "enOriginal": "table; desk",
+        "koOriginal": "탁자, 책상",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "下",
+        "pinyin": "xià",
+        "en": "low position or rank",
+        "ko": "아래, 낮은 위치나 지위",
+        "id": "hsk1-08-09",
+        "enOriginal": "low position or rank",
+        "koOriginal": "아래, 낮은 위치나 지위",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "漂亮",
+        "pinyin": "piàoliang",
+        "en": "pretty; beautiful",
+        "ko": "예쁘다, 아름답다",
+        "id": "hsk1-08-10",
+        "enOriginal": "pretty; beautiful",
+        "koOriginal": "예쁘다, 아름답다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "在",
+        "pinyin": "zài",
+        "en": "at/in",
+        "ko": "~에서, ~에",
+        "id": "hsk1-08-11",
+        "enOriginal": "at/in",
+        "koOriginal": "~에서, ~에",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "学校",
+        "pinyin": "xuéxiào",
+        "en": "school",
+        "ko": "학교",
+        "id": "hsk1-08-12",
+        "enOriginal": "school",
+        "koOriginal": "학교",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "书店",
+        "pinyin": "shūdiàn",
+        "en": "bookstore",
+        "ko": "서점",
+        "id": "hsk1-08-13",
+        "enOriginal": "bookstore",
+        "koOriginal": "서점",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "前",
+        "pinyin": "qián",
+        "en": "front",
+        "ko": "앞",
+        "id": "hsk1-08-14",
+        "enOriginal": "front",
+        "koOriginal": "앞",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "能",
+        "pinyin": "néng",
+        "en": "can; be able to",
+        "ko": "~할 수 있다",
+        "id": "hsk1-08-15",
+        "enOriginal": "can; be able to",
+        "koOriginal": "~할 수 있다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "到",
+        "pinyin": "dào",
+        "en": "arrive; reach",
+        "ko": "도착하다, 이르다",
+        "id": "hsk1-08-16",
+        "enOriginal": "arrive; reach",
+        "koOriginal": "도착하다, 이르다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "午饭",
+        "pinyin": "wǔfàn",
+        "en": "lunch",
+        "ko": "점심 식사",
+        "id": "hsk1-08-17",
+        "enOriginal": "lunch",
+        "koOriginal": "점심 식사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "饭",
+        "pinyin": "fàn",
+        "en": "meal",
+        "ko": "식사, 끼니",
+        "id": "hsk1-08-18",
+        "enOriginal": "meal",
+        "koOriginal": "식사, 끼니",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "大",
+        "pinyin": "dà",
+        "en": "big; large",
+        "ko": "크다, 큰",
+        "id": "hsk1-08-19",
+        "enOriginal": "big; large",
+        "koOriginal": "크다, 큰",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "病人",
+        "pinyin": "bìngrén",
+        "en": "patient",
+        "ko": "환자",
+        "id": "hsk1-08-20",
+        "enOriginal": "patient",
+        "koOriginal": "환자",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "多",
+        "pinyin": "duō",
+        "en": "many; much",
+        "ko": "많다",
+        "id": "hsk1-08-21",
+        "enOriginal": "many; much",
+        "koOriginal": "많다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "医生",
+        "pinyin": "yīshēng",
+        "en": "doctor",
+        "ko": "의사",
+        "id": "hsk1-08-22",
+        "enOriginal": "doctor",
+        "koOriginal": "의사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "工作",
+        "pinyin": "gōngzuò",
+        "en": "work",
+        "ko": "일하다, 근무하다",
+        "id": "hsk1-08-23",
+        "enOriginal": "work",
+        "koOriginal": "일하다, 근무하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "9": {
+    "title": "我明天上午在学校学习",
+    "words": [
+      {
+        "hanzi": "前边",
+        "pinyin": "qiánbian",
+        "en": "front",
+        "ko": "앞, 앞쪽",
+        "id": "hsk1-09-01",
+        "enOriginal": "front",
+        "koOriginal": "앞, 앞쪽",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "边",
+        "pinyin": "bian / biān",
+        "en": "indicating locality; edge; side",
+        "ko": "위치를 나타내는 접미사, 가장자리, 측면",
+        "id": "hsk1-09-02",
+        "enOriginal": "indicating locality; edge; side",
+        "koOriginal": "위치를 나타내는 접미사, 가장자리, 측면",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "家",
+        "pinyin": "jiā",
+        "en": "for families or enterprises",
+        "ko": "가정이나 기업 등을 세는 양사",
+        "id": "hsk1-09-03",
+        "enOriginal": "for families or enterprises",
+        "koOriginal": "가정이나 기업 등을 세는 양사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "那个",
+        "pinyin": "nàge",
+        "en": "that",
+        "ko": "저것, 저, 그",
+        "id": "hsk1-09-04",
+        "enOriginal": "that",
+        "koOriginal": "저것, 저, 그",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "外边",
+        "pinyin": "wàibian",
+        "en": "outside",
+        "ko": "밖, 바깥쪽",
+        "id": "hsk1-09-05",
+        "enOriginal": "outside",
+        "koOriginal": "밖, 바깥쪽",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "椅子",
+        "pinyin": "yǐzi",
+        "en": "chair",
+        "ko": "의자",
+        "id": "hsk1-09-06",
+        "enOriginal": "chair",
+        "koOriginal": "의자",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "上",
+        "pinyin": "shang / shàng",
+        "en": "used after a noun, indicating position/higher position",
+        "ko": "명사 뒤에서 위치를 나타냄, 위쪽",
+        "id": "hsk1-09-07",
+        "enOriginal": "used after a noun, indicating position/higher position",
+        "koOriginal": "명사 뒤에서 위치를 나타냄, 위쪽",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "本",
+        "pinyin": "běn",
+        "en": "for books",
+        "ko": "책을 세는 양사",
+        "id": "hsk1-09-08",
+        "enOriginal": "for books",
+        "koOriginal": "책을 세는 양사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "书",
+        "pinyin": "shū",
+        "en": "book",
+        "ko": "책",
+        "id": "hsk1-09-09",
+        "enOriginal": "book",
+        "koOriginal": "책",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "那",
+        "pinyin": "nà",
+        "en": "that",
+        "ko": "저, 그, 저것",
+        "id": "hsk1-09-10",
+        "enOriginal": "that",
+        "koOriginal": "저, 그, 저것",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "第",
+        "pinyin": "dì",
+        "en": "marker of ordinal numbers",
+        "ko": "서수를 나타내는 접두사",
+        "id": "hsk1-09-11",
+        "enOriginal": "marker of ordinal numbers",
+        "koOriginal": "서수를 나타내는 접두사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "学习",
+        "pinyin": "xuéxí",
+        "en": "study; learn",
+        "ko": "공부하다, 배우다",
+        "id": "hsk1-09-12",
+        "enOriginal": "study; learn",
+        "koOriginal": "공부하다, 배우다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "做",
+        "pinyin": "zuò",
+        "en": "do; engage in",
+        "ko": "하다, 종사하다",
+        "id": "hsk1-09-13",
+        "enOriginal": "do; engage in",
+        "koOriginal": "하다, 종사하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "白天",
+        "pinyin": "báitiān",
+        "en": "day; daytime",
+        "ko": "낮, 낮 시간",
+        "id": "hsk1-09-14",
+        "enOriginal": "day; daytime",
+        "koOriginal": "낮, 낮 시간",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "读书",
+        "pinyin": "dúshū",
+        "en": "read a book",
+        "ko": "책을 읽다",
+        "id": "hsk1-09-15",
+        "enOriginal": "read a book",
+        "koOriginal": "책을 읽다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "和",
+        "pinyin": "hé",
+        "en": "with",
+        "ko": "~와 함께",
+        "id": "hsk1-09-16",
+        "enOriginal": "with",
+        "koOriginal": "~와 함께",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "朋友",
+        "pinyin": "péngyou",
+        "en": "friend",
+        "ko": "친구",
+        "id": "hsk1-09-17",
+        "enOriginal": "friend",
+        "koOriginal": "친구",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "唱",
+        "pinyin": "chàng",
+        "en": "sing",
+        "ko": "노래하다, 부르다",
+        "id": "hsk1-09-18",
+        "enOriginal": "sing",
+        "koOriginal": "노래하다, 부르다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "歌",
+        "pinyin": "gē",
+        "en": "song",
+        "ko": "노래",
+        "id": "hsk1-09-19",
+        "enOriginal": "song",
+        "koOriginal": "노래",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "好听",
+        "pinyin": "hǎotīng",
+        "en": "pleasant to hear",
+        "ko": "듣기 좋다",
+        "id": "hsk1-09-20",
+        "enOriginal": "pleasant to hear",
+        "koOriginal": "듣기 좋다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "电视",
+        "pinyin": "diànshì",
+        "en": "television",
+        "ko": "텔레비전",
+        "id": "hsk1-09-21",
+        "enOriginal": "television",
+        "koOriginal": "텔레비전",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "狗",
+        "pinyin": "gǒu",
+        "en": "dog",
+        "ko": "개",
+        "id": "hsk1-09-22",
+        "enOriginal": "dog",
+        "koOriginal": "개",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "玩",
+        "pinyin": "wán",
+        "en": "play; have fun",
+        "ko": "놀다, 즐기다",
+        "id": "hsk1-09-23",
+        "enOriginal": "play; have fun",
+        "koOriginal": "놀다, 즐기다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "10": {
+    "title": "这儿的苹果真便宜！",
+    "words": [
+      {
+        "hanzi": "杯子",
+        "pinyin": "bēizi",
+        "en": "cup; glass",
+        "ko": "컵, 유리잔",
+        "id": "hsk1-10-01",
+        "enOriginal": "cup; glass",
+        "koOriginal": "컵, 유리잔",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "售货员",
+        "pinyin": "shòuhuòyuán",
+        "en": "shop assistant; salesperson; vendor",
+        "ko": "점원, 판매원, 상인",
+        "id": "hsk1-10-02",
+        "enOriginal": "shop assistant; salesperson; vendor",
+        "koOriginal": "점원, 판매원, 상인",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "这边",
+        "pinyin": "zhèbian",
+        "en": "here; this side",
+        "ko": "여기, 이쪽",
+        "id": "hsk1-10-03",
+        "enOriginal": "here; this side",
+        "koOriginal": "여기, 이쪽",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "钱",
+        "pinyin": "qián",
+        "en": "money",
+        "ko": "돈",
+        "id": "hsk1-10-04",
+        "enOriginal": "money",
+        "koOriginal": "돈",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "这些",
+        "pinyin": "zhèxiē",
+        "en": "these",
+        "ko": "이것들",
+        "id": "hsk1-10-05",
+        "enOriginal": "these",
+        "koOriginal": "이것들",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "块",
+        "pinyin": "kuài",
+        "en": "for silver dollars or paper money",
+        "ko": "은화나 지폐를 세는 양사",
+        "id": "hsk1-10-06",
+        "enOriginal": "for silver dollars or paper money",
+        "koOriginal": "은화나 지폐를 세는 양사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "那些",
+        "pinyin": "nàxiē",
+        "en": "those",
+        "ko": "저것들, 그것들",
+        "id": "hsk1-10-07",
+        "enOriginal": "those",
+        "koOriginal": "저것들, 그것들",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "这儿",
+        "pinyin": "zhèr",
+        "en": "here",
+        "ko": "여기",
+        "id": "hsk1-10-08",
+        "enOriginal": "here",
+        "koOriginal": "여기",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "水果",
+        "pinyin": "shuǐguǒ",
+        "en": "fruit",
+        "ko": "과일",
+        "id": "hsk1-10-09",
+        "enOriginal": "fruit",
+        "koOriginal": "과일",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "少",
+        "pinyin": "shǎo",
+        "en": "few; little",
+        "ko": "적다",
+        "id": "hsk1-10-10",
+        "enOriginal": "few; little",
+        "koOriginal": "적다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "斤",
+        "pinyin": "jīn",
+        "en": "jin",
+        "ko": "근(무게 단위)",
+        "id": "hsk1-10-11",
+        "enOriginal": "jin",
+        "koOriginal": "근(무게 단위)",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "苹果",
+        "pinyin": "píngguǒ",
+        "en": "apple",
+        "ko": "사과",
+        "id": "hsk1-10-12",
+        "enOriginal": "apple",
+        "koOriginal": "사과",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "便宜",
+        "pinyin": "piányi",
+        "en": "cheap; affordable",
+        "ko": "싸다, 가격이 저렴하다",
+        "id": "hsk1-10-13",
+        "enOriginal": "cheap; affordable",
+        "koOriginal": "싸다, 가격이 저렴하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "商店",
+        "pinyin": "shāngdiàn",
+        "en": "shop; store",
+        "ko": "가게, 상점",
+        "id": "hsk1-10-14",
+        "enOriginal": "shop; store",
+        "koOriginal": "가게, 상점",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "衣服",
+        "pinyin": "yīfu",
+        "en": "clothes",
+        "ko": "옷, 의복",
+        "id": "hsk1-10-15",
+        "enOriginal": "clothes",
+        "koOriginal": "옷, 의복",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "件",
+        "pinyin": "jiàn",
+        "en": "piece",
+        "ko": "개, 벌(양사)",
+        "id": "hsk1-10-16",
+        "enOriginal": "piece",
+        "koOriginal": "개, 벌(양사)",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "元",
+        "pinyin": "yuán",
+        "en": "yuan",
+        "ko": "위안(화폐 단위)",
+        "id": "hsk1-10-17",
+        "enOriginal": "yuan",
+        "koOriginal": "위안(화폐 단위)",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "怎么样",
+        "pinyin": "zěnmeyàng",
+        "en": "(used to enquire about the nature, condition, manner, etc. of sth) how",
+        "ko": "(사물의 성질·상태·방식 등을 물을 때) 어떻다, 어떤가",
+        "id": "hsk1-10-18",
+        "enOriginal": "(used to enquire about the nature, condition, manner, etc. of sth) how",
+        "koOriginal": "어떻다, 어떤가",
+        "usageNoteEn": "used to enquire about the nature, condition, manner, etc. of sth",
+        "usageNoteKo": "사물의 성질·상태·방식 등을 물을 때 쓰임",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "贵",
+        "pinyin": "guì",
+        "en": "expensive",
+        "ko": "비싸다",
+        "id": "hsk1-10-19",
+        "enOriginal": "expensive",
+        "koOriginal": "비싸다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "穿",
+        "pinyin": "chuān",
+        "en": "wear; put on",
+        "ko": "입다, 착용하다",
+        "id": "hsk1-10-20",
+        "enOriginal": "wear; put on",
+        "koOriginal": "입다, 착용하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "女",
+        "pinyin": "nǚ",
+        "en": "female; woman",
+        "ko": "여성, 여자",
+        "id": "hsk1-10-21",
+        "enOriginal": "female; woman",
+        "koOriginal": "여성, 여자",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "男",
+        "pinyin": "nán",
+        "en": "male; man",
+        "ko": "남성, 남자",
+        "id": "hsk1-10-22",
+        "enOriginal": "male; man",
+        "koOriginal": "남성, 남자",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "那儿",
+        "pinyin": "nàr",
+        "en": "there; that place",
+        "ko": "저기, 그곳",
+        "id": "hsk1-10-23",
+        "enOriginal": "there; that place",
+        "koOriginal": "저기, 그곳",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "11": {
+    "title": "我读大学呢",
+    "words": [
+      {
+        "hanzi": "时候",
+        "pinyin": "shíhou",
+        "en": "(a point in) time",
+        "ko": "때, 시점",
+        "id": "hsk1-11-01",
+        "enOriginal": "(a point in) time",
+        "koOriginal": "때, 시점",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "饭店",
+        "pinyin": "fàndiàn",
+        "en": "restaurant",
+        "ko": "식당, 음식점",
+        "id": "hsk1-11-02",
+        "enOriginal": "restaurant",
+        "koOriginal": "식당, 음식점",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "知道",
+        "pinyin": "zhīdào",
+        "en": "know; realize",
+        "ko": "알다, 깨닫다",
+        "id": "hsk1-11-03",
+        "enOriginal": "know; realize",
+        "koOriginal": "알다, 깨닫다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "正在",
+        "pinyin": "zhèngzài",
+        "en": "in the process of",
+        "ko": "한창 ~하는 중이다",
+        "id": "hsk1-11-04",
+        "enOriginal": "in the process of",
+        "koOriginal": "한창 ~하는 중이다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "找",
+        "pinyin": "zhǎo",
+        "en": "look for",
+        "ko": "찾다",
+        "id": "hsk1-11-05",
+        "enOriginal": "look for",
+        "koOriginal": "찾다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "开车",
+        "pinyin": "kāichē",
+        "en": "drive (a vehicle)",
+        "ko": "운전하다",
+        "id": "hsk1-11-06",
+        "enOriginal": "drive (a vehicle)",
+        "koOriginal": "운전하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "车",
+        "pinyin": "chē",
+        "en": "vehicle",
+        "ko": "차량, 탈것",
+        "id": "hsk1-11-07",
+        "enOriginal": "vehicle",
+        "koOriginal": "차량, 탈것",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "在",
+        "pinyin": "zài",
+        "en": "used to indicate an action in progress",
+        "ko": "동작이 진행 중임을 나타냄",
+        "id": "hsk1-11-08",
+        "enOriginal": "used to indicate an action in progress",
+        "koOriginal": "동작이 진행 중임을 나타냄",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "读",
+        "pinyin": "dú",
+        "en": "attend school; study",
+        "ko": "학교에 다니다, 공부하다",
+        "id": "hsk1-11-09",
+        "enOriginal": "attend school; study",
+        "koOriginal": "학교에 다니다, 공부하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "大学",
+        "pinyin": "dàxué",
+        "en": "university; college",
+        "ko": "대학교, 대학",
+        "id": "hsk1-11-10",
+        "enOriginal": "university; college",
+        "koOriginal": "대학교, 대학",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "大学生",
+        "pinyin": "dàxuéshēng",
+        "en": "college/university student",
+        "ko": "대학생",
+        "id": "hsk1-11-11",
+        "enOriginal": "college/university student",
+        "koOriginal": "대학생",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "学",
+        "pinyin": "xué",
+        "en": "study; learn",
+        "ko": "공부하다, 배우다",
+        "id": "hsk1-11-12",
+        "enOriginal": "study; learn",
+        "koOriginal": "공부하다, 배우다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "医",
+        "pinyin": "yī",
+        "en": "medicine",
+        "ko": "의학",
+        "id": "hsk1-11-13",
+        "enOriginal": "medicine",
+        "koOriginal": "의학",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "弟弟",
+        "pinyin": "dìdi",
+        "en": "younger brother",
+        "ko": "남동생",
+        "id": "hsk1-11-14",
+        "enOriginal": "younger brother",
+        "koOriginal": "남동생",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "起床",
+        "pinyin": "qǐchuáng",
+        "en": "get up; get out of bed",
+        "ko": "일어나다, 침대에서 나오다",
+        "id": "hsk1-11-15",
+        "enOriginal": "get up; get out of bed",
+        "koOriginal": "일어나다, 침대에서 나오다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "睡觉",
+        "pinyin": "shuìjiào",
+        "en": "sleep",
+        "ko": "잠을 자다",
+        "id": "hsk1-11-16",
+        "enOriginal": "sleep",
+        "koOriginal": "잠을 자다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "睡",
+        "pinyin": "shuì",
+        "en": "sleep",
+        "ko": "자다",
+        "id": "hsk1-11-17",
+        "enOriginal": "sleep",
+        "koOriginal": "자다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "那里",
+        "pinyin": "nàlǐ",
+        "en": "there; that place",
+        "ko": "저기, 그곳",
+        "id": "hsk1-11-18",
+        "enOriginal": "there; that place",
+        "koOriginal": "저기, 그곳",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "哪里",
+        "pinyin": "nǎlǐ",
+        "en": "where",
+        "ko": "어디",
+        "id": "hsk1-11-19",
+        "enOriginal": "where",
+        "koOriginal": "어디",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "昨天",
+        "pinyin": "zuótiān",
+        "en": "yesterday",
+        "ko": "어제",
+        "id": "hsk1-11-20",
+        "enOriginal": "yesterday",
+        "koOriginal": "어제",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "问",
+        "pinyin": "wèn",
+        "en": "ask",
+        "ko": "묻다, 질문하다",
+        "id": "hsk1-11-21",
+        "enOriginal": "ask",
+        "koOriginal": "묻다, 질문하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "对",
+        "pinyin": "duì",
+        "en": "to; towards",
+        "ko": "~에게, ~을 향하여",
+        "id": "hsk1-11-22",
+        "enOriginal": "to; towards",
+        "koOriginal": "~에게, ~을 향하여",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "说",
+        "pinyin": "shuō",
+        "en": "speak; talk; say",
+        "ko": "말하다, 이야기하다",
+        "id": "hsk1-11-23",
+        "enOriginal": "speak; talk; say",
+        "koOriginal": "말하다, 이야기하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "en": "want; wish",
+        "ko": "원하다, 바라다",
+        "id": "hsk1-11-24",
+        "enOriginal": "want; wish",
+        "koOriginal": "원하다, 바라다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "小朋友",
+        "pinyin": "xiǎopéngyou",
+        "en": "child; kid",
+        "ko": "어린이, 아이",
+        "id": "hsk1-11-25",
+        "enOriginal": "child; kid",
+        "koOriginal": "어린이, 아이",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "12": {
+    "title": "昨天下雪了",
+    "words": [
+      {
+        "hanzi": "天气",
+        "pinyin": "tiānqì",
+        "en": "weather",
+        "ko": "날씨",
+        "id": "hsk1-12-01",
+        "enOriginal": "weather",
+        "koOriginal": "날씨",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "这里",
+        "pinyin": "zhèlǐ",
+        "en": "here",
+        "ko": "여기, 이곳",
+        "id": "hsk1-12-02",
+        "enOriginal": "here",
+        "koOriginal": "여기, 이곳",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "天",
+        "pinyin": "tiān",
+        "en": "weather",
+        "ko": "날씨",
+        "id": "hsk1-12-03",
+        "enOriginal": "weather",
+        "koOriginal": "날씨",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "下雨",
+        "pinyin": "xià yǔ",
+        "en": "rain",
+        "ko": "비가 내리다",
+        "id": "hsk1-12-04",
+        "enOriginal": "rain",
+        "koOriginal": "비가 내리다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "了",
+        "pinyin": "le",
+        "en": "used at the end of a sentence to indicate a change of situation or state",
+        "ko": "상황이나 상태의 변화를 나타내는 문장 끝 조사",
+        "id": "hsk1-12-05",
+        "enOriginal": "used at the end of a sentence to indicate a change of situation or state",
+        "koOriginal": "상황이나 상태의 변화를 나타내는 문장 끝 조사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "雨",
+        "pinyin": "yǔ",
+        "en": "rain",
+        "ko": "비",
+        "id": "hsk1-12-06",
+        "enOriginal": "rain",
+        "koOriginal": "비",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "有点儿",
+        "pinyin": "yǒudiǎnr",
+        "en": "rather; a bit",
+        "ko": "다소, 조금",
+        "id": "hsk1-12-07",
+        "enOriginal": "rather; a bit",
+        "koOriginal": "다소, 조금",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "觉得",
+        "pinyin": "juéde",
+        "en": "feel",
+        "ko": "느끼다",
+        "id": "hsk1-12-08",
+        "enOriginal": "feel",
+        "koOriginal": "느끼다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "冷",
+        "pinyin": "lěng",
+        "en": "cold",
+        "ko": "춥다, 차갑다",
+        "id": "hsk1-12-09",
+        "enOriginal": "cold",
+        "koOriginal": "춥다, 차갑다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "下",
+        "pinyin": "xià",
+        "en": "(of rain, snow, etc.) come down; fall",
+        "ko": "(비, 눈 등이) 내리다, 떨어지다",
+        "id": "hsk1-12-10",
+        "enOriginal": "(of rain, snow, etc.) come down; fall",
+        "koOriginal": "(비, 눈 등이) 내리다, 떨어지다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "雪",
+        "pinyin": "xuě",
+        "en": "snow",
+        "ko": "눈",
+        "id": "hsk1-12-11",
+        "enOriginal": "snow",
+        "koOriginal": "눈",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "来",
+        "pinyin": "lái",
+        "en": "come",
+        "ko": "오다",
+        "id": "hsk1-12-12",
+        "enOriginal": "come",
+        "koOriginal": "오다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "公司",
+        "pinyin": "gōngsī",
+        "en": "company",
+        "ko": "회사",
+        "id": "hsk1-12-13",
+        "enOriginal": "company",
+        "koOriginal": "회사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "生病",
+        "pinyin": "shēngbìng",
+        "en": "fall ill",
+        "ko": "병에 걸리다",
+        "id": "hsk1-12-14",
+        "enOriginal": "fall ill",
+        "koOriginal": "병에 걸리다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "看病",
+        "pinyin": "kànbìng",
+        "en": "(of a patient) see a doctor",
+        "ko": "(환자가) 진찰을 받다",
+        "id": "hsk1-12-15",
+        "enOriginal": "(of a patient) see a doctor",
+        "koOriginal": "(환자가) 진찰을 받다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "病",
+        "pinyin": "bìng",
+        "en": "fall ill; be sick",
+        "ko": "병에 걸리다, 아프다",
+        "id": "hsk1-12-16",
+        "enOriginal": "fall ill; be sick",
+        "koOriginal": "병에 걸리다, 아프다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "一点儿",
+        "pinyin": "yìdiǎnr",
+        "en": "some",
+        "ko": "약간, 조금",
+        "id": "hsk1-12-17",
+        "enOriginal": "some",
+        "koOriginal": "약간, 조금",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "药",
+        "pinyin": "yào",
+        "en": "medicine",
+        "ko": "약",
+        "id": "hsk1-12-18",
+        "enOriginal": "medicine",
+        "koOriginal": "약",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "天",
+        "pinyin": "tiān",
+        "en": "day",
+        "ko": "날, 일(시간 단위)",
+        "id": "hsk1-12-19",
+        "enOriginal": "day",
+        "koOriginal": "날, 일(시간 단위)",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "回",
+        "pinyin": "huí",
+        "en": "return; go back",
+        "ko": "돌아오다, 돌아가다",
+        "id": "hsk1-12-20",
+        "enOriginal": "return; go back",
+        "koOriginal": "돌아오다, 돌아가다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "再",
+        "pinyin": "zài",
+        "en": "then; only then",
+        "ko": "그다음에, 그제야",
+        "id": "hsk1-12-21",
+        "enOriginal": "then; only then",
+        "koOriginal": "그다음에, 그제야",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "喝",
+        "pinyin": "hē",
+        "en": "drink",
+        "ko": "마시다",
+        "id": "hsk1-12-22",
+        "enOriginal": "drink",
+        "koOriginal": "마시다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "热",
+        "pinyin": "rè",
+        "en": "hot; warm",
+        "ko": "뜨겁다, 따뜻하다",
+        "id": "hsk1-12-23",
+        "enOriginal": "hot; warm",
+        "koOriginal": "뜨겁다, 따뜻하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "水",
+        "pinyin": "shuǐ",
+        "en": "water",
+        "ko": "물",
+        "id": "hsk1-12-24",
+        "enOriginal": "water",
+        "koOriginal": "물",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "13": {
+    "title": "请给我一杯茶",
+    "words": [
+      {
+        "hanzi": "可以",
+        "pinyin": "kěyǐ",
+        "en": "can; may",
+        "ko": "~할 수 있다, ~해도 된다",
+        "id": "hsk1-13-01",
+        "enOriginal": "can; may",
+        "koOriginal": "~할 수 있다, ~해도 된다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "再",
+        "pinyin": "zài",
+        "en": "once more; again",
+        "ko": "한 번 더, 다시",
+        "id": "hsk1-13-02",
+        "enOriginal": "once more; again",
+        "koOriginal": "한 번 더, 다시",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "问题",
+        "pinyin": "wèntí",
+        "en": "question; problem",
+        "ko": "질문, 문제",
+        "id": "hsk1-13-03",
+        "enOriginal": "question; problem",
+        "koOriginal": "질문, 문제",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "卖",
+        "pinyin": "mài",
+        "en": "sell",
+        "ko": "팔다",
+        "id": "hsk1-13-04",
+        "enOriginal": "sell",
+        "koOriginal": "팔다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "打电话",
+        "pinyin": "dǎ diànhuà",
+        "en": "make a phone call; call",
+        "ko": "전화를 걸다",
+        "id": "hsk1-13-05",
+        "enOriginal": "make a phone call; call",
+        "koOriginal": "전화를 걸다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "一下",
+        "pinyin": "yíxià",
+        "en": "(used after a verb as its complement, indicating an act or an attempt) one time; once",
+        "ko": "(동사 뒤에서 동작이나 시도를 나타내는 보어로 쓰임) 한 번",
+        "id": "hsk1-13-06",
+        "enOriginal": "(used after a verb as its complement, indicating an act or an attempt) one time; once",
+        "koOriginal": "한 번",
+        "usageNoteEn": "used after a verb as its complement, indicating an act or an attempt",
+        "usageNoteKo": "동사 뒤에서 동작이나 시도를 나타내는 보어로 쓰임",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "服务员",
+        "pinyin": "fúwùyuán",
+        "en": "attendant; waiter; waitress",
+        "ko": "종업원, 웨이터, 웨이트리스",
+        "id": "hsk1-13-07",
+        "enOriginal": "attendant; waiter; waitress",
+        "koOriginal": "종업원, 웨이터, 웨이트리스",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "女士",
+        "pinyin": "nǚshì",
+        "en": "lady; madam",
+        "ko": "여성, 부인",
+        "id": "hsk1-13-08",
+        "enOriginal": "lady; madam",
+        "koOriginal": "여성, 부인",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "请",
+        "pinyin": "qǐng",
+        "en": "please",
+        "ko": "부디, ~해 주세요",
+        "id": "hsk1-13-09",
+        "enOriginal": "please",
+        "koOriginal": "부디, ~해 주세요",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "坐",
+        "pinyin": "zuò",
+        "en": "sit",
+        "ko": "앉다",
+        "id": "hsk1-13-10",
+        "enOriginal": "sit",
+        "koOriginal": "앉다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "给",
+        "pinyin": "gěi",
+        "en": "give",
+        "ko": "주다",
+        "id": "hsk1-13-11",
+        "enOriginal": "give",
+        "koOriginal": "주다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "杯",
+        "pinyin": "bēi",
+        "en": "cup; glass",
+        "ko": "컵, 잔",
+        "id": "hsk1-13-12",
+        "enOriginal": "cup; glass",
+        "koOriginal": "컵, 잔",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "en": "demand; ask for",
+        "ko": "요구하다, 요청하다",
+        "id": "hsk1-13-13",
+        "enOriginal": "demand; ask for",
+        "koOriginal": "요구하다, 요청하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "早饭",
+        "pinyin": "zǎofàn",
+        "en": "breakfast",
+        "ko": "아침 식사",
+        "id": "hsk1-13-14",
+        "enOriginal": "breakfast",
+        "koOriginal": "아침 식사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "这个",
+        "pinyin": "zhège",
+        "en": "this",
+        "ko": "이것, 이",
+        "id": "hsk1-13-15",
+        "enOriginal": "this",
+        "koOriginal": "이것, 이",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "面包",
+        "pinyin": "miànbāo",
+        "en": "bread",
+        "ko": "빵",
+        "id": "hsk1-13-16",
+        "enOriginal": "bread",
+        "koOriginal": "빵",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "鸡蛋",
+        "pinyin": "jīdàn",
+        "en": "(hen's) egg",
+        "ko": "달걀, 계란",
+        "id": "hsk1-13-17",
+        "enOriginal": "(hen's) egg",
+        "koOriginal": "달걀, 계란",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "先生",
+        "pinyin": "xiānsheng",
+        "en": "gentleman; sir",
+        "ko": "신사, 선생님(남성 존칭)",
+        "id": "hsk1-13-18",
+        "enOriginal": "gentleman; sir",
+        "koOriginal": "신사, 선생님(남성 존칭)",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "一半",
+        "pinyin": "yíbàn",
+        "en": "one half; half",
+        "ko": "절반, 반",
+        "id": "hsk1-13-19",
+        "enOriginal": "one half; half",
+        "koOriginal": "절반, 반",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "茶",
+        "pinyin": "chá",
+        "en": "tea",
+        "ko": "차",
+        "id": "hsk1-13-20",
+        "enOriginal": "tea",
+        "koOriginal": "차",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "14": {
+    "title": "我看了一个电影",
+    "words": [
+      {
+        "hanzi": "上",
+        "pinyin": "shàng",
+        "en": "go up; get on; board",
+        "ko": "올라가다, 타다, 탑승하다",
+        "id": "hsk1-14-01",
+        "enOriginal": "go up; get on; board",
+        "koOriginal": "올라가다, 타다, 탑승하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "火车",
+        "pinyin": "huǒchē",
+        "en": "train",
+        "ko": "기차",
+        "id": "hsk1-14-02",
+        "enOriginal": "train",
+        "koOriginal": "기차",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "中午",
+        "pinyin": "zhōngwǔ",
+        "en": "noon",
+        "ko": "정오, 한낮",
+        "id": "hsk1-14-03",
+        "enOriginal": "noon",
+        "koOriginal": "정오, 한낮",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "开",
+        "pinyin": "kāi",
+        "en": "(of vehicles) depart; leave",
+        "ko": "(교통수단이) 출발하다, 떠나다",
+        "id": "hsk1-14-04",
+        "enOriginal": "(of vehicles) depart; leave",
+        "koOriginal": "(교통수단이) 출발하다, 떠나다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "有些",
+        "pinyin": "yǒuxiē",
+        "en": "(indicating a part) some",
+        "ko": "(일부분을 나타냄) 일부, 몇몇",
+        "id": "hsk1-14-05",
+        "enOriginal": "(indicating a part) some",
+        "koOriginal": "일부, 몇몇",
+        "usageNoteEn": "indicating a part",
+        "usageNoteKo": "일부분을 나타냄",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "有的",
+        "pinyin": "yǒude",
+        "en": "some",
+        "ko": "일부, 몇몇",
+        "id": "hsk1-14-06",
+        "enOriginal": "some",
+        "koOriginal": "일부, 몇몇",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "了",
+        "pinyin": "le",
+        "en": "used after a verb to indicate the completion of an action",
+        "ko": "동작의 완료를 나타내는 조사",
+        "id": "hsk1-14-07",
+        "enOriginal": "used after a verb to indicate the completion of an action",
+        "koOriginal": "동작의 완료를 나타내는 조사",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "写",
+        "pinyin": "xiě",
+        "en": "write",
+        "ko": "쓰다",
+        "id": "hsk1-14-08",
+        "enOriginal": "write",
+        "koOriginal": "쓰다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "都",
+        "pinyin": "dōu",
+        "en": "all; both",
+        "ko": "모두, 둘 다",
+        "id": "hsk1-14-09",
+        "enOriginal": "all; both",
+        "koOriginal": "모두, 둘 다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "听见",
+        "pinyin": "tīngjiàn",
+        "en": "hear",
+        "ko": "들리다, 듣다",
+        "id": "hsk1-14-10",
+        "enOriginal": "hear",
+        "koOriginal": "들리다, 듣다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "不要",
+        "pinyin": "búyào",
+        "en": "don't",
+        "ko": "~하지 마라",
+        "id": "hsk1-14-11",
+        "enOriginal": "don't",
+        "koOriginal": "~하지 마라",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "说话",
+        "pinyin": "shuōhuà",
+        "en": "say; speak; talk",
+        "ko": "말하다, 이야기하다",
+        "id": "hsk1-14-12",
+        "enOriginal": "say; speak; talk",
+        "koOriginal": "말하다, 이야기하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "听",
+        "pinyin": "tīng",
+        "en": "listen to; hear",
+        "ko": "듣다, 귀 기울이다",
+        "id": "hsk1-14-13",
+        "enOriginal": "listen to; hear",
+        "koOriginal": "듣다, 귀 기울이다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "哪些",
+        "pinyin": "nǎxiē",
+        "en": "which",
+        "ko": "어느 것들, 어떤 것들",
+        "id": "hsk1-14-14",
+        "enOriginal": "which",
+        "koOriginal": "어느 것들, 어떤 것들",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "字",
+        "pinyin": "zì",
+        "en": "character; word",
+        "ko": "글자, 문자, 단어",
+        "id": "hsk1-14-15",
+        "enOriginal": "character; word",
+        "koOriginal": "글자, 문자, 단어",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "汉语",
+        "pinyin": "Hànyǔ",
+        "en": "Chinese language",
+        "ko": "중국어",
+        "id": "hsk1-14-16",
+        "enOriginal": "Chinese language",
+        "koOriginal": "중국어",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "汉字",
+        "pinyin": "Hànzì",
+        "en": "Chinese character",
+        "ko": "한자",
+        "id": "hsk1-14-17",
+        "enOriginal": "Chinese character",
+        "koOriginal": "한자",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "明年",
+        "pinyin": "míngnián",
+        "en": "next year",
+        "ko": "내년",
+        "id": "hsk1-14-18",
+        "enOriginal": "next year",
+        "koOriginal": "내년",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "上",
+        "pinyin": "shàng",
+        "en": "begin to do sth at a fixed time",
+        "ko": "정해진 시간에 어떤 일을 시작하다",
+        "id": "hsk1-14-19",
+        "enOriginal": "begin to do sth at a fixed time",
+        "koOriginal": "정해진 시간에 어떤 일을 시작하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "中学",
+        "pinyin": "zhōngxué",
+        "en": "middle school",
+        "ko": "중학교",
+        "id": "hsk1-14-20",
+        "enOriginal": "middle school",
+        "koOriginal": "중학교",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "小学",
+        "pinyin": "xiǎoxué",
+        "en": "primary school",
+        "ko": "초등학교",
+        "id": "hsk1-14-21",
+        "enOriginal": "primary school",
+        "koOriginal": "초등학교",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "中学生",
+        "pinyin": "zhōngxuéshēng",
+        "en": "middle school student",
+        "ko": "중학생",
+        "id": "hsk1-14-22",
+        "enOriginal": "middle school student",
+        "koOriginal": "중학생",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "小学生",
+        "pinyin": "xiǎoxuéshēng",
+        "en": "primary school student; pupil",
+        "ko": "초등학생",
+        "id": "hsk1-14-23",
+        "enOriginal": "primary school student; pupil",
+        "koOriginal": "초등학생",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "上学",
+        "pinyin": "shàngxué",
+        "en": "start school; go to school",
+        "ko": "학교에 다니기 시작하다, 학교에 가다",
+        "id": "hsk1-14-24",
+        "enOriginal": "start school; go to school",
+        "koOriginal": "학교에 다니기 시작하다, 학교에 가다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "他们",
+        "pinyin": "tāmen",
+        "en": "they; them",
+        "ko": "그들, 그들을",
+        "id": "hsk1-14-25",
+        "enOriginal": "they; them",
+        "koOriginal": "그들, 그들을",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "她们",
+        "pinyin": "tāmen",
+        "en": "(referring to female people) they; them",
+        "ko": "그녀들, 그녀들을",
+        "id": "hsk1-14-26",
+        "enOriginal": "(referring to female people) they; them",
+        "koOriginal": "그녀들, 그녀들을",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "它们",
+        "pinyin": "tāmen",
+        "en": "(plural of 它) they; them; their",
+        "ko": "그것들, 그것들을, 그것들의",
+        "id": "hsk1-14-27",
+        "enOriginal": "(plural of 它) they; them; their",
+        "koOriginal": "그것들, 그것들을, 그것들의",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "晚",
+        "pinyin": "wǎn",
+        "en": "late",
+        "ko": "늦다",
+        "id": "hsk1-14-28",
+        "enOriginal": "late",
+        "koOriginal": "늦다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  },
+  "15": {
+    "title": "大兴机场见！",
+    "words": [
+      {
+        "hanzi": "爱",
+        "pinyin": "ài",
+        "en": "like; be fond of",
+        "ko": "좋아하다, 즐기다",
+        "id": "hsk1-15-01",
+        "enOriginal": "like; be fond of",
+        "koOriginal": "좋아하다, 즐기다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "哪个",
+        "pinyin": "nǎge",
+        "en": "which",
+        "ko": "어느 것, 어떤 것",
+        "id": "hsk1-15-02",
+        "enOriginal": "which",
+        "koOriginal": "어느 것, 어떤 것",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "去年",
+        "pinyin": "qùnián",
+        "en": "last year",
+        "ko": "작년, 지난해",
+        "id": "hsk1-15-03",
+        "enOriginal": "last year",
+        "koOriginal": "작년, 지난해",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "男朋友",
+        "pinyin": "nánpéngyou",
+        "en": "boyfriend",
+        "ko": "남자 친구",
+        "id": "hsk1-15-04",
+        "enOriginal": "boyfriend",
+        "koOriginal": "남자 친구",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "几",
+        "pinyin": "jǐ",
+        "en": "a few; several",
+        "ko": "몇몇, 몇 개의",
+        "id": "hsk1-15-05",
+        "enOriginal": "a few; several",
+        "koOriginal": "몇몇, 몇 개의",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "年",
+        "pinyin": "nián",
+        "en": "year",
+        "ko": "년, 해",
+        "id": "hsk1-15-06",
+        "enOriginal": "year",
+        "koOriginal": "년, 해",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "好玩儿",
+        "pinyin": "hǎowánr",
+        "en": "fun; interesting",
+        "ko": "재미있다, 흥미롭다",
+        "id": "hsk1-15-07",
+        "enOriginal": "fun; interesting",
+        "koOriginal": "재미있다, 흥미롭다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "西安",
+        "pinyin": "Xī'ān",
+        "en": "Xi'an",
+        "ko": "시안",
+        "id": "hsk1-15-08",
+        "enOriginal": "Xi'an",
+        "koOriginal": "시안",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "北京",
+        "pinyin": "Běijīng",
+        "en": "Beijing",
+        "ko": "베이징",
+        "id": "hsk1-15-09",
+        "enOriginal": "Beijing",
+        "koOriginal": "베이징",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "飞机",
+        "pinyin": "fēijī",
+        "en": "plane",
+        "ko": "비행기",
+        "id": "hsk1-15-10",
+        "enOriginal": "plane",
+        "koOriginal": "비행기",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "en": "need; take",
+        "ko": "필요하다, (시간이) 걸리다",
+        "id": "hsk1-15-11",
+        "enOriginal": "need; take",
+        "koOriginal": "필요하다, (시간이) 걸리다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "小时",
+        "pinyin": "xiǎoshí",
+        "en": "hour",
+        "ko": "시간",
+        "id": "hsk1-15-12",
+        "enOriginal": "hour",
+        "koOriginal": "시간",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "家人",
+        "pinyin": "jiārén",
+        "en": "family (member)",
+        "ko": "가족, 가족 구성원",
+        "id": "hsk1-15-13",
+        "enOriginal": "family (member)",
+        "koOriginal": "가족, 가족 구성원",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "时间",
+        "pinyin": "shíjiān",
+        "en": "(duration of) time",
+        "ko": "시간, 시간의 길이",
+        "id": "hsk1-15-14",
+        "enOriginal": "(duration of) time",
+        "koOriginal": "시간, 시간의 길이",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "机场",
+        "pinyin": "jīchǎng",
+        "en": "airport",
+        "ko": "공항",
+        "id": "hsk1-15-15",
+        "enOriginal": "airport",
+        "koOriginal": "공항",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "接",
+        "pinyin": "jiē",
+        "en": "meet; welcome",
+        "ko": "마중하다, 맞이하다",
+        "id": "hsk1-15-16",
+        "enOriginal": "meet; welcome",
+        "koOriginal": "마중하다, 맞이하다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "住",
+        "pinyin": "zhù",
+        "en": "live; stay",
+        "ko": "살다, 머무르다",
+        "id": "hsk1-15-17",
+        "enOriginal": "live; stay",
+        "koOriginal": "살다, 머무르다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "早",
+        "pinyin": "zǎo",
+        "en": "early",
+        "ko": "이르다",
+        "id": "hsk1-15-18",
+        "enOriginal": "early",
+        "koOriginal": "이르다",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      },
+      {
+        "hanzi": "那",
+        "pinyin": "nà",
+        "en": "then",
+        "ko": "그러면, 그렇다면",
+        "id": "hsk1-15-19",
+        "enOriginal": "then",
+        "koOriginal": "그러면, 그렇다면",
+        "usageNoteEn": "",
+        "usageNoteKo": "",
+        "partOfSpeech": null,
+        "properNoun": null,
+        "source": {
+          "file": null,
+          "pdfPage": null,
+          "section": null
+        },
+        "provenance": "existing-site-data"
+      }
+    ]
+  }
+}
