@@ -1,0 +1,1110 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script src="course.js?v=consistent-2"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK 2급 · 성장 마을 | 민쌤중국어 어휘랜드</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #f8faf9;
+  --white: #ffffff;
+  --dark: #263b36;
+  --muted: #778981;
+  --line: #e5ece8;
+  --teal: #0f766e;
+  --gold: #d3a044;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--dark);
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+button, a { font: inherit; }
+button { cursor: pointer; }
+
+button:focus-visible, a:focus-visible {
+  outline: 3px solid #57b5a0;
+  outline-offset: 3px;
+}
+
+[hidden] { display: none !important; }
+
+.topbar {
+  height: 68px;
+  background: white;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(22px, calc((100vw - 1080px) / 2));
+}
+
+.brand {
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.top-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 42px 20px 80px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--teal);
+  margin: 0 0 9px;
+}
+
+h1 {
+  font-size: clamp(27px, 5vw, 35px);
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 9px 0 0;
+}
+
+.section-title {
+  font-size: 19px;
+  font-weight: 800;
+  margin: 30px 0 16px;
+}
+
+/* Header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 27px;
+}
+
+.header-icon {
+  width: 64px;
+  height: 64px;
+  background: #e8f6ef;
+  border-radius: 19px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--teal);
+}
+
+.header-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Overall Progress */
+.overall-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 23px;
+}
+
+.overall-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.overall-label {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.overall-number {
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.star-total {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.star-total svg {
+  width: 21px;
+  height: 21px;
+}
+
+.progress-track {
+  height: 9px;
+  background: #e7eee9;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 19px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--teal);
+  border-radius: 99px;
+  transition: width .3s ease;
+}
+
+.progress-caption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 11px;
+}
+
+/* Area Cards */
+.area-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.area-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 25px;
+  transition: border-color .2s, transform .2s;
+}
+
+.area-card.unlocked:hover {
+  transform: translateY(-2px);
+  border-color: var(--area-color);
+}
+
+.area-card.locked {
+  background: #fcfdfc;
+}
+
+.area-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.area-label {
+  color: var(--area-color);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.area-name {
+  font-size: 23px;
+  font-weight: 800;
+  margin: 7px 0;
+}
+
+.area-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.area-icon {
+  width: 53px;
+  height: 53px;
+  border-radius: 15px;
+  background: var(--area-light);
+  color: var(--area-color);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.area-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.area-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.area-meta strong {
+  color: var(--dark);
+}
+
+.area-progress {
+  height: 7px;
+  border-radius: 99px;
+  background: #e9efeb;
+  overflow: hidden;
+  margin: 10px 0 0;
+}
+
+.area-progress-fill {
+  width: 0;
+  height: 100%;
+  background: var(--area-color);
+  border-radius: 99px;
+}
+
+.area-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: 0;
+  border-radius: 13px;
+  background: var(--area-color);
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.area-button:hover:not(:disabled) {
+  filter: brightness(.94);
+}
+
+.area-button:disabled {
+  background: #edf1ef;
+  color: #9ca9a2;
+  cursor: not-allowed;
+}
+
+.unlock-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 17px;
+  line-height: 1.7;
+}
+
+.unlock-note svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Area Map */
+.map-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.back-button {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--dark);
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.map-title {
+  font-size: 27px;
+  font-weight: 800;
+  margin: 3px 0 4px;
+}
+
+.map-subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.map-progress-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  padding: 18px 21px;
+  margin-bottom: 22px;
+}
+
+.map-progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.map-progress-top span:last-child {
+  color: var(--area-color);
+}
+
+/* Curved Learning Path */
+.map-board {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 24px 8px 32px;
+}
+
+.map-board-heading {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.path-container {
+  position: relative;
+  max-width: 440px;
+  height: 680px;
+  margin: 0 auto;
+}
+
+.path-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.lesson-node {
+  position: absolute;
+  width: 116px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  z-index: 2;
+}
+
+.node-circle {
+  width: 67px;
+  height: 67px;
+  border-radius: 50%;
+  border: 3px solid #dce5df;
+  background: white;
+  color: #a5b3aa;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(30,60,40,.04);
+  padding: 0;
+}
+
+.node-circle.current {
+  background: var(--area-color);
+  border-color: var(--area-color);
+  color: white;
+  box-shadow: 0 0 0 7px var(--area-light);
+}
+
+.node-circle.completed {
+  background: var(--area-light);
+  border-color: var(--area-color);
+  color: var(--area-color);
+}
+
+.node-circle.locked,
+.node-circle.coming-soon {
+  cursor: not-allowed;
+}
+
+.node-circle svg {
+  width: 23px;
+  height: 23px;
+}
+
+.node-number {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--dark);
+  background: #ffffff;
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin-top: 3px;
+}
+
+.node-stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+.node-stars svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.node-status {
+  font-size: 11px;
+  color: var(--muted);
+  background: #ffffff;
+  padding: 2px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+/* Footer */
+.area-finish {
+  margin-top: 20px;
+  background: var(--area-light);
+  border: 1px solid var(--area-border);
+  border-radius: 17px;
+  padding: 22px;
+  text-align: center;
+}
+
+.area-finish strong {
+  display: block;
+  color: var(--area-color);
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.area-finish p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.area-finish button {
+  margin-top: 15px;
+  border: 0;
+  background: var(--area-color);
+  color: white;
+  border-radius: 12px;
+  padding: 13px 20px;
+  font-weight: 700;
+}
+
+.footnote {
+  text-align: center;
+  color: #98a69e;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 27px;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    height: 60px;
+    padding: 0 17px;
+  }
+
+  .brand { font-size: 13px; }
+
+  .container {
+    padding: 28px 15px 55px;
+  }
+
+  .area-card { padding: 21px; }
+
+  .area-name { font-size: 21px; }
+
+  .path-container { height: 650px; }
+
+  .node-circle {
+    width: 61px;
+    height: 61px;
+  }
+
+  .lesson-node { width: 105px; }
+
+  .map-board { padding-left: 3px; padding-right: 3px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+<link rel="stylesheet" href="language.css">
+<link rel="stylesheet" href="ui.css?v=hsk2-1">
+<script defer src="icons.js"></script>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html" data-i18n-ignore="true"><svg class="brand-book" viewBox="0 0 56 56" aria-hidden="true"><path d="M4 8 Q17 5 26.5 14 L26.5 49 Q16 40 4 43 Z M52 8 Q39 5 29.5 14 L29.5 49 Q40 40 52 43 Z" fill="#417C69"/><path d="M10 17 Q16 16 21 20 M10 24 Q16 23 21 27 M10 31 Q16 30 21 34 M35 20 Q40 16 46 17 M35 27 Q40 23 46 24 M35 34 Q40 30 46 31" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"/></svg><span class="brand-copy"><span class="brand-ko" lang="ko">민쌤중국어</span><span class="brand-en" lang="en">CHINESE VOCABULARY LAND</span></span></a>
+  <a class="top-link" href="hsk.html">HSK 급수 선택</a>
+</header>
+
+<main class="container">
+
+<!-- AREA SELECTION -->
+<section id="areaSelection">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">HSK 2 · LEARNING JOURNEY</p>
+      <h1>성장 마을</h1>
+      <p class="subtitle">
+        15개 레슨에서 단어를 익히고 게임으로 복습하세요.
+      </p>
+    </div>
+
+    <div class="header-icon">
+      <svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22V12"/>
+        <path d="M12 13C5 13 3 9 3 4c6 0 9 3 9 9Z"/>
+        <path d="M12 16c0-7 3-10 9-10 0 6-3 10-9 10Z"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="overall-card">
+    <div class="overall-top">
+      <div>
+        <div class="overall-label">전체 학습 진행률</div>
+        <div class="overall-number" id="totalProgress">
+          0 / 15 레슨
+        </div>
+      </div>
+      <div>
+        <div class="overall-label">획득한 별</div>
+        <div class="star-total">
+          <svg viewBox="0 0 24 24"
+            fill="currentColor" stroke="currentColor">
+            <path d="m12 2 3.1 6.3 7 1-5.1 5 .9 7-5.9-3.3-5.9 3.3.9-7-5.1-5 7-1Z"/>
+          </svg>
+          <span id="totalStars">0 / 45</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="totalProgressFill"></div>
+    </div>
+    <div class="progress-caption">
+      평가는 준비 중이며, 별은 평가가 열린 후 획득할 수 있어요.
+    </div>
+  </div>
+
+  <h2 class="section-title">학습 구역</h2>
+  <div class="area-list" id="areaList"></div>
+
+  <p class="footnote">
+    모든 구역에서 원하는 레슨을 학습할 수 있어요.<br>
+    학습 기록은 로그인한 계정에 급수별로 저장됩니다.
+  </p>
+</section>
+
+<!-- AREA MAP -->
+<section id="areaMap" hidden>
+  <div class="map-header">
+    <button class="back-button" id="backButton"
+      aria-label="구역 선택으로 돌아가기">
+      <svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+    </button>
+    <div>
+      <p class="eyebrow" id="mapEyebrow">AREA 01</p>
+      <h1 class="map-title" id="mapTitle">새싹의 시작</h1>
+      <div class="map-subtitle" id="mapSubtitle"></div>
+    </div>
+  </div>
+
+  <div class="map-progress-card" id="mapProgressCard">
+    <div class="map-progress-top">
+      <span>구역 학습 진행률</span>
+      <span id="mapProgressText">0 / 5</span>
+    </div>
+    <div class="progress-track" style="margin-top:12px;">
+      <div class="progress-fill" id="mapProgressFill"></div>
+    </div>
+  </div>
+
+  <div class="map-board" id="mapBoard">
+    <div class="map-board-heading">
+      START ↓
+    </div>
+    <div class="path-container" id="pathContainer"></div>
+  </div>
+
+  <div class="area-finish" id="areaFinish"></div>
+
+  <p class="footnote">
+    단어 학습과 게임을 자유롭게 이용하세요. 평가는 준비 중입니다.
+  </p>
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script><script src="progress.js?v=1"></script>
+<script>
+"use strict";
+
+
+const TOTAL_LESSONS = 15;
+const MAX_STARS = 3;
+
+const areas = [
+  {
+    id: 1,
+    name: "새싹의 시작",
+    description: "중국어 학습의 첫걸음을 시작해 보세요.",
+    start: 1,
+    end: 5,
+    color: "#438d6b",
+    light: "#e3f4e9",
+    border: "#c7e6d2",
+    icon: "sprout"
+  },
+  {
+    id: 2,
+    name: "성장의 여정",
+    description: "새로운 표현을 익히며 실력을 키워보세요.",
+    start: 6,
+    end: 10,
+    color: "#5c85b6",
+    light: "#e8f0fc",
+    border: "#d2e0f2",
+    icon: "waves"
+  },
+  {
+    id: 3,
+    name: "첫 번째 목표",
+    description: "마지막 구역에 도전해 보세요.",
+    start: 11,
+    end: 15,
+    color: "#9876b6",
+    light: "#f1eafb",
+    border: "#e4d7f0",
+    icon: "flag"
+  }
+];
+
+// Activate a lesson only after its vocabulary is added to LESSON_DATA
+// in lesson.html. Keep this list in sync with the lesson data.
+const availableLessons = new Set(Array.from({length: TOTAL_LESSONS}, (_, i) => i + 1));
+
+function el(id) {
+  return document.getElementById(id);
+}
+
+let progress=null, stars=[], currentArea=null, isAdmin=false, roleCheckVersion=0;
+const roleClient=window.MinssemBackend.client;
+async function refreshAdminAccess(){
+ const version=++roleCheckVersion; progress=null; isAdmin=false;
+ el('areaMap').hidden=true; el('areaSelection').hidden=false;
+ el('totalProgress').textContent='—'; el('totalStars').textContent='—'; el('totalProgressFill').style.width='0%';
+ el('areaList').textContent='Loading / 불러오는 중…';
+ try {const {data,error}=await window.MinssemAuth.getUser(); if(error||!data?.user){location.replace('login.html');return;}
+ const p=await window.MinssemAuth.getProfile(data.user.id); if(p.error||!p.data)throw p.error||Error('Profile missing');
+ const next=await window.MinssemProgress.load({userId:data.user.id,course:'hsk2'}); if(version!==roleCheckVersion)return;
+ progress=next;stars=next.stars;isAdmin=p.data.role==='admin';
+ if(currentArea&&isAreaUnlocked(currentArea.id))openArea(currentArea.id);else {currentArea=null;renderAreaSelection();}
+ }catch(e){if(version===roleCheckVersion){console.error(e);el('areaList').textContent='Unable to load progress / 진행률 조회 실패. 새로고침해 주세요.';}}
+}
+function countCompleted(start,end){return progress.range(start,end).completed;}
+function countStars(start,end){return progress.range(start,end).stars;}
+function isAreaUnlocked(id){const a=areas.find(x=>x.id===id);return !!a&&isLessonUnlocked(a.start);}
+function isLessonUnlocked(n){return !!progress&&availableLessons.has(n)&&true;}
+
+function iconSvg(name) {
+  const common = `fill="none" stroke="currentColor"
+    stroke-width="1.8" stroke-linecap="round"
+    stroke-linejoin="round"`;
+
+  if (name === "sprout") {
+    return `<svg viewBox="0 0 24 24" ${common}>
+      <path d="M12 22V12"/>
+      <path d="M12 13C5 13 3 9 3 4c6 0 9 3 9 9Z"/>
+      <path d="M12 16c0-7 3-10 9-10 0 6-3 10-9 10Z"/>
+    </svg>`;
+  }
+
+  if (name === "waves") {
+    return `<svg viewBox="0 0 24 24" ${common}>
+      <path d="M2 8c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2"/>
+      <path d="M2 15c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2"/>
+    </svg>`;
+  }
+
+  if (name === "flag") {
+    return `<svg viewBox="0 0 24 24" ${common}>
+      <path d="M4 22V4"/>
+      <path d="M4 5c6-4 10 4 16 0v11c-6 4-10-4-16 0"/>
+    </svg>`;
+  }
+
+  if (name === "lock") {
+    return `<svg viewBox="0 0 24 24" ${common}>
+      <rect x="4" y="10" width="16" height="11" rx="2"/>
+      <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+    </svg>`;
+  }
+
+  if (name === "check") {
+    return `<svg viewBox="0 0 24 24" ${common}>
+      <path d="m5 12 4 4L19 6"/>
+    </svg>`;
+  }
+
+  return "";
+}
+
+function starSvg(filled) {
+  return `<svg viewBox="0 0 24 24"
+    fill="${filled ? "#D4A044" : "none"}"
+    stroke="${filled ? "#D4A044" : "#8E9E95"}"
+    stroke-width="2"
+    stroke-linejoin="round"
+    aria-hidden="true">
+    <path d="m12 2 3.1 6.3 7 1-5.1 5 .9 7-5.9-3.3-5.9 3.3.9-7-5.1-5 7-1Z"/>
+  </svg>`;
+}
+
+function renderAreaSelection() {
+  if (!progress) return;
+
+  const completed = countCompleted(1, TOTAL_LESSONS);
+  const earned = countStars(1, TOTAL_LESSONS);
+
+  el("totalProgress").textContent =
+    `${completed} / ${TOTAL_LESSONS} 레슨`;
+  el("totalStars").textContent =
+    `${earned} / ${TOTAL_LESSONS * MAX_STARS}`;
+  el("totalProgressFill").style.width =
+    `${completed / TOTAL_LESSONS * 100}%`;
+
+  const list = el("areaList");
+  list.replaceChildren();
+
+  areas.forEach(area => {
+    const unlocked = isAreaUnlocked(area.id);
+    const done = countCompleted(area.start, area.end);
+    const earnedStars = countStars(area.start, area.end);
+
+    const card = document.createElement("div");
+    card.className = `area-card ${unlocked ? "unlocked" : "locked"}`;
+    card.style.setProperty("--area-color", area.color);
+    card.style.setProperty("--area-light", area.light);
+
+    card.innerHTML = `
+      <div class="area-heading">
+        <div>
+          <div class="area-label">
+            AREA ${String(area.id).padStart(2, "0")}
+            · LESSON ${String(area.start).padStart(2,"0")}–${String(area.end).padStart(2,"0")}
+          </div>
+          <div class="area-name">${area.name}</div>
+          <p class="area-description">${area.description}</p>
+        </div>
+        <div class="area-icon">
+          ${iconSvg(unlocked ? area.icon : "lock")}
+        </div>
+      </div>
+
+      <div class="area-meta">
+        <span>학습 진행률 <strong>${done} / 5</strong></span>
+        <span>★ ${earnedStars} / 15</span>
+      </div>
+
+      <div class="area-progress">
+        <div class="area-progress-fill"
+          style="width:${done / 5 * 100}%"></div>
+      </div>
+
+      ${!unlocked ? `
+        <div class="unlock-note">
+          ${iconSvg("lock")}
+          <span>${area.id - 1}구역의 5개 레슨을 완료하면 열립니다.</span>
+        </div>
+      ` : ""}
+
+      <button class="area-button"
+        ${unlocked ? "" : "disabled"}>
+        ${unlocked
+          ? done === 5
+            ? "구역 다시 둘러보기 →"
+            : `${area.id}구역 입장하기 →`
+          : "잠금 상태"}
+      </button>
+    `;
+
+    const button = card.querySelector(".area-button");
+    if (unlocked) {
+      button.addEventListener("click", () => {
+        openArea(area.id);
+      });
+    }
+
+    list.appendChild(card);
+  });
+}
+
+function openArea(areaId) {
+  if (!progress) return;
+
+  if (!isAreaUnlocked(areaId)) return;
+
+  currentArea = areas[areaId - 1];
+
+  el("areaSelection").hidden = true;
+  el("areaMap").hidden = false;
+
+  el("mapEyebrow").textContent =
+    `HSK 2 · AREA ${String(areaId).padStart(2,"0")}`;
+  el("mapTitle").textContent = currentArea.name;
+  el("mapSubtitle").textContent =
+    `LESSON ${currentArea.start}–${currentArea.end} · ${currentArea.description}`;
+
+  ["mapProgressCard", "mapBoard", "areaFinish"].forEach(id => {
+    el(id).style.setProperty("--area-color", currentArea.color);
+    el(id).style.setProperty("--area-light", currentArea.light);
+    el(id).style.setProperty("--area-border", currentArea.border);
+  });
+
+  el("mapEyebrow").style.color = currentArea.color;
+
+  renderAreaMap();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function renderAreaMap() {
+  if (!currentArea) return;
+
+  if (!progress) return;
+
+  const area = currentArea;
+  const completed = countCompleted(area.start, area.end);
+
+  el("mapProgressText").textContent = `${completed} / 5`;
+  el("mapProgressText").style.color = area.color;
+  el("mapProgressFill").style.width = `${completed / 5 * 100}%`;
+  el("mapProgressFill").style.background = area.color;
+
+  const container = el("pathContainer");
+  container.replaceChildren();
+
+  // Path runs from top to bottom, alternating left and right.
+  const path = document.createElementNS(
+    "http://www.w3.org/2000/svg", "svg"
+  );
+  path.setAttribute("class", "path-svg");
+  path.setAttribute("viewBox", "0 0 400 680");
+  path.setAttribute("preserveAspectRatio", "none");
+
+
+path.innerHTML = `
+  <path
+    d="M200 78
+       C200 132 95 120 95 205
+       S305 275 305 335
+       S95 415 95 465
+       S200 550 200 590"
+    fill="none"
+    stroke="#e4ebe6"
+    stroke-width="17"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M200 78
+       C200 132 95 120 95 205
+       S305 275 305 335
+       S95 415 95 465
+       S200 550 200 590"
+    fill="none"
+    stroke="${area.color}"
+    stroke-opacity=".48"
+    stroke-width="3"
+    stroke-dasharray="5 10"
+    stroke-linecap="round"
+  />
+`;
+
+container.appendChild(path);
+
+
+  const positions = [
+    {x:50, y:11.5},
+    {x:23.75, y:30.1},
+    {x:76.25, y:49.3},
+    {x:23.75, y:68.4},
+    {x:50, y:86.8}
+  ];
+
+  positions.forEach((position, index) => {
+    const lesson = area.start + index;
+    const earned = stars[lesson - 1];
+    const unlocked = isLessonUnlocked(lesson);
+    const available = availableLessons.has(lesson);
+
+    let state = "locked";
+    if (earned >= 1) {
+      state = "completed";
+    } else if (unlocked && available) {
+      state = "current";
+    } else if (unlocked) {
+      state = "coming-soon";
+    }
+
+    const node = document.createElement("div");
+    node.className = "lesson-node";
+    node.style.left = `${position.x}%`;
+    node.style.top = `${position.y}%`;
+
+    const circle = document.createElement("button");
+    circle.type = "button";
+    circle.className = `node-circle ${state}`;
+    circle.style.setProperty("--area-color", area.color);
+    circle.style.setProperty("--area-light", area.light);
+
+    if (state === "locked") {
+      circle.innerHTML = iconSvg("lock");
+      circle.disabled = true;
+      circle.setAttribute("aria-label", `제${lesson}과 잠김`);
+    } else if (!available) {
+      circle.textContent = String(lesson);
+      circle.disabled = true;
+      circle.setAttribute("aria-label", `제${lesson}과 준비 중`);
+    } else {
+      circle.textContent = String(lesson);
+      circle.setAttribute(
+        "aria-label", `제${lesson}과 학습 시작`
+      );
+      circle.addEventListener("click", () => {
+        window.location.href =
+          `lesson.html?course=hsk2&lesson=${lesson}`;
+      });
+    }
+
+    const number = document.createElement("div");
+    number.className = "node-number";
+    number.textContent =
+      `LESSON ${String(lesson).padStart(2,"0")}`;
+
+    const starRow = document.createElement("div");
+    starRow.className = "node-stars";
+    for (let s = 1; s <= 3; s++) {
+      starRow.innerHTML += starSvg(s <= earned);
+    }
+
+    const status = document.createElement("div");
+    status.className = "node-status";
+
+    if (earned >= 1 && available) {
+      status.textContent = "완료 · 다시 학습 가능";
+    } else if (earned >= 1) {
+      status.textContent = "완료";
+    } else if (!unlocked) {
+      status.textContent = "잠금";
+    } else if (!available) {
+      status.textContent = "준비 중";
+    } else {
+      status.textContent = "학습 시작";
+    }
+
+    node.append(circle, number, starRow, status);
+    container.appendChild(node);
+  });
+
+  const finish = el("areaFinish");
+  finish.replaceChildren();
+
+  const heading = document.createElement("strong");
+  const message = document.createElement("p");
+
+  if (completed === 5) {
+    heading.textContent = "🎉 구역 완료!";
+    message.textContent = area.id === 3
+      ? "HSK 2급의 모든 구역을 완료했어요!"
+      : "축하해요! 다음 구역이 잠금 해제되었어요.";
+
+    if (area.id < 3) {
+      const button = document.createElement("button");
+      button.textContent = "다음 구역으로 이동하기 →";
+      button.addEventListener("click", () => {
+        openArea(area.id + 1);
+      });
+      finish.append(heading, message, button);
+    } else {
+      finish.append(heading, message);
+    }
+  } else {
+    heading.textContent = "다음 구역 학습";
+    message.textContent =
+      "다음 구역도 지금 학습할 수 있어요.";
+    if (area.id === 3) {
+      heading.textContent = "HSK 2급 최종 목표";
+      message.textContent =
+        "15개 레슨을 복습하며 HSK 2급 어휘를 익혀보세요.";
+    }
+    finish.append(heading, message);
+  }
+}
+
+function goBack() {
+  currentArea = null;
+  el("areaMap").hidden = true;
+  el("areaSelection").hidden = false;
+  renderAreaSelection();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+el("backButton").addEventListener("click", goBack);
+
+window.addEventListener('pageshow',refreshAdminAccess);
+roleClient.auth.onAuthStateChange(event=>{if(event==='SIGNED_OUT'||event==='SIGNED_IN')setTimeout(refreshAdminAccess,0);});
+</script>
+<script src="i18n.js?v=hsk2-1"></script>
+</body>
+</html>

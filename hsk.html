@@ -149,7 +149,7 @@ footer {
 }
 </style>
 <link rel="stylesheet" href="language.css?v=20261125b">
-<link rel="stylesheet" href="ui.css?v=20261125b">
+<link rel="stylesheet" href="ui.css?v=hsk2-1">
 <script defer src="icons.js"></script>
 <link rel="stylesheet" href="bilingual-layout.css?v=2">
 </head>
@@ -188,12 +188,12 @@ footer {
       <div class="status" id="status1">학습 시작하기 →</div>
     </a>
 
-    <div class="card locked">
+    <a class="card active" href="hsk2.html">
       <div class="icon">🌿</div>
       <h2 id="level2">HSK 2급</h2>
       <p id="desc2">기초 표현과 어휘를 확장해요.</p>
-      <div class="status coming-soon">준비 중</div>
-    </div>
+      <div class="status" id="status2">학습 시작하기 →</div>
+    </a>
 
     <div class="card locked">
       <div class="icon">🌳</div>
@@ -301,6 +301,7 @@ function setLanguage(language) {
   document.getElementById("pageTitle").textContent = t.pageTitle;
   document.getElementById("pageIntro").innerHTML = t.pageIntro;
   document.getElementById("status1").textContent = t.start;
+  document.getElementById("status2").textContent = t.start;
   document.getElementById("footer").textContent = t.footer;
 
   for (let n = 1; n <= 6; n++) {

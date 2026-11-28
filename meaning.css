@@ -1,0 +1,26 @@
+/* Preserve every sense and necessary qualification; improve reading space instead of shortening. */
+.meaning-copy{white-space:normal;overflow-wrap:break-word;word-break:normal;line-height:1.6;min-width:0;max-width:100%;text-overflow:clip;}
+.meaning-copy .meaning-context{display:block;font-size:.85em;font-weight:400;line-height:1.6;color:#52655c;margin:0 0 .3em;}
+.meaning-copy .meaning-core{font-weight:inherit;}
+#meaningEn.meaning-long,#flashEn.meaning-long{font-size:1.125rem;font-weight:600;text-align:left;max-width:36ch;margin-inline:auto;}
+#meaningEn.meaning-very-long,#flashEn.meaning-very-long{font-size:1.0625rem;}
+#quizPlay .quiz-english.meaning-long,#cbMeaning.meaning-long{font-size:1.125rem;line-height:1.65;text-align:left;font-weight:600;}
+#quizPlay .quiz-option-en,#quizPlay .quiz-option-en.meaning-long{font-size:1rem;line-height:1.6;}
+#lqOptions .meaning-copy,#wmRight .meaning-copy{font-size:1rem;line-height:1.6;}
+#lqOptions .meaning-long,#wmRight .meaning-long{text-align:left;}
+#quizPlay .quiz-option:has(.meaning-long){text-align:left;padding:12px!important;}
+.quiz-options:has(.meaning-very-long),#lqOptions:has(.meaning-very-long){grid-template-columns:1fr;}
+.shared-answer-copy .meaning-copy,.review-meaning.meaning-copy,.mp-meaning.meaning-copy{font-size:1rem;line-height:1.65;}
+.review-item:has(.meaning-long){align-items:flex-start;}
+@media(max-width:520px){
+ .quiz-options:has(.meaning-long),#lqOptions:has(.meaning-long){grid-template-columns:1fr;}
+ #meaningEn.meaning-long,#flashEn.meaning-long{font-size:1.0625rem;line-height:1.65;}
+ .flash-card:has(.meaning-long){padding:24px 16px;gap:12px;}
+ .review-item:has(.meaning-long){flex-wrap:wrap;}
+ .review-item .review-meaning.meaning-long{flex-basis:100%;}
+ .mp-row:has(.mp-meaning.meaning-long){flex-wrap:wrap;}
+ .mp-row .mp-meaning.meaning-long{flex-basis:100%;max-width:none;}
+}
+.quiz-option-en.meaning-copy{font-size:1rem;line-height:1.6;}
+.quiz-english.meaning-copy.meaning-long{font-size:1.125rem;line-height:1.65;text-align:left;}
+.quiz-options:has(.meaning-long),#lqOptions:has(.meaning-long){grid-auto-rows:auto;}

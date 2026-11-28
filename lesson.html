@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<script src="course.js?v=consistent-2"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>제1과 단어 학습 | 민쌤중국어 어휘랜드</title>
@@ -854,11 +855,13 @@ h1 {
 .meaning-ko,.flash-ko,.quiz-korean,.quiz-option-ko,.review-ko {display:none!important;}
 </style>
 <link rel="stylesheet" href="language.css?v=20261125b">
-<link rel="stylesheet" href="ui.css?v=20261125b">
+<link rel="stylesheet" href="ui.css?v=hsk2-1">
 <link rel="stylesheet" href="game-compact.css?v=20261125b">
 <script defer src="icons.js"></script>
 <style>.account-best{display:block;margin-top:10px;padding-top:8px;border-top:1px solid #DDE7E2;color:#417C69;font-size:13px;font-weight:600;line-height:1.5;white-space:normal}</style>
 <link rel="stylesheet" href="bilingual-layout.css?v=2">
+<link rel="stylesheet" href="meaning.css?v=consistent-2">
+<script src="meaning.js?v=consistent-2"></script>
 </head>
 
 <body>
@@ -1387,7 +1390,8 @@ h1 {
 <div id="cbPlay" class="wm-panel" hidden><div class="wm-meta"><span id="cbCount"></span><span id="cbClock"></span></div><div class="progress-track"><div class="progress-fill" id="cbBar"></div></div><div class="cb-prompt"><p id="cbPrompt"></p><h2 id="cbMeaning"></h2><p id="cbPinyin" class="pinyin"></p></div><div id="cbSlots"></div><div id="cbOptions"></div><button id="cbClear" type="button"></button><button id="cbCheck" class="wm-action" type="button"></button><div id="cbFeedback" role="status"></div><button id="cbAnswerAudio" class="wm-action" hidden type="button"></button><button id="cbNext" class="wm-action" hidden type="button"></button></div><div id="cbResult" class="wm-panel" hidden><p id="cbSummary"></p><p id="cbBest"></p><button id="cbRetry" class="wm-action" type="button"></button><button id="cbMenu" class="wm-action" type="button"></button></div></section>
 </main>
 
-<script src="data/hsk1-vocabulary.js?v=1"></script>
+<script src="data/hsk1-vocabulary.js?v=consistent-2"></script>
+<script src="data/hsk2-vocabulary.js?v=consistent-2"></script>
 <script src="audio.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase-client.js?v=1"></script><script src="auth.js?v=2"></script><script src="progress.js?v=1"></script>
@@ -1411,6 +1415,8 @@ function currentMeaning(word) {
 ====================================== */
 
 
+const COURSE = window.MinssemCourse.id;
+const COURSE_LEVEL = window.MinssemCourse.level;
 const TOTAL_LESSONS = 15;
 const MAX_STARS = 3;
 
@@ -1424,7 +1430,7 @@ const lessonNumber =
     ? requestedLesson
     : null;
 
-const lessonData = window.MinssemHSK1Vocabulary;
+const lessonData = COURSE === 'hsk2' ? window.MinssemHSK2Vocabulary : window.MinssemHSK1Vocabulary;
 
 const lesson = lessonNumber
   ? lessonData[lessonNumber]
@@ -1433,8 +1439,8 @@ const lesson = lessonNumber
 const words = lesson ? lesson.words : [];
 
 const SESSION_KEY = lessonNumber
-  ? `minssem-lesson-${lessonNumber}-stage`
-  : "minssem-lesson-invalid-stage";
+  ? `minssem-${COURSE}-lesson-${lessonNumber}-stage`
+  : `minssem-${COURSE}-lesson-invalid-stage`;
 
 function el(id) {
   return document.getElementById(id);
@@ -1477,7 +1483,7 @@ function setLessonLabels() {
     if (
       node.id !== "unavailableEyebrow"
     ) {
-      node.textContent = localStorage.getItem("minssem-language") === "en" ? `HSK Level 1 · Lesson ${lessonNumber}` : `HSK 1급 · 제${lessonNumber}과`;
+      node.textContent = localStorage.getItem("minssem-language") === "en" ? `HSK Level ${COURSE_LEVEL} · Lesson ${lessonNumber}` : `HSK ${COURSE_LEVEL}급 · 제${lessonNumber}과`;
     }
   });
 
@@ -1609,8 +1615,8 @@ function openLesson() {
 
 function showUnavailableLesson() {
   const label = lessonNumber
-    ? `HSK 1급 · 제${lessonNumber}과`
-    : "HSK 1급";
+    ? `HSK ${COURSE_LEVEL}급 · 제${lessonNumber}과`
+    : `HSK ${COURSE_LEVEL}급`;
 
   el("unavailableEyebrow").textContent = label;
 
@@ -1701,7 +1707,7 @@ function renderWord() {
 
   el("hanzi").textContent = word.hanzi;
   el("pinyin").textContent = String(word.pinyin||'').normalize('NFC');
-  el("meaningEn").textContent = currentMeaning(word);
+  window.MinssemMeaning.set(el("meaningEn"),currentMeaning(word));
   el("meaningKo").textContent = "";
 
   el("counter").textContent =
@@ -1812,7 +1818,7 @@ function renderFlash() {
 
   el("flashHanzi").textContent = word.hanzi;
   el("flashPinyin").textContent = String(word.pinyin||'').normalize('NFC');
-  el("flashEn").textContent = currentMeaning(word);
+  window.MinssemMeaning.set(el("flashEn"),currentMeaning(word));
   el("flashKo").textContent = "";
 
   el("flashPinyin").hidden = true;
@@ -2027,7 +2033,7 @@ function beginTracking(mode) {
     if (error || !data.user) throw new Error("Login required");
     run.user = data.user.id;
     const result = await supabaseClient.from("learning_sessions").insert({
-      id: run.id, user_id: run.user, course: "hsk1", lesson_number: lessonNumber,
+      id: run.id, user_id: run.user, course: COURSE, lesson_number: lessonNumber,
       game_type: mode === "review" ? "review" : "speed_quiz",
       game_mode: mode === "review" ? null : mode, total_questions: run.total,
       started_at: new Date(run.started).toISOString()
@@ -2184,7 +2190,7 @@ function renderQuizQuestion() {
 
     const english = document.createElement("div");
     english.className = "quiz-english";
-    english.textContent = currentMeaning(word);
+    window.MinssemMeaning.set(english,currentMeaning(word));
 
     const korean = document.createElement("div");
     korean.className = "quiz-korean";
@@ -2206,7 +2212,7 @@ function renderQuizQuestion() {
     if (question.type === "hanziToMeaning") {
       const english = document.createElement("span");
       english.className = "quiz-option-en";
-      english.textContent = currentMeaning(choice);
+      window.MinssemMeaning.set(english,currentMeaning(choice));
 
       const korean = document.createElement("span");
       korean.className = "quiz-option-ko";
@@ -2568,7 +2574,7 @@ function renderWrongAnswerReview() {
 
     const english = document.createElement("div");
     english.className = "review-en";
-    english.textContent = currentMeaning(word);
+    window.MinssemMeaning.set(english,currentMeaning(word));
 
     const korean = document.createElement("div");
     korean.className = "review-ko";
@@ -2688,19 +2694,19 @@ el("retryWrongBtn").addEventListener(
 
 async function initializeLesson() {
   let admin=false;
-  try {const {data,error}=await window.MinssemAuth.getUser();if(error||!data?.user){location.replace('login.html');return;}const p=await window.MinssemAuth.getProfile(data.user.id);if(p.error||!p.data)throw p.error||Error('Profile missing');admin=p.data.role==='admin';assessmentProgress=await window.MinssemProgress.load({userId:data.user.id});}catch(e){console.error(e);el('unavailableTitle').textContent='진행률 조회 실패 / Unable to load progress';el('unavailableDescription').textContent='새로고침해 주세요 / Please refresh';showStage('unavailableSection');return;}
-  if (lessonNumber===1 && admin) { const b=el("chooseAssessmentBtn"); b.disabled=false; b.classList.remove("stage-choice-pending"); b.style.cursor="pointer"; b.querySelector(".stage-choice-description").textContent=localStorage.getItem("minssem-language")==="en"?"Assess your understanding of the lesson":"단원 학습 성취도 평가"; b.querySelector(".stage-choice-description").dataset.menuEn="Assess your understanding of the lesson"; b.querySelector(".stage-choice-arrow").textContent="›"; b.onclick=()=>location.href="assessment.html?course=hsk1&type=lesson&lesson=1"; }
+  try {const {data,error}=await window.MinssemAuth.getUser();if(error||!data?.user){location.replace('login.html');return;}const p=await window.MinssemAuth.getProfile(data.user.id);if(p.error||!p.data)throw p.error||Error('Profile missing');admin=p.data.role==='admin';assessmentProgress=await window.MinssemProgress.load({userId:data.user.id,course:COURSE});}catch(e){console.error(e);el('unavailableTitle').textContent='진행률 조회 실패 / Unable to load progress';el('unavailableDescription').textContent='새로고침해 주세요 / Please refresh';showStage('unavailableSection');return;}
   if (!lesson || !words.length) {
     showUnavailableLesson();
     return;
   }
 
+  document.querySelectorAll('a[href="hsk1.html"]').forEach(a=>a.href=window.MinssemCourse.map);
   setLessonLabels();
 
   // 학습 지도의 잠금 상태 확인
-  if (!assessmentProgress.isLessonUnlocked(lessonNumber,{admin})) {
+  if (COURSE !== 'hsk2' && !assessmentProgress.isLessonUnlocked(lessonNumber,{admin})) {
       el("unavailableEyebrow").textContent =
-        `HSK 1급 · 제${lessonNumber}과`;
+        `HSK ${COURSE_LEVEL}급 · 제${lessonNumber}과`;
 
       el("unavailableTitle").textContent =
         "아직 잠겨 있는 레슨이에요 🔒";
@@ -2729,13 +2735,13 @@ if (localStorage.getItem("minssem-language") === "en") {
 initializeLesson();
 
 </script>
-<script src="game-ui.js?v=3"></script>
+<script src="game-ui.js?v=consistent-2"></script>
 <script src="badge-alerts.js?v=0343d"></script>
-<script src="game-records.js?v=badge1"></script>
-<script src="game-review.js"></script>
-<script src="word-match.js?v=2"></script>
-<script src="listening-quiz.js?v=2"></script>
-<script src="character-builder.js?v=2"></script>
-<script src="i18n.js?v=20261125c"></script>
+<script src="game-records.js?v=hsk2-1"></script>
+<script src="game-review.js?v=consistent-2"></script>
+<script src="word-match.js?v=consistent-2"></script>
+<script src="listening-quiz.js?v=consistent-2"></script>
+<script src="character-builder.js?v=consistent-2"></script>
+<script src="i18n.js?v=hsk2-1"></script>
 </body>
 </html>
